@@ -1,0 +1,12 @@
+.slider-track {
+  animation: scrollVertical 20s linear infinite;
+}
+
+@keyframes scrollVertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
