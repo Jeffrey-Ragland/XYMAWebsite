@@ -171,13 +171,13 @@ const Product = () => {
 
       {/* product cards */}
 
-      <div className=" mx-[5%] xl:mx-[8%]">
+      <div className="  mx-[5%] xl:mx-[8%] flex flex-col items-center">
         {/* utmaps */}
         <div
-          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
           data-aos="flip-up"
         >
-          <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
+          <div className=" w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
             <div
               className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
               style={{
@@ -218,14 +218,14 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
             {/* heading and play button */}
-            <div className=" md:flex gap-2 mb-2">
-              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
+            <div className="  md:flex items-center justify-between gap-2 mb-2">
+              <div className=" mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
               <div
-                className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
                 onClick={() => setRenderUtmapsVideo(true)}
               >
                 <div className="text-[#FE9D1C]">
@@ -238,12 +238,14 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
-              Temperature Range: 25° C to 1600° C
+            <div className="md:flex">
+              <div className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                Temperature Range: 25° C to 1600° C
+              </div>
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
+            <div className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
               µTMapS & µSTMapS are IIoT-enabled temperature measurement and
               temperature profiling sensors that captures continuous
               measurements at multiple points with a single customizable
@@ -252,7 +254,7 @@ const Product = () => {
             </div>
 
             {/* cards */}
-            <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
+            <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={isteel} />
@@ -268,7 +270,7 @@ const Product = () => {
               </div>
             </div>
 
-            <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
+            <div className=" md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={semi} />
@@ -288,7 +290,7 @@ const Product = () => {
 
         {/* ports */}
         <div
-          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
           data-aos="flip-up"
         >
           <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
@@ -325,17 +327,17 @@ const Product = () => {
                 >
                   PoRTS
                 </div>
-                <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                <div className="text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                   A single customizable wavelength can measure viscosity,
                   density & Temperature continuously.
                 </div>
               </div>
             </div>
           </div>
-          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
             {/* heading and play button */}
-            <div className=" md:flex gap-2 mb-2">
-              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
+            <div className="  md:flex items-center justify-between gap-2 mb-2">
+              <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Multi-Parameter Measurement Sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -349,7 +351,7 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className="md:flex flex-wrap lg:gap-2 text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium">
+            <div className="md:flex flex-wrap lg:gap-2 text-[clamp(16px,1vw,20px)] font-medium">
               <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
                 Viscosity: 50 cP - 15000 cP
               </div>
@@ -364,7 +366,7 @@ const Product = () => {
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
+            <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
               PoRTS is an invasive/non-invasive based IIoT-enabled rheology and
               temperature measurement sensor that continuously captures multiple
               parameters such as viscosity, density and temperature with a
@@ -403,7 +405,7 @@ const Product = () => {
 
         {/* ztar */}
         <div
-          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4"
+          className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
           data-aos="flip-up"
         >
           <div className="w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
@@ -447,10 +449,10 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className=" w-full md:w-[55%] xl:p-2 md:p-4">
+          <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
             {/* heading and play button */}
-            <div className=" md:flex gap-2 mb-2">
-              <div className="mb-2 md:mb-0 text-lg lg:text-3xl 2xl:text-4xl font-semibold">
+            <div className=" md:flex items-center justify-between gap-2 mb-2">
+              <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Ultrasonic contact & non-contact based level measurement sensor
               </div>
               <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -464,12 +466,14 @@ const Product = () => {
             </div>
 
             {/* orange tab */}
-            <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
-              Level: 0.03 m to 10 m
+            <div className="md-flex">
+              <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                Level: 0.03 m to 10 m
+              </div>
             </div>
 
             {/* description */}
-            <div className=" text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-xl mb-2 font-medium">
+            <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
               Ztar is a contact/contactless IIoT-enabled level measurement
               sensor that captures continuous level across any hazardous
               environment with accuracy in contrast to radar-based level
@@ -477,7 +481,7 @@ const Product = () => {
             </div>
 
             {/* cards */}
-            <div className="md:flex gap-2 mb-2 md:mb-20 text-sm lg:text-base 2xl:text-xl">
+            <div className=" md:flex gap-2 mb-2 md:mb-20 text-sm lg:text-base 2xl:text-xl">
               <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                 <div className="flex items-center justify-center">
                   <img className="w-10" src={metal} />
@@ -529,7 +533,6 @@ const Product = () => {
             </div>
           </div>
         </div>
-        
       )}
     </div>
   );

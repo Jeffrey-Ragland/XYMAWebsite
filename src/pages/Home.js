@@ -996,7 +996,7 @@ export const Home = () => {
                 Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
             </div>
           </div>
@@ -1019,7 +1019,7 @@ export const Home = () => {
                 Multi - Point Measurement
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Multi - Point Measurement
             </div>
           </div>
@@ -1042,7 +1042,7 @@ export const Home = () => {
                 Energy Management System-IoT
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Energy&nbsp;Management System-IoT
             </div>
           </div>
@@ -1065,7 +1065,7 @@ export const Home = () => {
                 Zero&nbsp;Manual Intervention
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               Zero&nbsp;Manual Intervention
             </div>
           </div>
@@ -1088,7 +1088,7 @@ export const Home = () => {
                 AI&nbsp;Enable&nbsp;Corrective Actions
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               AI&nbsp;Enable&nbsp;Corrective Actions
             </div>
           </div>
@@ -1111,7 +1111,7 @@ export const Home = () => {
                 Retrofit Benifits
               </div>
             )}
-            <div className="hidden md:block text-[10px] absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               Retrofit Benifits
             </div>
           </div>
@@ -1138,7 +1138,7 @@ export const Home = () => {
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
             <div
-              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-8 md:py-16 lg:py-24 justify-center"
+              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-8 md:py-16 lg:py-24 2xl:py-32 justify-center"
               data-aos="flip-right"
               style={{
                 background:
@@ -1153,7 +1153,7 @@ export const Home = () => {
                 <div>Technology</div>
               </div>
 
-              <div className="text-xs lg:text-base 2xl:text-lg">
+              <div className="text-xs lg:text-base 2xl:text-xl">
                 The team leverages state-of-the-art, award-winning, ultrasonic
                 waveguide technology developed through 25+ years of research and
                 development.
@@ -1175,7 +1175,7 @@ export const Home = () => {
                       Client-Centric
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     The Solution is provided based on in-depth understanding of
                     clients needs addressing the relevant challenges.
                   </div>
@@ -1194,7 +1194,7 @@ export const Home = () => {
                       Customization for Solutions
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Gain immediate access to valuable data through the
                     technology's adaptability with material selection and
                     configuration for waveguides.
@@ -1216,7 +1216,7 @@ export const Home = () => {
                       Real-Time Insights
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Gain immediate access to valuable data through our
                     supervised sensing capabilities, empowering informed
                     decision-making.
@@ -1236,7 +1236,7 @@ export const Home = () => {
                       On-Time Delivery
                     </div>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-lg">
+                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Committed to adhering to project timelines and satisfaction.
                   </div>
                 </div>

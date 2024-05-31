@@ -786,7 +786,7 @@ const Media = () => {
           <div className="flex justify-center">
             <VerticalSlider images={images1} />
           </div>
-          <div className="flex justify-center -mt-32">
+          <div className="flex justify-center -mt-20 xl:-mt-32">
             <VerticalSlider images={images2} />
           </div>
           <div className="flex justify-center">
