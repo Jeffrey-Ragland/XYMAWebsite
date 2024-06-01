@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import video2 from '../Images/contactOverlay2.mp4';
 import map from '../Images/map.png';
-import call from '../Images/call.png';
 import mail from '../Images/mail.png';
 import location from '../Images/location.png'; 
 import line from "../Assets/underline.png";
@@ -220,7 +219,11 @@ const ContactPage = () => {
           Installations of Ultrasonic Waveguide Sensors in different countries
         </div>
         <div className=" h-[200px] md:h-auto">
-          <img className="object-cover w-full h-full" src={map} data-aos="fade"></img>
+          <img
+            className="object-cover w-full h-full"
+            src={map}
+            data-aos="fade"
+          ></img>
         </div>
       </section>
 
@@ -231,7 +234,7 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className="md:flex justify-center  mx-[5%]">
+      <div className="md:flex justify-center mx-[10%] 2xl:mx-[15%]">
         <div className="w-full md:w-1/2 h-[300px] md:h-[400px] 2xl:h-[450px] p-4">
           <iframe
             className="rounded-2xl"
@@ -245,15 +248,15 @@ const ContactPage = () => {
           ></iframe>
         </div>
 
-        <div className="w-full md:w-1/2 p-4 flex items-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+        <div className="w-full md:w-1/2 p-4 flex items-start text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
           <div className="flex flex-col">
-            <div className="flex border border-gray-300 rounded-xl p-2">
+            {/* <div className="flex border border-gray-300 rounded-xl p-2">
               <img className="w-7 h-7 mt-0.5" src={call} alt="Call Icon" />
               <div className="ml-4 text-[#60646C] font-semibold">
                 Contact Details:
                 <div className="text-black">(+91) 9442949347</div>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex mt-3 border border-gray-300 rounded-xl p-2">
               <img
@@ -266,7 +269,9 @@ const ContactPage = () => {
                 <div className="text-black">XYMA ANALYTICS PRIVATE LIMITED</div>
                 <div className="text-black">
                   B4-01, 4th Floor, Phase II, B-Block, IITM Research Park,
-                  Kanagam Road, Taramani, Chennai, TamilNadu, India - 600113
+                  <br /> Kanagam Road, Taramani, Chennai,
+                  TamilNadu,
+                  <br /> India - 600113.
                 </div>
               </div>
             </div>
@@ -275,11 +280,7 @@ const ContactPage = () => {
               <img className="w-7 h-7 mt-0.5" src={mail} alt="Mail Icon" />
               <div className="ml-4 text-[#60646C] font-semibold">
                 Email Address:
-                <div className="text-black">
-                  info@xyma.in
-                  <br />
-                  nishanthraja@xyma.in
-                </div>
+                <div className="text-black">info@xyma.in</div>
               </div>
             </div>
           </div>

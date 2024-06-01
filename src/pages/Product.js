@@ -220,12 +220,12 @@ const Product = () => {
           </div>
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
             {/* heading and play button */}
-            <div className="  md:flex items-center justify-between gap-2 mb-2">
+            <div className="border border-black  md:flex items-start justify-between gap-2 mb-2">
               <div className=" mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
               <div
-                className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                className=" border border-black flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
                 onClick={() => setRenderUtmapsVideo(true)}
               >
                 <div className="text-[#FE9D1C]">
@@ -336,7 +336,7 @@ const Product = () => {
           </div>
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
             {/* heading and play button */}
-            <div className="  md:flex items-center justify-between gap-2 mb-2">
+            <div className="  md:flex items-start justify-between gap-2 mb-2">
               <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Multi-Parameter Measurement Sensor
               </div>
@@ -451,7 +451,7 @@ const Product = () => {
           </div>
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
             {/* heading and play button */}
-            <div className=" md:flex items-center justify-between gap-2 mb-2">
+            <div className=" md:flex items-start justify-between gap-2 mb-2">
               <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Ultrasonic contact & non-contact based level measurement sensor
               </div>
