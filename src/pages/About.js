@@ -12,9 +12,10 @@ import c3 from '../Assets/Framec3.png';
 import c4 from '../Assets/Framec4.png';
 import c5 from '../Assets/Framec5.png';
 import c6 from '../Assets/Framec6.png';
-import a1 from '../Assets/a1.jpg';
-import a2 from "../Assets/a2.png";
-import a3 from "../Assets/a3.png";
+import ceo from "../Assets/ceo.jpeg";
+import cto from "../Assets/cto.jpg";
+import adv1 from "../Assets/adv1.png";
+import adv2 from "../Assets/adv2.png";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import Xarrow from "react-xarrows";
@@ -28,8 +29,6 @@ import "aos/dist/aos.css";
 
 const About = () => {
   
- const navigate = useNavigate();
-
   const { width } = useWindowSize();
   const isLargeScreen = width >= 768;
 
@@ -379,7 +378,7 @@ const About = () => {
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mx-[15%] md:mx-0 text-center lg:text-lg xl:text-base 2xl:text-xl mb-4 md:mb-6 2xl:mb-8">
+        <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mx-[15%] md:mx-0 text-center lg:text-lg xl:text-base 2xl:text-xl mb-4 md:mb-8 xl:mb-12 2xl:mb-16">
           <div className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c1}></img>
             <div className="font-semibold mt-2">Key Value</div>
@@ -406,57 +405,70 @@ const About = () => {
           </div>
         </div>
 
-        <div className="md:flex mt-4">
+        <div className=" md:flex mx-[5%] md:mx-[8%] xl:mx-[15%]">
           {/* react slick carousel */}
-          <div className="  w-full md:w-1/2 p-8 lg:p-16">
-            <Slider {...settings}>
-              <div className="text-center">
+          <div className="  w-full md:w-[40%]">
+            <Slider {...settings} className=" ">
+              <div className=" text-center">
                 <img
-                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
-                  src={a1}
-                  alt="a1"
+                  className=" w-full object-cover rounded-2xl"
+                  src={ceo}
+                  alt="ceo"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                <div className="text-[#1C2024] font-semibold md:text-base lg:text-lg 2xl:text-xl mt-2">
                   Dr. Nishanth Raja
                 </div>
-                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                  C.E.O. and Co-founder
+                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                  CEO and Co-founder
+                </div>
+              </div>
+              <div className=" text-center">
+                <img
+                  className=" w-full object-cover rounded-2xl"
+                  src={cto}
+                  alt="cto"
+                />
+                <div className="text-[#1C2024] font-semibold md:text-base lg:text-lg 2xl:text-xl mt-2">
+                  Aswin Kumar Kathirvel
+                </div>
+                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                  CTO and Co-founder
                 </div>
               </div>
               <div className="text-center">
                 <img
-                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
-                  src={a2}
-                  alt="a2"
+                  className="w-full object-cover rounded-2xl"
+                  src={adv1}
+                  alt="adv1"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                <div className="text-[#1C2024] font-semibold md:text-base lg:text-lg 2xl:text-xl mt-2">
                   Prof. Krishnan Balasubramaniam
                 </div>
-                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   Founder & Advisor
                 </div>
               </div>
               <div className="text-center">
                 <img
-                  className="max-h-[400px] 2xl:max-h-[450px] w-full rounded-2xl"
-                  src={a3}
-                  alt="a3"
+                  className="w-full object-cover rounded-2xl"
+                  src={adv2}
+                  alt="adv2"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
+                <div className="text-[#1C2024] font-semibold md:text-base lg:text-lg 2xl:text-xl mt-2">
                   Prof. Prabhu Rajagopal
                 </div>
-                <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   Founder & Advisor
                 </div>
               </div>
             </Slider>
           </div>
 
-          <div className=" w-full md:w-1/2 flex flex-col justify-center p-8 lg:p-16">
+          <div className=" w-full md:w-[60%] flex flex-col justify-start py-4 px-8 xl:mt-8 2xl:mt-20">
             <div className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
               The Mission
             </div>
-            <div className="text-center text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl mt-2">
+            <div className="text-center text-[#60646C] text-sm lg:text-lg xl:text-base 2xl:text-xl mt-2">
               Our mission is to increase efficiency in operations through
               IIoT-enabled process parameter monitoring and AI-based predictive
               maintenance to enhance asset life and prevent unplanned downtime

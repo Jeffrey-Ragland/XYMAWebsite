@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.15e11638.css",
-    "main.js": "/static/js/main.2a505bbe.js",
+    "main.css": "/static/css/main.1394bcdf.css",
+    "main.js": "/static/js/main.3a42f432.js",
     "static/js/453.f2c81f3e.chunk.js": "/static/js/453.f2c81f3e.chunk.js",
     "static/media/utmapsDemo.mp4": "/static/media/utmapsDemo.5627d55df171358567e3.mp4",
     "static/media/utmaps.png": "/static/media/utmaps.bfc11746d1f17b47acbb.png",
@@ -78,9 +78,9 @@
     "static/media/Frameasian.png": "/static/media/Frameasian.d19a8cda6df0e407cfb0.png",
     "static/media/asian2.png": "/static/media/asian2.e66628fdb2f48a854c1a.png",
     "static/media/xymalogo_white.png": "/static/media/xymalogo_white.4e2ffa7fd8e87d8d9843.png",
+    "static/media/adv1.png": "/static/media/adv1.53e41a79974a8dedc35e.png",
+    "static/media/adv2.png": "/static/media/adv2.9160202a4bf6026f6739.png",
     "static/media/paintsHome.jpg": "/static/media/paintsHome.2efae6d48ac4be9ea90e.jpg",
-    "static/media/a2.png": "/static/media/a2.8386ee8a6bedadd5163b.png",
-    "static/media/a3.png": "/static/media/a3.d55af8e1a87d6ff9e5c1.png",
     "static/media/oilRecovery3.jpg": "/static/media/oilRecovery3.b415a6916c325fd2cda9.jpg",
     "static/media/oilRecoveryHome.png": "/static/media/oilRecoveryHome.7628719b94d3b0b6c589.png",
     "static/media/lubricantsHome.png": "/static/media/lubricantsHome.91faa8db520e1308ea33.png",
@@ -91,9 +91,10 @@
     "static/media/newut.jpeg": "/static/media/newut.b72afad55588952319ff.jpeg",
     "static/media/paintsresized.png": "/static/media/paintsresized.eb486e5befff951fbbf4.png",
     "static/media/all1.png": "/static/media/all1.7b195f5703e88ba3a732.png",
+    "static/media/cto.jpg": "/static/media/cto.cce3e23b490bd0056c58.jpg",
     "static/media/all3.png": "/static/media/all3.93e79cbce1c5c2fc95ff.png",
     "static/media/all2.png": "/static/media/all2.83fc3938eaea65cc398a.png",
-    "static/media/a1.jpg": "/static/media/a1.153bd251c1ee581b7dba.jpg",
+    "static/media/ceo.jpeg": "/static/media/ceo.ddfa1ef17b424524d467.jpeg",
     "static/media/trophy.png": "/static/media/trophy.857bd285d0177ebec22e.png",
     "static/media/framevector.png": "/static/media/framevector.25fce6b5486ae3b4d382.png",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -101,12 +102,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.15e11638.css.map": "/static/css/main.15e11638.css.map",
-    "main.2a505bbe.js.map": "/static/js/main.2a505bbe.js.map",
+    "main.1394bcdf.css.map": "/static/css/main.1394bcdf.css.map",
+    "main.3a42f432.js.map": "/static/js/main.3a42f432.js.map",
     "453.f2c81f3e.chunk.js.map": "/static/js/453.f2c81f3e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15e11638.css",
-    "static/js/main.2a505bbe.js"
+    "static/css/main.1394bcdf.css",
+    "static/js/main.3a42f432.js"
   ]
 }
