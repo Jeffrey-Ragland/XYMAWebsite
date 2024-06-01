@@ -17,9 +17,9 @@ import time from '../Assets/time.png';
 import sg from '../Brand/sg.png';
 import tata from '../Brand/tata.png';
 import lam from '../Brand/lam.png';
-import ind from '../Brand/ind.png';
-import bharat from '../Brand/bharat.png';
-import ved from '../Brand/ved.png';
+import ind from '../Brand/iocl.png';
+import bharat from '../Brand/bpcl.png';
+import ved from '../Brand/vedanta.png';
 import drdo from '../Brand/drdo.png';
 import cumi from '../Brand/cumi.png';
 import epri from '../Brand/epri.png';
@@ -1295,54 +1295,54 @@ export const Home = () => {
         </div>
 
         {/* client logo carousel*/}
-        <div className="mt-16 mb-4 md:mx-[8%] ">
+        <div className="mt-16 mb-8 md:mx-[8%]">
           <Slider {...settings}>
-            <div className="">
-              <img src={sg} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={sg} className="mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={tata} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={tata} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div className=" ">
-              <img src={drdo} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={drdo} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={cumi} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={cumi} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={lam} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={lam} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={ind} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={ind} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={epri} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={epri} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={skf} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={skf} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div className="flex">
-              <img src={bharat} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={bharat} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={ved} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={ved} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={schneider} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={schneider} className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
-            <div>
-              <img src={reliance} className="mx-auto max-w-[200px] h-auto" />
+            <div className="mb-6">
+              <img src={reliance} className=" mx-auto max-w-[145px] h-auto" />
             </div>
           </Slider>
         </div>

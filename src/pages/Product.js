@@ -15,8 +15,8 @@ import luboil from "../Assets/luboil.png";
 import semi from "../Assets/semi.png";
 import ref from "../Assets/refineries.png";
 import eor from "../Assets/eor.png";
-import video from "../Images/contactOverlay2.mp4";
-//import utmapsDemo from '../Assets/videos/utmapsDemoCompressed.mp4'
+// import video from "../Images/contactOverlay2.mp4";
+import utmapsDemo from '../Assets/utmapsDemo.mp4'
 import { RiPlayCircleFill } from "react-icons/ri";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -220,12 +220,12 @@ const Product = () => {
           </div>
           <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
             {/* heading and play button */}
-            <div className="border border-black  md:flex items-start justify-between gap-2 mb-2">
+            <div className="  md:flex items-start justify-between gap-2 mb-2">
               <div className=" mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
                 Multi-Point Temperature Mapping Sensor
               </div>
               <div
-                className=" border border-black flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
                 onClick={() => setRenderUtmapsVideo(true)}
               >
                 <div className="text-[#FE9D1C]">
@@ -529,7 +529,7 @@ const Product = () => {
               />
             </div>
             <div className="flex justify-center p-0.5">
-              <video className="" src={video} autoPlay controls />
+              <video className="" src={utmapsDemo} autoPlay controls />
             </div>
           </div>
         </div>
