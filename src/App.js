@@ -13,8 +13,7 @@ const App = () => {
         <Mainpage/> 
         
       </BrowserRouter>
-    
-   
+  
     </React.Fragment>
     
   )
