@@ -45,7 +45,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
-  
   const [clickedImage, setClickedImage] = useState(aluminum);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [overlay, setOverlay] = useState(false);
@@ -53,7 +52,7 @@ export const Home = () => {
   const [portsBadge, setPortsBadge] = useState(false);
   const [ztarBadge, setZtarBadge] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState([]);
 
   const coverImageRef = useRef(null);
 
@@ -63,7 +62,7 @@ export const Home = () => {
     section3: useRef(null),
     section4: useRef(null),
   };
-  
+
   const settings = {
     slidesToShow: 1,
     rows: 2,
@@ -105,68 +104,67 @@ export const Home = () => {
 
   // condition to display icon menu
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6,
+    const handleScroll = () => {
+      const coverImagePosition = coverImageRef.current.getBoundingClientRect();
+      const coverImageHeight =
+        coverImagePosition.bottom - coverImagePosition.top;
+      const scrollDistance = document.documentElement.scrollTop;
+      const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
+
+      if (scrollDistance > scrollThreshold) {
+        setRenderIconMenu(true);
+      } else {
+        setRenderIconMenu(false);
+      }
     };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if(!entry.isIntersecting)
-        {
-          setRenderIconMenu(true);
-        }
-        else
-        {
-          setRenderIconMenu(false);
-        }
-      });
-    },options);
-
-    observer.observe(coverImageRef.current);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      observer.disconnect();
-    }
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // intersection observer, indicates the section in the screen
+  //for active section in display
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
+    const handleScroll = () => {
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        const sectionPosition = ref.current.getBoundingClientRect();
+        const sectionHeight = sectionPosition.height;
+
+        const visiblePart =
+          Math.min(viewportHeight, sectionPosition.bottom) -
+          Math.max(0, sectionPosition.top);
+        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+
+        if (visiblePercentage >= 60) {
+          setActiveSection((prevActiveSections) => {
+            if (!prevActiveSections.includes(sectionId)) {
+              return [...prevActiveSections, sectionId];
+            }
+            return prevActiveSections;
+          });
+        } else {
+          setActiveSection((prevActiveSections) => {
+            return prevActiveSections.filter((id) => id !== sectionId);
+          });
+        }
+      });
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, options);
-
-    Object.values(sectionRefs).forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      Object.values(sectionRefs).forEach(ref => {
-        if(ref.current)
-        {
-          observer.unobserve(ref.current);
-        }
-      });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const handleSectionScroll = (ref) => {
     scrollToSection(ref);
   };
- 
+
   const scrollToSection = (ref) => {
     const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
     const sectionTop = ref.current.getBoundingClientRect().top + window.scrollY;
@@ -177,18 +175,16 @@ export const Home = () => {
       behavior: "smooth",
     });
   };
-  
-  const handleOverlayEnter = () =>
-  {
+
+  const handleOverlayEnter = () => {
     setOverlay(true);
-  }
+  };
 
   const handleOverlayLeave = () => {
     setOverlay(false);
   };
 
-  const handleUtmapsBadgeEnter = () =>
-  {
+  const handleUtmapsBadgeEnter = () => {
     setUtmapsBadge(true);
   };
 
@@ -213,7 +209,6 @@ export const Home = () => {
   };
 
   const handleImageChange = (event) => {
-    
     switch (event.target.id) {
       case "aluminum":
         setClickedImage(aluminum);
@@ -245,8 +240,8 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    AOS.init({duration: 1500});
-  },[]);
+    AOS.init({ duration: 1500 });
+  }, []);
 
   return (
     <div className="w-full overflow-hidden">
@@ -291,13 +286,15 @@ export const Home = () => {
       {/* icon menu */}
       {renderIconMenu && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-10 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
           data-aos=""
         >
           <div
             onClick={() => handleSectionScroll(sectionRefs.section1)}
             className={`cursor-pointer ${
-              activeSection === "section1" ? "text-orange-400" : "text-gray-400"
+              activeSection.includes("section1")
+                ? "text-orange-400"
+                : "text-gray-400"
             }`}
           >
             <GiWaterSplash size={25} />
@@ -305,7 +302,9 @@ export const Home = () => {
           <div
             onClick={() => handleSectionScroll(sectionRefs.section2)}
             className={`cursor-pointer ${
-              activeSection === "section2" ? "text-orange-400" : "text-gray-400"
+              activeSection.includes("section2")
+                ? "text-orange-400"
+                : "text-gray-400"
             }`}
           >
             <MdOutlineSensors size={25} />
@@ -313,7 +312,9 @@ export const Home = () => {
           <div
             onClick={() => handleSectionScroll(sectionRefs.section3)}
             className={`cursor-pointer ${
-              activeSection === "section3" ? "text-orange-400" : "text-gray-400"
+              activeSection.includes("section3")
+                ? "text-orange-400"
+                : "text-gray-400"
             }`}
           >
             <SiBlueprint size={25} />
@@ -321,7 +322,9 @@ export const Home = () => {
           <div
             onClick={() => handleSectionScroll(sectionRefs.section4)}
             className={`cursor-pointer ${
-              activeSection === "section4" ? "text-orange-400" : "text-gray-400"
+              activeSection.includes("section4")
+                ? "text-orange-400"
+                : "text-gray-400"
             }`}
           >
             <HiUserGroup size={25} />
@@ -332,7 +335,10 @@ export const Home = () => {
       {/* elements section */}
       <section id="section1" ref={sectionRefs.section1} className="pt-1">
         {/* text with underline */}
-        <div className="flex justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]">
+        <div
+          // ref={sectionRefs.section1}
+          className="flex justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]"
+        >
           <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
             <div>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
             <div>
@@ -789,8 +795,8 @@ export const Home = () => {
 
       {/* semi circle component */}
       <section
-        id="section2"
         className="  flex flex-col items-center justify-center relative mb-8 xl:h-[95vh]"
+        id="section2"
         ref={sectionRefs.section2}
       >
         <div
@@ -804,7 +810,10 @@ export const Home = () => {
           </div>
         )} */}
 
-        <div className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]">
+        <div
+          // ref={sectionRefs.section2}
+          className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]"
+        >
           <div className="flex flex-wrap justify-center gap-1">
             <div>Patented Ultrasonic </div>
             <div>
@@ -1126,7 +1135,10 @@ export const Home = () => {
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className=" flex justify-center items-center  xl:mx-[8%]">
+          <div
+            // ref={sectionRefs.section3}
+            className=" flex justify-center items-center  xl:mx-[8%]"
+          >
             <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
               <div>Making a difference with</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
@@ -1282,7 +1294,10 @@ export const Home = () => {
 
       {/* clients section */}
       <section id="section4" ref={sectionRefs.section4} className=" ">
-        <div className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4">
+        <div
+          // ref={sectionRefs.section4}
+          className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
+        >
           <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
             Xyma Analytics' Clients
           </div>

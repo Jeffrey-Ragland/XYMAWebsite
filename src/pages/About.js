@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useEffect, useRef, useState} from 'react';
 import iit from '../Assets/Frameiit.png';
 import group1 from '../Assets/Framegroup.png';
 import frame1 from '../Assets/Frame1.png';
@@ -22,15 +21,34 @@ import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
 import Slider from "react-slick";
+import { GiWaterSplash } from "react-icons/gi";
+import { MdOutlineSensors } from "react-icons/md";
+import { SiBlueprint } from "react-icons/si";
+import { HiUserGroup } from "react-icons/hi2";
+import { RiMapPinTimeLine } from "react-icons/ri";
+import { GrGroup } from "react-icons/gr";
+import { GiAchievement } from "react-icons/gi";
+import { FaListCheck } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
-  
+  const [renderIconMenu, setRenderIconMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState([]);
+
   const { width } = useWindowSize();
   const isLargeScreen = width >= 768;
+
+  const coverImageRef = useRef(null);
+
+  const sectionRefs = {
+    section1: useRef(null),
+    section2: useRef(null),
+    section3: useRef(null),
+    section4: useRef(null),
+  };
 
   const settings = {
     dots: true,
@@ -40,16 +58,93 @@ const About = () => {
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 2500
+    autoplaySpeed: 2500,
   };
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
-  
+
+  // condition to display icon menu
+  useEffect(() => {
+    const handleScroll = () => {
+      const coverImagePosition = coverImageRef.current.getBoundingClientRect();
+      const coverImageHeight =
+        coverImagePosition.bottom - coverImagePosition.top;
+      const scrollDistance = document.documentElement.scrollTop;
+      const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
+
+      if (scrollDistance > scrollThreshold) {
+        setRenderIconMenu(true);
+      } else {
+        setRenderIconMenu(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  //for active section in display
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        const sectionPosition = ref.current.getBoundingClientRect();
+        const sectionHeight = sectionPosition.height;
+
+        const visiblePart =
+          Math.min(viewportHeight, sectionPosition.bottom) -
+          Math.max(0, sectionPosition.top);
+        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+
+        if (visiblePercentage >= 40) {
+          setActiveSection((prevActiveSections) => {
+            if (!prevActiveSections.includes(sectionId)) {
+              return [...prevActiveSections, sectionId];
+            }
+            return prevActiveSections;
+          });
+        } else {
+          setActiveSection((prevActiveSections) => {
+            return prevActiveSections.filter((id) => id !== sectionId);
+          });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleSectionScroll = (ref) => {
+    scrollToSection(ref);
+  };
+
+  const scrollToSection = (ref) => {
+    const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
+    const sectionTop = ref.current.getBoundingClientRect().top + window.scrollY;
+    const scrollPosition = sectionTop - navbarHeight;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
-      <div className=" relative mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
+      <div
+        ref={coverImageRef}
+        className=" relative mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl"
+      >
         <img
           className="h-full w-full object-cover"
           src={iit}
@@ -110,216 +205,271 @@ const About = () => {
         ABOUT US
       </div>
 
-      <div className="mt-8 mx-[5%] mb-8 md:mb-12">
-        <div className="text-center flex justify-center">
-          <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-            <div>About XYMA</div>
-            <img className="w-full h-2" src={line}></img>
-          </div>
-        </div>
-        <div className="text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl mt-2">
-          "XYMA Analytics is a deep-tech company started from IIT Madras,
-          serving 15+ MNCs globally now to provide them with accurate
-          multi-point temperature and multi-parameter measurements through
-          patented ultrasonic waveguide technology."
-        </div>
-      </div>
-
-      {/* arrow box */}
-      <div className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
-        {isLargeScreen ? (
-          <>
-            <Xarrow
-              start="box1"
-              end="box2"
-              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-              color="gray"
-              strokeWidth={1}
-              headSize={10}
-              curveness={1.2}
-              showTail={true}
-              tailShape="circle"
-            />
-            <Xarrow
-              start="box3"
-              end="box4"
-              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-              color="gray"
-              strokeWidth={1}
-              headSize={10}
-              curveness={1.2}
-              showTail={true}
-              tailShape="circle"
-            />
-          </>
-        ) : (
-          <>
-            <Xarrow
-              start="box5"
-              end="box6"
-              startAnchor="bottom"
-              endAnchor="top"
-              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-              color="gray"
-              strokeWidth={1}
-              headSize={10}
-              curveness={1.2}
-              showTail={true}
-              tailShape="circle"
-            />
-            <Xarrow
-              start="box7"
-              end="box8"
-              startAnchor="bottom"
-              endAnchor="top"
-              dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
-              color="gray"
-              strokeWidth={1}
-              headSize={10}
-              curveness={1.2}
-              showTail={true}
-              tailShape="circle"
-            />
-          </>
-        )}
-
-        <div className=" md:flex justify-between mb-2">
-          {/* box 1 */}
+      {/* icon menu */}
+      {renderIconMenu && (
+        <div
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          data-aos=""
+        >
           <div
-            className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
-            id="box1"
+            onClick={() => handleSectionScroll(sectionRefs.section1)}
+            className={`cursor-pointer ${
+              activeSection.includes("section1")
+                ? "text-orange-400"
+                : "text-gray-400"
+            }`}
           >
-            <div className=" w-full h-full">
-              <div className=" flex items-center mb-2">
-                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                  2020
-                </span>
-              </div>
-              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </div>
-              <div className=" text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </div>
-              <div className=" flex items-center mb-2">
-                <span
-                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
-                >
-                  View More
-                </span>
-              </div>
-            </div>
-            {/* empty div for arrow 1 - small screen*/}
-            <div className=" absolute w-4 bottom-0 right-[10%]" id="box5" />
+            <RiMapPinTimeLine size={25} />
           </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section2)}
+            className={`cursor-pointer ${
+              activeSection.includes("section2")
+                ? "text-orange-400"
+                : "text-gray-400"
+            }`}
+          >
+            <GrGroup size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section3)}
+            className={`cursor-pointer ${
+              activeSection.includes("section3")
+                ? "text-orange-400"
+                : "text-gray-400"
+            }`}
+          >
+            <GiAchievement size={25} />
+          </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section4)}
+            className={`cursor-pointer ${
+              activeSection.includes("section4")
+                ? "text-orange-400"
+                : "text-gray-400"
+            }`}
+          >
+            <FaListCheck size={25} />
+          </div>
+        </div>
+      )}
 
-          {/* text 1 */}
-          <div className=" relative w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-            Lorem Ipsum has been the industry's standard dummy text when an
-            unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
+      <section id="section1" ref={sectionRefs.section1}>
+        <div className="mt-8 mx-[5%] mb-8 md:mb-12">
+          <div className="text-center flex justify-center">
+            <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+              <div>About XYMA</div>
+              <img className="w-full h-2" src={line}></img>
+            </div>
+          </div>
+          <div className="text-[#60646C] text-center text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl mt-2">
+            "XYMA Analytics is a deep-tech company started from IIT Madras,
+            serving 15+ MNCs globally now to provide them with accurate
+            multi-point temperature and multi-parameter measurements through
+            patented ultrasonic waveguide technology."
           </div>
         </div>
 
-        <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
-          {/* text 2 */}
-          <div className="w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-            Lorem Ipsum has been the industry's standard dummy text when an
-            unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
-          </div>
-          {/* box 2 */}
-          <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-4">
-            <div className=" w-full">
-              <div className="flex items-center px-4 mb-2">
-                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                  2020
-                </span>
+        {/* arrow box */}
+        <div className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
+          {isLargeScreen ? (
+            <>
+              <Xarrow
+                start="box1"
+                end="box2"
+                dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+                color="gray"
+                strokeWidth={1}
+                headSize={10}
+                curveness={1.2}
+                showTail={true}
+                tailShape="circle"
+              />
+              <Xarrow
+                start="box3"
+                end="box4"
+                dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+                color="gray"
+                strokeWidth={1}
+                headSize={10}
+                curveness={1.2}
+                showTail={true}
+                tailShape="circle"
+              />
+            </>
+          ) : (
+            <>
+              <Xarrow
+                start="box5"
+                end="box6"
+                startAnchor="bottom"
+                endAnchor="top"
+                dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+                color="gray"
+                strokeWidth={1}
+                headSize={10}
+                curveness={1.2}
+                showTail={true}
+                tailShape="circle"
+              />
+              <Xarrow
+                start="box7"
+                end="box8"
+                startAnchor="bottom"
+                endAnchor="top"
+                dashness={{ strokeLen: 10, nonStrokeLen: 5 }}
+                color="gray"
+                strokeWidth={1}
+                headSize={10}
+                curveness={1.2}
+                showTail={true}
+                tailShape="circle"
+              />
+            </>
+          )}
+
+          <div className=" md:flex justify-between mb-2">
+            {/* box 1 */}
+            <div
+              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
+              id="box1"
+            >
+              <div className=" w-full h-full">
+                <div className=" flex items-center mb-2">
+                  <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
+                    2020
+                  </span>
+                </div>
+                <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry
+                </div>
+                <div className=" text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the make a type specimen book.
+                </div>
+                <div className=" flex items-center mb-2">
+                  <span
+                    className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </span>
+                </div>
               </div>
-              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl px-4 mb-1">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
+              {/* empty div for arrow 1 - small screen*/}
+              <div className=" absolute w-4 bottom-0 right-[10%]" id="box5" />
+            </div>
+
+            {/* text 1 */}
+            <div className=" relative w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
+              Lorem Ipsum has been the industry's standard dummy text when an
+              unknown printer took a galley of type and scrambled it to make a
+              type specimen book.
+            </div>
+          </div>
+
+          <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
+            {/* text 2 */}
+            <div className="w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
+              Lorem Ipsum has been the industry's standard dummy text when an
+              unknown printer took a galley of type and scrambled it to make a
+              type specimen book.
+            </div>
+            {/* box 2 */}
+            <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-4">
+              <div className=" w-full">
+                <div className="flex items-center px-4 mb-2">
+                  <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
+                    2020
+                  </span>
+                </div>
+                <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl px-4 mb-1">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry
+                  {/* empty div for arrow */}
+                  <div className="-ml-4 mt-2 h-1" id="box2"></div>
+                </div>
                 {/* empty div for arrow */}
-                <div className="-ml-4 mt-2 h-1" id="box2"></div>
+                <div className="" id="box3"></div>
+                <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] px-4 mb-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the make a type specimen book.
+                </div>
+                <div className="flex items-center px-4 mb-2">
+                  <span
+                    className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </span>
+                </div>
               </div>
-              {/* empty div for arrow */}
-              <div className="" id="box3"></div>
-              <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] px-4 mb-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </div>
-              <div className="flex items-center px-4 mb-2">
-                <span
-                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
-                >
-                  View More
-                </span>
-              </div>
+              {/* empty div for arrow 1 - small screen*/}
+              <div className="absolute w-4 top-[10%] right-[30%]" id="box6" />
+              {/* empty div for arrow 2 - small screen */}
+              <div className="absolute w-4 bottom-0 right-[10%]" id="box7" />
             </div>
-            {/* empty div for arrow 1 - small screen*/}
-            <div className="absolute w-4 top-[10%] right-[30%]" id="box6" />
-            {/* empty div for arrow 2 - small screen */}
-            <div className="absolute w-4 bottom-0 right-[10%]" id="box7" />
+          </div>
+          <div className=" md:flex justify-between">
+            {/* box 3 */}
+            <div
+              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
+              id="box4"
+            >
+              <div className=" w-full">
+                <div className="flex items-center mb-2">
+                  <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
+                    2020
+                  </span>
+                </div>
+                <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry
+                </div>
+                <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the make a type specimen book.
+                </div>
+                <div className="flex items-center mb-2">
+                  <span
+                    className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                  >
+                    View More
+                  </span>
+                </div>
+              </div>
+              {/* empty div for arrow 2 - small screen*/}
+              <div className="absolute w-4 top-[10%] right-[30%]" id="box8" />
+            </div>
+            {/* text 3 */}
+            <div className="w-full md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
+              Lorem Ipsum has been the industry's standard dummy text when an
+              unknown printer took a galley of type and scrambled it to make a
+              type specimen book.
+            </div>
           </div>
         </div>
-        <div className=" md:flex justify-between">
-          {/* box 3 */}
-          <div
-            className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
-            id="box4"
-          >
-            <div className=" w-full">
-              <div className="flex items-center mb-2">
-                <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                  2020
-                </span>
-              </div>
-              <div className="font-semibold lg:text-lg xl:text-base 2xl:text-xl mb-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
-              </div>
-              <div className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-[#60646C] mb-2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the make a type specimen book.
-              </div>
-              <div className="flex items-center mb-2">
-                <span
-                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full p-2 text-white"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
-                >
-                  View More
-                </span>
-              </div>
-            </div>
-            {/* empty div for arrow 2 - small screen*/}
-            <div className="absolute w-4 top-[10%] right-[30%]" id="box8" />
-          </div>
-          {/* text 3 */}
-          <div className="w-full md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-            Lorem Ipsum has been the industry's standard dummy text when an
-            unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <section className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
+      <section
+        id="section2"
+        ref={sectionRefs.section2}
+        className="mx-[5%] mb-8 md:mb-12 2xl:mb-16"
+      >
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>The Team</div>
@@ -329,7 +479,11 @@ const About = () => {
         <img className="mt-4" src={group1} data-aos="zoom-in-up"></img>
       </section>
 
-      <section className="mx-[5%] mb-8 md:mb-12 2xl:mb-16">
+      <section
+        id="section3"
+        ref={sectionRefs.section3}
+        className="mx-[5%] mb-8 md:mb-12 2xl:mb-16"
+      >
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>The Vision</div>
@@ -371,7 +525,11 @@ const About = () => {
         </div>
       </section>
 
-      <section className="mx-[5%] mt-10 mb-8 md:mb-12 2xl:mb-16">
+      <section
+        id="section4"
+        ref={sectionRefs.section4}
+        className="mx-[5%] mt-10 mb-8 md:mb-12 2xl:mb-16"
+      >
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>Key Values</div>
@@ -476,10 +634,8 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="mx-[5%]">
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
           <img className="h-12" src={framevector}></img>
         </div>
         <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import media from '../Assets/Framemedia.png';
 import second from '../Assets/secondline.png';
@@ -30,14 +30,18 @@ import image11 from '../Images/Image11.png';
 import VerticalSlider from './VerticalSlider';
 import asain2 from '../Assets/asian2.png';
 import line from "../Assets/underline.png";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { FaPhotoVideo } from "react-icons/fa";
 
 const Media = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
 
-  const navigate =useNavigate();
-  const handleContactClick =()=>{
-    navigate ('/contact');
-  }
+  const coverImageRef = useRef(null);
 
+  
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
@@ -46,16 +50,21 @@ const Media = () => {
   const [isHovered6, setIsHovered6] = useState(false);
   const [isHovered7, setIsHovered7] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
+  const [renderIconMenu, setRenderIconMenu] = useState(false); 
+  const [activeSection, setActiveSection] = useState([]);
 
-  const handleLoadMore = ()=>
-  {
+  const handleLoadMore = () => {
     setLoadMore(true);
-  }
+  };
 
-  const handleLoadLess = () =>
-  {
+  const handleLoadLess = () => {
     setLoadMore(false);
-  }
+  };
+
+  const sectionRefs = {
+    section1: useRef(null),
+    section2: useRef(null)
+  };
 
   const images3 = [
     image1,
@@ -71,10 +80,10 @@ const Media = () => {
     image4,
     image2,
     image5,
-    image6
+    image6,
   ];
 
-  const images2=[
+  const images2 = [
     image7,
     image8,
     image7,
@@ -88,11 +97,10 @@ const Media = () => {
     image9,
     image11,
     image2,
-    image1
-  ]
+    image1,
+  ];
 
-
-  const images1=[
+  const images1 = [
     image6,
     image11,
     image5,
@@ -106,15 +114,97 @@ const Media = () => {
     image10,
     image3,
     image7,
-    image9
-  ]
+    image9,
+  ];
+
+  // condition to display icon menu
+  useEffect(() => {
+  const handleScroll = () => {
+  const coverImagePosition = coverImageRef.current.getBoundingClientRect();
+   const coverImageHeight = coverImagePosition.bottom - coverImagePosition.top;
+   const scrollDistance = document.documentElement.scrollTop;
+   const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
+
+   if (scrollDistance > scrollThreshold)
+   {
+     setRenderIconMenu(true);
+   } 
+   else 
+   {
+     setRenderIconMenu(false);
+   }
+  };
+   window.addEventListener('scroll', handleScroll);
+
+  return () => 
+    {
+    window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
   
-  
+  //handles the scroll function
+  const handleSectionScroll = (ref) => {
+    scrollToSection(ref);
+  };
+
+  const scrollToSection = (ref) => {
+    const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
+    const sectionTop = ref.current.getBoundingClientRect().top + window.scrollY;
+    const scrollPosition = sectionTop - navbarHeight;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  //for active section in display
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        const sectionPosition = ref.current.getBoundingClientRect();
+        const sectionHeight = sectionPosition.height;
+
+        const visiblePart =
+          Math.min(viewportHeight, sectionPosition.bottom) -
+          Math.max(0, sectionPosition.top);
+        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+
+        if (visiblePercentage >= 40) {
+          setActiveSection((prevActiveSections) => {
+            if (!prevActiveSections.includes(sectionId)) {
+              return [...prevActiveSections, sectionId];
+            }
+            return prevActiveSections;
+          });
+        } else {
+          setActiveSection((prevActiveSections) => {
+            return prevActiveSections.filter((id) => id !== sectionId);
+          });
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
+
   return (
     <div>
       <section>
         <div className="h-[10vh]">{/* navbar space */}</div>
-        <div className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
+        <div
+          ref={coverImageRef}
+          className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl"
+        >
           <img
             src={media}
             alt="media"
@@ -143,7 +233,7 @@ const Media = () => {
         </div>
       </section>
 
-      <section>
+      <section id="section1" ref={sectionRefs.section1}>
         <div className="mt-4 md:mt-10 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>Highlights</div>
@@ -266,6 +356,35 @@ const Media = () => {
               </button>
             </center>
           </div>
+
+          {/* icon menu */}
+          {renderIconMenu && (
+            <div
+              className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
+              data-aos=""
+            >
+              <div
+                onClick={() => handleSectionScroll(sectionRefs.section1)}
+                className={`cursor-pointer  ${
+                  activeSection.includes("section1")
+                    ? "text-orange-400"
+                    : "text-gray-400"
+                }`}
+              >
+                <IoNewspaperOutline size={25} />
+              </div>
+              <div
+                onClick={() => handleSectionScroll(sectionRefs.section2)}
+                className={`cursor-pointer ${
+                  activeSection.includes("section2")
+                    ? "text-orange-400"
+                    : "text-gray-400"
+                }`}
+              >
+                <FaPhotoVideo size={25} />
+              </div>
+            </div>
+          )}
 
           {!loadMore && (
             <div
@@ -768,32 +887,34 @@ const Media = () => {
         </div>
       </section>
 
-      <div className="h-[90vh] md:h-[50vh] xl:h-[90vh] bg-[#EEF6FF] md:flex mt-20">
-        <div className="h-[30%] md:h-full md:w-1/2 flex flex-col items-center justify-center">
-          <img
-            //style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
-            src={icon6}
-            alt="Background"
-            className="h-[40px]"
-          />
-          <div className="font-semibold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-[#013872] w-[90%] md:w-[60%] text-center">
-            "Strength lies in togetherness, creativity is embraced with
-            inclusivity, and passion flourishes with freedom."
+      <section id="section2" ref={sectionRefs.section2}>
+        <div className="h-[90vh] md:h-[50vh] xl:h-[90vh] bg-[#EEF6FF] md:flex mt-20">
+          <div className="h-[30%] md:h-full md:w-1/2 flex flex-col items-center justify-center">
+            <img
+              //style={{ width: "8%", marginLeft: "50%", marginTop: "25%" }}
+              src={icon6}
+              alt="Background"
+              className="h-[40px]"
+            />
+            <div className="font-semibold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-[#013872] w-[90%] md:w-[60%] text-center">
+              "Strength lies in togetherness, creativity is embraced with
+              inclusivity, and passion flourishes with freedom."
+            </div>
           </div>
-        </div>
 
-        <div className="flex w-full md:w-1/2 h-[70%] md:h-full overflow-hidden">
-          <div className="flex justify-center">
-            <VerticalSlider images={images1} />
-          </div>
-          <div className="flex justify-center -mt-20 xl:-mt-32">
-            <VerticalSlider images={images2} />
-          </div>
-          <div className="flex justify-center">
-            <VerticalSlider images={images3} />
+          <div className="flex w-full md:w-1/2 h-[70%] md:h-full overflow-hidden">
+            <div className="flex justify-center">
+              <VerticalSlider images={images1} />
+            </div>
+            <div className="flex justify-center -mt-20 xl:-mt-32">
+              <VerticalSlider images={images2} />
+            </div>
+            <div className="flex justify-center">
+              <VerticalSlider images={images3} />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
