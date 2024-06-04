@@ -94,25 +94,28 @@ const About = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
-        const sectionPosition = ref.current.getBoundingClientRect();
-        const sectionHeight = sectionPosition.height;
+        if(ref.current)
+        {
+          const sectionPosition = ref.current.getBoundingClientRect();
+          const sectionHeight = sectionPosition.height;
 
-        const visiblePart =
-          Math.min(viewportHeight, sectionPosition.bottom) -
-          Math.max(0, sectionPosition.top);
-        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+          const visiblePart =
+            Math.min(viewportHeight, sectionPosition.bottom) -
+            Math.max(0, sectionPosition.top);
+          const visiblePercentage = (visiblePart / sectionHeight) * 100;
 
-        if (visiblePercentage >= 40) {
-          setActiveSection((prevActiveSections) => {
-            if (!prevActiveSections.includes(sectionId)) {
-              return [...prevActiveSections, sectionId];
-            }
-            return prevActiveSections;
-          });
-        } else {
-          setActiveSection((prevActiveSections) => {
-            return prevActiveSections.filter((id) => id !== sectionId);
-          });
+          if (visiblePercentage >= 40) {
+            setActiveSection((prevActiveSections) => {
+              if (!prevActiveSections.includes(sectionId)) {
+                return [...prevActiveSections, sectionId];
+              }
+              return prevActiveSections;
+            });
+          } else {
+            setActiveSection((prevActiveSections) => {
+              return prevActiveSections.filter((id) => id !== sectionId);
+            });
+          }
         }
       });
     };
@@ -208,7 +211,7 @@ const About = () => {
       {/* icon menu */}
       {renderIconMenu && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
           data-aos=""
         >
           <div

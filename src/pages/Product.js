@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Sb.css";
 import image1 from "../Assets/image1.png";
 import image2 from "../Assets/image2.png";
@@ -21,9 +22,6 @@ import ztarLogo from '../Assets/ztarLogo.png';
 // import video from "../Images/contactOverlay2.mp4";
 import utmapsDemo from '../Assets/utmapsDemo.mp4'
 import { RiPlayCircleFill } from "react-icons/ri";
-import { GiWaterSplash } from "react-icons/gi";
-import { MdOutlineSensors } from "react-icons/md";
-import { SiBlueprint } from "react-icons/si";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
@@ -36,14 +34,18 @@ const Product = () => {
   const [renderUtmapsVideo, setRenderUtmapsVideo] = useState(false); //product video
   const [renderIconMenu, setRenderIconMenu] = useState(false); //icon menu
   const [activeSection, setActiveSection] = useState([]); //sections in viewport
+  const [renderReadMoreUtmaps, setRenderReadMoreUtmaps] = useState(false);
+  const [renderReadMorePorts, setRenderReadMorePorts] = useState(false);
+  const [renderReadMoreZtar, setRenderReadMoreZtar] = useState(false);
 
   const sliderRef = useRef(null); 
   const coverImageRef = useRef(null);
+  const location = useLocation();
 
   const sectionRefs = {
-    section1: useRef(null),
-    section2: useRef(null),
-    section3: useRef(null)
+    uTMapS: useRef(null),
+    PoRTS: useRef(null),
+    Ztar: useRef(null)
   };
 
   //to control cover image slide change
@@ -118,6 +120,8 @@ const Product = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        if(ref.current)
+        {
         const sectionPosition = ref.current.getBoundingClientRect();
         const sectionHeight = sectionPosition.height;
 
@@ -138,6 +142,7 @@ const Product = () => {
             return prevActiveSections.filter((id) => id !== sectionId);
           });
         }
+      }
       });
     };
 
@@ -147,6 +152,18 @@ const Product = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const section = document.querySelector(location.hash);
+      if (section) {
+         window.scrollTo({
+           top: section.offsetTop - window.innerHeight * 0.1,
+           behavior: "smooth",
+         });
+      }
+    }
+  }, [location]);
 
   return (
     <div className="relative overflow-hidden">
@@ -267,13 +284,13 @@ const Product = () => {
       {/* icon menu */}
       {renderIconMenu && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
           data-aos=""
         >
           <div
-            onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`cursor-pointer rounded-full bg-black  ${
-              activeSection.includes("section1")
+            onClick={() => handleSectionScroll(sectionRefs.uTMapS)}
+            className={`cursor-pointer rounded-full   ${
+              activeSection.includes("uTMapS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
             }`}
@@ -281,9 +298,9 @@ const Product = () => {
             <img src={utmapsLogo} className="h-6 rounded-full"></img>
           </div>
           <div
-            onClick={() => handleSectionScroll(sectionRefs.section2)}
+            onClick={() => handleSectionScroll(sectionRefs.PoRTS)}
             className={`cursor-pointer bg-black rounded-full ${
-              activeSection.includes("section2")
+              activeSection.includes("PoRTS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
             }`}
@@ -291,9 +308,9 @@ const Product = () => {
             <img src={portsLogo} className="h-6 rounded-full"></img>
           </div>
           <div
-            onClick={() => handleSectionScroll(sectionRefs.section3)}
+            onClick={() => handleSectionScroll(sectionRefs.Ztar)}
             className={`cursor-pointer bg-black rounded-full ${
-              activeSection.includes("section3")
+              activeSection.includes("Ztar")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
             }`}
@@ -307,7 +324,7 @@ const Product = () => {
 
       <div className="  mx-[5%] xl:mx-[8%] flex flex-col items-center">
         {/* utmaps */}
-        <section id="section1" ref={sectionRefs.section1}>
+        <section id="uTMapS" ref={sectionRefs.uTMapS}>
           <div
             className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
             data-aos="flip-up"
@@ -356,7 +373,7 @@ const Product = () => {
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
               {/* heading and play button */}
               <div className="  md:flex items-start justify-between gap-2 mb-2">
-                <div className=" mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
+                <div className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Multi-Point Temperature Mapping Sensor
                 </div>
                 <div
@@ -386,6 +403,12 @@ const Product = () => {
                 measurements at multiple points with a single customizable
                 waveguide with multiple configurations in contrast to contact
                 based thermocouples/RTDs or contactless IR guns.
+                <span
+                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  onClick={() => setRenderReadMoreUtmaps(true)}
+                >
+                  Read More...
+                </span>
               </div>
 
               {/* cards */}
@@ -423,11 +446,77 @@ const Product = () => {
                 </div>
               </div>
             </div>
+            {/* utmaps additional description */}
+            {renderReadMoreUtmaps && (
+              <div
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                data-aos="zoom-in"
+              >
+                {/* content */}
+                <div className="md:flex h-full">
+                  <div className="w-full md:w-[20%] flex items-center justify-center mt-4 md:mt-0">
+                    <img
+                      className="h-60 md:h-auto"
+                      src={utmap}
+                      alt="utmaps"
+                      data-aos="slide-left"
+                    />
+                  </div>
+                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                      Explanation
+                    </div>
+                    <div>
+                      µTMapS & µSTMapS are IIoT-enabled temperature measurement
+                      and temperature profiling sensors that captures continuous
+                      measurements at multiple points with a single customizable
+                      waveguide with multiple configurations in contrast to
+                      contact based thermocouples/RTDs or contactless IR guns.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Nulla consequat massa quis enim.
+                      Donec pede justo, fringilla vel, aliquet nec, vulputate
+                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                      venenatis vitae, justo. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium.
+                    </div>
+                  </div>
+                  <div className=" w-full md:w-[40%] px-4 pt-4 md:pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium quis, sem. Nulla consequat massa
+                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
+                      vulputate eget, arcu. Imperdiet a, venenatis vitae, justo.
+                      Donec ultricies nec, pellentesque eu, pretium. In enim
+                      justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="text-orange-400 absolute right-2 top-2"
+                  onClick={() => setRenderReadMoreUtmaps(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
         {/* ports */}
-        <section id="section2" ref={sectionRefs.section2}>
+        <section id="PoRTS" ref={sectionRefs.PoRTS}>
           <div
             className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
             data-aos="flip-up"
@@ -476,7 +565,7 @@ const Product = () => {
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
               {/* heading and play button */}
               <div className="  md:flex items-start justify-between gap-2 mb-2">
-                <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
+                <div className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Multi-Parameter Measurement Sensor
                 </div>
                 <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
@@ -512,6 +601,12 @@ const Product = () => {
                 with a single waveguide unlike discrete measurements with
                 thermocouple/RTDs or discrete measurements with sampling from
                 viscometer and density meter.
+                <span
+                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  onClick={() => setRenderReadMorePorts(true)}
+                >
+                  Read More...
+                </span>
               </div>
 
               {/* cards */}
@@ -540,11 +635,79 @@ const Product = () => {
                 </div>
               </div>
             </div>
+            {/* ports additional description */}
+            {renderReadMorePorts && (
+              <div
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                data-aos="zoom-in"
+              >
+                {/* content */}
+                <div className="md:flex h-full">
+                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                      Explanation
+                    </div>
+                    <div>
+                      PoRTS is an invasive/non-invasive based IIoT-enabled
+                      rheology and temperature measurement sensor that
+                      continuously captures multiple parameters such as
+                      viscosity, density and temperature with a single waveguide
+                      unlike discrete measurements with thermocouple/RTDs or
+                      discrete measurements with sampling from viscometer and
+                      density meter.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Nulla consequat massa quis enim.
+                      Donec pede justo, fringilla vel, aliquet nec, vulputate
+                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                      venenatis vitae, justo. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium.
+                    </div>
+                  </div>
+                  <div className=" w-full md:w-[40%] px-4 pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium quis, sem. Nulla consequat massa
+                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
+                      vulputate eget, arcu. Imperdiet a, venenatis vitae, justo.
+                      Donec ultricies nec, pellentesque eu, pretium. In enim
+                      justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    </div>
+                  </div>
+                  <div className="w-full md:w-[20%] flex items-center justify-center mt-4 md:mt-0">
+                    <img
+                      className="h-60 md:h-auto"
+                      src={ports}
+                      alt="ports"
+                      data-aos="slide-right"
+                    />
+                  </div>
+                </div>
+                <button
+                  className="text-orange-400 absolute right-2 top-2"
+                  onClick={() => setRenderReadMorePorts(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
         {/* ztar */}
-        <section id="section3" ref={sectionRefs.section3}>
+        <section id="Ztar" ref={sectionRefs.Ztar}>
           <div
             className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
             data-aos="flip-up"
@@ -593,7 +756,7 @@ const Product = () => {
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
               {/* heading and play button */}
               <div className=" md:flex items-start justify-between gap-2 mb-2">
-                <div className="mb-2 md:mb-0 text-[clamp(20px,3vw,40px)] font-semibold">
+                <div className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Ultrasonic contact & non-contact based level measurement
                   sensor
                 </div>
@@ -620,6 +783,12 @@ const Product = () => {
                 sensor that captures continuous level across any hazardous
                 environment with accuracy in contrast to radar-based level
                 measurement sensors.
+                <span
+                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  onClick={() => setRenderReadMoreZtar(true)}
+                >
+                  Read More...
+                </span>
               </div>
 
               {/* cards */}
@@ -639,6 +808,69 @@ const Product = () => {
                 </div>
               </div>
             </div>
+            {/* ztar additional description */}
+            {renderReadMoreZtar && (
+              <div
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                data-aos="zoom-in"
+              >
+                {/* content */}
+                <div className="md:flex h-full">
+                  <div className=" w-full md:w-[20%] flex items-center justify-center">
+                    <img
+                      className="h-60 md:h-auto"
+                      src={ztar}
+                      alt="ztar"
+                      data-aos="slide-left"
+                    />
+                  </div>
+                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                      Explanation
+                    </div>
+                    <div>
+                      Ztar is a contact/contactless IIoT-enabled level
+                      measurement sensor that captures continuous level across
+                      any hazardous environment with accuracy in contrast to
+                      radar-based level measurement sensors.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Nulla consequat massa quis enim.
+                      Donec pede justo, fringilla vel, aliquet nec, vulputate
+                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                      venenatis vitae, justo. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium.
+                    </div>
+                  </div>
+                  <div className=" w-full md:w-[40%] px-4 pt-4 md:pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus.
+                    </div>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                      natoque penatibus et magnis dis parturient montes,
+                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                      pellentesque eu, pretium quis, sem. Nulla consequat massa
+                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
+                      vulputate eget, arcu.
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="text-orange-400 absolute right-[1%] top-[2%]"
+                  onClick={() => setRenderReadMoreZtar(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+            )}
           </div>
         </section>
       </div>

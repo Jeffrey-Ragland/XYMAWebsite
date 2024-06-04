@@ -13,6 +13,11 @@ const Footer = () => {
     const handleContactClick = () => {
       navigate("/contact");
     };
+
+    const handleProductClick = (sectionId) => {
+      navigate(`/products#${sectionId}`)
+    };
+
   return (
     <div
       className="mt-24"
@@ -121,18 +126,27 @@ const Footer = () => {
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Products <img className="mt-1 h-0.5 w-5" src={line} />
               </div>
-              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+              <div
+                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                onClick={() => handleProductClick("uTMapS")}
+              >
                 μTMapS
               </div>
-              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+              <div
+                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                onClick={() => handleProductClick("PoRTS")}
+              >
                 PoRTS
               </div>
-              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+              <div
+                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                onClick={() => handleProductClick("Ztar")}
+              >
                 Ztar
               </div>
-              <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+              {/* <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
                 I-PAMS
-              </div>
+              </div> */}
             </div>
 
             <div className="w-1/3">

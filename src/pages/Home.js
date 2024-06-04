@@ -131,6 +131,8 @@ export const Home = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        if(ref.current)
+        {
         const sectionPosition = ref.current.getBoundingClientRect();
         const sectionHeight = sectionPosition.height;
 
@@ -151,6 +153,7 @@ export const Home = () => {
             return prevActiveSections.filter((id) => id !== sectionId);
           });
         }
+      }
       });
     };
 
@@ -286,7 +289,7 @@ export const Home = () => {
       {/* icon menu */}
       {renderIconMenu && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
           data-aos=""
         >
           <div
@@ -503,8 +506,15 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  10°C deviation in ideal bath temperature reduces current
-                  efficiency, promotes anode effect, and increases PFC emissions
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    10°C
+                  </span>
+                  deviation in ideal bath temperature reduces current
+                  efficiency, promotes anode effect, and increases{" "}
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mx-2">
+                    PFC
+                  </span>
+                  emissions
                 </div>
               </div>
             </>
@@ -550,8 +560,11 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  $5.1M would be worth of steel produced by extending ladle life
-                  for 1 set of cycle
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    $5.1M
+                  </span>
+                  would be worth of steel produced by extending ladle life for 1
+                  set of cycle
                 </div>
               </div>
             </>
@@ -597,8 +610,14 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  20°C increase in design temperature reduces operational life
-                  of reformer tubes by 50%
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    20°C
+                  </span>
+                  increase in design temperature reduces operational life of
+                  reformer tubes by
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl ml-2">
+                    50%
+                  </span>
                 </div>
               </div>
             </>
@@ -644,7 +663,10 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  30% of maintenance budget is affected by lubricants.
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    30%
+                  </span>
+                  of maintenance budget is affected by lubricants.
                 </div>
               </div>
             </>
@@ -690,9 +712,12 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  1.3 lakhs/day would be the worth of injection polymer of
-                  unknown viscosity flooded in EOR due to unavailability of
-                  continuous viscosity measurement technique.
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    1.3
+                  </span>
+                  lakhs/day would be the worth of injection polymer of unknown
+                  viscosity flooded in EOR due to unavailability of continuous
+                  viscosity measurement technique.
                 </div>
               </div>
             </>

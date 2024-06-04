@@ -165,6 +165,8 @@ const Media = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
+        if(ref.current)
+        {
         const sectionPosition = ref.current.getBoundingClientRect();
         const sectionHeight = sectionPosition.height;
 
@@ -185,6 +187,7 @@ const Media = () => {
             return prevActiveSections.filter((id) => id !== sectionId);
           });
         }
+      }
       });
     };
     window.addEventListener("scroll", handleScroll);
@@ -360,7 +363,7 @@ const Media = () => {
           {/* icon menu */}
           {renderIconMenu && (
             <div
-              className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-50 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
+              className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
               data-aos=""
             >
               <div

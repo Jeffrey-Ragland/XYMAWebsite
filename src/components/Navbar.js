@@ -34,7 +34,7 @@ const Navbar = () => {
         >
           <div className="flex items-center text-white lg:justify-around justify-between w-full h-full text-lg xl:text-sm 2xl:text-lg">
             <div className="h-full flex items-center">
-              <img className="h-[65%]" src={xyma} alt="Logo" />
+              <img className="h-[80%]" src={xyma} alt="Logo" />
             </div>
             <div className="hidden lg:flex gap-8 items-center">
               {HeaderData.map((item, index) => (
