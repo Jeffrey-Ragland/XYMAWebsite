@@ -37,12 +37,13 @@ const ContactPage = () => {
       <section>
         <div className=" relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
           <video
-            src={video2}
             autoPlay
             loop
             muted
             className="h-full w-full object-cover"
-          />
+          >
+            <source src={video2} type='video/mp4' />
+          </video>
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
             <div className="text-xl md:text-4xl xl:text-3xl 2xl:text-5xl font-medium md:font-semibold">
@@ -250,14 +251,6 @@ const ContactPage = () => {
 
         <div className="w-full md:w-1/2 p-4 flex items-start text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
           <div className="flex flex-col">
-            {/* <div className="flex border border-gray-300 rounded-xl p-2">
-              <img className="w-7 h-7 mt-0.5" src={call} alt="Call Icon" />
-              <div className="ml-4 text-[#60646C] font-semibold">
-                Contact Details:
-                <div className="text-black">(+91) 9442949347</div>
-              </div>
-            </div> */}
-
             <div className="flex mt-3 border border-gray-300 rounded-xl p-2">
               <img
                 className="w-7 h-7 mt-0.5"

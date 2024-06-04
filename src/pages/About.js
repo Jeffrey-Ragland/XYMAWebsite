@@ -625,7 +625,7 @@ const About = () => {
             </Slider>
           </div>
 
-          <div className=" w-full md:w-[60%] flex flex-col justify-start py-4 px-8 xl:mt-8 2xl:mt-20">
+          <div className=" w-full md:w-[60%] flex flex-col justify-start py-4 px-8 mt-8 2xl:mt-20">
             <div className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
               The Mission
             </div>

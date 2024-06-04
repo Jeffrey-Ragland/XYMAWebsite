@@ -21,6 +21,7 @@ import portsLogo from '../Assets/portsLogo.png';
 import ztarLogo from '../Assets/ztarLogo.png';
 // import video from "../Images/contactOverlay2.mp4";
 import utmapsDemo from '../Assets/utmapsDemo.mp4'
+import portsDemo from '../Assets/portsDemo.mp4'
 import { RiPlayCircleFill } from "react-icons/ri";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,6 +33,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 const Product = () => {
   const [currentSlide, setCurrentSlide] = useState(0); //cover image slide
   const [renderUtmapsVideo, setRenderUtmapsVideo] = useState(false); //product video
+  const [renderPortsVideo, setRenderPortsVideo] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false); //icon menu
   const [activeSection, setActiveSection] = useState([]); //sections in viewport
   const [renderReadMoreUtmaps, setRenderReadMoreUtmaps] = useState(false);
@@ -568,7 +570,10 @@ const Product = () => {
                 <div className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Multi-Parameter Measurement Sensor
                 </div>
-                <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+                <div
+                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
+                  onClick={() => setRenderPortsVideo(true)}
+                >
                   <div className="text-[#FE9D1C]">
                     <RiPlayCircleFill size={20} />
                   </div>
@@ -874,6 +879,7 @@ const Product = () => {
           </div>
         </section>
       </div>
+      {/* utmaps product video */}
       {renderUtmapsVideo && (
         <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
           <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
@@ -904,7 +910,51 @@ const Product = () => {
               />
             </div>
             <div className="flex justify-center p-0.5">
-              <video className="" src={utmapsDemo} autoPlay controls />
+              <video autoPlay controls>
+                <source src={utmapsDemo} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ports product video */}
+      {renderPortsVideo && (
+        <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+            <div className="">
+              <div
+                className=" flex gap-2 justify-between p-3 text-white"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+                }}
+              >
+                <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold">
+                  PoRTS&nbsp;Product&nbsp;Demo
+                </div>
+                <button
+                  className="text-orange-400"
+                  onClick={() => setRenderPortsVideo(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+              <div
+                className="h-1"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+              />
+            </div>
+            <div className="flex justify-center p-0.5">
+              <video
+                autoPlay
+                controls
+              >
+                <source src={portsDemo} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
