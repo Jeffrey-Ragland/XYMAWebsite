@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import video2 from '../Images/contactOverlay2.mp4';
 import map from '../Images/map.png';
 import mail from '../Images/mail.png';
@@ -7,10 +7,74 @@ import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
 
+  const [submitButtonClicked, setSubmitButtonClicked] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    job: '',
+    company: '',
+    solution: '',
+    details: '',
+  });
+
+  const handleSubmitButtonClick = () => {
+    setSubmitButtonClicked(true);
+    setTimeout(() => {
+      setSubmitButtonClicked(false);
+    },200);
+  };
+
   const sectionRef = useRef(null);
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({...formData, [name]: value});
+  };
+  console.log('form data', formData);
+  
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const toastId = toast.loading("Sending email...");
+    fetch('http://localhost:3001/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }).then(response => {
+      if (response.ok) {
+        // console.log('Email sent successfully');
+        // window.alert("Email sent successfully");
+        toast.update(toastId, {
+          render: "Email sent successfully",
+          type: 'success',
+          isLoading: false,
+          autoClose: 5000,
+        });
+        setFormData({ name: '',
+                      email: '',
+                      job: '',
+                      company: '',
+                      solution: '',
+                      details: ''})
+      }
+      else {
+        console.error('Email failed');
+        window.alert("Email failed");
+      }
+    }).catch(error => {
+      console.error ('Error:',error);
+    })
+    // .finally(() => {
+      
+    // })
+  };
+
 
   const handleButtonClick = () => {
     const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
@@ -24,10 +88,7 @@ const ContactPage = () => {
     });
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-  }
-
+ 
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -36,13 +97,8 @@ const ContactPage = () => {
     <div className="mt-[10vh]">
       <section>
         <div className=" relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
-          <video
-            autoPlay
-            loop
-            muted
-            className="h-full w-full object-cover"
-          >
-            <source src={video2} type='video/mp4' />
+          <video autoPlay loop muted className="h-full w-full object-cover">
+            <source src={video2} type="video/mp4" />
           </video>
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
@@ -105,17 +161,18 @@ const ContactPage = () => {
             >
               <div className="md:flex gap-4">
                 <div className=" w-full md:w-1/2 mb-2">
-                  <label
-                    className="block font-semibold mb-1"
-                    htmlFor="username"
-                  >
+                  <label className="block font-semibold mb-1" htmlFor="name">
                     Your Name <span className="text-[#CE2C31]">*</span>
                   </label>
                   <input
                     className="appearance-none leading-tight w-full border border-gray-400 rounded-lg p-2 text-gray-800 focus:outline-none focus:border-gray-600"
-                    id="username"
+                    id="name"
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Enter your name"
+                    required
                   />
                 </div>
                 <div className=" w-full md:w-1/2 mb-2">
@@ -126,7 +183,11 @@ const ContactPage = () => {
                     className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600"
                     id="email"
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Enter your Email"
+                    required
                   />
                 </div>
               </div>
@@ -140,6 +201,10 @@ const ContactPage = () => {
                     className="appearance-none leading-tight w-full md:w-full border border-gray-400 rounded-lg p-2 text-gray-800 focus:outline-none focus:border-gray-600"
                     id="job"
                     type="text"
+                    name="job"
+                    value={formData.job}
+                    onChange={handleChange}
+                    required
                     placeholder="Enter your Job Title"
                   />
                 </div>
@@ -151,19 +216,26 @@ const ContactPage = () => {
                     className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600"
                     id="company"
                     type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    required
                     placeholder="Enter your Company's Name"
                   />
                 </div>
               </div>
 
               <div className="mb-2">
-                <label className="block font-semibold mb-2" htmlFor="select">
+                <label className="block font-semibold mb-2" htmlFor="solution">
                   Select Solution Need <span className="text-[#CE2C31]">*</span>
                 </label>
                 <select
                   className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600"
-                  id="select"
-                  //placeholder="Select Solution"
+                  id="solution"
+                  name="solution"
+                  value={formData.solution}
+                  onChange={handleChange}
+                  required
                 >
                   <option value="" disabled selected hidden>
                     Select Solution
@@ -176,20 +248,27 @@ const ContactPage = () => {
               </div>
 
               <div className="mb-2">
-                <label className="block font-semibold mb-2" htmlFor="detail">
+                <label className="block font-semibold mb-2" htmlFor="details">
                   Details On Your Requirements
                   <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
                   className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600 h-16 md:h-20"
-                  id="detail"
-                  type="text"
+                  id="details"
+                  name="details"
+                  value={formData.details}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your requirements"
                 />
               </div>
 
               <div className="flex justify-center">
-                <div className="block md:w-full">
+                <div
+                  className={`block md:w-full duration-200 ${
+                    submitButtonClicked ? "scale-90" : "scale-100"
+                  }`}
+                >
                   <button
                     style={{
                       background:
@@ -197,6 +276,7 @@ const ContactPage = () => {
                     }}
                     className="text-white py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                     type="submit"
+                    onClick={handleSubmitButtonClick}
                   >
                     Submit
                   </button>
@@ -262,8 +342,7 @@ const ContactPage = () => {
                 <div className="text-black">XYMA ANALYTICS PRIVATE LIMITED</div>
                 <div className="text-black">
                   B4-01, 4th Floor, Phase II, B-Block, IITM Research Park,
-                  <br /> Kanagam Road, Taramani, Chennai,
-                  TamilNadu,
+                  <br /> Kanagam Road, Taramani, Chennai, TamilNadu,
                   <br /> India - 600113.
                 </div>
               </div>
@@ -279,6 +358,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
