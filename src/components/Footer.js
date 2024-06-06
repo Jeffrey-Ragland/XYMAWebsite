@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import vector from '../Assets/Vector.png';
 import logo from "../Assets/logo.png";
 import twitter from "../Assets/twitter.png";
@@ -7,8 +8,12 @@ import share from "../Assets/share.png";
 import line from "../Assets/line.png";
 import arrow from "../Assets/arrow.png";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [subscribeButtonClicked, setSubscribeButtonClicked] = useState(false);
     const navigate = useNavigate();
     const handleContactClick = () => {
       navigate("/contact");
@@ -18,6 +23,43 @@ const Footer = () => {
       navigate(`/products#${sectionId}`)
     };
 
+    const handleSubscription = () => {
+      setSubscribeButtonClicked(true);
+      setTimeout(() => {
+        setSubscribeButtonClicked(false)
+      },200);
+    };
+
+    const handleSubscriptionSubmit = (e) => {
+      e.preventDefault();
+      const toastId = toast.loading('Sending response...');
+      fetch("http://localhost:3001/subscription",{
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({email})
+      }).then(response => {
+        if(response.ok) {
+          toast.update(toastId, {
+            render: 'Thank You for Subscribing!',
+            type: 'success',
+            closeOnClick: true,
+            isLoading: false,
+            autoClose: 5000
+          });
+          // console.log('subscribed successfully');
+          // window.alert('subsxcribed successfully');
+          setEmail('');
+        }
+        else {
+          // console.error('subscription failed')
+        }
+      }).catch(error => {
+        // console.error(error);
+      })
+    };
+
   return (
     <div
       className="mt-24"
@@ -25,6 +67,7 @@ const Footer = () => {
         background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
       }}
     >
+      <ToastContainer/>
       <div className="flex justify-center items-center">
         <div
           className="mt-[-50px] rounded-3xl w-full md:w-[90%] md:flex text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold p-4 px-8"
@@ -170,16 +213,18 @@ const Footer = () => {
               <div className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Subscribe Now
               </div>
-              <form class="flex gap-2 items-center w-full">
+              <form class="flex gap-2 items-center w-full" onSubmit={handleSubscriptionSubmit}>
                 <input
                   type="email"
+                  value={email}
                   className="text-xs lg:text-sm xl:text-xs 2xl:text-base text-black w-[85%] rounded-sm p-2"
                   placeholder="Enter your email"
                   required
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <div className="w-[15%] flex justify-center">
-                  <img className="h-8 md:h-6 lg:h-8" src={arrow} />
-                </div>
+                <button className="w-[15%] flex justify-center">
+                  <img className={`h-8 md:h-6 lg:h-8 duration-200 ${subscribeButtonClicked && 'scale-75'}`} type="submit" src={arrow} onClick={handleSubscription}/>
+                </button>
               </form>
             </div>
           </div>

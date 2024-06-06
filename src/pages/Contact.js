@@ -35,11 +35,11 @@ const ContactPage = () => {
     const {name, value} = e.target;
     setFormData({...formData, [name]: value});
   };
-  console.log('form data', formData);
+  // console.log('form data', formData);
   
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const toastId = toast.loading("Sending email...");
+    const toastId = toast.loading("Sending response...");
     fetch('http://localhost:3001/contacts', {
       method: 'POST',
       headers: {
@@ -48,11 +48,10 @@ const ContactPage = () => {
       body: JSON.stringify(formData)
     }).then(response => {
       if (response.ok) {
-        // console.log('Email sent successfully');
-        // window.alert("Email sent successfully");
         toast.update(toastId, {
-          render: "Email sent successfully",
-          type: 'success',
+          render: "Response received! Thank You",
+          type: "success",
+          closeOnClick: true,
           isLoading: false,
           autoClose: 5000,
         });
@@ -64,15 +63,12 @@ const ContactPage = () => {
                       details: ''})
       }
       else {
-        console.error('Email failed');
-        window.alert("Email failed");
+        //console.error('Email failed');
+        //window.alert("Email failed");
       }
     }).catch(error => {
-      console.error ('Error:',error);
+      //console.error ('Error:',error);
     })
-    // .finally(() => {
-      
-    // })
   };
 
 
@@ -95,6 +91,7 @@ const ContactPage = () => {
 
   return (
     <div className="mt-[10vh]">
+      <ToastContainer/>
       <section>
         <div className=" relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
           <video autoPlay loop muted className="h-full w-full object-cover">
@@ -358,7 +355,6 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
