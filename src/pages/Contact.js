@@ -40,35 +40,38 @@ const ContactPage = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const toastId = toast.loading("Sending response...");
-    fetch('http://localhost:3001/contacts', {
-      method: 'POST',
+    fetch("http://34.93.162.58:4000/backend/contacts", {
+      method: "POST",
       headers: {
-        'Content-Type' : 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
-    }).then(response => {
-      if (response.ok) {
-        toast.update(toastId, {
-          render: "Response received! Thank You",
-          type: "success",
-          closeOnClick: true,
-          isLoading: false,
-          autoClose: 5000,
-        });
-        setFormData({ name: '',
-                      email: '',
-                      job: '',
-                      company: '',
-                      solution: '',
-                      details: ''})
-      }
-      else {
-        //console.error('Email failed');
-        //window.alert("Email failed");
-      }
-    }).catch(error => {
-      //console.error ('Error:',error);
+      body: JSON.stringify(formData),
     })
+      .then((response) => {
+        if (response.ok) {
+          toast.update(toastId, {
+            render: "Response received! Thank You",
+            type: "success",
+            closeOnClick: true,
+            isLoading: false,
+            autoClose: 5000,
+          });
+          setFormData({
+            name: "",
+            email: "",
+            job: "",
+            company: "",
+            solution: "",
+            details: "",
+          });
+        } else {
+          //console.error('Email failed');
+          //window.alert("Email failed");
+        }
+      })
+      .catch((error) => {
+        //console.error ('Error:',error);
+      });
   };
 
 

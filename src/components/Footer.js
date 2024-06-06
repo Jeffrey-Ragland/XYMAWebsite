@@ -33,31 +33,32 @@ const Footer = () => {
     const handleSubscriptionSubmit = (e) => {
       e.preventDefault();
       const toastId = toast.loading('Sending response...');
-      fetch("http://localhost:3001/subscription",{
-        method: 'POST',
+      fetch("http://34.93.162.58:4000/backend/subscription", {
+        method: "POST",
         headers: {
-          'Content-Type' : 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({email})
-      }).then(response => {
-        if(response.ok) {
-          toast.update(toastId, {
-            render: 'Thank You for Subscribing!',
-            type: 'success',
-            closeOnClick: true,
-            isLoading: false,
-            autoClose: 5000
-          });
-          // console.log('subscribed successfully');
-          // window.alert('subsxcribed successfully');
-          setEmail('');
-        }
-        else {
-          // console.error('subscription failed')
-        }
-      }).catch(error => {
-        // console.error(error);
+        body: JSON.stringify({ email }),
       })
+        .then((response) => {
+          if (response.ok) {
+            toast.update(toastId, {
+              render: "Thank You for Subscribing!",
+              type: "success",
+              closeOnClick: true,
+              isLoading: false,
+              autoClose: 5000,
+            });
+            // console.log('subscribed successfully');
+            // window.alert('subsxcribed successfully');
+            setEmail("");
+          } else {
+            // console.error('subscription failed')
+          }
+        })
+        .catch((error) => {
+          // console.error(error);
+        });
     };
 
   return (
@@ -213,7 +214,7 @@ const Footer = () => {
               <div className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Subscribe Now
               </div>
-              <form class="flex gap-2 items-center w-full" onSubmit={handleSubscriptionSubmit}>
+              <form className="flex gap-2 items-center w-full" onSubmit={handleSubscriptionSubmit}>
                 <input
                   type="email"
                   value={email}
