@@ -43,6 +43,7 @@ import { HiUserGroup } from "react-icons/hi2";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+//import ProgressBar from "react-scroll-progress-bar";
 
 export const Home = () => {
   const [clickedImage, setClickedImage] = useState(aluminum);
@@ -53,7 +54,8 @@ export const Home = () => {
   const [ztarBadge, setZtarBadge] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
-
+  const [scrollProgress, setScrollProgress] = useState(0);
+ 
   const coverImageRef = useRef(null);
 
   const sectionRefs = {
@@ -179,6 +181,19 @@ export const Home = () => {
     });
   };
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll',handleProgressScroll);
+    return () => window.removeEventListener('scroll', handleProgressScroll);
+  }, []);
+
   const handleOverlayEnter = () => {
     setOverlay(true);
   };
@@ -249,6 +264,21 @@ export const Home = () => {
   return (
     <div className="w-full overflow-hidden">
       <div className="h-[10vh]">{/* space for navbar */}</div>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       {/* cover image */}
       <section
         className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl"

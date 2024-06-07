@@ -21,10 +21,6 @@ import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
 import Slider from "react-slick";
-import { GiWaterSplash } from "react-icons/gi";
-import { MdOutlineSensors } from "react-icons/md";
-import { SiBlueprint } from "react-icons/si";
-import { HiUserGroup } from "react-icons/hi2";
 import { RiMapPinTimeLine } from "react-icons/ri";
 import { GrGroup } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
@@ -37,6 +33,7 @@ import "aos/dist/aos.css";
 const About = () => {
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const { width } = useWindowSize();
   const isLargeScreen = width >= 768;
@@ -94,8 +91,7 @@ const About = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
-        if(ref.current)
-        {
+        if (ref.current) {
           const sectionPosition = ref.current.getBoundingClientRect();
           const sectionHeight = sectionPosition.height;
 
@@ -142,8 +138,37 @@ const About = () => {
     });
   };
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
+
   return (
     <div>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       <div
         ref={coverImageRef}
         className=" relative mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl"

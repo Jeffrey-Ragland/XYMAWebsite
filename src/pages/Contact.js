@@ -11,35 +11,35 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
-
   const [submitButtonClicked, setSubmitButtonClicked] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    job: '',
-    company: '',
-    solution: '',
-    details: '',
+    name: "",
+    email: "",
+    job: "",
+    company: "",
+    solution: "",
+    details: "",
   });
 
   const handleSubmitButtonClick = () => {
     setSubmitButtonClicked(true);
     setTimeout(() => {
       setSubmitButtonClicked(false);
-    },200);
+    }, 200);
   };
 
   const sectionRef = useRef(null);
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
-    setFormData({...formData, [name]: value});
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
   // console.log('form data', formData);
-  
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const toastId = toast.loading("Sending response...");
+    const toastId = toast.loading("Sending response...", { closeButton: true });
     fetch("http://34.93.162.58:4000/backend/contacts", {
       method: "POST",
       headers: {
@@ -74,7 +74,6 @@ const ContactPage = () => {
       });
   };
 
-
   const handleButtonClick = () => {
     const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
     const sectionTop =
@@ -87,14 +86,42 @@ const ContactPage = () => {
     });
   };
 
- 
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
+
   return (
     <div className="mt-[10vh]">
-      <ToastContainer/>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
+      <ToastContainer />
       <section>
         <div className=" relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
           <video autoPlay loop muted className="h-full w-full object-cover">

@@ -1,5 +1,4 @@
-import React, { useState,useRef  } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState,useRef, useEffect } from 'react';
 import newframe6 from "../Assets/newframecrop.png";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
@@ -26,8 +25,8 @@ const Badge2 = ({ text, selected, onClick }) => {
 };
 
 const Career = () => {
-
   const [selectedBadge, setSelectedBadge] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const handleBadgeClick = (index) => {
     setSelectedBadge(index);
@@ -49,14 +48,38 @@ const Career = () => {
     });
   };
 
-  const navigate = useNavigate();
-  const handleContactClick =()=>{
-    navigate ('/contact');
-  }
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
 
   return (
     <div>
       <div className="h-[10vh]"></div>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       <section className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl">
         <img
           src={newframe6}
@@ -512,7 +535,7 @@ const Career = () => {
         </p>
       </div>
     </div>
-  ); 
+  );
 }
 
 export default Career

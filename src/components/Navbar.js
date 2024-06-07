@@ -25,9 +25,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="h-[10vh]">
+      <div className="h-[9vh]">
         <div
-          className="h-[9vh] flex items-center px-4"
+          className="h-full flex items-center px-4"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
@@ -80,84 +80,85 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <div
-          className="h-[1vh] w-full"
-          style={{
-            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-          }}
-        ></div>
+        {/*  */}
       </div>
 
       {/* hamburger menu */}
       {burgerMenuOpen && (
-        <div
-          className="bg-white h-[90vh] w-full lg:hidden"
-          // data-aos="slide-down"
-          // data-aos-duration="800"
-        >
-          <div className="h-[60%]">
-            {HeaderData.map((item, index) => (
+        <>
+          <div
+            className="h-[1vh] w-full"
+            style={{
+              background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+            }}
+          ></div>
+          <div
+            className="bg-white h-[90vh] w-full lg:hidden"
+            // data-aos="slide-down"
+            // data-aos-duration="800"
+          >
+            <div className="h-[60%]">
+              {HeaderData.map((item, index) => (
+                <div
+                  key={index}
+                  className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl  ${
+                    location.pathname === item.path ? "text-orange-400" : ""
+                  }`}
+                  onClick={() => {
+                    //handleNavItemClick(index);
+                    handleBurgerMenu();
+                  }}
+                >
+                  <NavLink
+                    to={item.path}
+                    className="w-full h-full flex items-center justify-between px-4"
+                  >
+                    {/* <div className="border border-black w-full h-full"> */}
+                    {item.title}
+                    <div
+                      className={`${
+                        location.pathname === item.path
+                          ? "text-orange-400"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      <FiArrowUpRight size={25} />
+                    </div>
+                  </NavLink>
+                </div>
+              ))}
+            </div>
+            <div className="p-3 h-[28%] flex items-end">
               <div
-                key={index}
-                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl  ${
-                  location.pathname === item.path ? "text-orange-400" : ""
-                }`}
+                className="text-white py-3 px-4 md:text-lg rounded-full cursor-pointer"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
                 onClick={() => {
-                  //handleNavItemClick(index);
+                  handleContactClick();
                   handleBurgerMenu();
                 }}
               >
-                <NavLink
-                  to={item.path}
-                  className="w-full h-full flex items-center justify-between px-4"
-                >
-                  {/* <div className="border border-black w-full h-full"> */}
-                  {item.title}
-                  <div
-                    className={`${
-                      location.pathname === item.path
-                        ? "text-orange-400"
-                        : "text-gray-400"
-                    }`}
-                  >
-                    <FiArrowUpRight size={25} />
-                  </div>
-                </NavLink>
-              </div>
-            ))}
-          </div>
-          <div className="p-3 h-[28%] flex items-end">
-            <div
-              className="text-white py-3 px-4 md:text-lg rounded-full cursor-pointer"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-              onClick={() => {
-                handleContactClick();
-                handleBurgerMenu();
-              }}
-            >
-              Get in Touch
-            </div>
-          </div>
-          {/* footer */}
-          <div className="h-[12%] px-4 py-2 text-xs md:text-base border border-t-gray-400">
-            <div className="h-[55%] flex flex-col justify-center">
-              <div className="flex gap-1 justify-center">
-                <div>© 2022 XYMA Analytics Inc.</div>
-                <div className="text-gray-400">IIT Madras Research Park,</div>
-              </div>
-              <div className="text-gray-400 text-center">
-                Chennai, 600113
+                Get in Touch
               </div>
             </div>
-            <div className="h-[45%] flex gap-6 justify-center items-center py-1">
-              <div>Terms & Conditions</div>
-              <div>Privacy Policy</div>
+            {/* footer */}
+            <div className="h-[12%] px-4 py-2 text-xs md:text-base border border-t-gray-400">
+              <div className="h-[55%] flex flex-col justify-center">
+                <div className="flex gap-1 justify-center">
+                  <div>© 2022 XYMA Analytics Inc.</div>
+                  <div className="text-gray-400">IIT Madras Research Park,</div>
+                </div>
+                <div className="text-gray-400 text-center">Chennai, 600113</div>
+              </div>
+              <div className="h-[45%] flex gap-6 justify-center items-center py-1">
+                <div>Terms & Conditions</div>
+                <div>Privacy Policy</div>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );

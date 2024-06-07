@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.32aa890e.css",
-    "main.js": "/static/js/main.feb365bb.js",
+    "main.css": "/static/css/main.cb91035e.css",
+    "main.js": "/static/js/main.d9328b3f.js",
     "static/js/453.f2c81f3e.chunk.js": "/static/js/453.f2c81f3e.chunk.js",
     "static/media/utmapsDemo.mp4": "/static/media/utmapsDemo.5627d55df171358567e3.mp4",
     "static/media/portsDemo.mp4": "/static/media/portsDemo.58d33679ca100569915e.mp4",
+    "static/media/XymaBrochure.pdf": "/static/media/XymaBrochure.e4992c203330730f5db6.pdf",
     "static/media/utmaps.png": "/static/media/utmaps.bfc11746d1f17b47acbb.png",
     "static/media/contactOverlay2.mp4": "/static/media/contactOverlay2.7688ae3b34f96d00d1bc.mp4",
     "static/media/Framegroup.png": "/static/media/Framegroup.602acf9eba16ae6b7109.png",
@@ -106,12 +107,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.32aa890e.css.map": "/static/css/main.32aa890e.css.map",
-    "main.feb365bb.js.map": "/static/js/main.feb365bb.js.map",
+    "main.cb91035e.css.map": "/static/css/main.cb91035e.css.map",
+    "main.d9328b3f.js.map": "/static/js/main.d9328b3f.js.map",
     "453.f2c81f3e.chunk.js.map": "/static/js/453.f2c81f3e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.32aa890e.css",
-    "static/js/main.feb365bb.js"
+    "static/css/main.cb91035e.css",
+    "static/js/main.d9328b3f.js"
   ]
 }

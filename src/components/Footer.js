@@ -2,21 +2,28 @@ import React from 'react'
 import { useState } from 'react';
 import vector from '../Assets/Vector.png';
 import logo from "../Assets/logo.png";
-import twitter from "../Assets/twitter.png";
-import linkedin from "../Assets/linkedin.png";
-import share from "../Assets/share.png";
 import line from "../Assets/line.png";
-import arrow from "../Assets/arrow.png";
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RWebShare } from "react-web-share";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
+import { IoShareSocialSharp } from "react-icons/io5";
+import brochure from '../Assets/XymaBrochure.pdf';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [subscribeButtonClicked, setSubscribeButtonClicked] = useState(false);
     const navigate = useNavigate();
+
     const handleContactClick = () => {
       navigate("/contact");
+    };
+
+    const handleBrochureDownload = () => {
+      window.open(brochure,'_blank');
     };
 
     const handleProductClick = (sectionId) => {
@@ -32,8 +39,9 @@ const Footer = () => {
 
     const handleSubscriptionSubmit = (e) => {
       e.preventDefault();
-      const toastId = toast.loading('Sending response...');
+      const toastId = toast.loading('Sending response...',{closeButton : true});
       fetch("http://34.93.162.58:4000/backend/subscription", {
+        //http://localhost:4000/backend/subscription
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +76,7 @@ const Footer = () => {
         background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
       }}
     >
-      <ToastContainer/>
+      <ToastContainer />
       <div className="flex justify-center items-center">
         <div
           className="mt-[-50px] rounded-3xl w-full md:w-[90%] md:flex text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold p-4 px-8"
@@ -93,7 +101,8 @@ const Footer = () => {
             >
               Get&nbsp;in&nbsp;Touch
             </button>
-            <button className="bg-white text-[#01285C] rounded-full w-44 px-1">
+            <button className="bg-white text-[#01285C] rounded-full w-44 px-1"
+            onClick={handleBrochureDownload}>
               Download&nbsp;Brochure
             </button>
           </div>
@@ -108,30 +117,52 @@ const Footer = () => {
               unplanned downtime and enhancing process efficiency.
             </div>
             <div className="flex gap-3 mt-4">
-              <img
-                className="w-6 h-6 cursor-pointer"
+              {/* twitter */}
+              <div
+                className="p-1 rounded-lg cursor-pointer"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
                 onClick={() =>
                   window.open("https://x.com/analyticsxyma?lang=en", "_blank")
                 }
-                src={twitter}
-                alt="Twitter"
-              ></img>
-              <img
-                className="w-6 h-6 cursor-pointer"
+              >
+                <FaXTwitter size={14} />
+              </div>
+              {/* linkedin */}
+              <div
+                className="p-1 rounded-lg cursor-pointer"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/company/xyma-analytics?original_referer=https%3A%2F%2Fwww.xyma.in%2F",
                     "_blank"
                   )
                 }
-                src={linkedin}
-                alt="LinkedIn"
-              ></img>
-              <img
-                className="w-6 h-6 cursor-pointer"
-                src={share}
-                alt="Share"
-              ></img>
+              >
+                <FaLinkedinIn size={15} />
+              </div>
+              {/* share */}
+              <div
+                className="p-1 rounded-lg cursor-pointer"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+              >
+                <RWebShare
+                  data={{
+                    url: "http://34.93.162.58:3000/",
+                    title: "XYMA Analytics Website",
+                  }}
+                >
+                  <IoShareSocialSharp size={15} />
+                </RWebShare>
+              </div>
             </div>
           </div>
 
@@ -214,7 +245,10 @@ const Footer = () => {
               <div className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Subscribe Now
               </div>
-              <form className="flex gap-2 items-center w-full" onSubmit={handleSubscriptionSubmit}>
+              <form
+                className="flex gap-2 items-center w-full"
+                onSubmit={handleSubscriptionSubmit}
+              >
                 <input
                   type="email"
                   value={email}
@@ -223,9 +257,21 @@ const Footer = () => {
                   required
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <button className="w-[15%] flex justify-center">
-                  <img className={`h-8 md:h-6 lg:h-8 duration-200 ${subscribeButtonClicked && 'scale-75'}`} type="submit" src={arrow} onClick={handleSubscription}/>
-                </button>
+                <div className="w-[15%] flex justify-center">
+                  <button
+                    className={`p-2 rounded-full cursor-pointer duration-200 ${
+                      subscribeButtonClicked && "scale-75"
+                    }`}
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                    type="submit"
+                    onClick={handleSubscription}
+                  >
+                    <FaArrowRight size={15} />
+                  </button>
+                </div>
               </form>
             </div>
           </div>

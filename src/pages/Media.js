@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import media from '../Assets/Framemedia.png';
-import second from '../Assets/secondline.png';
 import asian from '../Assets/Frameasian.png';
 import shell from '../Assets/Frameshell.png';
 import icon1 from '../Assets/Frameicon1.png';
@@ -34,14 +32,6 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const Media = () => {
-  const navigate = useNavigate();
-  const handleContactClick = () => {
-    navigate("/contact");
-  };
-
-  const coverImageRef = useRef(null);
-
-  
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
@@ -50,8 +40,11 @@ const Media = () => {
   const [isHovered6, setIsHovered6] = useState(false);
   const [isHovered7, setIsHovered7] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
-  const [renderIconMenu, setRenderIconMenu] = useState(false); 
+  const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const coverImageRef = useRef(null);
 
   const handleLoadMore = () => {
     setLoadMore(true);
@@ -63,7 +56,7 @@ const Media = () => {
 
   const sectionRefs = {
     section1: useRef(null),
-    section2: useRef(null)
+    section2: useRef(null),
   };
 
   const images3 = [
@@ -119,29 +112,26 @@ const Media = () => {
 
   // condition to display icon menu
   useEffect(() => {
-  const handleScroll = () => {
-  const coverImagePosition = coverImageRef.current.getBoundingClientRect();
-   const coverImageHeight = coverImagePosition.bottom - coverImagePosition.top;
-   const scrollDistance = document.documentElement.scrollTop;
-   const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
+    const handleScroll = () => {
+      const coverImagePosition = coverImageRef.current.getBoundingClientRect();
+      const coverImageHeight =
+        coverImagePosition.bottom - coverImagePosition.top;
+      const scrollDistance = document.documentElement.scrollTop;
+      const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
 
-   if (scrollDistance > scrollThreshold)
-   {
-     setRenderIconMenu(true);
-   } 
-   else 
-   {
-     setRenderIconMenu(false);
-   }
-  };
-   window.addEventListener('scroll', handleScroll);
-
-  return () => 
-    {
-    window.removeEventListener('scroll', handleScroll);
+      if (scrollDistance > scrollThreshold) {
+        setRenderIconMenu(true);
+      } else {
+        setRenderIconMenu(false);
+      }
     };
-}, []);
-  
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   //handles the scroll function
   const handleSectionScroll = (ref) => {
     scrollToSection(ref);
@@ -165,29 +155,28 @@ const Media = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
-        if(ref.current)
-        {
-        const sectionPosition = ref.current.getBoundingClientRect();
-        const sectionHeight = sectionPosition.height;
+        if (ref.current) {
+          const sectionPosition = ref.current.getBoundingClientRect();
+          const sectionHeight = sectionPosition.height;
 
-        const visiblePart =
-          Math.min(viewportHeight, sectionPosition.bottom) -
-          Math.max(0, sectionPosition.top);
-        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+          const visiblePart =
+            Math.min(viewportHeight, sectionPosition.bottom) -
+            Math.max(0, sectionPosition.top);
+          const visiblePercentage = (visiblePart / sectionHeight) * 100;
 
-        if (visiblePercentage >= 40) {
-          setActiveSection((prevActiveSections) => {
-            if (!prevActiveSections.includes(sectionId)) {
-              return [...prevActiveSections, sectionId];
-            }
-            return prevActiveSections;
-          });
-        } else {
-          setActiveSection((prevActiveSections) => {
-            return prevActiveSections.filter((id) => id !== sectionId);
-          });
+          if (visiblePercentage >= 40) {
+            setActiveSection((prevActiveSections) => {
+              if (!prevActiveSections.includes(sectionId)) {
+                return [...prevActiveSections, sectionId];
+              }
+              return prevActiveSections;
+            });
+          } else {
+            setActiveSection((prevActiveSections) => {
+              return prevActiveSections.filter((id) => id !== sectionId);
+            });
+          }
         }
-      }
       });
     };
     window.addEventListener("scroll", handleScroll);
@@ -197,13 +186,40 @@ const Media = () => {
     };
   }, []);
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
 
-
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
 
   return (
     <div>
       <section>
         <div className="h-[10vh]">{/* navbar space */}</div>
+        {/* scroll progress bar */}
+        <div
+          className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+          style={{
+            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+          }}
+        >
+          <div
+            className="h-[1vh]"
+            style={{
+              width: `${scrollProgress}%`,
+              background:
+                "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+            }}
+          />
+        </div>
         <div
           ref={coverImageRef}
           className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl"

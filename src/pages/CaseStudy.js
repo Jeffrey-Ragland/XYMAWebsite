@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { HiChevronLeft } from 'react-icons/hi2';
 import second from '../Assets/secondline.png';
 import aluminum from '../Images/al1.png';
@@ -14,21 +14,50 @@ import { useNavigate } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const CaseStudy = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const navigate = useNavigate();
-  const handleBack =()=>{
-    navigate ('/resources');
-  } 
+  const handleBack = () => {
+    navigate("/resources");
+  };
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
+
   return (
-    <div className=" mx-[5%]">
+    <div className=" mx-[5%] overflow-hidden">
       <div className="h-[10vh]">{/* navbar space */}</div>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       <div className="mt-10 md:mt-16">
         <div className="flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
           <div

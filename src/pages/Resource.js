@@ -30,6 +30,7 @@ const Resource = () => {
   const [selectedContent, setSelectedContent] = useState("All");
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const coverImageRef = useRef(null);
 
@@ -47,9 +48,6 @@ const Resource = () => {
   };
 
   const navigate = useNavigate();
-  const handleContactClick = () => {
-    navigate("/contact");
-  };
   const handleCaseStudyClick = () => {
     navigate("/resources/casestudy");
   };
@@ -87,29 +85,28 @@ const Resource = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
-        if(ref.current)
-        {
-        const sectionPosition = ref.current.getBoundingClientRect();
-        const sectionHeight = sectionPosition.height;
+        if (ref.current) {
+          const sectionPosition = ref.current.getBoundingClientRect();
+          const sectionHeight = sectionPosition.height;
 
-        const visiblePart =
-          Math.min(viewportHeight, sectionPosition.bottom) -
-          Math.max(0, sectionPosition.top);
-        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+          const visiblePart =
+            Math.min(viewportHeight, sectionPosition.bottom) -
+            Math.max(0, sectionPosition.top);
+          const visiblePercentage = (visiblePart / sectionHeight) * 100;
 
-        if (visiblePercentage >= 40) {
-          setActiveSection((prevActiveSections) => {
-            if (!prevActiveSections.includes(sectionId)) {
-              return [...prevActiveSections, sectionId];
-            }
-            return prevActiveSections;
-          });
-        } else {
-          setActiveSection((prevActiveSections) => {
-            return prevActiveSections.filter((id) => id !== sectionId);
-          });
+          if (visiblePercentage >= 40) {
+            setActiveSection((prevActiveSections) => {
+              if (!prevActiveSections.includes(sectionId)) {
+                return [...prevActiveSections, sectionId];
+              }
+              return prevActiveSections;
+            });
+          } else {
+            setActiveSection((prevActiveSections) => {
+              return prevActiveSections.filter((id) => id !== sectionId);
+            });
+          }
         }
-      }
       });
     };
 
@@ -135,8 +132,37 @@ const Resource = () => {
     });
   };
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
+
   return (
     <div className="overflow-hidden">
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       <section
         ref={coverImageRef}
         className="mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] relative shadow-white shadow-2xl"

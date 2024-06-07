@@ -39,15 +39,16 @@ const Product = () => {
   const [renderReadMoreUtmaps, setRenderReadMoreUtmaps] = useState(false);
   const [renderReadMorePorts, setRenderReadMorePorts] = useState(false);
   const [renderReadMoreZtar, setRenderReadMoreZtar] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const sliderRef = useRef(null); 
+  const sliderRef = useRef(null);
   const coverImageRef = useRef(null);
   const location = useLocation();
 
   const sectionRefs = {
     uTMapS: useRef(null),
     PoRTS: useRef(null),
-    Ztar: useRef(null)
+    Ztar: useRef(null),
   };
 
   //to control cover image slide change
@@ -76,29 +77,26 @@ const Product = () => {
 
   // condition to display icon menu
   useEffect(() => {
-  const handleScroll = () => {
-  const coverImagePosition = coverImageRef.current.getBoundingClientRect();
-   const coverImageHeight = coverImagePosition.bottom - coverImagePosition.top;
-   const scrollDistance = document.documentElement.scrollTop;
-   const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
+    const handleScroll = () => {
+      const coverImagePosition = coverImageRef.current.getBoundingClientRect();
+      const coverImageHeight =
+        coverImagePosition.bottom - coverImagePosition.top;
+      const scrollDistance = document.documentElement.scrollTop;
+      const scrollThreshold = coverImageHeight * 0.6; // 60% of the cover image scrolled
 
-   if (scrollDistance > scrollThreshold)
-   {
-     setRenderIconMenu(true);
-   } 
-   else 
-   {
-     setRenderIconMenu(false);
-   }
-  };
-   window.addEventListener('scroll', handleScroll);
-
-  return () => 
-    {
-    window.removeEventListener('scroll', handleScroll);
+      if (scrollDistance > scrollThreshold) {
+        setRenderIconMenu(true);
+      } else {
+        setRenderIconMenu(false);
+      }
     };
-}, []);
-  
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   //handles the scroll function
   const handleSectionScroll = (ref) => {
     scrollToSection(ref);
@@ -122,29 +120,28 @@ const Product = () => {
         window.innerHeight || document.documentElement.clientHeight;
 
       Object.entries(sectionRefs).forEach(([sectionId, ref]) => {
-        if(ref.current)
-        {
-        const sectionPosition = ref.current.getBoundingClientRect();
-        const sectionHeight = sectionPosition.height;
+        if (ref.current) {
+          const sectionPosition = ref.current.getBoundingClientRect();
+          const sectionHeight = sectionPosition.height;
 
-        const visiblePart =
-          Math.min(viewportHeight, sectionPosition.bottom) -
-          Math.max(0, sectionPosition.top);
-        const visiblePercentage = (visiblePart / sectionHeight) * 100;
+          const visiblePart =
+            Math.min(viewportHeight, sectionPosition.bottom) -
+            Math.max(0, sectionPosition.top);
+          const visiblePercentage = (visiblePart / sectionHeight) * 100;
 
-        if (visiblePercentage >= 70) {
-          setActiveSection((prevActiveSections) => {
-            if (!prevActiveSections.includes(sectionId)) {
-              return [...prevActiveSections, sectionId];
-            }
-            return prevActiveSections;
-          });
-        } else {
-          setActiveSection((prevActiveSections) => {
-            return prevActiveSections.filter((id) => id !== sectionId);
-          });
+          if (visiblePercentage >= 70) {
+            setActiveSection((prevActiveSections) => {
+              if (!prevActiveSections.includes(sectionId)) {
+                return [...prevActiveSections, sectionId];
+              }
+              return prevActiveSections;
+            });
+          } else {
+            setActiveSection((prevActiveSections) => {
+              return prevActiveSections.filter((id) => id !== sectionId);
+            });
+          }
         }
-      }
       });
     };
 
@@ -159,17 +156,46 @@ const Product = () => {
     if (location.hash) {
       const section = document.querySelector(location.hash);
       if (section) {
-         window.scrollTo({
-           top: section.offsetTop - window.innerHeight * 0.1,
-           behavior: "smooth",
-         });
+        window.scrollTo({
+          top: section.offsetTop - window.innerHeight * 0.1,
+          behavior: "smooth",
+        });
       }
     }
   }, [location]);
 
+  // progress scroll bar
+  const handleProgressScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    setScrollProgress(scrollPercent);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleProgressScroll);
+    return () => window.removeEventListener("scroll", handleProgressScroll);
+  }, []);
+
   return (
     <div className="relative overflow-hidden">
       <div className="h-[10vh]">{/* navbar space */}</div>
+      {/* scroll progress bar */}
+      <div
+        className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      >
+        <div
+          className="h-[1vh]"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, #FF6347 0%,  #FF0000 101.48%)",
+          }}
+        />
+      </div>
       <div ref={coverImageRef} className="shadow-white shadow-2xl relative">
         <Slider ref={sliderRef} {...settings}>
           {/* image 1 */}
@@ -949,10 +975,7 @@ const Product = () => {
               />
             </div>
             <div className="flex justify-center p-0.5">
-              <video
-                autoPlay
-                controls
-              >
+              <video autoPlay controls>
                 <source src={portsDemo} type="video/mp4" />
               </video>
             </div>
