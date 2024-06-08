@@ -41,6 +41,7 @@ const ContactPage = () => {
     e.preventDefault();
     const toastId = toast.loading("Sending response...", { closeButton: true });
     fetch("http://34.93.162.58:4000/backend/contacts", {
+      // http://localhost:4000/backend/contacts
       method: "POST",
       headers: {
         "Content-Type": "application/json",
