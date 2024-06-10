@@ -17,6 +17,7 @@ import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
+import groupPic from '../Assets/groupPic.JPG'
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
@@ -504,7 +505,7 @@ const About = () => {
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <img className="mt-4" src={group1} data-aos="zoom-in-up"></img>
+        <img className="mt-4" src={groupPic} data-aos="zoom-in-up"></img>
       </section>
 
       <section
