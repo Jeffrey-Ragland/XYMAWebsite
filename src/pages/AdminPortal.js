@@ -1,8 +1,21 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import xyma from "../Assets/xymalogo_white.png";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { FaAngleDown, FaAngleUp, FaPencil, FaTrashCan } from "react-icons/fa6";
+import { MdFileUpload } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import software from '../Assets/software.jpg';
+import electronics from '../Assets/electronics.jpg'
+import ultrasonic from '../Assets/ultrasonic.jpg';
+import mechanical from '../Assets/mechanical.jpg';
+import backend from '../Assets/backend.jpg';
+import sensor from '../Assets/sensordept.jpeg';
+import finance from '../Assets/finance.jpg';
+import admin from '../Assets/admin.jpg';
+import recruit from '../Assets/recruit.jpg';
 
 const AdminPortal = () => {
 
@@ -14,7 +27,7 @@ const AdminPortal = () => {
   });
   const [position, setPosition] = useState([]);
   const [departmentPopup, setDepartmentPopup] = useState(false);
-  const [openPositionID, setOpenPositionId] = useState(null);
+  const [openPositions, setOpenPositions] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [editedPositions, setEditedPositions] = useState({});
   const [editedPositionDesc, setEditedPositionDesc] = useState({});
@@ -29,6 +42,15 @@ const AdminPortal = () => {
   const handleDateChange = (date) => {
     setFormData({...formData, date: date})
   }
+
+  const toggleOpenPosition = (positionId) => {
+    if (openPositions.includes(positionId)) {
+      setOpenPositions(openPositions.filter(id => id !== positionId));
+    } 
+    else {
+      setOpenPositions([...openPositions, positionId]);
+    }
+  };
 
   const handleEditPositionNameChange = (e, positionId) => {
     setEditedPositions({
@@ -46,6 +68,17 @@ const AdminPortal = () => {
        [positionId]: e.target.value,
      });
    };
+
+   const deptBackgrounds = {
+    'Software Development' : software,
+    'Electronics' : electronics,
+    'Ultrasonic' : ultrasonic,
+    'Mechanical Designing' : mechanical,
+    'Software Backend and Operations' : backend,
+    'Sensor Development' : sensor,
+    'Finance' : finance,
+    'Admin Department' : admin
+   }
 
   //posting position details to db
   const handleFormSubmit = (e) => {
@@ -155,6 +188,11 @@ const AdminPortal = () => {
       if(response.ok) {
         console.log('Position name updated');
         fetchPosition();
+        setEditedPositions((prevState) => {
+          const newState = {...prevState };
+          delete newState[positionId];
+          return newState; 
+        });
       } else {
         window.alert('Failed to update position name');
       }
@@ -180,6 +218,11 @@ const AdminPortal = () => {
       if(response.ok) {
         console.log('position description updated');
         fetchPosition();
+        setEditedPositionDesc((prevState) => {
+          const newState = {...prevState};
+          delete newState[positionId];
+          return newState;
+        })
       } else {
         window.alert('failed to update position description');
       }
@@ -192,11 +235,22 @@ const AdminPortal = () => {
   const uniqueDepartments = [...new Set(position.map(position => position.DepartmentName))];
 
   return (
-    <div className="p-4">
-      <div className="flex justify-center mb-8 relative">
-        <div className="">Admin Portal</div>
+    <div className="md:h-screen">
+      <div
+        className="flex justify-between items-center relative py-2 px-4 text-white"
+        style={{
+          background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+        }}
+      >
+        <div className="flex items-center">
+          <img className="h-10" src={xyma} alt="Logo" />
+        </div>
+        <div className="text-lg font-medium">Admin Portal</div>
         <button
-          className="border border-black absolute right-0 p-1"
+          className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm font-medium"
+          style={{
+            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+          }}
           onClick={() => {
             localStorage.removeItem("token");
             navigate("/admin@2k24");
@@ -205,18 +259,39 @@ const AdminPortal = () => {
           Logout
         </button>
       </div>
-      <div className="md:flex gap-4">
+
+      <div
+        className="h-[1vh] mb-8"
+        style={{
+          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+        }}
+      ></div>
+
+      <div className="md:flex gap-4 max-w-[1400px] mx-auto px-4">
         {/* add position */}
-        <div className="border border-black p-8 w-full md:w-1/2 mb-4 md:mb-0">
-          <div className="mb-4">Add Position</div>
-          <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
+        <div
+          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg"
+          style={{
+            backgroundImage: `url(${recruit})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="mb-2 font-medium py-2 px-4 rounded-t-md">
+            Add Position
+          </div>
+          <form
+            className="flex flex-col gap-4 p-4 "
+            onSubmit={handleFormSubmit}
+          >
             <div>
               <select
                 name="DeptName"
                 value={formData.DeptName}
                 placeholder="Enter Department Name"
                 required
-                className="border border-black w-full"
+                className="w-full p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50"
                 onChange={handleFormChange}
               >
                 <option value="" disabled>
@@ -245,7 +320,7 @@ const AdminPortal = () => {
                 value={formData.PositionName}
                 placeholder="Enter Position Name"
                 required
-                className="border border-black w-full"
+                className="w-full p-1 border border-l-gray-400 border-t-gray-400 border-b-gray-400 rounded-l-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50"
                 onChange={handleFormChange}
               />
               <DatePicker
@@ -254,7 +329,8 @@ const AdminPortal = () => {
                 dateFormat="dd/MM/yyyy"
                 showIcon={true}
                 required
-                className="border border-black text-sm w-28"
+                placeholderText="Enter Date"
+                className="border border-gray-400 text-sm w-32 rounded-r-lg focus:outline-none focus:border-gray-600 text-gray-800"
               />
             </div>
             <div>
@@ -263,29 +339,41 @@ const AdminPortal = () => {
                 value={formData.PositionDesc}
                 placeholder="Enter Position Description"
                 required
-                className="border border-black w-full h-20 resize-none"
+                className=" w-full h-20 resize-none p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50"
                 onChange={handleFormChange}
               />
             </div>
             <div className="flex justify-end items-center">
-              <button className="border border-black p-1" type="submit">
+              <button
+                className="py-2 px-4 rounded-md text-sm font-medium text-white hover:scale-110 duration-200"
+                type="submit"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #98FB98 0%, #25c916 100%)",
+                }}
+              >
                 Add
               </button>
             </div>
           </form>
         </div>
         {/* display position */}
-        <div className="border border-black p-8 w-full md:w-1/2">
+        <div className="border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg">
           {/* department name/ heading */}
-          <div
-            className="relative"
-            //style={{ scrollbarWidth: "none" }}
-          >
-            <div className="mb-4">Added Departments</div>
+          <div className="relative p-4">
+            <div className="mb-4 font-medium">Added Departments</div>
             {uniqueDepartments.map((department) => (
-              <div className="border border-black rounded-md mb-2 cursor-pointer flex">
+              <div
+                className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white"
+                // style={{
+                //   backgroundImage: `url(${deptTitleBackgrounds[department]})`,
+                //   backgroundSize: "cover",
+                //   backgroundRepeat: "no-repeat",
+                //   backgroundPosition: "center"
+                // }}
+              >
                 <div
-                  className="border border-black w-[90%] p-1"
+                  className="w-[90%] p-1 rounded-md"
                   onClick={() => {
                     setSelectedDepartment(department);
                     setDepartmentPopup(true);
@@ -294,38 +382,54 @@ const AdminPortal = () => {
                   {department}
                 </div>
                 <div
-                  className="border border-black w-[10%] p-1 flex justify-center"
+                  className="rounded-r-md w-[10%] p-1 flex justify-center items-center text-white"
                   onClick={() => handleDeleteDepartment(department)}
+                  style={{
+                    background: "linear-gradient(90deg, #fca192 0%, red 100%)",
+                  }}
                 >
-                  x
+                  <FaTrashCan size={15} />
                 </div>
               </div>
             ))}
             {departmentPopup && (
-              <div className="absolute inset-0 border border-black bg-white p-2">
+              <div
+                className="absolute inset-0 overflow-auto rounded-md p-4 bg-[#F9F9FB]"
+                //style={{ scrollbarWidth: "none" }}
+                style={{
+                  backgroundImage: `url(${deptBackgrounds[selectedDepartment]})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  scrollbarWidth: "none",
+                }}
+              >
                 {/* header */}
-                <div className="flex justify-between">
-                  <div>{selectedDepartment} Openings</div>
+                <div className="flex justify-between items-center mb-4">
+                  <div className="font-medium">
+                    {selectedDepartment} Openings
+                  </div>
                   <div
                     className="cursor-pointer"
                     onClick={() => setDepartmentPopup(false)}
                   >
-                    X
+                    <IoMdClose size={20} />
                   </div>
                 </div>
                 {/* content */}
-                <div className="p-2">
+                <div className="">
                   {position
                     .filter((pos) => pos.DepartmentName === selectedDepartment)
                     .map((pos) => (
                       <div className=" mb-2" key={pos._id}>
                         {/* position name */}
-                        <div className="border border-black rounded-md flex justify-between cursor-pointer p-1 ">
+                        <div className="border border-gray-400 rounded-t-md flex justify-between p-1 bg-[#F9F9FB]">
                           {editedPositions[pos._id] &&
                           editedPositions[pos._id].PositionName !==
                             undefined ? (
                             <input
                               type="text"
+                              className="border focus:outline-none focus:border-gray-600 rounded-md px-1"
                               value={editedPositions[pos._id].PositionName}
                               onChange={(e) =>
                                 handleEditPositionNameChange(e, pos._id)
@@ -335,21 +439,21 @@ const AdminPortal = () => {
                             <div>{pos.Position}</div>
                           )}
 
-                          <div className="flex gap-2">
+                          <div className="flex gap-4 items-center">
                             {editedPositions[pos._id] &&
                             editedPositions[pos._id].PositionName !==
                               undefined ? (
                               <div
-                                className="cursor-pointer"
+                                className="cursor-pointer text-green-500"
                                 onClick={() =>
                                   handleUpdatePositionName(pos._id)
                                 }
                               >
-                                Update
+                                <MdFileUpload size={20} />
                               </div>
                             ) : (
                               <div
-                                className="cursor-pointer"
+                                className="cursor-pointer text-blue-500"
                                 onClick={() =>
                                   setEditedPositions({
                                     ...editedPositions,
@@ -360,50 +464,60 @@ const AdminPortal = () => {
                                   })
                                 }
                               >
-                                Edit
+                                <FaPencil size={15} />
                               </div>
                             )}
                             <div
-                              className="cursor-pointer"
+                              className="cursor-pointer text-red-600"
                               onClick={() => handleDeletePosition(pos._id)}
                             >
-                              x
+                              <FaTrashCan size={15} />
                             </div>
                             <div
                               className="cursor-pointer"
-                              onClick={() => setOpenPositionId(pos._id)}
+                              onClick={() => toggleOpenPosition(pos._id)}
                             >
-                              more
+                              {openPositions.includes(pos._id) ? (
+                                <FaAngleUp size={15} />
+                              ) : (
+                                <FaAngleDown size={15} />
+                              )}
                             </div>
                           </div>
                         </div>
                         {/* position description */}
-                        {openPositionID === pos._id && (
-                          <div className="flex justify-between border border-black p-1">
+                        {openPositions.includes(pos._id) && (
+                          <div className="flex justify-between gap-2 border border-b-gray-400 border-l-gray-400 border-r-gray-400 rounded-b-md p-2 bg-[#F9F9FB]">
                             {editedPositionDesc[pos._id] !== undefined ? (
                               <textarea
+                                className="h-20 resize-none w-full bg-white border border-gray-200 p-1 text-sm rounded-md focus:outline-none focus:border-gray-600"
                                 value={editedPositionDesc[pos._id]}
                                 onChange={(e) =>
                                   handleEditPositionDescChange(e, pos._id)
                                 }
                               />
                             ) : (
-                              <div>{pos.PositionDescription}</div>
+                              <div
+                                className="h-20 w-full overflow-auto bg-white border border-gray-200 p-1 text-sm rounded-md"
+                                style={{ scrollbarWidth: "none" }}
+                              >
+                                {pos.PositionDescription}
+                              </div>
                             )}
 
-                            <div className="flex gap-2">
+                            <div className="">
                               {editedPositionDesc[pos._id] !== undefined ? (
                                 <div
-                                  className="cursor-pointer"
+                                  className="cursor-pointer text-green-500"
                                   onClick={() =>
                                     handleUpdatePositionDesc(pos._id)
                                   }
                                 >
-                                  Update
+                                  <MdFileUpload size={20} />
                                 </div>
                               ) : (
                                 <div
-                                  className="cursor-pointer"
+                                  className="cursor-pointer text-blue-500"
                                   onClick={() =>
                                     setEditedPositionDesc({
                                       ...editedPositionDesc,
@@ -411,21 +525,9 @@ const AdminPortal = () => {
                                     })
                                   }
                                 >
-                                  edit
+                                  <FaPencil size={15} />
                                 </div>
                               )}
-                              <div
-                                className="cursor-pointer"
-                                onClick={() => {
-                                  setOpenPositionId(null);
-                                  setEditedPositionDesc({
-                                    ...editedPositionDesc,
-                                    [pos._id]: undefined,
-                                  });
-                                }}
-                              >
-                                less
-                              </div>
                             </div>
                           </div>
                         )}

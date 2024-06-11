@@ -34,7 +34,7 @@ const RoutingPage = () => {
   ].includes(location.pathname);
 
   return (
-    <>
+    <div className="font-satoshi">
       <ScrollToTop />
       {!isAdminRoute && !isNotFoundRoute && <Navbar />}
       <div>
@@ -48,14 +48,14 @@ const RoutingPage = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources/casestudy" element={<CaseStudy />} />
           <Route path="/admin@2k24" element={<AdminLogin />} />
-          <Route path='/admin@2k24Portal' element={<ProtectedRoute />}>
+          <Route path="/admin@2k24Portal" element={<ProtectedRoute />}>
             <Route path="" element={<AdminPortal />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       {!isAdminRoute && !isNotFoundRoute && <Footer />}
-    </>
+    </div>
   );
 };
 
