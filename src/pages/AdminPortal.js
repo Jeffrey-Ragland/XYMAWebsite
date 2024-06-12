@@ -16,6 +16,8 @@ import sensor from '../Assets/sensordept.jpeg';
 import finance from '../Assets/finance.jpg';
 import admin from '../Assets/admin.jpg';
 import recruit from '../Assets/recruit.jpg';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AdminPortal = () => {
 
@@ -31,6 +33,8 @@ const AdminPortal = () => {
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [editedPositions, setEditedPositions] = useState({});
   const [editedPositionDesc, setEditedPositionDesc] = useState({});
+  const [confirmDepartmentToDelete, setConfirmDepartmentToDelete] = useState(null);
+  const [confirmPositionToDelete, setConfirmPositionToDelete] = useState(null);
  
   const navigate = useNavigate();
 
@@ -93,17 +97,18 @@ const AdminPortal = () => {
     })
     .then((response) => {
       if(response.ok) {
-        window.alert('position added to db');
+        toast.success('Position added!');
         setFormData({DeptName: '',
                      PositionName: '',
                      PositionDesc: ''});
         fetchPosition();
       } 
       else {
-        window.alert('adding position failed');
+        toast.error('Adding position failed');
       }
     })
     .catch((error) => {
+      toast.error("Adding position failed");
       console.log(error);
     });
   };
@@ -136,13 +141,15 @@ const AdminPortal = () => {
     })
     .then((response) => {
       if(response.ok) {
-        //window.alert('position deleted');
+        toast.success('Position deleted!');
         fetchPosition();
+        setConfirmPositionToDelete(null);
       } else {
-        window.alert('deleting position failed');
+        toast.error('Deleting position failed');
       }
     })
     .catch((error) => {
+      toast.error("Deleting position failed");
       console.log(error);
     });
   };
@@ -160,13 +167,15 @@ const AdminPortal = () => {
       })
       .then((response) => {
         if(response.ok) {
-          console.log('position/department deleted');
+          toast.success('Department deleted!');
           fetchPosition();
+          setConfirmDepartmentToDelete(null);
         } else {
-          window.alert('Failed to delete position/department');
+          toast.error('Failed to delete department');
         }
       })
       .catch((error) => {
+        toast.error("Failed to delete department");
         console.log(error);
       });
     });
@@ -186,7 +195,7 @@ const AdminPortal = () => {
     })
     .then((response) => {
       if(response.ok) {
-        console.log('Position name updated');
+        toast.success('Position title updated!');
         fetchPosition();
         setEditedPositions((prevState) => {
           const newState = {...prevState };
@@ -194,10 +203,11 @@ const AdminPortal = () => {
           return newState; 
         });
       } else {
-        window.alert('Failed to update position name');
+        toast.error('Failed to update position title');
       }
     })
     .catch((error) => {
+      toast.error("Failed to update position title");
       console.log(error);
     });
   };
@@ -216,7 +226,7 @@ const AdminPortal = () => {
     })
     .then((response) => {
       if(response.ok) {
-        console.log('position description updated');
+        toast.success('Position description updated!');
         fetchPosition();
         setEditedPositionDesc((prevState) => {
           const newState = {...prevState};
@@ -224,10 +234,11 @@ const AdminPortal = () => {
           return newState;
         })
       } else {
-        window.alert('failed to update position description');
+        toast.error('Failed to update position description');
       }
     })
     .catch((error) => {
+      toast.error("Failed to update position description");
       console.log(error);
     });
   };
@@ -235,9 +246,9 @@ const AdminPortal = () => {
   const uniqueDepartments = [...new Set(position.map(position => position.DepartmentName))];
 
   return (
-    <div className="md:h-screen">
+    <div className="md:h-screen  2xl:text-lg">
       <div
-        className="flex justify-between items-center relative py-2 px-4 text-white"
+        className="flex justify-between items-center py-2 px-4 text-white"
         style={{
           background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
         }}
@@ -245,9 +256,11 @@ const AdminPortal = () => {
         <div className="flex items-center">
           <img className="h-10" src={xyma} alt="Logo" />
         </div>
-        <div className="text-lg font-medium">Admin Portal</div>
+        <div className="text-base md:text-xl 2xl:text-2xl font-medium">
+          Admin Portal
+        </div>
         <button
-          className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm font-medium"
+          className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm 2xl:text-base font-medium"
           style={{
             background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
           }}
@@ -266,19 +279,22 @@ const AdminPortal = () => {
           background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
         }}
       ></div>
-
+      <ToastContainer />
       <div className="md:flex gap-4 max-w-[1400px] mx-auto px-4">
         {/* add position */}
         <div
-          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg"
-          style={{
-            backgroundImage: `url(${recruit})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
+          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg pb-24"
+          // style={{
+          //   background: "linear-gradient(180deg, #ffffff 0%, #fad1a5 100%)",
+          // }}
+          // style={{
+          //   backgroundImage: `url(${recruit})`,
+          //   backgroundSize: "cover",
+          //   backgroundRepeat: "no-repeat",
+          //   backgroundPosition: "center",
+          // }}
         >
-          <div className="mb-2 font-medium py-2 px-4 rounded-t-md">
+          <div className="mb-2 text-base md:text-lg 2xl:text-xl font-medium py-2 px-4">
             Add Position
           </div>
           <form
@@ -320,6 +336,7 @@ const AdminPortal = () => {
                 value={formData.PositionName}
                 placeholder="Enter Position Name"
                 required
+                autoComplete="off"
                 className="w-full p-1 border border-l-gray-400 border-t-gray-400 border-b-gray-400 rounded-l-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50"
                 onChange={handleFormChange}
               />
@@ -358,40 +375,71 @@ const AdminPortal = () => {
           </form>
         </div>
         {/* display position */}
-        <div className="border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg">
+        <div className="border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg mb-8 md:mb-0">
           {/* department name/ heading */}
-          <div className="relative p-4">
-            <div className="mb-4 font-medium">Added Departments</div>
-            {uniqueDepartments.map((department) => (
-              <div
-                className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white"
-                // style={{
-                //   backgroundImage: `url(${deptTitleBackgrounds[department]})`,
-                //   backgroundSize: "cover",
-                //   backgroundRepeat: "no-repeat",
-                //   backgroundPosition: "center"
-                // }}
-              >
-                <div
-                  className="w-[90%] p-1 rounded-md"
-                  onClick={() => {
-                    setSelectedDepartment(department);
-                    setDepartmentPopup(true);
-                  }}
-                >
-                  {department}
-                </div>
-                <div
-                  className="rounded-r-md w-[10%] p-1 flex justify-center items-center text-white"
-                  onClick={() => handleDeleteDepartment(department)}
-                  style={{
-                    background: "linear-gradient(90deg, #fca192 0%, red 100%)",
-                  }}
-                >
-                  <FaTrashCan size={15} />
-                </div>
+          <div className="relative p-4 md:h-full min-h-[400px]">
+            {uniqueDepartments.length === 0 ? (
+              <div className="h-full flex justify-center items-center text-sm text-gray-800">
+                No Departments Added
               </div>
-            ))}
+            ) : (
+              <>
+                <div className="mb-4 text-base md:text-lg 2xl:text-xl font-medium">
+                  Added Departments
+                </div>
+                {uniqueDepartments.map((department) => (
+                  <div className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white">
+                    <div
+                      className="w-[90%] p-1 rounded-md"
+                      onClick={() => {
+                        setSelectedDepartment(department);
+                        setDepartmentPopup(true);
+                      }}
+                    >
+                      {department}
+                    </div>
+                    <div
+                      className="rounded-r-md w-[10%] p-1 flex justify-center items-center text-white"
+                      // onClick={() => handleDeleteDepartment(department)}
+                      onClick={() => setConfirmDepartmentToDelete(department)}
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #fca192 0%, red 100%)",
+                      }}
+                    >
+                      <FaTrashCan size={15} />
+                    </div>
+                    {/* delete confirmation */}
+                    {confirmDepartmentToDelete === department && (
+                      // overlay
+                      <div className="absolute inset-0 h-full bg-black/25 flex justify-center items-center rounded-md">
+                        <div className="bg-white rounded-md px-2 py-3 flex flex-col gap-4">
+                          <div className="font-medium">Confirm Delete</div>
+                          <div className="text-xs md:text-sm text-gray-700">
+                            Are you sure you want to delete this DEPARTMENT ?
+                          </div>
+                          <div className="flex justify-end gap-4 text-sm font-medium">
+                            <button
+                              className="py-1 px-2 rounded-md bg-stone-200 hover:scale-110 duration-200"
+                              onClick={() => setConfirmDepartmentToDelete(null)}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              className="py-1 px-2 rounded-md text-white bg-red-500 hover:scale-110 duration-200"
+                              onClick={() => handleDeleteDepartment(department)}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </>
+            )}
+
             {departmentPopup && (
               <div
                 className="absolute inset-0 overflow-auto rounded-md p-4 bg-[#F9F9FB]"
@@ -406,7 +454,7 @@ const AdminPortal = () => {
               >
                 {/* header */}
                 <div className="flex justify-between items-center mb-4">
-                  <div className="font-medium">
+                  <div className="font-medium text-base md:text-lg 2xl:text-xl">
                     {selectedDepartment} Openings
                   </div>
                   <div
@@ -417,7 +465,7 @@ const AdminPortal = () => {
                   </div>
                 </div>
                 {/* content */}
-                <div className="">
+                <div>
                   {position
                     .filter((pos) => pos.DepartmentName === selectedDepartment)
                     .map((pos) => (
@@ -469,10 +517,46 @@ const AdminPortal = () => {
                             )}
                             <div
                               className="cursor-pointer text-red-600"
-                              onClick={() => handleDeletePosition(pos._id)}
+                              //onClick={() => handleDeletePosition(pos._id)}
+                              onClick={() =>
+                                setConfirmPositionToDelete(pos._id)
+                              }
                             >
                               <FaTrashCan size={15} />
                             </div>
+                            {/* delete confirmation */}
+                            {confirmPositionToDelete === pos._id && (
+                              // overlay
+                              <div className="absolute inset-0 h-full bg-black/25 flex justify-center items-center rounded-md">
+                                <div className="bg-white rounded-md px-2 py-3 flex flex-col gap-4">
+                                  <div className="font-medium">
+                                    Confirm Delete
+                                  </div>
+                                  <div className="text-xs md:text-sm text-gray-700">
+                                    Are you sure you want to delete this
+                                    POSITION ?
+                                  </div>
+                                  <div className="flex justify-end gap-4 text-sm font-medium">
+                                    <button
+                                      className="py-1 px-2 rounded-md bg-stone-200 hover:scale-110 duration-200"
+                                      onClick={() =>
+                                        setConfirmPositionToDelete(null)
+                                      }
+                                    >
+                                      Cancel
+                                    </button>
+                                    <button
+                                      className="py-1 px-2 rounded-md text-white bg-red-500 hover:scale-110 duration-200"
+                                      onClick={() =>
+                                        handleDeletePosition(pos._id)
+                                      }
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
                             <div
                               className="cursor-pointer"
                               onClick={() => toggleOpenPosition(pos._id)}
@@ -490,7 +574,7 @@ const AdminPortal = () => {
                           <div className="flex justify-between gap-2 border border-b-gray-400 border-l-gray-400 border-r-gray-400 rounded-b-md p-2 bg-[#F9F9FB]">
                             {editedPositionDesc[pos._id] !== undefined ? (
                               <textarea
-                                className="h-20 resize-none w-full bg-white border border-gray-200 p-1 text-sm rounded-md focus:outline-none focus:border-gray-600"
+                                className="h-20 resize-none w-full bg-white border border-gray-200 p-1 text-sm 2xl:text-base rounded-md focus:outline-none focus:border-gray-600"
                                 value={editedPositionDesc[pos._id]}
                                 onChange={(e) =>
                                   handleEditPositionDescChange(e, pos._id)
@@ -498,7 +582,7 @@ const AdminPortal = () => {
                               />
                             ) : (
                               <div
-                                className="h-20 w-full overflow-auto bg-white border border-gray-200 p-1 text-sm rounded-md"
+                                className="h-20 w-full overflow-auto bg-white border border-gray-200 p-1 text-sm 2xl:text-base rounded-md"
                                 style={{ scrollbarWidth: "none" }}
                               >
                                 {pos.PositionDescription}

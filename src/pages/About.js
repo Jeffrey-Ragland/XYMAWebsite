@@ -17,7 +17,7 @@ import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
 import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
-import groupPic from '../Assets/groupPic.JPG'
+import groupPicEdited from '../Assets/groupPicEdited.png'
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
@@ -497,7 +497,7 @@ const About = () => {
       <section
         id="section2"
         ref={sectionRefs.section2}
-        className="mx-[5%] mb-8 md:mb-12 2xl:mb-16"
+        className="mx-[5%] md:mx-[8%] mb-4 md:mb-8 2xl:mb-12"
       >
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
@@ -505,7 +505,7 @@ const About = () => {
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
-        <img className="mt-4" src={groupPic} data-aos="zoom-in-up"></img>
+        <img className="mt-4 rounded-2xl" src={groupPicEdited} data-aos="zoom-in-up"></img>
       </section>
 
       <section

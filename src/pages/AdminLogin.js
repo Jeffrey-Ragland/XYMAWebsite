@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import xyma from "../Assets/xymalogo_white.png";
+import adminLoginBg from '../Assets/adminLoginBg.JPG';
+import { TbSquareRoundedChevronsLeftFilled } from "react-icons/tb";
 
 const AdminLogin = () => {
 
@@ -39,9 +42,22 @@ const AdminLogin = () => {
     };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="border border-black flex flex-col p-4 items-center gap-4">
-        <div>XYMA admin</div>
+    <div
+      className="flex items-center justify-center h-screen relative"
+      style={{
+        backgroundImage: `url(${adminLoginBg})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute left-4 top-4 text-orange-500 cursor-pointer" onClick={() => navigate('/careers')}>
+        <TbSquareRoundedChevronsLeftFilled size={40} />
+      </div>
+      <div className="flex flex-col p-4 items-center gap-4 rounded-md backdrop-blur-sm bg-white/40 text-base md:text-lg 2xl:text-xl">
+        <div>
+          <img className="h-10" src={xyma} alt="logo" />
+        </div>
         <form
           className="flex flex-col items-center gap-4"
           onSubmit={handleAdminLoginSubmit}
@@ -49,26 +65,33 @@ const AdminLogin = () => {
           <div>
             <input
               type="text"
-              name='Username'
+              name="Username"
               value={formData.Username}
               onChange={handleFormChange}
               placeholder="Username..."
               required
-              className="border border-black "
+              autoComplete="off"
+              className="w-full p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800"
             />
           </div>
           <div>
             <input
               type="password"
-              name='Password'
+              name="Password"
               value={formData.Password}
               onChange={handleFormChange}
               placeholder="Password..."
               required
-              className="border border-black "
+              className="w-full p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800"
             />
           </div>
-          <button type="submit" className="border border-black ">
+          <button
+            className="py-2 px-4 rounded-md text-sm 2xl:text-base font-medium text-white hover:scale-110 duration-200"
+            type="submit"
+            style={{
+              background: "linear-gradient(180deg, #98FB98 0%, #25c916 100%)",
+            }}
+          >
             Login
           </button>
         </form>
