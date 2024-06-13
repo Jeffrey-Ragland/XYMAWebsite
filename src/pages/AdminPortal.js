@@ -5,7 +5,7 @@ import xyma from "../Assets/xymalogo_white.png";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { FaAngleDown, FaAngleUp, FaPencil, FaTrashCan } from "react-icons/fa6";
-import { MdFileUpload } from "react-icons/md";
+import { FaUpload } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import software from '../Assets/software.jpg';
 import electronics from '../Assets/electronics.jpg'
@@ -33,6 +33,7 @@ const AdminPortal = () => {
   const [selectedDepartment, setSelectedDepartment] = useState(null);
   const [editedPositions, setEditedPositions] = useState({});
   const [editedPositionDesc, setEditedPositionDesc] = useState({});
+  const [editedDates, setEditedDates] = useState({});
   const [confirmDepartmentToDelete, setConfirmDepartmentToDelete] = useState(null);
   const [confirmPositionToDelete, setConfirmPositionToDelete] = useState(null);
  
@@ -59,10 +60,7 @@ const AdminPortal = () => {
   const handleEditPositionNameChange = (e, positionId) => {
     setEditedPositions({
       ...editedPositions,
-      [positionId]: {
-        ...editedPositions[positionId],
-        PositionName: e.target.value,
-      },
+      [positionId]: e.target.value,
     });
   };
 
@@ -72,6 +70,14 @@ const AdminPortal = () => {
        [positionId]: e.target.value,
      });
    };
+
+   const handleEditDateChange = (date, positionId) => {
+    setEditedDates({
+      ...editedDates,
+      [positionId] : date,
+    });
+   };
+   console.log('edited dates',editedDates);
 
    const deptBackgrounds = {
     'Software Development' : software,
@@ -100,7 +106,8 @@ const AdminPortal = () => {
         toast.success('Position added!');
         setFormData({DeptName: '',
                      PositionName: '',
-                     PositionDesc: ''});
+                     PositionDesc: '',
+                     date: null});
         fetchPosition();
       } 
       else {
@@ -183,7 +190,7 @@ const AdminPortal = () => {
 
   //update position name
   const handleUpdatePositionName = (positionId) => {
-    const editedName = editedPositions[positionId].PositionName;
+    const editedName = editedPositions[positionId];
     fetch(`http://localhost:4000/backend/updateposition/${positionId}`, {
       method: 'PUT',
       headers: {
@@ -232,7 +239,7 @@ const AdminPortal = () => {
           const newState = {...prevState};
           delete newState[positionId];
           return newState;
-        })
+        });
       } else {
         toast.error('Failed to update position description');
       }
@@ -241,6 +248,37 @@ const AdminPortal = () => {
       toast.error("Failed to update position description");
       console.log(error);
     });
+  };
+
+  // update last date
+  const handleUpdateDate = (positionId) => {
+    const editedDate = editedDates[positionId];
+    fetch(`http://localhost:4000/backend/updateposition/${positionId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        LastDate:editedDate,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          toast.success("Last Date updated!");
+          fetchPosition();
+          setEditedDates((prevState) => {
+            const newState = { ...prevState };
+            delete newState[positionId];
+            return newState;
+          });
+        } else {
+          toast.error("Failed to update last date");
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed to update last date");
+        console.log(error);
+      });
   };
 
   const uniqueDepartments = [...new Set(position.map(position => position.DepartmentName))];
@@ -283,7 +321,7 @@ const AdminPortal = () => {
       <div className="md:flex gap-4 max-w-[1400px] mx-auto px-4">
         {/* add position */}
         <div
-          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg pb-24"
+          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg pb-24 p-4 "
           // style={{
           //   background: "linear-gradient(180deg, #ffffff 0%, #fad1a5 100%)",
           // }}
@@ -294,20 +332,17 @@ const AdminPortal = () => {
           //   backgroundPosition: "center",
           // }}
         >
-          <div className="mb-2 text-base md:text-lg 2xl:text-xl font-medium py-2 px-4">
+          <div className="mb-4 text-base md:text-lg 2xl:text-xl font-medium">
             Add Position
           </div>
-          <form
-            className="flex flex-col gap-4 p-4 "
-            onSubmit={handleFormSubmit}
-          >
+          <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
             <div>
               <select
                 name="DeptName"
                 value={formData.DeptName}
                 placeholder="Enter Department Name"
                 required
-                className="w-full p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50"
+                className="w-full p-1 border border-gray-400 rounded-lg focus:outline-none focus:border-gray-600 text-gray-800 backdrop-blur-sm bg-white/50 cursor-pointer"
                 onChange={handleFormChange}
               >
                 <option value="" disabled>
@@ -346,8 +381,8 @@ const AdminPortal = () => {
                 dateFormat="dd/MM/yyyy"
                 showIcon={true}
                 required
-                placeholderText="Enter Date"
-                className="border border-gray-400 text-sm w-32 rounded-r-lg focus:outline-none focus:border-gray-600 text-gray-800"
+                placeholderText="Enter Last Date"
+                className="border border-gray-400 text-sm w-36 rounded-r-lg focus:outline-none focus:border-gray-600 text-gray-800"
               />
             </div>
             <div>
@@ -380,12 +415,12 @@ const AdminPortal = () => {
           <div className="relative p-4 md:h-full min-h-[400px]">
             {uniqueDepartments.length === 0 ? (
               <div className="h-full flex justify-center items-center text-sm text-gray-800">
-                No Departments Added
+                No Positions Added
               </div>
             ) : (
               <>
                 <div className="mb-4 text-base md:text-lg 2xl:text-xl font-medium">
-                  Added Departments
+                  Added Positions
                 </div>
                 {uniqueDepartments.map((department) => (
                   <div className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white">
@@ -443,7 +478,6 @@ const AdminPortal = () => {
             {departmentPopup && (
               <div
                 className="absolute inset-0 overflow-auto rounded-md p-4 bg-[#F9F9FB]"
-                //style={{ scrollbarWidth: "none" }}
                 style={{
                   backgroundImage: `url(${deptBackgrounds[selectedDepartment]})`,
                   backgroundSize: "cover",
@@ -471,14 +505,12 @@ const AdminPortal = () => {
                     .map((pos) => (
                       <div className=" mb-2" key={pos._id}>
                         {/* position name */}
-                        <div className="border border-gray-400 rounded-t-md flex justify-between p-1 bg-[#F9F9FB]">
-                          {editedPositions[pos._id] &&
-                          editedPositions[pos._id].PositionName !==
-                            undefined ? (
+                        <div className="border border-gray-300 rounded-t-md flex gap-2 justify-between py-1 px-2 bg-[#F9F9FB]">
+                          {editedPositions[pos._id] !== undefined ? (
                             <input
                               type="text"
-                              className="border focus:outline-none focus:border-gray-600 rounded-md px-1"
-                              value={editedPositions[pos._id].PositionName}
+                              className="border focus:outline-none focus:border-gray-600 rounded-md px-1 w-full"
+                              value={editedPositions[pos._id]}
                               onChange={(e) =>
                                 handleEditPositionNameChange(e, pos._id)
                               }
@@ -488,16 +520,14 @@ const AdminPortal = () => {
                           )}
 
                           <div className="flex gap-4 items-center">
-                            {editedPositions[pos._id] &&
-                            editedPositions[pos._id].PositionName !==
-                              undefined ? (
+                            {editedPositions[pos._id] !== undefined ? (
                               <div
                                 className="cursor-pointer text-green-500"
                                 onClick={() =>
                                   handleUpdatePositionName(pos._id)
                                 }
                               >
-                                <MdFileUpload size={20} />
+                                <FaUpload size={15} />
                               </div>
                             ) : (
                               <div
@@ -505,10 +535,7 @@ const AdminPortal = () => {
                                 onClick={() =>
                                   setEditedPositions({
                                     ...editedPositions,
-                                    [pos._id]: {
-                                      ...editedPositions[pos._id],
-                                      PositionName: pos.Position,
-                                    },
+                                    [pos._id]: pos.Position,
                                   })
                                 }
                               >
@@ -517,7 +544,6 @@ const AdminPortal = () => {
                             )}
                             <div
                               className="cursor-pointer text-red-600"
-                              //onClick={() => handleDeletePosition(pos._id)}
                               onClick={() =>
                                 setConfirmPositionToDelete(pos._id)
                               }
@@ -527,7 +553,7 @@ const AdminPortal = () => {
                             {/* delete confirmation */}
                             {confirmPositionToDelete === pos._id && (
                               // overlay
-                              <div className="absolute inset-0 h-full bg-black/25 flex justify-center items-center rounded-md">
+                              <div className="absolute inset-0 bg-black/25 flex justify-center items-center rounded-md z-10">
                                 <div className="bg-white rounded-md px-2 py-3 flex flex-col gap-4">
                                   <div className="font-medium">
                                     Confirm Delete
@@ -571,49 +597,104 @@ const AdminPortal = () => {
                         </div>
                         {/* position description */}
                         {openPositions.includes(pos._id) && (
-                          <div className="flex justify-between gap-2 border border-b-gray-400 border-l-gray-400 border-r-gray-400 rounded-b-md p-2 bg-[#F9F9FB]">
-                            {editedPositionDesc[pos._id] !== undefined ? (
-                              <textarea
-                                className="h-20 resize-none w-full bg-white border border-gray-200 p-1 text-sm 2xl:text-base rounded-md focus:outline-none focus:border-gray-600"
-                                value={editedPositionDesc[pos._id]}
-                                onChange={(e) =>
-                                  handleEditPositionDescChange(e, pos._id)
-                                }
-                              />
-                            ) : (
-                              <div
-                                className="h-20 w-full overflow-auto bg-white border border-gray-200 p-1 text-sm 2xl:text-base rounded-md"
-                                style={{ scrollbarWidth: "none" }}
-                              >
-                                {pos.PositionDescription}
-                              </div>
-                            )}
+                          <>
+                            <div className=" border border-b-gray-300 border-l-gray-300 border-r-gray-300 rounded-b-md p-2 bg-[#F9F9FB]">
+                              <div className="flex justify-between items-center gap-2 mb-2">
+                                <div className="text-sm 2xl:text-lg">
+                                  Description:
+                                </div>
+                                {editedPositionDesc[pos._id] !== undefined ? (
+                                  <textarea
+                                    className="h-20 resize-none w-full bg-white border border-gray-200 p-1 text-sm 2xl:text-base rounded-md focus:outline-none focus:border-gray-600"
+                                    value={editedPositionDesc[pos._id]}
+                                    onChange={(e) =>
+                                      handleEditPositionDescChange(e, pos._id)
+                                    }
+                                  />
+                                ) : (
+                                  <div
+                                    className="h-20 w-full overflow-auto bg-white border border-gray-300 p-1 text-sm 2xl:text-base rounded-md"
+                                    style={{ scrollbarWidth: "none" }}
+                                  >
+                                    {pos.PositionDescription}
+                                  </div>
+                                )}
 
-                            <div className="">
-                              {editedPositionDesc[pos._id] !== undefined ? (
-                                <div
-                                  className="cursor-pointer text-green-500"
-                                  onClick={() =>
-                                    handleUpdatePositionDesc(pos._id)
-                                  }
-                                >
-                                  <MdFileUpload size={20} />
+                                <div className="">
+                                  {editedPositionDesc[pos._id] !== undefined ? (
+                                    <div
+                                      className="cursor-pointer text-green-500"
+                                      onClick={() =>
+                                        handleUpdatePositionDesc(pos._id)
+                                      }
+                                    >
+                                      <FaUpload size={15} />
+                                    </div>
+                                  ) : (
+                                    <div
+                                      className="cursor-pointer text-blue-500"
+                                      onClick={() =>
+                                        setEditedPositionDesc({
+                                          ...editedPositionDesc,
+                                          [pos._id]: pos.PositionDescription,
+                                        })
+                                      }
+                                    >
+                                      <FaPencil size={15} />
+                                    </div>
+                                  )}
                                 </div>
-                              ) : (
-                                <div
-                                  className="cursor-pointer text-blue-500"
-                                  onClick={() =>
-                                    setEditedPositionDesc({
-                                      ...editedPositionDesc,
-                                      [pos._id]: pos.PositionDescription,
-                                    })
-                                  }
-                                >
-                                  <FaPencil size={15} />
+                              </div>
+                              {/* last date */}
+                              <div className="flex gap-2 items-center text-sm 2xl:text-base">
+                                <div className="text-sm 2xl:text-lg mr-[11px] 2xl:mr-[15px]">
+                                  Last&nbsp;Date:
                                 </div>
-                              )}
+                                {editedDates[pos._id] !== undefined ? (
+                                  <div className="border border-gray-300 w-full rounded-md bg-white">
+                                    <DatePicker
+                                      selected={editedDates[pos._id]}
+                                      onChange={(date) =>
+                                        handleEditDateChange(date, pos._id)
+                                      }
+                                      dateFormat="dd/MM/yyyy"
+                                      showIcon={true}
+                                      toggleCalendarOnIconClick
+                                      className="rounded-md px-1 focus:outline-none"
+                                    />
+                                  </div>
+                                ) : (
+                                  <div className="border border-gray-300 bg-white w-full rounded-md px-1 py-1.5">
+                                    {pos.LastDate &&
+                                      new Date(pos.LastDate).toLocaleDateString(
+                                        "en-GB"
+                                      )}
+                                  </div>
+                                )}
+
+                                {editedDates[pos._id] !== undefined ? (
+                                  <div
+                                    className="cursor-pointer text-green-500"
+                                    onClick={() => handleUpdateDate(pos._id)}
+                                  >
+                                    <FaUpload size={15} />
+                                  </div>
+                                ) : (
+                                  <div
+                                    className="cursor-pointer text-blue-500"
+                                    onClick={() =>
+                                      setEditedDates({
+                                        ...editedDates,
+                                        [pos._id]: pos.LastDate,
+                                      })
+                                    }
+                                  >
+                                    <FaPencil size={15} />
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                          </div>
+                          </>
                         )}
                       </div>
                     ))}

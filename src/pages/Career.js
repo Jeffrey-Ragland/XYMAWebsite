@@ -4,39 +4,20 @@ import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
-import ReactReadMoreReadLess from "react-read-more-read-less";
-import useWindowSize from "react-use/lib/useWindowSize";
-
-// const Badge2 = ({ text, selected, onClick }) => {
-//   const badgeStyle = {
-//     backgroundColor: selected ? '#01285C' : '#EEF6FF',
-//     color: selected ? '#ffffff' : '#013872',
-//     padding: '5px 14px',
-//     borderRadius: '9999px',
-//     border: `1px solid ${selected ? '#01285C' : '#B4CEEC'}`,
-//     cursor: 'pointer'
-//   };
-
-//   return (
-//     <span style={badgeStyle} onClick={onClick}>
-//       {text}
-//     </span>
-//   );
-// };
+import noData from '../Assets/noData.jpg';
+// import ReactReadMoreReadLess from "react-read-more-read-less";
+// import useWindowSize from "react-use/lib/useWindowSize";
 
 const Career = () => {
-  //const [selectedBadge, setSelectedBadge] = useState(0);
+  
   const [scrollProgress, setScrollProgress] = useState(0);
   const [position, setPosition] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState('All');
-
-  // const handleBadgeClick = (index) => {
-  //   setSelectedBadge(index);
-  // };
+  const [selectedDummyContent, setSelectedDummyContent] = useState('Software\u00A0Development');
 
   const sectionRef = useRef(null);
-  const { width } = useWindowSize();
-  const isLargeScreen = width >= 768;
+  //const { width } = useWindowSize();
+  //const isLargeScreen = width >= 768;
 
   const handleButtonClick = () => {
     const navbarHeight = window.innerHeight * 0.1; // 10vh to account for navbar
@@ -58,6 +39,19 @@ const Career = () => {
     const scrollPercent = (scrollTop / docHeight) * 100;
     setScrollProgress(scrollPercent);
   };
+
+  //dummy content when no data in db
+  const dummyContent = [
+    "Software\u00A0Development",
+    "Electronics",
+    "Ultrasonic",
+    "Mechanical\u00A0Designing",
+    "Software\u00A0Backend\u00A0and\u00A0Operations",
+    "Sensor\u00A0Development",
+    "Finance",
+    "Admin\u00A0Department",
+  ];
+                        
 
   useEffect(() => {
     window.addEventListener("scroll", handleProgressScroll);
@@ -174,69 +168,105 @@ const Career = () => {
         </div>
       </div>
 
-      <section ref={sectionRef}>
-        <div className="mt-10 md:mt-0 text-center flex justify-center mb-4 2xl:mb-10">
+      <section ref={sectionRef} className=" mb-12 2xl:mb-16">
+        <div className="mt-10 md:mt-0 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>Opportunities</div>
             <img className="w-full h-2" src={line}></img>
           </div>
         </div>
 
-        {/* department badges */}
-        <div
-          className="mt-8 mx-[5%] xl:mx-[8%] flex gap-2 2xl:gap-4 overflow-auto text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {uniqueDepartments.map((department) => (
+        {position.length !== 0 ? (
+          <div>
+            {/* department badges */}
             <div
-              className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
-                selectedDepartment === department
-                  ? "bg-[#01285C] text-white border-[#01285C]"
-                  : "bg-[#EEF6FF] text-[#013872] border-[#B4CEEC]"
-              }`}
-              onClick={() => setSelectedDepartment(department)}
+              className="mt-8 mx-[5%] xl:mx-[8%] flex gap-2 2xl:gap-4 overflow-auto text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium"
+              style={{ scrollbarWidth: "none" }}
             >
-              {department.replace(/ /g, "\u00A0")}
-            </div>
-          ))}
-        </div>
-
-        {/* department content */}
-        <div className="mt-8 mx-[5%] xl:mx-[8%] mb-8">
-          {position
-            .filter(
-              (pos) =>
-                selectedDepartment === "All" ||
-                pos.DepartmentName === selectedDepartment
-            )
-            .map((pos) => (
-              <div className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
-                {selectedDepartment === "All" && (
-                  <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
-                    {pos.DepartmentName}
-                  </div>
-                )}
-                <div className="text-lg md:text-xl 2xl:text-3xl font-medium">
-                  {pos.Position}
-                </div>
-                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                  {pos.PositionDescription}
-                </div>
-                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                  Apply Before: {pos.LastDate}
-                </div>
-                <button
-                  className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
+              {uniqueDepartments.map((department) => (
+                <div
+                  className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
+                    selectedDepartment === department
+                      ? "bg-[#01285C] text-white border-[#01285C]"
+                      : "bg-[#EEF6FF] text-[#013872] border-[#B4CEEC]"
+                  }`}
+                  onClick={() => setSelectedDepartment(department)}
                 >
-                  Apply Now
-                </button>
+                  {department.replace(/ /g, "\u00A0")}
+                </div>
+              ))}
+            </div>
+
+            {/* department content */}
+            <div className="mt-8 mx-[5%] xl:mx-[8%] mb-8">
+              {position
+                .filter(
+                  (pos) =>
+                    selectedDepartment === "All" ||
+                    pos.DepartmentName === selectedDepartment
+                )
+                .map((pos) => (
+                  <div className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
+                    {selectedDepartment === "All" && (
+                      <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
+                        {pos.DepartmentName}
+                      </div>
+                    )}
+                    <div className="text-lg md:text-xl 2xl:text-3xl font-medium">
+                      {pos.Position}
+                    </div>
+                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                      {pos.PositionDescription}
+                    </div>
+                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                      Apply Before: {pos.LastDate}
+                    </div>
+                    <button
+                      className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                ))}
+            </div>
+          </div>
+        ) : (
+          // dummy content for no positions
+          <div className="mt-8 mx-[5%] xl:mx-[8%] text-sm lg:text-lg xl:text-sm 2xl:text-xl font-medium">
+            <div
+              className="flex gap-2 overflow-auto mb-6"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {dummyContent.map((dep, index) => (
+                <div
+                  key={index}
+                  className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
+                    selectedDummyContent === dep
+                      ? "bg-[#01285C] text-white border-[#01285C]"
+                      : "bg-[#EEF6FF] text-[#013872] border-[#B4CEEC]"
+                  }`}
+                  onClick={() => setSelectedDummyContent(dep)}
+                >
+                  {dep}
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center items-center px-8 py-20 border border-gray-400 rounded-xl">
+              <div>
+                <div className="mb-4 flex justify-center">
+                  <img src={noData} alt="noData" className=" h-20" />
+                </div>
+                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                  Sorry, No openings available at the moment.
+                </div>
               </div>
-            ))}
-        </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <div className="mt-4 w-full flex justify-center">
