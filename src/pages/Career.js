@@ -14,6 +14,15 @@ const Career = () => {
   const [position, setPosition] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState('All');
   const [selectedDummyContent, setSelectedDummyContent] = useState('Software\u00A0Development');
+  const [applicationFormOpen, setApplicationFormOpen] = useState(false);
+  const [selectedPosition, setSelectedPosition] = useState(null);
+  const [applicationFormData, setApplicationFormData] = useState ({
+    Name: '',
+    Age: '',
+    ApplyingForDepartment: '',
+    ApplyingForPosition: ''
+  });
+  const [resume, setResume] = useState(null);
 
   const sectionRef = useRef(null);
   //const { width } = useWindowSize();
@@ -51,7 +60,25 @@ const Career = () => {
     "Finance",
     "Admin\u00A0Department",
   ];
-                        
+
+  // application form
+  const handleApplicationFormChange = (e) => {
+    const {name, value} = e.target;
+    setApplicationFormData({...applicationFormData, [name]: value});
+  }
+
+  //application form -> resume
+  const handleResumeChange = (e) => {
+    // setResume(e.target.files[0]);
+    const file = e.target.files[0];
+    if(file.type === 'application/pdf') {
+      setResume(file);
+    } else {
+      alert('please upload only pdf file');
+      e.target.value = null;
+      setResume(null);
+    };
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleProgressScroll);
@@ -79,6 +106,44 @@ const Career = () => {
     };
   }, []);
   console.log("retrieved positions from backend", position);
+
+  //uploading appllication form to db
+  const handleApplicationFormSubmit = (e) => {
+    e.preventDefault();
+     const formData = new FormData();
+     formData.append("Name", applicationFormData.Name);
+     formData.append("Age", applicationFormData.Age);
+     formData.append("ApplyingForDepartment",selectedPosition.DepartmentName);
+     formData.append("ApplyingForPosition",selectedPosition.Position);
+     formData.append("file", resume);
+
+     fetch("http://localhost:4000/backend/uploadapplicationform", {
+      method: 'POST',
+      body: formData
+     })
+     .then(response => {
+      if(!response.ok) {
+        throw new Error('Error uploading application form')
+      } else {
+        alert("Application form sent succssfully");
+        setApplicationFormData({
+          Name: "",
+          Age: "",
+          ApplyingForDepartment: "",
+          ApplyingForPosition: "",
+        });
+        setResume(null);
+
+        const fileInput = document.getElementById('resumeInput');
+        if(fileInput) {
+          fileInput.value = null;
+        }
+      }
+     })
+     .catch(error => {
+      console.error(error);
+     });
+  };
 
   const uniqueDepartments = ['All', ...new Set(position.map(position => position.DepartmentName))];
 
@@ -206,31 +271,38 @@ const Career = () => {
                     pos.DepartmentName === selectedDepartment
                 )
                 .map((pos) => (
-                  <div className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
-                    {selectedDepartment === "All" && (
-                      <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
-                        {pos.DepartmentName}
+                  <>
+                    <div className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
+                      {selectedDepartment === "All" && (
+                        <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
+                          {pos.DepartmentName}
+                        </div>
+                      )}
+                      <div className="text-lg md:text-xl 2xl:text-3xl font-medium">
+                        {pos.Position}
                       </div>
-                    )}
-                    <div className="text-lg md:text-xl 2xl:text-3xl font-medium">
-                      {pos.Position}
+                      <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                        {pos.PositionDescription}
+                      </div>
+                      <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                        Apply Before:{" "}
+                        {new Date(pos.LastDate).toLocaleDateString("en-GB")}
+                      </div>
+                      <button
+                        className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                        }}
+                        onClick={() => {
+                          setSelectedPosition(pos);
+                          setApplicationFormOpen(true);
+                        }}
+                      >
+                        Apply Now
+                      </button>
                     </div>
-                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                      {pos.PositionDescription}
-                    </div>
-                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                      Apply Before: {pos.LastDate}
-                    </div>
-                    <button
-                      className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                      }}
-                    >
-                      Apply Now
-                    </button>
-                  </div>
+                  </>
                 ))}
             </div>
           </div>
@@ -268,6 +340,57 @@ const Career = () => {
           </div>
         )}
       </section>
+
+      {/* application form */}
+      {applicationFormOpen && selectedPosition && (
+        <div className="fixed inset-0 h-full bg-black/40 flex justify-center items-center">
+          <div className="bg-white border border-black p-4">
+            <div className="flex gap-2 justify-between items-center">
+              <div>Application Form</div>
+              <div
+                className="text-xl font-bold cursor-pointer"
+                onClick={() => setApplicationFormOpen(false)}
+              >
+                x
+              </div>
+            </div>
+            <div>Application for {selectedPosition.DepartmentName}</div>
+            <div>for position: {selectedPosition.Position}</div>
+            <form className="flex flex-col gap-2" onSubmit={handleApplicationFormSubmit}>
+              <div>
+                <input
+                  className="border border-black w-full"
+                  type="text"
+                  name="Name"
+                  value={applicationFormData.Name}
+                  required
+                  autoComplete="off"
+                  placeholder="Enter Your Name"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+              <div>
+                <input
+                  className="border border-black w-full"
+                  type="text"
+                  name="Age"
+                  value={applicationFormData.Age}
+                  required
+                  autoComplete="off"
+                  placeholder="Enter Your Age"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+              <div>
+                <input id='resumeInput' type='file' accept='.pdf' onChange={handleResumeChange} required />
+              </div>
+              <div>
+                <button type='submit'>Apply</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <div className="mt-4 w-full flex justify-center">
         <p className="text-[#60646C] w-[80%] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl text-center">

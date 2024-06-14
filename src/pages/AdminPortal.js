@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import xyma from "../Assets/xymalogo_white.png";
+
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { FaAngleDown, FaAngleUp, FaPencil, FaTrashCan } from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp, FaPencil, FaTrashCan, FaBell } from "react-icons/fa6";
 import { FaUpload } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import software from '../Assets/software.jpg';
@@ -36,6 +36,7 @@ const AdminPortal = () => {
   const [editedDates, setEditedDates] = useState({});
   const [confirmDepartmentToDelete, setConfirmDepartmentToDelete] = useState(null);
   const [confirmPositionToDelete, setConfirmPositionToDelete] = useState(null);
+  const [alertOpen, setAlertOpen] = useState(false);
  
   const navigate = useNavigate();
 
@@ -129,7 +130,10 @@ const AdminPortal = () => {
       }
     })
     .then(response => response.json())
-    .then(data => setPosition(data))
+    .then(data => {
+      setPosition(data);
+      handleExpiredPositions(data);
+    })
     .catch(error => console.log(error));
   };
 
@@ -137,6 +141,21 @@ const AdminPortal = () => {
     fetchPosition();
   },[]);
   console.log("retrieved positions from backend", position);
+
+  //handling expired positions
+  const handleExpiredPositions = (positions) => {
+    const currentDate = new Date();
+    positions.forEach(pos => {
+      const lastDate = new Date(pos.LastDate);
+      lastDate.setDate(lastDate.getDate() + 1);
+      console.log("last date", lastDate);
+      console.log("current date", currentDate);
+      if(lastDate < currentDate) {
+        handleDeletePosition(pos._id);
+      }
+    });
+    
+  };
 
   //deleting position from db
   const handleDeletePosition = (positionId) => {
@@ -284,54 +303,11 @@ const AdminPortal = () => {
   const uniqueDepartments = [...new Set(position.map(position => position.DepartmentName))];
 
   return (
-    <div className="md:h-screen  2xl:text-lg">
-      <div
-        className="flex justify-between items-center py-2 px-4 text-white"
-        style={{
-          background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
-        }}
-      >
-        <div className="flex items-center">
-          <img className="h-10" src={xyma} alt="Logo" />
-        </div>
-        <div className="text-base md:text-xl 2xl:text-2xl font-medium">
-          Admin Portal
-        </div>
-        <button
-          className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm 2xl:text-base font-medium"
-          style={{
-            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-          }}
-          onClick={() => {
-            localStorage.removeItem("token");
-            navigate("/admin@2k24");
-          }}
-        >
-          Logout
-        </button>
-      </div>
-
-      <div
-        className="h-[1vh] mb-8"
-        style={{
-          background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-        }}
-      ></div>
+    <div className="md:h-screen 2xl:text-lg mt-[10vh]">
       <ToastContainer />
-      <div className="md:flex gap-4 max-w-[1400px] mx-auto px-4">
+      <div className="md:flex gap-4 max-w-[1400px] mx-auto px-4 pt-8">
         {/* add position */}
-        <div
-          className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg pb-24 p-4 "
-          // style={{
-          //   background: "linear-gradient(180deg, #ffffff 0%, #fad1a5 100%)",
-          // }}
-          // style={{
-          //   backgroundImage: `url(${recruit})`,
-          //   backgroundSize: "cover",
-          //   backgroundRepeat: "no-repeat",
-          //   backgroundPosition: "center",
-          // }}
-        >
+        <div className="border border-gray-400 w-full md:w-1/2 mb-4 md:mb-0 rounded-md bg-[#F9F9FB] shadow-lg pb-24 p-4 ">
           <div className="mb-4 text-base md:text-lg 2xl:text-xl font-medium">
             Add Position
           </div>
