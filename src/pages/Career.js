@@ -278,14 +278,14 @@ const Career = () => {
                           {pos.DepartmentName}
                         </div>
                       )}
-                      <div className="text-lg md:text-xl 2xl:text-3xl font-medium">
+                      <div className="text-lg md:text-xl 2xl:text-2xl font-medium">
                         {pos.Position}
                       </div>
                       <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
                         {pos.PositionDescription}
                       </div>
                       <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                        Apply Before:{" "}
+                        Apply Before:
                         {new Date(pos.LastDate).toLocaleDateString("en-GB")}
                       </div>
                       <button

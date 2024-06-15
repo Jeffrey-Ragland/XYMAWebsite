@@ -13,7 +13,6 @@ import AdminPortal from '../pages/AdminPortal';
 import AdminApplications from '../pages/AdminApplications';
 import NotFound from '../pages/NotFound';
 import Navbar from "./Navbar";
-import AdminNavbar from './AdminNavbar';
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import ProtectedRoute from '../pages/ProtectedRoute';
@@ -40,7 +39,6 @@ const RoutingPage = () => {
     <div className="font-satoshi">
       <ScrollToTop />
       {!isAdminRoute && !isNotFoundRoute && <Navbar />}
-      {isAdminRoute && <AdminNavbar />}
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
