@@ -4,6 +4,8 @@ import xyma from "../Assets/xymalogo_white.png";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
+import { AiOutlineForm } from "react-icons/ai";
+import { FaWpforms } from "react-icons/fa6";
 
 const AdminApplications = () => {
   const navigate = useNavigate();
@@ -13,18 +15,6 @@ const AdminApplications = () => {
   const [applicationDepartmentPopup, setApplicationDepartmentPopup] = useState(false);
   const [selectedApplicationUserId, setSelectedApplicationUserId] = useState(null);
   const [openUserApplication, setOpenUserApplication] = useState(false);
-
-  const adminPaths = [
-    {
-      title: "Portal",
-      path: "/admin@2k24Portal",
-    },
-    {
-      title: "Applications",
-      path: "/admin@2k24Applications",
-    },
-  ];
-
   const fetchApplicationForm = () => {
     fetch("http://localhost:4000/backend/getapplicationform")
     .then(response => {
@@ -53,39 +43,58 @@ const AdminApplications = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-10">
+      <div className="fixed top-0 left-0 w-full z-10 2xl:text-lg">
         <div
-          className="flex items-center h-[9vh] text-white px-4"
+          className="flex items-center h-[9vh] text-white px-2 md:px-4"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className="flex items-center gap-4 h-full  w-1/3">
+          <div className="flex items-center gap-4 h-full w-[35%] md:w-1/3">
             <div className="h-full flex items-center">
               <img className="h-[80%]" src={xyma} alt="Logo" />
             </div>
-            <div className="text-base md:text-xl 2xl:text-2xl font-medium">
+            <div className="text-sm md:text-xl 2xl:text-2xl font-medium">
               Admin Portal
             </div>
           </div>
 
           {/* routes */}
-          <div className="flex gap-4 justify-center  w-1/3">
-            {adminPaths.map((item, index) => (
-              <div key={index} className="">
+          <div className="w-[30%] md:w-1/3">
+            <div className="flex gap-4 justify-center  ">
+              <div>
                 <NavLink
-                  to={item.path}
+                  to="/admin@2k24Portal"
                   className={`${
-                    location.pathname === item.path && "text-orange-400"
+                    location.pathname === "/admin@2k24Portal" &&
+                    "text-orange-400"
                   }`}
                 >
-                  <span>{item.title}</span>
+                  <span className="md:hidden">
+                    <AiOutlineForm size={25} />
+                  </span>
+                  <span className="hidden md:block">Portal</span>
                 </NavLink>
               </div>
-            ))}
+
+              <div>
+                <NavLink
+                  to="/admin@2k24Applications"
+                  className={`${
+                    location.pathname === "/admin@2k24Applications" &&
+                    "text-orange-400"
+                  }`}
+                >
+                  <span className="md:hidden">
+                    <FaWpforms size={25} />
+                  </span>
+                  <span className="hidden md:block">Applications</span>
+                </NavLink>
+              </div>
+            </div>
           </div>
 
-          <div className=" w-1/3 flex justify-end">
+          <div className="w-[35%] md:w-1/3 flex justify-end">
             <button
               className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm 2xl:text-base font-medium"
               style={{
@@ -113,7 +122,7 @@ const AdminApplications = () => {
       {/* content */}
       <div className="md:flex gap-4 mt-[10vh] pt-8 px-4 max-w-[1400px] mx-auto">
         {/* applications section */}
-        <div className="relative border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg mb-8 md:mb-0 p-4">
+        <div className="relative border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg mb-8 md:mb-0 p-4 min-h-[400px]">
           {uniqueApplicationDepartments.length === 0 ? (
             <div className="h-full flex justify-center items-center text-sm text-gray-800">
               No New Applications
@@ -181,50 +190,114 @@ const AdminApplications = () => {
         {/* view section */}
         <div className="border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg mb-8 md:mb-0 p-4 min-h-[400px]">
           {openUserApplication === false ? (
-            <div>select an application to view</div>
+            <div className="h-full flex justify-center items-center">
+              select an application to view
+            </div>
           ) : (
             <div>
               {applicationData
                 .filter((app) => app._id === selectedApplicationUserId)
                 .map((app) => (
-                  <div key={app._id}>
-                    <div>{app.Name}'s Application</div>
-                    <div>
-                      Applying for {app.ApplyingForPosition},{" "}
+                  <div key={app._id} className="flex flex-col gap-2">
+                    <div className="font-medium">
+                      {app.Name}'s Application for {app.ApplyingForPosition},{" "}
                       {app.ApplyingForDepartment}
                     </div>
-                    <div>Email: {app.Email}</div>
-                    <div>Contact No: {app.Phone}</div>
-                    <div>LinkedIn Profile: {app.LinkedIn}</div>
-                    <div>Expected Salary: {app.ExpectedSalary}</div>
-                    <div>Contact No: {app.Phone}</div>
-                    <div>Previous Company: {app.PrevJobCompany}</div>
-                    <div>Previous Role: {app.PrevJobTitle}</div>
-                    <div>About Them: "{app.SelfIntro}"</div>
-                    <div>
-                      Why are they intrested in this position: "{app.WhyIntrested}"
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Email:</span> {app.Email}
+                      </div>
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Contact No:</span>{" "}
+                        {app.Phone}
+                      </div>
                     </div>
-                    <div>
-                      What are their expectations: "{app.YourExpectations}"
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">LinkedIn Profile:</span>{" "}
+                        {app.LinkedIn}
+                      </div>
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Expected Salary:</span>{" "}
+                        {app.ExpectedSalary}
+                      </div>
                     </div>
-                    <div>
-                      What can we expect from them: "{app.OurExpectations}"
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Previous Company:</span>{" "}
+                        {app.PrevJobCompany}
+                      </div>
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Previous Role:</span>{" "}
+                        {app.PrevJobTitle}
+                      </div>
                     </div>
-                    <div>Willing to relocate: {app.Relocate}</div>
-                    <div>Start Date: {app.StartDate}</div>
-                    <button
-                      onClick={() => {
-                        const file = new Blob(
-                          [new Uint8Array(app.Resume.data.data)],
-                          { type: app.Resume.contentType }
-                        );
-                        const fileURL = URL.createObjectURL(file);
-                        window.open(fileURL, "_blank");
-                      }}
-                      className="border border-black rounded-md"
-                    >
-                      View Resume
-                    </button>
+
+                    <div className="flex gap-2 items-center font-medium">
+                      <div className="w-1/2">About Them:</div>
+                      <div className="w-1/2">
+                        Why are they intrested in this position:
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 bg-white rounded-md h-20 overflow-auto w-1/2">
+                        "{app.SelfIntro}"
+                      </div>
+                      <div className="border border-gray-400 p-1 text-gray-800 bg-white rounded-md h-20 overflow-auto w-1/2">
+                        "{app.WhyIntrested}"
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2 items-center font-medium">
+                      <div className="w-1/2">What are their expectations:</div>
+                      <div className="w-1/2">What can we expect from them:</div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 bg-white rounded-md h-20 overflow-auto w-1/2">
+                        "{app.YourExpectations}"
+                      </div>
+
+                      <div className="border border-gray-400 p-1 text-gray-800 bg-white rounded-md h-20 overflow-auto w-1/2">
+                        "{app.OurExpectations}"
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">
+                          Willing to relocate:
+                        </span>{" "}
+                        {app.Relocate}
+                      </div>
+                      <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
+                        <span className="font-medium">Start Date:</span>{" "}
+                        {app.StartDate}
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <button
+                        style={{
+                          background:
+                            "linear-gradient(180deg, #98FB98 0%, #25c916 100%)",
+                        }}
+                        onClick={() => {
+                          const file = new Blob(
+                            [new Uint8Array(app.Resume.data.data)],
+                            { type: app.Resume.contentType }
+                          );
+                          const fileURL = URL.createObjectURL(file);
+                          window.open(fileURL, "_blank");
+                        }}
+                        className="bg-white py-2 px-4 rounded-md text-sm font-medium text-white hover:scale-110 duration-200"
+                      >
+                        View Resume
+                      </button>
+                    </div>
                   </div>
                 ))}
             </div>

@@ -4,9 +4,16 @@ import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import xyma from "../Assets/xymalogo_white.png";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { FaAngleDown, FaAngleUp, FaPencil, FaTrashCan, FaBell } from "react-icons/fa6";
+import {
+  FaAngleDown,
+  FaAngleUp,
+  FaPencil,
+  FaTrashCan,
+  FaWpforms,
+} from "react-icons/fa6";
 import { FaUpload } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { AiOutlineForm } from "react-icons/ai";
 import software from '../Assets/software.jpg';
 import electronics from '../Assets/electronics.jpg'
 import ultrasonic from '../Assets/ultrasonic.jpg';
@@ -21,19 +28,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AdminPortal = () => {
 
-   const location = useLocation();
-
-   const adminPaths = [
-     {
-       title: "Portal",
-       path: "/admin@2k24Portal",
-     },
-     {
-       title: "Applications",
-       path: "/admin@2k24Applications",
-     },
-   ];
-
+  const location = useLocation();
   const [formData, setFormData] = useState({
     DeptName: '',
     PositionName: '',
@@ -319,37 +314,56 @@ const AdminPortal = () => {
       {/* navbar */}
       <div className="fixed top-0 left-0 w-full z-10">
         <div
-          className="flex items-center h-[9vh] text-white px-4"
+          className="flex items-center h-[9vh] text-white px-2 md:px-4"
           style={{
             background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
           }}
         >
-          <div className="flex items-center gap-4 h-full  w-1/3">
+          <div className="flex items-center gap-4 h-full w-[35%] md:w-1/3 ">
             <div className="h-full flex items-center">
               <img className="h-[80%]" src={xyma} alt="Logo" />
             </div>
-            <div className="text-base md:text-xl 2xl:text-2xl font-medium">
+            <div className="text-sm md:text-xl 2xl:text-2xl font-medium">
               Admin Portal
             </div>
           </div>
 
           {/* routes */}
-          <div className="flex gap-4 justify-center  w-1/3">
-            {adminPaths.map((item, index) => (
-              <div key={index} className="">
+          <div className="w-[30%] md:w-1/3 ">
+            <div className="flex gap-4 justify-center  ">
+              <div>
                 <NavLink
-                  to={item.path}
+                  to="/admin@2k24Portal"
                   className={`${
-                    location.pathname === item.path && "text-orange-400"
+                    location.pathname === "/admin@2k24Portal" &&
+                    "text-orange-400"
                   }`}
                 >
-                  <span>{item.title}</span>
+                  <span className="md:hidden">
+                    <AiOutlineForm size={25} />
+                  </span>
+                  <span className="hidden md:block">Portal</span>
                 </NavLink>
               </div>
-            ))}
+
+              <div>
+                <NavLink
+                  to="/admin@2k24Applications"
+                  className={`${
+                    location.pathname === "/admin@2k24Applications" &&
+                    "text-orange-400"
+                  }`}
+                >
+                  <span className="md:hidden">
+                    <FaWpforms size={25} />
+                  </span>
+                  <span className="hidden md:block">Applications</span>
+                </NavLink>
+              </div>
+            </div>
           </div>
 
-          <div className=" w-1/3 flex justify-end">
+          <div className="w-[35%] md:w-1/3 flex justify-end  ">
             <button
               className="py-2 px-4 rounded-full hover:scale-110 duration-200 text-sm 2xl:text-base font-medium"
               style={{

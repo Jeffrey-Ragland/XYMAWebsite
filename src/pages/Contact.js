@@ -182,7 +182,7 @@ const ContactPage = () => {
             at any time
           </div>
 
-          <div className=" mb-4">
+          <div className="mb-4">
             <form
               onSubmit={handleFormSubmit}
               className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl"

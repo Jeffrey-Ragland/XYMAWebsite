@@ -5,6 +5,7 @@ import photo from '../Assets/photo.png'
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import noData from '../Assets/noData.jpg';
+import { IoMdClose } from "react-icons/io";
 // import ReactReadMoreReadLess from "react-read-more-read-less";
 // import useWindowSize from "react-use/lib/useWindowSize";
 
@@ -383,26 +384,32 @@ const Career = () => {
       {/* application form */}
       {applicationFormOpen && selectedPosition && (
         <div className="fixed inset-0 h-full bg-black/40 flex justify-center items-center">
-          <div className="bg-white h-[75%] max-w-[90%] border border-black p-4 overflow-auto">
-            <div className="flex gap-2 justify-between items-center">
-              <div>Application Form</div>
+          <div
+            className="bg-white h-[75%] max-w-[90%] border border-gray-400 rounded-md p-4 overflow-auto"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <div className="flex gap-2 justify-between items-center mb-2 font-semibold">
+              <div>
+                Applying for {selectedPosition.Position},{" "}
+                {selectedPosition.DepartmentName}
+              </div>
               <div
-                className="text-xl font-bold cursor-pointer"
+                className="cursor-pointer rounded-full hover:bg-gray-400 duration-200"
                 onClick={() => setApplicationFormOpen(false)}
               >
-                x
+                <IoMdClose size={20} />
               </div>
             </div>
-            <div>Application for {selectedPosition.DepartmentName}</div>
-            <div>for position: {selectedPosition.Position}</div>
             <form
-              className="flex flex-col gap-2"
+              className="flex flex-col gap-2 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl"
               onSubmit={handleApplicationFormSubmit}
             >
               <div>
-                <label htmlFor="Name">Name</label>
+                <label htmlFor="Name" className="font-medium">
+                  Name <span className="text-[#CE2C31]">*</span>
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="w-full mt-1 border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600"
                   type="text"
                   id="Name"
                   name="Name"
@@ -415,9 +422,11 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="Email">Email</label>
+                <label htmlFor="Email" className="font-medium">
+                  Email <span className="text-[#CE2C31]">*</span>
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   type="email"
                   id="Email"
                   name="Email"
@@ -430,9 +439,11 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="Phone">Phone</label>
+                <label htmlFor="Phone" className="font-medium">
+                  Phone <span className="text-[#CE2C31]">*</span>
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   type="tel"
                   id="Phone"
                   name="Phone"
@@ -445,9 +456,11 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="LinkedIn">LinkedIn</label>
+                <label htmlFor="LinkedIn" className="font-medium">
+                  LinkedIn <span className="text-[#CE2C31]">*</span>
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   type="text"
                   id="LinkedIn"
                   name="LinkedIn"
@@ -460,9 +473,11 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="ExpectedSalary">ExpectedSalary</label>
+                <label htmlFor="ExpectedSalary" className="font-medium">
+                  Expected Salary <span className="text-[#CE2C31]">*</span>
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   type="text"
                   id="ExpectedSalary"
                   name="ExpectedSalary"
@@ -474,13 +489,15 @@ const Career = () => {
                 />
               </div>
 
-              <div>Previous Work Experience (if any)</div>
               <div>
-                <label htmlFor="PrevJobCompany">
+                <div className="font-medium">
+                  Previous Work Experience (if any)
+                </div>
+                <label htmlFor="PrevJobCompany" className="font-medium">
                   What company you worked for before
                 </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   id="PrevJobCompany"
                   type="text"
                   name="PrevJobCompany"
@@ -492,9 +509,11 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="PrevJobTitle">What was your job title</label>
+                <label htmlFor="PrevJobTitle" className="font-medium">
+                  What was your job title
+                </label>
                 <input
-                  className="border border-black w-full"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full mt-1"
                   type="text"
                   id="PrevJobTitle"
                   name="PrevJobTitle"
@@ -505,45 +524,31 @@ const Career = () => {
                 />
               </div>
 
-              <div>
-                <label>Are you willing to relocate to Chennai</label>
-                <input
-                  id="relocateYes"
-                  type="radio"
-                  name="Relocate"
-                  value="Yes"
-                  checked={applicationFormData.Relocate === "Yes"}
-                  required
-                  onChange={handleApplicationFormChange}
-                />
-                <label htmlFor="relocateYes">Yes</label>
-                <input
-                  id="relocateNo"
-                  type="radio"
-                  name="Relocate"
-                  value="No"
-                  checked={applicationFormData.Relocate === "No"}
-                  required
-                  onChange={handleApplicationFormChange}
-                />
-                <label htmlFor="relocateNo">No</label>
+              <div className="md:flex gap-2 items-center mt-2">
+                <div>
+                  <label htmlFor="resumeInput" className="font-medium">
+                    Upload&nbsp;your&nbsp;resume{" "}
+                    <span className="text-[#CE2C31]">*</span>
+                  </label>
+                </div>
+                <div className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 mt-1">
+                  <input
+                    id="resumeInput"
+                    type="file"
+                    accept=".pdf"
+                    onChange={handleResumeChange}
+                    required
+                  />
+                </div>
               </div>
 
               <div>
-                <label htmlFor="resumeInput">Upload your resume</label>
-                <input
-                  id="resumeInput"
-                  type="file"
-                  accept=".pdf"
-                  onChange={handleResumeChange}
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="SelfIntro">Tell us about yourself</label>
+                <label htmlFor="SelfIntro" className="font-medium">
+                  Tell us about yourself{" "}
+                  <span className="text-[#CE2C31]">*</span>
+                </label>
                 <textarea
-                  className="border border-black w-full h-20 resize-none"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full h-20 resize-none mt-1"
                   name="SelfIntro"
                   id="SelfIntro"
                   value={applicationFormData.SelfIntro}
@@ -554,11 +559,12 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="WhyIntrested">
-                  Why are you intrested in this position
+                <label htmlFor="WhyIntrested" className="font-medium">
+                  Why are you intrested in this position{" "}
+                  <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
-                  className="border border-black w-full h-20 resize-none"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full h-20 resize-none mt-1"
                   name="WhyIntrested"
                   id="WhyIntrested"
                   value={applicationFormData.WhyIntrested}
@@ -569,11 +575,12 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="YourExpectations">
-                  What are your expectations from this role
+                <label htmlFor="YourExpectations" className="font-medium">
+                  What are your expectations from this role{" "}
+                  <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
-                  className="border border-black w-full h-20 resize-none"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full h-20 resize-none mt-1"
                   name="YourExpectations"
                   id="YourExpectations"
                   value={applicationFormData.YourExpectations}
@@ -584,11 +591,12 @@ const Career = () => {
               </div>
 
               <div>
-                <label htmlFor="OurExpectations">
-                  What can we expect from you
+                <label htmlFor="OurExpectations" className="font-medium">
+                  What can we expect from you{" "}
+                  <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
-                  className="border border-black w-full h-20 resize-none"
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 w-full h-20 resize-none mt-1"
                   name="OurExpectations"
                   id="OurExpectations"
                   value={applicationFormData.OurExpectations}
@@ -598,22 +606,71 @@ const Career = () => {
                 />
               </div>
 
-              <div className='flex gap-1'>
-                <label htmlFor="StartDate">
-                  When will you be available to join with us
-                </label>
+              <div className="md:flex items-center gap-2">
+                <div>
+                  <label className="font-medium">
+                    Are you willing to relocate to Chennai{" "}
+                    <span className="text-[#CE2C31]">*</span>
+                  </label>
+                </div>
+                <div className="flex">
+                  <input
+                    className="cursor-pointer mr-1"
+                    id="relocateYes"
+                    type="radio"
+                    name="Relocate"
+                    value="Yes"
+                    checked={applicationFormData.Relocate === "Yes"}
+                    required
+                    onChange={handleApplicationFormChange}
+                  />
+                  <label htmlFor="relocateYes" className="cursor-pointer">
+                    Yes
+                  </label>
+                  <input
+                    className="cursor-pointer ml-2 mr-1"
+                    id="relocateNo"
+                    type="radio"
+                    name="Relocate"
+                    value="No"
+                    checked={applicationFormData.Relocate === "No"}
+                    required
+                    onChange={handleApplicationFormChange}
+                  />
+                  <label htmlFor="relocateNo" className="cursor-pointer">
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <div className="md:flex gap-2">
+                <div className="mb-1">
+                  <label htmlFor="StartDate" className="font-medium">
+                    When will you be available to join with us{" "}
+                    <span className="text-[#CE2C31]">*</span>
+                  </label>
+                </div>
                 <input
                   type="date"
                   name="StartDate"
                   id="StartDate"
-                  className='border border-black'
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600"
                   value={applicationFormData.StartDate}
                   required
                   onChange={handleApplicationFormChange}
                 />
               </div>
-              <div>
-                <button type="submit">Apply</button>
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  className="text-white py-1 px-4 rounded-full focus:outline-none focus:shadow-outline mt-4 font-medium"
+                >
+                  Apply
+                </button>
               </div>
             </form>
           </div>
