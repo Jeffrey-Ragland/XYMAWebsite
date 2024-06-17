@@ -167,7 +167,6 @@ const AdminPortal = () => {
         handleDeletePosition(pos._id);
       }
     });
-    
   };
 
   //deleting position from db

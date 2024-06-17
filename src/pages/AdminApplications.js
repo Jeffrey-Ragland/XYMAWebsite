@@ -180,30 +180,55 @@ const AdminApplications = () => {
 
         {/* view section */}
         <div className="border border-gray-400 w-full md:w-1/2 rounded-md bg-[#F9F9FB] shadow-lg mb-8 md:mb-0 p-4 min-h-[400px]">
-         {openUserApplication === false ? (
-          <div>
-            select an application to view
-          </div>
-         ) : (
-          <div>
-            {applicationData
-            .filter((app) => app._id === selectedApplicationUserId)
-            .map((app) => (
-              <div key={app._id}>
-                <div>{app.Name}'s Application</div>
-                <div>Applying for {app.ApplyingForPosition}, {app.ApplyingForDepartment}</div>
-                <button onClick={() => {
-                  const file = new Blob(
-                    [new Uint8Array(app.Resume.data.data)],
-                    { type: app.Resume.contentType }
-                  );
-                  const fileURL = URL.createObjectURL(file);
-                  window.open(fileURL, "_blank");
-                }} className="border border-black rounded-md">View Resume</button>
-              </div>
-            ))}
-          </div>
-         )}
+          {openUserApplication === false ? (
+            <div>select an application to view</div>
+          ) : (
+            <div>
+              {applicationData
+                .filter((app) => app._id === selectedApplicationUserId)
+                .map((app) => (
+                  <div key={app._id}>
+                    <div>{app.Name}'s Application</div>
+                    <div>
+                      Applying for {app.ApplyingForPosition},{" "}
+                      {app.ApplyingForDepartment}
+                    </div>
+                    <div>Email: {app.Email}</div>
+                    <div>Contact No: {app.Phone}</div>
+                    <div>LinkedIn Profile: {app.LinkedIn}</div>
+                    <div>Expected Salary: {app.ExpectedSalary}</div>
+                    <div>Contact No: {app.Phone}</div>
+                    <div>Previous Company: {app.PrevJobCompany}</div>
+                    <div>Previous Role: {app.PrevJobTitle}</div>
+                    <div>About Them: "{app.SelfIntro}"</div>
+                    <div>
+                      Why are they intrested in this position: "{app.WhyIntrested}"
+                    </div>
+                    <div>
+                      What are their expectations: "{app.YourExpectations}"
+                    </div>
+                    <div>
+                      What can we expect from them: "{app.OurExpectations}"
+                    </div>
+                    <div>Willing to relocate: {app.Relocate}</div>
+                    <div>Start Date: {app.StartDate}</div>
+                    <button
+                      onClick={() => {
+                        const file = new Blob(
+                          [new Uint8Array(app.Resume.data.data)],
+                          { type: app.Resume.contentType }
+                        );
+                        const fileURL = URL.createObjectURL(file);
+                        window.open(fileURL, "_blank");
+                      }}
+                      className="border border-black rounded-md"
+                    >
+                      View Resume
+                    </button>
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
       </div>
     </>

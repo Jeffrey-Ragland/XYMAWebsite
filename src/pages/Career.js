@@ -16,11 +16,22 @@ const Career = () => {
   const [selectedDummyContent, setSelectedDummyContent] = useState('Software\u00A0Development');
   const [applicationFormOpen, setApplicationFormOpen] = useState(false);
   const [selectedPosition, setSelectedPosition] = useState(null);
-  const [applicationFormData, setApplicationFormData] = useState ({
-    Name: '',
-    Age: '',
-    ApplyingForDepartment: '',
-    ApplyingForPosition: ''
+  const [applicationFormData, setApplicationFormData] = useState({
+    Name: "",
+    Email: "",
+    Phone: "",
+    LinkedIn: "",
+    ExpectedSalary: "",
+    PrevJobCompany: "",
+    PrevJobTitle: "",
+    SelfIntro: "",
+    WhyIntrested: "",
+    YourExpectations: "",
+    OurExpectations: "", 
+    Relocate: "",
+    StartDate: null,
+    ApplyingForDepartment: "",
+    ApplyingForPosition: "",
   });
   const [resume, setResume] = useState(null);
 
@@ -66,6 +77,7 @@ const Career = () => {
     const {name, value} = e.target;
     setApplicationFormData({...applicationFormData, [name]: value});
   }
+  //console.log('application form data',applicationFormData);
 
   //application form -> resume
   const handleResumeChange = (e) => {
@@ -105,17 +117,31 @@ const Career = () => {
       clearInterval(interval);
     };
   }, []);
-  console.log("retrieved positions from backend", position);
+  //console.log("retrieved positions from backend", position);
 
   //uploading appllication form to db
   const handleApplicationFormSubmit = (e) => {
     e.preventDefault();
      const formData = new FormData();
+
      formData.append("Name", applicationFormData.Name);
-     formData.append("Age", applicationFormData.Age);
+     formData.append("Email", applicationFormData.Email);
+     formData.append("Phone", applicationFormData.Phone);
+     formData.append("LinkedIn", applicationFormData.LinkedIn);
+     formData.append("ExpectedSalary", applicationFormData.ExpectedSalary);
+     formData.append("PrevJobCompany", applicationFormData.PrevJobCompany);
+     formData.append("PrevJobTitle", applicationFormData.PrevJobTitle);
+     formData.append("SelfIntro", applicationFormData.SelfIntro);
+     formData.append("WhyIntrested", applicationFormData.WhyIntrested);
+     formData.append("YourExpectations", applicationFormData.YourExpectations);
+     formData.append("OurExpectations", applicationFormData.OurExpectations);
+     formData.append("Relocate", applicationFormData.Relocate);
+     formData.append("StartDate", applicationFormData.StartDate);
      formData.append("ApplyingForDepartment",selectedPosition.DepartmentName);
      formData.append("ApplyingForPosition",selectedPosition.Position);
      formData.append("file", resume);
+
+     console.log('backend form data',formData)
 
      fetch("http://localhost:4000/backend/uploadapplicationform", {
       method: 'POST',
@@ -128,7 +154,18 @@ const Career = () => {
         alert("Application form sent succssfully");
         setApplicationFormData({
           Name: "",
-          Age: "",
+          Email: "",
+          Phone: "",
+          LinkedIn: "",
+          ExpectedSalary: "",
+          PrevJobCompany: "",
+          PrevJobTitle: "",
+          SelfIntro: "",
+          WhyIntrested: "",
+          YourExpectations: "",
+          OurExpectations: "",
+          Relocate: "",
+          StartDate: null,
           ApplyingForDepartment: "",
           ApplyingForPosition: "",
         });
@@ -138,6 +175,8 @@ const Career = () => {
         if(fileInput) {
           fileInput.value = null;
         }
+
+        setApplicationFormOpen(false);
       }
      })
      .catch(error => {
@@ -344,7 +383,7 @@ const Career = () => {
       {/* application form */}
       {applicationFormOpen && selectedPosition && (
         <div className="fixed inset-0 h-full bg-black/40 flex justify-center items-center">
-          <div className="bg-white border border-black p-4">
+          <div className="bg-white h-[75%] max-w-[90%] border border-black p-4 overflow-auto">
             <div className="flex gap-2 justify-between items-center">
               <div>Application Form</div>
               <div
@@ -356,36 +395,225 @@ const Career = () => {
             </div>
             <div>Application for {selectedPosition.DepartmentName}</div>
             <div>for position: {selectedPosition.Position}</div>
-            <form className="flex flex-col gap-2" onSubmit={handleApplicationFormSubmit}>
+            <form
+              className="flex flex-col gap-2"
+              onSubmit={handleApplicationFormSubmit}
+            >
               <div>
+                <label htmlFor="Name">Name</label>
                 <input
                   className="border border-black w-full"
                   type="text"
+                  id="Name"
                   name="Name"
                   value={applicationFormData.Name}
                   required
                   autoComplete="off"
-                  placeholder="Enter Your Name"
+                  placeholder="Enter your Name"
                   onChange={handleApplicationFormChange}
                 />
               </div>
+
               <div>
+                <label htmlFor="Email">Email</label>
+                <input
+                  className="border border-black w-full"
+                  type="email"
+                  id="Email"
+                  name="Email"
+                  value={applicationFormData.Email}
+                  required
+                  autoComplete="off"
+                  placeholder="Enter your Email"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="Phone">Phone</label>
+                <input
+                  className="border border-black w-full"
+                  type="tel"
+                  id="Phone"
+                  name="Phone"
+                  value={applicationFormData.Phone}
+                  required
+                  autoComplete="off"
+                  placeholder="Enter your Contact Number"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="LinkedIn">LinkedIn</label>
                 <input
                   className="border border-black w-full"
                   type="text"
-                  name="Age"
-                  value={applicationFormData.Age}
+                  id="LinkedIn"
+                  name="LinkedIn"
+                  value={applicationFormData.LinkedIn}
                   required
                   autoComplete="off"
-                  placeholder="Enter Your Age"
+                  placeholder="Enter your LinkedIn Profile"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="ExpectedSalary">ExpectedSalary</label>
+                <input
+                  className="border border-black w-full"
+                  type="text"
+                  id="ExpectedSalary"
+                  name="ExpectedSalary"
+                  value={applicationFormData.ExpectedSalary}
+                  required
+                  autoComplete="off"
+                  placeholder="Entern your Expected Salary"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>Previous Work Experience (if any)</div>
+              <div>
+                <label htmlFor="PrevJobCompany">
+                  What company you worked for before
+                </label>
+                <input
+                  className="border border-black w-full"
+                  id="PrevJobCompany"
+                  type="text"
+                  name="PrevJobCompany"
+                  value={applicationFormData.PrevJobCompany}
+                  autoComplete="off"
+                  placeholder="Enter previous Company Name"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="PrevJobTitle">What was your job title</label>
+                <input
+                  className="border border-black w-full"
+                  type="text"
+                  id="PrevJobTitle"
+                  name="PrevJobTitle"
+                  value={applicationFormData.PrevJobTitle}
+                  autoComplete="off"
+                  placeholder="Enter previous Job Role"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label>Are you willing to relocate to Chennai</label>
+                <input
+                  id="relocateYes"
+                  type="radio"
+                  name="Relocate"
+                  value="Yes"
+                  checked={applicationFormData.Relocate === "Yes"}
+                  required
+                  onChange={handleApplicationFormChange}
+                />
+                <label htmlFor="relocateYes">Yes</label>
+                <input
+                  id="relocateNo"
+                  type="radio"
+                  name="Relocate"
+                  value="No"
+                  checked={applicationFormData.Relocate === "No"}
+                  required
+                  onChange={handleApplicationFormChange}
+                />
+                <label htmlFor="relocateNo">No</label>
+              </div>
+
+              <div>
+                <label htmlFor="resumeInput">Upload your resume</label>
+                <input
+                  id="resumeInput"
+                  type="file"
+                  accept=".pdf"
+                  onChange={handleResumeChange}
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="SelfIntro">Tell us about yourself</label>
+                <textarea
+                  className="border border-black w-full h-20 resize-none"
+                  name="SelfIntro"
+                  id="SelfIntro"
+                  value={applicationFormData.SelfIntro}
+                  required
+                  autoComplete="off"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="WhyIntrested">
+                  Why are you intrested in this position
+                </label>
+                <textarea
+                  className="border border-black w-full h-20 resize-none"
+                  name="WhyIntrested"
+                  id="WhyIntrested"
+                  value={applicationFormData.WhyIntrested}
+                  required
+                  autoComplete="off"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="YourExpectations">
+                  What are your expectations from this role
+                </label>
+                <textarea
+                  className="border border-black w-full h-20 resize-none"
+                  name="YourExpectations"
+                  id="YourExpectations"
+                  value={applicationFormData.YourExpectations}
+                  required
+                  autoComplete="off"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="OurExpectations">
+                  What can we expect from you
+                </label>
+                <textarea
+                  className="border border-black w-full h-20 resize-none"
+                  name="OurExpectations"
+                  id="OurExpectations"
+                  value={applicationFormData.OurExpectations}
+                  required
+                  autoComplete="off"
+                  onChange={handleApplicationFormChange}
+                />
+              </div>
+
+              <div className='flex gap-1'>
+                <label htmlFor="StartDate">
+                  When will you be available to join with us
+                </label>
+                <input
+                  type="date"
+                  name="StartDate"
+                  id="StartDate"
+                  className='border border-black'
+                  value={applicationFormData.StartDate}
+                  required
                   onChange={handleApplicationFormChange}
                 />
               </div>
               <div>
-                <input id='resumeInput' type='file' accept='.pdf' onChange={handleResumeChange} required />
-              </div>
-              <div>
-                <button type='submit'>Apply</button>
+                <button type="submit">Apply</button>
               </div>
             </form>
           </div>
