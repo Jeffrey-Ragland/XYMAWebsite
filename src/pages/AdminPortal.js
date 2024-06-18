@@ -103,46 +103,47 @@ const AdminPortal = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:4000/backend/addposition", {
-      method: 'POST',
+    fetch("http://34.93.162.58:4000/backend/addposition", {
+      method: "POST",
       headers: {
-        'Content-Type' : 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     })
-    .then((response) => {
-      if(response.ok) {
-        toast.success('Position added!');
-        setFormData({DeptName: '',
-                     PositionName: '',
-                     PositionDesc: '',
-                     date: null});
-        fetchPosition();
-      } 
-      else {
-        toast.error('Adding position failed');
-      }
-    })
-    .catch((error) => {
-      toast.error("Adding position failed");
-      console.log(error);
-    });
+      .then((response) => {
+        if (response.ok) {
+          toast.success("Position added!");
+          setFormData({
+            DeptName: "",
+            PositionName: "",
+            PositionDesc: "",
+            date: null,
+          });
+          fetchPosition();
+        } else {
+          toast.error("Adding position failed");
+        }
+      })
+      .catch((error) => {
+        toast.error("Adding position failed");
+        console.log(error);
+      });
   };
 
   //getting position details from db
   const fetchPosition = () => {
-    fetch("http://localhost:4000/backend/getposition", {
+    fetch("http://34.93.162.58:4000/backend/getposition", {
       method: "GET",
       headers: {
-        'Content-Type' : 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     })
-    .then(response => response.json())
-    .then(data => {
-      setPosition(data);
-      handleExpiredPositions(data);
-    })
-    .catch(error => console.log(error));
+      .then((response) => response.json())
+      .then((data) => {
+        setPosition(data);
+        handleExpiredPositions(data);
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect (() => {
@@ -166,25 +167,25 @@ const AdminPortal = () => {
 
   //deleting position from db
   const handleDeletePosition = (positionId) => {
-    fetch(`http://localhost:4000/backend/deleteposition/${positionId}`, {
-      method: 'DELETE',
+    fetch(`http://34.93.162.58:4000/backend/deleteposition/${positionId}`, {
+      method: "DELETE",
       headers: {
-        'Content-Type' : 'application/json',
+        "Content-Type": "application/json",
       },
     })
-    .then((response) => {
-      if(response.ok) {
-        toast.success('Position deleted!');
-        fetchPosition();
-        setConfirmPositionToDelete(null);
-      } else {
-        toast.error('Deleting position failed');
-      }
-    })
-    .catch((error) => {
-      toast.error("Deleting position failed");
-      console.log(error);
-    });
+      .then((response) => {
+        if (response.ok) {
+          toast.success("Position deleted!");
+          fetchPosition();
+          setConfirmPositionToDelete(null);
+        } else {
+          toast.error("Deleting position failed");
+        }
+      })
+      .catch((error) => {
+        toast.error("Deleting position failed");
+        console.log(error);
+      });
   };
 
   //deleting department from db
@@ -192,100 +193,100 @@ const AdminPortal = () => {
     const positionsToDelete = position.filter(pos => pos.DepartmentName === department);
 
     positionsToDelete.forEach(pos => {
-      fetch(`http://localhost:4000/backend/deleteposition/${pos._id}`, {
-        method: 'DELETE',
+      fetch(`http://34.93.162.58:4000/backend/deleteposition/${pos._id}`, {
+        method: "DELETE",
         headers: {
-          'Content-Type' : 'application/json',
+          "Content-Type": "application/json",
         },
       })
-      .then((response) => {
-        if(response.ok) {
-          toast.success('Department deleted!');
-          fetchPosition();
-          setConfirmDepartmentToDelete(null);
-        } else {
-          toast.error('Failed to delete department');
-        }
-      })
-      .catch((error) => {
-        toast.error("Failed to delete department");
-        console.log(error);
-      });
+        .then((response) => {
+          if (response.ok) {
+            toast.success("Department deleted!");
+            fetchPosition();
+            setConfirmDepartmentToDelete(null);
+          } else {
+            toast.error("Failed to delete department");
+          }
+        })
+        .catch((error) => {
+          toast.error("Failed to delete department");
+          console.log(error);
+        });
     });
   };
 
   //update position name
   const handleUpdatePositionName = (positionId) => {
     const editedName = editedPositions[positionId];
-    fetch(`http://localhost:4000/backend/updateposition/${positionId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type' : 'application/json',
-      },
-      body: JSON.stringify({
-        PositionName: editedName,
-      }),
-    })
-    .then((response) => {
-      if(response.ok) {
-        toast.success('Position title updated!');
-        fetchPosition();
-        setEditedPositions((prevState) => {
-          const newState = {...prevState };
-          delete newState[positionId];
-          return newState; 
-        });
-      } else {
-        toast.error('Failed to update position title');
-      }
-    })
-    .catch((error) => {
-      toast.error("Failed to update position title");
-      console.log(error);
-    });
-  };
-
-  // update position description
-  const handleUpdatePositionDesc = (positionId) => {
-    const editedDesc = editedPositionDesc[positionId];
-    fetch(`http://localhost:4000/backend/updateposition/${positionId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type' : 'application/json',
-      },
-      body: JSON.stringify({
-        PositionDesc: editedDesc,
-      }),
-    })
-    .then((response) => {
-      if(response.ok) {
-        toast.success('Position description updated!');
-        fetchPosition();
-        setEditedPositionDesc((prevState) => {
-          const newState = {...prevState};
-          delete newState[positionId];
-          return newState;
-        });
-      } else {
-        toast.error('Failed to update position description');
-      }
-    })
-    .catch((error) => {
-      toast.error("Failed to update position description");
-      console.log(error);
-    });
-  };
-
-  // update last date
-  const handleUpdateDate = (positionId) => {
-    const editedDate = editedDates[positionId];
-    fetch(`http://localhost:4000/backend/updateposition/${positionId}`, {
+    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        LastDate:editedDate,
+        PositionName: editedName,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          toast.success("Position title updated!");
+          fetchPosition();
+          setEditedPositions((prevState) => {
+            const newState = { ...prevState };
+            delete newState[positionId];
+            return newState;
+          });
+        } else {
+          toast.error("Failed to update position title");
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed to update position title");
+        console.log(error);
+      });
+  };
+
+  // update position description
+  const handleUpdatePositionDesc = (positionId) => {
+    const editedDesc = editedPositionDesc[positionId];
+    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        PositionDesc: editedDesc,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          toast.success("Position description updated!");
+          fetchPosition();
+          setEditedPositionDesc((prevState) => {
+            const newState = { ...prevState };
+            delete newState[positionId];
+            return newState;
+          });
+        } else {
+          toast.error("Failed to update position description");
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed to update position description");
+        console.log(error);
+      });
+  };
+
+  // update last date
+  const handleUpdateDate = (positionId) => {
+    const editedDate = editedDates[positionId];
+    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        LastDate: editedDate,
       }),
     })
       .then((response) => {
@@ -483,7 +484,8 @@ const AdminPortal = () => {
                   Added Positions
                 </div>
                 {uniqueDepartments.map((department) => (
-                  <div className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white">
+                  <div key={department} 
+                  className="border border-gray-400 rounded-md mb-2 cursor-pointer flex bg-white">
                     <div
                       className="w-[90%] p-1 rounded-md"
                       onClick={() => {

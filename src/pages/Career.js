@@ -6,8 +6,8 @@ import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import noData from '../Assets/noData.jpg';
 import { IoMdClose } from "react-icons/io";
-// import ReactReadMoreReadLess from "react-read-more-read-less";
-// import useWindowSize from "react-use/lib/useWindowSize";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Career = () => {
   
@@ -82,12 +82,11 @@ const Career = () => {
 
   //application form -> resume
   const handleResumeChange = (e) => {
-    // setResume(e.target.files[0]);
     const file = e.target.files[0];
-    if(file.type === 'application/pdf') {
+    if(file && file.type === 'application/pdf') {
       setResume(file);
     } else {
-      alert('please upload only pdf file');
+      toast.warning('Please upload only PDF file!');
       e.target.value = null;
       setResume(null);
     };
@@ -100,15 +99,18 @@ const Career = () => {
 
   //getting position details from db
   const fetchPosition = () => {
-    fetch("http://localhost:4000/backend/getposition", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setPosition(data))
-      .catch((error) => console.log(error));
+    //fetch("http://localhost:4000/backend/getposition", 
+      fetch("http://34.93.162.58:4000/backend/getposition", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => setPosition(data))
+        .catch((error) => {
+          // console.log(error)
+        });
   };
 
   useEffect(() => {
@@ -142,7 +144,7 @@ const Career = () => {
      formData.append("ApplyingForPosition",selectedPosition.Position);
      formData.append("file", resume);
 
-     console.log('backend form data',formData)
+    // console.log('backend form data',formData)
 
      fetch("http://localhost:4000/backend/uploadapplicationform", {
       method: 'POST',
@@ -150,9 +152,9 @@ const Career = () => {
      })
      .then(response => {
       if(!response.ok) {
-        throw new Error('Error uploading application form')
+        //throw new Error('Error uploading application form')
       } else {
-        alert("Application form sent succssfully");
+        toast.success('We have received your response!');
         setApplicationFormData({
           Name: "",
           Email: "",
@@ -181,7 +183,7 @@ const Career = () => {
       }
      })
      .catch(error => {
-      console.error(error);
+      //console.error(error);
      });
   };
 
@@ -190,6 +192,7 @@ const Career = () => {
   return (
     <div>
       <div className="h-[10vh]"></div>
+      <ToastContainer/>
       {/* scroll progress bar */}
       <div
         className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
@@ -290,6 +293,7 @@ const Career = () => {
             >
               {uniqueDepartments.map((department) => (
                 <div
+                  key={department}
                   className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
                     selectedDepartment === department
                       ? "bg-[#01285C] text-white border-[#01285C]"
@@ -311,8 +315,7 @@ const Career = () => {
                     pos.DepartmentName === selectedDepartment
                 )
                 .map((pos) => (
-                  <>
-                    <div className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
+                    <div key={pos._id} className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
                       {selectedDepartment === "All" && (
                         <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
                           {pos.DepartmentName}
@@ -342,7 +345,6 @@ const Career = () => {
                         Apply Now
                       </button>
                     </div>
-                  </>
                 ))}
             </div>
           </div>

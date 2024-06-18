@@ -265,7 +265,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                 >
-                  <option value="" disabled selected hidden>
+                  <option value="" disabled>
                     Select Solution
                   </option>
                   <option value="sales">Sales</option>
@@ -351,9 +351,9 @@ const ContactPage = () => {
             width="100%"
             height="100%"
             style={{ border: "0" }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 

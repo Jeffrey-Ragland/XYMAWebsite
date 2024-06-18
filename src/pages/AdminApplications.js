@@ -16,20 +16,20 @@ const AdminApplications = () => {
   const [selectedApplicationUserId, setSelectedApplicationUserId] = useState(null);
   const [openUserApplication, setOpenUserApplication] = useState(false);
   const fetchApplicationForm = () => {
-    fetch("http://localhost:4000/backend/getapplicationform")
-    .then(response => {
-      if(!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      setApplicationData(data);
-      console.log('application form data',data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+    fetch("http://34.93.162.58:4000/backend/getapplicationform")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setApplicationData(data);
+        console.log("application form data", data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
   useEffect(() => {
     fetchApplicationForm();
@@ -210,7 +210,7 @@ const AdminApplications = () => {
                       </div>
                       <div className="border border-gray-400 p-1 text-gray-800 w-1/2 bg-white rounded-md">
                         <span className="font-medium">Contact No:</span>{" "}
-                        {app.Phone}
+                        {app.Phone} 
                       </div>
                     </div>
 
