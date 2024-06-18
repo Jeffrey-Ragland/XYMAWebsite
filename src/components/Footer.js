@@ -101,8 +101,10 @@ const Footer = () => {
             >
               Get&nbsp;in&nbsp;Touch
             </button>
-            <button className="bg-white text-[#01285C] rounded-full w-44 px-1"
-            onClick={handleBrochureDownload}>
+            <button
+              className="bg-white text-[#01285C] rounded-full w-44 px-1"
+              onClick={handleBrochureDownload}
+            >
               Download&nbsp;Brochure
             </button>
           </div>
@@ -219,9 +221,12 @@ const Footer = () => {
               >
                 Ztar
               </div>
-              {/* <div className="mb-3 hover:text-orange-500 duration-200 cursor-pointer">
+              <div
+                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                onClick={() => handleProductClick("IPAMS")}
+              >
                 I-PAMS
-              </div> */}
+              </div>
             </div>
 
             <div className="w-1/3">

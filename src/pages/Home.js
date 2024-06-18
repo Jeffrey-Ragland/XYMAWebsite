@@ -8,6 +8,7 @@ import paints from '../Assets/paintsHome.jpg'
 import utmaps from '../Assets/newut.jpeg';
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
+import ipams from '../Assets/IPAMS.png'
 import newpage from '../Assets/newpage.png';
 import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
@@ -52,6 +53,7 @@ export const Home = () => {
   const [utmapsBadge, setUtmapsBadge] = useState(false);
   const [portsBadge, setPortsBadge] = useState(false);
   const [ztarBadge, setZtarBadge] = useState(false);
+  const [ipamsBadge, setIpamsBadge] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -387,6 +389,9 @@ export const Home = () => {
             className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
+            <div className="mb-2 ml-2 font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
+              Industries:
+            </div>
             <div>
               <div
                 className={`md:w-full cursor-pointer p-1 mb-1 flex ${
@@ -799,52 +804,6 @@ export const Home = () => {
               </div>
             </>
           )}
-
-          {/* <div
-            className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
-            data-aos="slide-right"
-          >
-            {clickedImage && (
-              <div>
-                <img
-                  src={clickedImage}
-                  alt="Clicked Image"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover"
-                />
-              </div>
-            )}
-            <div
-              className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to bottom, white, rgb(209, 213, 219))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              {imageName}
-            </div>
-          </div> */}
-          {/* elements description */}
-          {/* <div
-            className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
-            data-aos="slide-left"
-          >
-            {clickedImage && (
-              <div
-                className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
-                style={{
-                  color: "transparent",
-                  background:
-                    "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
-                  backgroundClip: "text",
-                  width: "100%",
-                }}
-              >
-                {imageDesc}
-              </div>
-            )}
-          </div> */}
         </div>
       </section>
 
@@ -859,12 +818,6 @@ export const Home = () => {
             overlay ? "opacity-40" : "opacity-0"
           }`}
         ></div>
-        {/* {overlay && (
-          <div className='hidden xl:block w-full h-full bg-black/40 duration-500 absolute'>
-
-          </div>
-        )} */}
-
         <div
           // ref={sectionRefs.section2}
           className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]"
@@ -882,6 +835,7 @@ export const Home = () => {
         </div>
 
         <div className=" mt-3 px-4 md:px-0 md:flex flex-wrap justify-center gap-2 text-[#FE7D18] z-10">
+          {/* utmaps badge */}
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
@@ -932,6 +886,7 @@ export const Home = () => {
             </div>
           </div>
 
+          {/* ports badge */}
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
@@ -951,7 +906,7 @@ export const Home = () => {
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
-                PoRTS: Multi-Parameter Viscosity, Density and Temperature
+                PoRTS: Multi-Parameter Measurement
               </div>
             </div>
             <div className="flex justify-end md:justify-normal">
@@ -983,6 +938,8 @@ export const Home = () => {
               )}
             </div>
           </div>
+
+          {/* ztar badge */}
           <div>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
@@ -1032,6 +989,59 @@ export const Home = () => {
               )}
             </div>
           </div>
+
+          {/* ipams badge */}
+          <div className="relative">
+            <div
+              className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
+              onMouseEnter={() => {
+                handleOverlayEnter();
+                setIpamsBadge(true);
+              }}
+              onMouseLeave={() => {
+                handleOverlayLeave();
+                setIpamsBadge(false);
+              }}
+            >
+              <div>
+                <img
+                  className="object-cover object-center rounded-full w-6 h-6 p-0.5 bg-black"
+                  src={ipams}
+                  alt="ipams"
+                />
+              </div>
+              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+                I-PAMS: Asset Monitoring
+              </div>
+            </div>
+
+            <div className="flex justify-end md:justify-normal">
+              {ipamsBadge && (
+                <div className="absolute right-[2%] bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[350px] z-10 text-gray-500 md:flex">
+                  <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
+                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                      <img
+                        className="object-cover object-center p-5"
+                        src={ipams}
+                        alt="ipams"
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
+                    <div className="text-base font-bold text-black mb-1">
+                      I-PAMS
+                    </div>
+                    <div className="text-xs text-justify">
+                      I-PAMS is out Industrial-IoT based asset monitoring system
+                      for industries. It provides real-time data visualization
+                      and detailed analysis delivering complete process control
+                      to the operator.
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="relative block w-[90%] md:w-[50%] xl:w-[40%] mt-2 2xl:w-[50%] ">
@@ -1061,7 +1071,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
-              Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
+              Sensor&nbsp;Life&nbsp;up&nbsp;to&nbsp;50,000&nbsp;hrs
             </div>
           </div>
           <div className="absolute flex text-right top-[30%] left-[4%] rounded-2xl">
@@ -1084,7 +1094,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
-              Multi - Point Measurement
+              Multi&nbsp;Point&nbsp;Measurement
             </div>
           </div>
           <div className="absolute flex text-right top-[3%] left-[20%] rounded-2xl">
@@ -1107,7 +1117,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
-              Energy&nbsp;Management System-IoT
+              Energy&nbsp;Management&nbsp;System&nbsp;IoT
             </div>
           </div>
           <div className="absolute flex text-right top-[3%] right-[20%] rounded-2xl">
@@ -1130,7 +1140,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
-              Zero&nbsp;Manual Intervention
+              Zero&nbsp;Manual&nbsp;Intervention
             </div>
           </div>
           <div className="absolute flex text-right top-[30%] right-[4%] rounded-2xl">
@@ -1153,7 +1163,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
-              AI&nbsp;Enable&nbsp;Corrective Actions
+              AI&nbsp;Enable&nbsp;Corrective&nbsp;Actions
             </div>
           </div>
           <div className="absolute flex text-right top-[65%] -right-[1%] rounded-2xl">
@@ -1176,7 +1186,7 @@ export const Home = () => {
               </div>
             )}
             <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
-              Retrofit Benifits
+              Retrofit&nbsp;Benifits
             </div>
           </div>
         </div>

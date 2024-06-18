@@ -8,6 +8,7 @@ import utmap from "../Assets/utmaps.png";
 import isteel from "../Assets/isteel.png";
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
+import ipams from '../Assets/IPAMS.png';
 import paint from "../Assets/paint.png";
 import metal from "../Assets/metal.png";
 import aicon from "../Assets/aluminumicon.png";
@@ -19,9 +20,21 @@ import eor from "../Assets/eor.png";
 import utmapsLogo from '../Assets/utmapsLogo.png';
 import portsLogo from '../Assets/portsLogo.png';
 import ztarLogo from '../Assets/ztarLogo.png';
+import ipamsLogo from '../Assets/ipamsLogo.png';
+import ipamsIcon1 from '../Assets/ipamsIcon1.png';
+import ipamsIcon2 from "../Assets/ipamsIcon2.png";
+import ipamsIcon3 from "../Assets/ipamsIcon3.png";
 // import video from "../Images/contactOverlay2.mp4";
 import utmapsDemo from '../Assets/utmapsDemo.mp4'
 import portsDemo from '../Assets/portsDemo.mp4'
+import additionalLogo1 from '../Assets/additionalLogo1.png';
+import additionalLogo2 from "../Assets/additionalLogo2.png";
+import additionalLogo3 from "../Assets/additionalLogo3.png";
+import additionalLogo4 from "../Assets/additionalLogo4.png";
+import additionalLogo5 from "../Assets/additionalLogo5.png";
+import additionalLogo6 from "../Assets/additionalLogo6.png";
+import additionalLogo7 from "../Assets/additionalLogo7.png";
+import line from "../Assets/underline.png";
 import { RiPlayCircleFill } from "react-icons/ri";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,6 +52,7 @@ const Product = () => {
   const [renderReadMoreUtmaps, setRenderReadMoreUtmaps] = useState(false);
   const [renderReadMorePorts, setRenderReadMorePorts] = useState(false);
   const [renderReadMoreZtar, setRenderReadMoreZtar] = useState(false);
+  const [renderReadMoreIpams, setRenderReadMoreIpams] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const sliderRef = useRef(null);
@@ -49,6 +63,7 @@ const Product = () => {
     uTMapS: useRef(null),
     PoRTS: useRef(null),
     Ztar: useRef(null),
+    IPAMS: useRef(null)
   };
 
   //to control cover image slide change
@@ -219,7 +234,7 @@ const Product = () => {
                   backgroundColor: "rgba(255, 255, 255, 1)",
                 }}
               >
-                Up to 1600° C
+                Up to 1450° C
               </div>
               <div className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
                 “The Disruptive Ultrasonic Waveguide Technology”
@@ -345,6 +360,16 @@ const Product = () => {
           >
             <img src={ztarLogo} className="h-6 rounded-full"></img>
           </div>
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.IPAMS)}
+            className={`cursor-pointer bg-black rounded-full ${
+              activeSection.includes("IPAMS")
+                ? "border-4 border-orange-400"
+                : "border-4 border-black"
+            }`}
+          >
+            <img src={ipamsLogo} className="h-6 rounded-full"></img>
+          </div>
         </div>
       )}
 
@@ -420,7 +445,7 @@ const Product = () => {
               {/* orange tab */}
               <div className="md:flex">
                 <div className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
-                  Temperature Range: 25° C to 1600° C
+                  Temperature Range: 25° C to 1450° C
                 </div>
               </div>
 
@@ -482,7 +507,7 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className="w-full md:w-[20%] flex items-center justify-center mt-4 md:mt-0">
+                  <div className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto  ">
                     <img
                       className="h-60 md:h-auto"
                       src={utmap}
@@ -490,45 +515,131 @@ const Product = () => {
                       data-aos="slide-left"
                     />
                   </div>
-                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                      Explanation
+                  <div className="  w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl h-[30%] md:h-auto ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div className=" ">About µTMapS & µSTMapS</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
                     </div>
-                    <div>
-                      µTMapS & µSTMapS are IIoT-enabled temperature measurement
-                      and temperature profiling sensors that captures continuous
-                      measurements at multiple points with a single customizable
-                      waveguide with multiple configurations in contrast to
-                      contact based thermocouples/RTDs or contactless IR guns.
-                    </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Nulla consequat massa quis enim.
-                      Donec pede justo, fringilla vel, aliquet nec, vulputate
-                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                      venenatis vitae, justo. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium.
+                    <div
+                      className="overflow-auto"
+                      style={{ scrollbarWidth: "none" }}
+                    >
+                      <div className="mb-2 2xl:mb-6">
+                        µTMapS & µSTMapS are IIoT-enabled temperature
+                        measurement and temperature profiling sensors that
+                        captures continuous measurements at multiple points with
+                        a single customizable waveguide with multiple
+                        configurations in contrast to contact based
+                        thermocouples/RTDs or contactless IR guns.
+                      </div>
+                      <div>
+                        The edge computing unit in the XYMA Electronics Unit
+                        performs advanced computations to extract temperature
+                        data from the received ultrasonic signals. The output
+                        from the edge classifiers is transmitted to the
+                        dashboard using industrial-standard wireless (or wired)
+                        communication technology via a transmitting unit.The
+                        status can be monitored in DCS system and displayed on
+                        XYMA's customizable dashboard.
+                      </div>
                     </div>
                   </div>
-                  <div className=" w-full md:w-[40%] px-4 pt-4 md:pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus.
+                  <div className="  w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div>Specifications</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
                     </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium quis, sem. Nulla consequat massa
-                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                      vulputate eget, arcu. Imperdiet a, venenatis vitae, justo.
-                      Donec ultricies nec, pellentesque eu, pretium. In enim
-                      justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                    <div className="flex flex-col justify-around  h-full">
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img src={additionalLogo1} alt="additionalLogo1" />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Functions:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Measures Unit Temperature (µTMapS), Skin Temperature
+                            (µSTMapS)
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo2}
+                            alt="additionalLogo2"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Measuring&nbsp;Range:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Temperature: 25 °C to 1450 °C
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo3}
+                            alt="additionalLogo3"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Resolution:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Temperature: 0.01 °C
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo4}
+                            alt="additionalLogo4"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Accuracy:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Temperature: ±1 °C
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo5}
+                            alt="additionalLogo5"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Power&nbsp;Supply:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Compatible with Industrial Standards
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -674,56 +785,193 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                      Explanation
-                    </div>
-                    <div>
-                      PoRTS is an invasive/non-invasive based IIoT-enabled
-                      rheology and temperature measurement sensor that
-                      continuously captures multiple parameters such as
-                      viscosity, density and temperature with a single waveguide
-                      unlike discrete measurements with thermocouple/RTDs or
-                      discrete measurements with sampling from viscometer and
-                      density meter.
-                    </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Nulla consequat massa quis enim.
-                      Donec pede justo, fringilla vel, aliquet nec, vulputate
-                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                      venenatis vitae, justo. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium.
-                    </div>
-                  </div>
-                  <div className=" w-full md:w-[40%] px-4 pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus.
-                    </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium quis, sem. Nulla consequat massa
-                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                      vulputate eget, arcu. Imperdiet a, venenatis vitae, justo.
-                      Donec ultricies nec, pellentesque eu, pretium. In enim
-                      justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                    </div>
-                  </div>
-                  <div className="w-full md:w-[20%] flex items-center justify-center mt-4 md:mt-0">
+                  <div className="w-full md:w-[20%] h-[30%] md:h-auto   flex items-center justify-center">
                     <img
                       className="h-60 md:h-auto"
                       src={ports}
                       alt="ports"
-                      data-aos="slide-right"
+                      data-aos="slide-left"
                     />
+                  </div>
+                  <div className=" w-full md:w-[40%] h-[30%] md:h-auto px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div className=" ">About PoRTS</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
+                    </div>
+                    <div
+                      className="overflow-auto"
+                      style={{ scrollbarWidth: "none" }}
+                    >
+                      <div className="mb-2 2xl:mb-6">
+                        PoRTS is an invasive/non-invasive based IIoT-enabled
+                        rheology and temperature measurement sensor that
+                        continuously captures multiple parameters such as
+                        viscosity, density and temperature with a single
+                        waveguide unlike discrete measurements with
+                        thermocouple/RTDs or discrete measurements with sampling
+                        from viscometer and density meter.
+                      </div>
+                      <div>
+                        The edge computing unit in the XYMA Electronics Unit
+                        performs advanced computations to extract measurement
+                        data from received ultrasonic signals. The output from
+                        the edge classifiers is transmitted to the dashboard
+                        using industrial-standard wireless (or wired)
+                        communication technology via a transmitting unit. The
+                        status can be monitored in DCS system and displayed on
+                        XYMA's customizable dashboard.
+                      </div>
+                    </div>
+                  </div>
+                  <div className=" w-full md:w-[40%] h-[40%] md:h-auto   px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div>Specifications</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-around  h-full">
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img src={additionalLogo1} alt="additionalLogo1" />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Functions:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Measures Viscosity, Density and Temperature
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo2}
+                            alt="additionalLogo2"
+                          />
+                        </div>
+                        <div className="w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Measuring&nbsp;Range:
+                          </div>
+                          <div className="text-[#60646C]">
+                            <div className="flex items-center gap-1">
+                              <div className="text-[#01285C]">Viscosity:</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">
+                                50cP - 15000 cP,
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <div className="text-[#01285C]">Density:</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">
+                                700 kg/m³ to 1200 kg/m³,
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <div className="text-[#01285C]">Temperature:</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">
+                                20 °C - 400 °C
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo3}
+                            alt="additionalLogo3"
+                          />
+                        </div>
+                        <div className="w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Resolution:
+                          </div>
+                          <div className="text-[#60646C]">
+                            <div className="flex gap-2">
+                              <div className="flex items-center gap-1">
+                                <div className="text-[#01285C]">Viscosity:</div>
+                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                  10cP,
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <div className="text-[#01285C]">Density:</div>
+                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                  1 kg/m³,
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <div className="text-[#01285C]">Temperature:</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">
+                                0.1 °C
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo4}
+                            alt="additionalLogo4"
+                          />
+                        </div>
+                        <div className="w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Accuracy:
+                          </div>
+                          <div className="text-[#60646C]">
+                            <div className="flex gap-2">
+                              <div className="flex items-center gap-1">
+                                <div className="text-[#01285C]">Viscosity:</div>
+                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                  ±1 %,
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <div className="text-[#01285C]">Density:</div>
+                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                  ±1 %
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <div className="text-[#01285C]">Temperature:</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">±1 °C</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo5}
+                            alt="additionalLogo5"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Power&nbsp;Supply:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Compatible with Industrial Standards
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <button
@@ -847,7 +1095,7 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className=" w-full md:w-[20%] flex items-center justify-center">
+                  <div className="w-full md:w-[20%] h-[30%] md:h-auto  flex items-center justify-center">
                     <img
                       className="h-60 md:h-auto"
                       src={ztar}
@@ -855,48 +1103,375 @@ const Product = () => {
                       data-aos="slide-left"
                     />
                   </div>
-                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div className="text-black font-semibold text-left text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                      Explanation
+                  <div className=" w-full md:w-[40%] h-[30%] md:h-auto px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div className=" ">About Ztar</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
                     </div>
-                    <div>
-                      Ztar is a contact/contactless IIoT-enabled level
-                      measurement sensor that captures continuous level across
-                      any hazardous environment with accuracy in contrast to
-                      radar-based level measurement sensors.
-                    </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Nulla consequat massa quis enim.
-                      Donec pede justo, fringilla vel, aliquet nec, vulputate
-                      eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                      venenatis vitae, justo. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium.
+
+                    <div
+                      className="overflow-auto"
+                      style={{ scrollbarWidth: "none" }}
+                    >
+                      <div className="mb-2 2xl:mb-6">
+                        Ztar is a contact/contactless IIoT-enabled level
+                        measurement sensor that captures continuous level across
+                        any hazardous environment with accuracy in contrast to
+                        radar-based level measurement sensors.
+                      </div>
+                      <div>
+                        Ztar is a waveguide based ultrasonic level sensor that
+                        provides accurate measurements even at higher
+                        temperatures. It is compatible with corrosive and
+                        hazardous fluids due to wide range of waveguide
+                        materials.
+                      </div>
                     </div>
                   </div>
-                  <div className=" w-full md:w-[40%] px-4 pt-4 md:pt-12 flex flex-col gap-2 text-[#60646C] font-medium text-justify text-xs md:text-sm lg:text-base 2xl:text-xl">
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus.
+                  <div className=" w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div>Specifications</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
                     </div>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                      Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                      natoque penatibus et magnis dis parturient montes,
-                      nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                      pellentesque eu, pretium quis, sem. Nulla consequat massa
-                      quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                      vulputate eget, arcu.
+                    <div className="flex flex-col justify-around  h-full">
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img src={additionalLogo1} alt="additionalLogo1" />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Functions:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Measures Fluid Level
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo2}
+                            alt="additionalLogo2"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Measuring&nbsp;Level:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Level: 0.03 m to 10 m
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo3}
+                            alt="additionalLogo3"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Resolution:
+                          </div>
+                          <div className="text-[#60646C]">Level: 1 mm</div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo4}
+                            alt="additionalLogo4"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Accuracy:
+                          </div>
+                          <div className="text-[#60646C]">Level: ±1 %</div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo5}
+                            alt="additionalLogo5"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Power&nbsp;Supply:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Compatible with Industrial Standards
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <button
-                  className="text-orange-400 absolute right-[1%] top-[2%]"
+                  className="text-orange-400 absolute right-2 top-2"
                   onClick={() => setRenderReadMoreZtar(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* i-pams */}
+        <section id="IPAMS" ref={sectionRefs.IPAMS}>
+          <div
+            className="md:flex p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg mb-4 max-w-[1640px]"
+            data-aos="flip-up"
+          >
+            <div className=" w-full md:w-[45%] mb-2 xl:mb-0 xl:p-2 ">
+              <div
+                className="w-full h-full flex flex-col justify-center items-center rounded-lg relative"
+                style={{
+                  background:
+                    "radial-gradient(49.48% 49.48% at 50% 34.03%, #808080 0%, #808080 0%, #1A1A1A 100%)",
+                }}
+              >
+                <div className="p-16 lg:p-24 2xl:p-28">
+                  <img
+                    className="object-cover object-center"
+                    src={ipams}
+                    alt="ipams"
+                  />
+                </div>
+                <div
+                  className="absolute bottom-0 w-full px-4 rounded-b-lg py-2"
+                  style={{
+                    background: "rgba(64, 64, 64, 0.5)",
+                    backdropFilter: "blur(9px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                  }}
+                >
+                  <div
+                    className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
+                    style={{
+                      background:
+                        "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+                      WebkitBackgroundClip: "text",
+                      color: "transparent",
+                      backgroundColor: "rgba(255, 255, 255, 1)",
+                      display: "inline-block",
+                    }}
+                  >
+                    I-PAMS
+                  </div>
+                  <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                    Provides real-time data visualization and detailed analysis
+                    delivering complete process control.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
+              {/* heading and play button */}
+              <div className="  md:flex items-start justify-between gap-2 mb-2">
+                <div className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
+                  IoT for Plant Asset Monitoring System
+                </div>
+                <div
+                  className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                  onClick={() => setRenderUtmapsVideo(true)}
+                >
+                  <div className="text-[#FE9D1C]">
+                    <RiPlayCircleFill size={20} />
+                  </div>
+                  <div className="text-sm mb-[2px] text-white">
+                    Play&nbsp;Video
+                  </div>
+                </div>
+              </div>
+
+              {/* orange tab */}
+              <div className="md:flex">
+                <div className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                  Real Time Monitoring Access
+                </div>
+              </div>
+
+              {/* description */}
+              <div className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
+                I-PAMS is out Industrial-IoT based asset monitoring system for
+                industries. It provides real-time data visualization and
+                detailed analysis delivering complete process control to the
+                operator.
+                <span
+                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  onClick={() => setRenderReadMoreIpams(true)}
+                >
+                  Read More...
+                </span>
+              </div>
+
+              {/* cards */}
+              <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
+                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
+                  <div className="flex items-center justify-center border border-[#D9D9E0] rounded-md p-1">
+                    <img
+                      className="w-9 rounded-md"
+                      src={ipamsIcon1}
+                      alt="ipamsIcon1"
+                    />
+                  </div>
+                  <div className="font-semibold">Real-time Thermal Mapping</div>
+                </div>
+
+                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
+                  <div className="flex items-center justify-center border border-[#D9D9E0] rounded-md p-1">
+                    <img
+                      className="w-9 rounded-md"
+                      src={ipamsIcon2}
+                      alt="ipamsIcon2"
+                    />
+                  </div>
+                  <div className="font-semibold">Predictive Maintenance</div>
+                </div>
+              </div>
+
+              <div className=" md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
+                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
+                  <div className="flex items-center justify-center border border-[#D9D9E0] rounded-md p-1">
+                    <img
+                      className="w-9 rounded-md"
+                      src={ipamsIcon3}
+                      alt="ipamsIcon3"
+                    />
+                  </div>
+                  <div className="font-semibold">Data Visualization</div>
+                </div>
+              </div>
+            </div>
+            {/* ipams additional description */}
+            {renderReadMoreIpams && (
+              <div
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                data-aos="zoom-in"
+              >
+                {/* content */}
+                <div className="md:flex h-full">
+                  <div className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto p-4">
+                    <img
+                      className="h-60 md:h-auto"
+                      src={ipams}
+                      alt="ipams"
+                      data-aos="slide-left"
+                    />
+                  </div>
+                  <div className="w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl h-[30%] md:h-auto ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div className=" ">About I-PAMS</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
+                    </div>
+                    <div
+                      className="overflow-auto"
+                      style={{ scrollbarWidth: "none" }}
+                    >
+                      <div className="mb-2 2xl:mb-6">
+                        I-PAMS is out Industrial-IoT based asset monitoring
+                        system for industries. It provides real-time data
+                        visualization and detailed analysis delivering complete
+                        process control to the operator. It enables report
+                        generation through a wide range of formats including
+                        CSV, PDF etc.
+                      </div>
+                      <div>
+                        I-PAMS also provides a wide range of widgets which are
+                        easily accessible. These widgets will be then used to
+                        visualize the data.Since I-PAMS provide real time
+                        monitoring, the user will be alerted through sms, email
+                        etc. I-PAMS provides data management and analytics tools
+                        for predictive maintenance. Through digital twin, the
+                        user can create a digital model of physical asset to
+                        increase the overall efficiency.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
+                    <div className="flex">
+                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <div>Specifications</div>
+                        <img className="w-full h-2" src={line}></img>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-around  h-full">
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img src={additionalLogo1} alt="additionalLogo1" />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Functions:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Real Time Monitoring Assets
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo6}
+                            alt="additionalLogo6"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Security&nbsp;Protocol:
+                          </div>
+                          <div className="text-[#60646C]">
+                            HTTPS(TCL/SSL), IPsec, SSH, WPA/WPA2/2PA3, Bcrypt,
+                            Keberos
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <div className=" w-[12%]">
+                          <img
+                            className="w-20"
+                            src={additionalLogo7}
+                            alt="additionalLogo7"
+                          />
+                        </div>
+                        <div className="flex gap-2 w-[88%]">
+                          <div className="text-[#01285C] font-semibold">
+                            Data&nbsp;Connectivity Protocol:
+                          </div>
+                          <div className="text-[#60646C]">
+                            Zigbee, WiFi(2.49Hz, 5.49Hz), Bluetooth-LE, LORA,
+                            RS-232, Tcp/Ip, Modbus, RS-485, Cellular
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="text-orange-400 absolute right-2 top-2"
+                  onClick={() => setRenderReadMoreIpams(false)}
                 >
                   <IoMdCloseCircle size={30} />
                 </button>

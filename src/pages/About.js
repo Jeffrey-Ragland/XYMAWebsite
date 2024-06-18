@@ -11,7 +11,7 @@ import c3 from '../Assets/Framec3.png';
 import c4 from '../Assets/Framec4.png';
 import c5 from '../Assets/Framec5.png';
 import c6 from '../Assets/Framec6.png';
-import ceo from "../Assets/ceo.jpeg";
+import ceo from "../Assets/ceo.jpg";
 import cto from "../Assets/cto.jpg";
 import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
@@ -193,15 +193,15 @@ const About = () => {
             <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
               <div>
                 <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
-                  20+
+                  50+
                 </div>
                 <div className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
-                  Years&nbsp;of&nbsp;R&D
+                  Years&nbsp;of&nbsp;Industrial<br/>Experience
                 </div>
               </div>
               <div>
                 <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
-                  18+
+                  20+
                 </div>
                 <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Intellectual
