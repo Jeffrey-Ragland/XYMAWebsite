@@ -25,8 +25,9 @@ import ipamsIcon1 from '../Assets/ipamsIcon1.png';
 import ipamsIcon2 from "../Assets/ipamsIcon2.png";
 import ipamsIcon3 from "../Assets/ipamsIcon3.png";
 // import video from "../Images/contactOverlay2.mp4";
-import utmapsDemo from '../Assets/utmapsDemo.mp4'
-import portsDemo from '../Assets/portsDemo.mp4'
+import utmapsDemo from '../Assets/utmapsDemo.mp4';
+import portsDemo from '../Assets/portsDemo.mp4';
+import ipamsDemo from '../Assets/ipamsDemo.mp4';
 import additionalLogo1 from '../Assets/additionalLogo1.png';
 import additionalLogo2 from "../Assets/additionalLogo2.png";
 import additionalLogo3 from "../Assets/additionalLogo3.png";
@@ -47,6 +48,8 @@ const Product = () => {
   const [currentSlide, setCurrentSlide] = useState(0); //cover image slide
   const [renderUtmapsVideo, setRenderUtmapsVideo] = useState(false); //product video
   const [renderPortsVideo, setRenderPortsVideo] = useState(false);
+  const [renderZtarVideo, setRenderZtarVideo] = useState(false);
+  const [renderIpamsVideo, setRenderIpamsVideo] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false); //icon menu
   const [activeSection, setActiveSection] = useState([]); //sections in viewport
   const [renderReadMoreUtmaps, setRenderReadMoreUtmaps] = useState(false);
@@ -948,7 +951,9 @@ const Product = () => {
                             </div>
                             <div className="flex items-center gap-1">
                               <div className="text-[#01285C]">Temperature:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">±1 °C</div>
+                              <div className="text-xs md:text-sm 2xl:text-lg">
+                                ±1 °C
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1039,7 +1044,10 @@ const Product = () => {
                   Ultrasonic contact & non-contact based level measurement
                   sensor
                 </div>
-                <div className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2">
+                <div
+                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
+                  onClick={() => setRenderZtarVideo(true)}
+                >
                   <div className="text-[#FE9D1C]">
                     <RiPlayCircleFill size={20} />
                   </div>
@@ -1290,7 +1298,7 @@ const Product = () => {
                 </div>
                 <div
                   className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
-                  onClick={() => setRenderUtmapsVideo(true)}
+                  onClick={() => setRenderIpamsVideo(true)}
                 >
                   <div className="text-[#FE9D1C]">
                     <RiPlayCircleFill size={20} />
@@ -1552,6 +1560,84 @@ const Product = () => {
             <div className="flex justify-center p-0.5">
               <video autoPlay controls>
                 <source src={portsDemo} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ztar product video */}
+      {renderZtarVideo && (
+        <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+            <div className="">
+              <div
+                className=" flex gap-2 justify-between p-3 text-white"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+                }}
+              >
+                <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold">
+                  Ztar&nbsp;Product&nbsp;Demo
+                </div>
+                <button
+                  className="text-orange-400"
+                  onClick={() => setRenderZtarVideo(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+              <div
+                className="h-1"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+              />
+            </div>
+            <div className="flex justify-center p-0.5">
+              <video autoPlay controls>
+                <source src={portsDemo} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ipams product video */}
+      {renderIpamsVideo && (
+        <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+            <div className="">
+              <div
+                className=" flex gap-2 justify-between p-3 text-white"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+                }}
+              >
+                <div className="text-lg md:text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-semibold">
+                  I-PAMS&nbsp;Product&nbsp;Demo
+                </div>
+                <button
+                  className="text-orange-400"
+                  onClick={() => setRenderIpamsVideo(false)}
+                >
+                  <IoMdCloseCircle size={30} />
+                </button>
+              </div>
+              <div
+                className="h-1"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+              />
+            </div>
+            <div className="flex justify-center p-0.5">
+              <video autoPlay controls>
+                <source src={ipamsDemo} type="video/mp4" />
               </video>
             </div>
           </div>

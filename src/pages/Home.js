@@ -27,6 +27,8 @@ import epri from '../Brand/epri.png';
 import skf from '../Brand/skf.png';
 import schneider from '../Brand/schneider.png';
 import reliance from '../Brand/reliance.png';
+import threeLions from '../Brand/threeLions.png';
+import cairn from '../Brand/cairn.png';
 import newbgcropped from '../Assets/newbgcropped.png';
 import sensor from '../Assets/sensor.png';
 import iot from '../Assets/iot.png';
@@ -70,7 +72,7 @@ export const Home = () => {
   const settings = {
     slidesToShow: 1,
     rows: 2,
-    slidesPerRow: 6,
+    slidesPerRow: 7,
     adaptiveHeight: true,
     responsive: [
       {
@@ -389,9 +391,13 @@ export const Home = () => {
             className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
-            <div className="mb-2 ml-2 font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
-              Industries:
+            <div className="mb-2 ml-2">
+              <div className=" font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
+                Industries:
+              </div>
+              <div className="border border-[#013872] mx-4 rounded-full" />
             </div>
+
             <div>
               <div
                 className={`md:w-full cursor-pointer p-1 mb-1 flex ${
@@ -457,7 +463,7 @@ export const Home = () => {
                 {clickedImage === lubricants && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="ml-1 -z-10">Lubricants</div>
+                <div className="ml-1 -z-10">Marine</div>
               </div>
               {clickedImage === lubricants && (
                 <div className="border border-[#013872] md:hidden" />
@@ -475,7 +481,7 @@ export const Home = () => {
                 {clickedImage === oilRecovery && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="ml-1 -z-10">Oil&nbsp;Recovery</div>
+                <div className="ml-1 -z-10">Oil&nbsp;&&nbsp;Gas</div>
               </div>
               {clickedImage === oilRecovery && (
                 <div className="border border-[#013872] md:hidden" />
@@ -1378,51 +1384,59 @@ export const Home = () => {
         <div className="mt-16 mb-8 md:mx-[8%]">
           <Slider {...settings}>
             <div className="mb-6">
-              <img src={sg} className="mx-auto max-w-[145px] h-auto" />
+              <img src={sg} alt="sg" className="mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={tata} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={tata} alt='tata' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={drdo} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={drdo} alt='drdo' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={cumi} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={cumi} alt='cumi' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={lam} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={lam} alt='lam' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={ind} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={ind} alt='ind' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={epri} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={epri} alt='epri' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={skf} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={skf} alt='skf' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={bharat} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={bharat} alt='bharat' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={ved} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={ved} alt='ved' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={schneider} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={schneider} alt='schneider' className=" mx-auto max-w-[145px] h-auto" />
             </div>
 
             <div className="mb-6">
-              <img src={reliance} className=" mx-auto max-w-[145px] h-auto" />
+              <img src={reliance} alt='reliance' className=" mx-auto max-w-[145px] h-auto" />
+            </div>
+
+            <div className="mb-6">
+              <img src={threeLions} alt='threeLions' className=" mx-auto max-w-[145px] h-auto" />
+            </div>
+
+            <div className="mb-6">
+              <img src={cairn} alt='cairn' className=" mx-auto max-w-[145px] h-auto" />
             </div>
           </Slider>
         </div>
