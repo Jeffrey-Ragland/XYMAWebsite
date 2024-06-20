@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef} from 'react';
 import cs from '../Assets/cs.png';
-import all1 from '../Images/all1.png';
-import all2 from '../Images/all2.png';
-import all3 from '../Images/all3.png';
-import aluminum from '../Images/al1.png';
+import newAl1 from '../Images/newAluminium1.png';
+import newAl2 from "../Images/newAluminium2.png";
 import steel1 from '../Images/steel1.png';
 import steel2 from '../Images/steel2.png';
 import tube1 from '../Images/tube1.png';
@@ -14,7 +12,8 @@ import oilRecovery from "../Assets/oilRecovery.png";
 import oilRecovery2 from '../Assets/oilRecovery3.jpg';
 import paints1 from '../Assets/paintsresized.png';
 import paints2 from '../Assets/paints2.jpg';
-import { useNavigate } from 'react-router-dom';
+import brochure from "../Assets/XymaBrochure.pdf";
+//import { useNavigate } from 'react-router-dom';
 import {
   GiMetalDisc,
   GiMetalBar,
@@ -47,10 +46,10 @@ const Resource = () => {
     setSelectedContent(word);
   };
 
-  const navigate = useNavigate();
-  const handleCaseStudyClick = () => {
-    navigate("/resources/casestudy");
-  };
+  //const navigate = useNavigate();
+  // const handleCaseStudyClick = () => {
+  //   navigate("/resources/casestudy");
+  // };
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
@@ -413,10 +412,10 @@ const Resource = () => {
             <div
               id="section1"
               ref={sectionRefs.section1}
-              className="md:flex rounded-2xl mb-4 border border-[#CDCED6]"
+              className="rounded-2xl mb-4 border border-[#CDCED6] font-medium p-4"
               data-aos="slide-left"
             >
-              <div className="w-full md:w-1/2 p-4">
+              {/* <div className="w-full md:w-1/2 p-4">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
                   Aluminum
                 </div>
@@ -433,9 +432,9 @@ const Resource = () => {
                   A 10°C temperature deviation reduces efficiency, promotes
                   anode effect, and increases PFC emissions.
                 </div>
-              </div>
+              </div> */}
               {/* empty line */}
-              <div className="border border-[#CDCED6] my-[10%]" />
+              {/* <div className="border border-[#CDCED6] my-[10%]" />
               <div className="w-full md:w-1/2 p-4">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
                   All
@@ -451,9 +450,9 @@ const Resource = () => {
                     A 10°C shift lowers efficiency, boosts anode effect, and
                     raises PFC emissions.
                   </div>
-                </div>
-                {/* empty line */}
-                <div className="border border-[#CDCED6] mx-[5%]" />
+                </div> */}
+              {/* empty line */}
+              {/* <div className="border border-[#CDCED6] mx-[5%]" />
                 <div className="flex p-4">
                   <div className="w-[30%] flex items-center justify-center">
                     <img
@@ -465,9 +464,9 @@ const Resource = () => {
                     Extending the ladle life for one cycle would result in steel
                     production worth $5.1 million.
                   </div>
-                </div>
-                {/* empty line */}
-                <div className="border border-[#CDCED6] mx-[5%]" />
+                </div> */}
+              {/* empty line */}
+              {/* <div className="border border-[#CDCED6] mx-[5%]" />
                 <div className="flex p-4">
                   <div className="w-[30%] flex items-center justify-center">
                     <img
@@ -476,6 +475,51 @@ const Resource = () => {
                     />
                   </div>
                   <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
+                    20°C rise halves reformer tube lifespan; design temperature
+                    crucial.
+                  </div>
+                </div>
+              </div> */}
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Aluminum
+                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
+              </div>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="w-full h-full"
+                      src={newAl1}
+                      alt="aluminum1"
+                    />
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    A 10°C temperature deviation reduces efficiency, promotes
+                    anode effect, and increases PFC emissions.
+                  </div>
+                </div>
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="w-full h-full"
+                      src={newAl2}
+                      alt="aluminum2"
+                    ></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     20°C rise halves reformer tube lifespan; design temperature
                     crucial.
                   </div>
@@ -489,55 +533,47 @@ const Resource = () => {
             <div
               id="section2"
               ref={sectionRefs.section2}
-              className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              className="rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium p-4"
               data-aos="zoom-out"
             >
-              <div className="w-full md:w-1/2 p-4">
-                <div className="mb-4 flex justify-between">
-                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                    Steel
-                  </div>
-                  <span
-                    className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Steel
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={steel1} />
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  Extending ladle life for one cycle yields steel worth $5.1M
-                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
               </div>
-              <div className="w-full md:w-1/2 p-4">
-                <div className="flex justify-end mb-4">
-                  <span
-                    className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="w-full h-full" src={steel1} alt="steel1" />
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    Extending ladle life for one cycle yields steel worth $5.1M
+                  </div>
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={steel2}></img>
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  Extending the lifespan of the ladle for one cycle results in
-                  producing steel valued at $5.1 million
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="w-full h-full"
+                      src={steel2}
+                      alt="steel2"
+                    ></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    Extending the lifespan of the ladle for one cycle results in
+                    producing steel valued at $5.1 million
+                  </div>
                 </div>
               </div>
             </div>
@@ -548,55 +584,43 @@ const Resource = () => {
             <div
               id="section3"
               ref={sectionRefs.section3}
-              className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
               data-aos="zoom-out"
             >
-              <div className="w-full md:w-1/2 p-4">
-                <div className="mb-4 flex justify-between">
-                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                    Refiniries
-                  </div>
-                  <span
-                    className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Refiniries
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={tube1} />
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  A 20°C temperature rise cuts reformer tube lifespan by half
-                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
               </div>
-              <div className="w-full md:w-1/2 p-4">
-                <div className="flex justify-end mb-4">
-                  <span
-                    className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="w-full h-full" src={tube1} alt='refiniries1'/>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    A 20°C temperature rise cuts reformer tube lifespan by half
+                  </div>
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={tube2}></img>
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  A 20°C temperature increase halves the lifespan of reformer
-                  tubes
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="w-full h-full" src={tube2} alt='refiniries2'></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    A 20°C temperature increase halves the lifespan of reformer
+                    tubes
+                  </div>
                 </div>
               </div>
             </div>
@@ -607,56 +631,44 @@ const Resource = () => {
             <div
               id="section4"
               ref={sectionRefs.section4}
-              className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
               data-aos="zoom-out"
             >
-              <div className="w-full md:w-1/2 p-4">
-                <div className="mb-4 flex justify-between">
-                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                    Lubricants
-                  </div>
-                  <span
-                    className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Lubricants
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={oil1} />
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  30% of maintenance budget influenced by lubricants,
-                  highlighting their significant role in operational expenses
-                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
               </div>
-              <div className="w-full md:w-1/2 p-4">
-                <div className="flex justify-end mb-4">
-                  <span
-                    className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="w-full h-full" src={oil1} alt='lubricants1'/>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    30% of maintenance budget influenced by lubricants,
+                    highlighting their significant role in operational expenses
+                  </div>
                 </div>
-                <div className="relative mb-4">
-                  <img className="w-full h-full" src={oil2}></img>
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  Lubricants significantly affect operational costs, accounting
-                  for 30% of the maintenance budget
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="w-full h-full" src={oil2} alt='lubricants2'></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    Lubricants significantly affect operational costs,
+                    accounting for 30% of the maintenance budget
+                  </div>
                 </div>
               </div>
             </div>
@@ -667,63 +679,51 @@ const Resource = () => {
             <div
               id="section5"
               ref={sectionRefs.section5}
-              className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
               data-aos="zoom-out"
             >
-              <div className="w-full md:w-1/2 p-4">
-                <div className="mb-4 flex justify-between">
-                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                    Oil Recovery
-                  </div>
-                  <span
-                    className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Oil Recovery
                 </div>
-                <div className="relative mb-4">
-                  <img
-                    className="rounded-2xl w-full h-full"
-                    src={oilRecovery}
-                  />
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  1.3 lakhs/day would be the worth of injection polymer of
-                  unknown viscosity flooded in EOR due to unavailability of
-                  continuous viscosity measurement technique.
-                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
               </div>
-              <div className="w-full md:w-1/2 p-4">
-                <div className="flex justify-end mb-4">
-                  <span
-                    className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={oilRecovery} alt='oil1'
+                    />
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    1.3 lakhs/day would be the worth of injection polymer of
+                    unknown viscosity flooded in EOR due to unavailability of
+                    continuous viscosity measurement technique.
+                  </div>
                 </div>
-                <div className="relative mb-4">
-                  <img
-                    className="rounded-2xl w-full h-full"
-                    src={oilRecovery2}
-                  ></img>
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  Enhanced oil recovery 'EOR' techniques can improve recovery
-                  rates from 20-40% to 30-60% of the original oil in place.
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={oilRecovery2} alt='oil2'
+                    ></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    Enhanced oil recovery 'EOR' techniques can improve recovery
+                    rates from 20-40% to 30-60% of the original oil in place.
+                  </div>
                 </div>
               </div>
             </div>
@@ -734,60 +734,48 @@ const Resource = () => {
             <div
               id="section6"
               ref={sectionRefs.section6}
-              className="md:flex rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
               data-aos="zoom-out"
             >
-              <div className="w-full md:w-1/2 p-4">
-                <div className="mb-4 flex justify-between">
-                  <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                    Paints
-                  </div>
-                  <span
-                    className="md:hidden text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Paints
                 </div>
-                <div className="relative mb-4">
-                  <img className="rounded-2xl w-full h-full" src={paints1} />
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  Water-based paints account for about 80% of all paints sold in
-                  the residential market.
-                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
               </div>
-              <div className="w-full md:w-1/2 p-4">
-                <div className="flex justify-end mb-4">
-                  <span
-                    className="hidden md:block text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                  >
-                    Read More
-                  </span>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img className="rounded-2xl w-full h-full" src={paints1} alt='paint1'/>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    Water-based paints account for about 80% of all paints sold
+                    in the residential market.
+                  </div>
                 </div>
-                <div className="relative mb-4">
-                  <img
-                    className="rounded-2xl w-full h-full"
-                    src={paints2}
-                  ></img>
-                  <span className="absolute bottom-4 right-4 bg-white text-xs rounded-full p-1 cursor-pointer">
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                  The use of low-VOC paints has increased by over 50% in the
-                  past decade due to environmental regulations and consumer
-                  demand.
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={paints2} alt='paint2'
+                    ></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    The use of low-VOC paints has increased by over 50% in the
+                    past decade due to environmental regulations and consumer
+                    demand.
+                  </div>
                 </div>
               </div>
             </div>

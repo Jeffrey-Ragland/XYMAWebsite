@@ -263,7 +263,7 @@ export const Home = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
-  }, []);
+  }, []); 
 
   return (
     <div className="w-full overflow-hidden">
@@ -290,7 +290,7 @@ export const Home = () => {
       >
         <img
           src={newpage}
-          alt="cover image"
+          alt="cover"
           className="absolute w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
@@ -380,7 +380,7 @@ export const Home = () => {
             <div>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
             <div>
               <div>Process&nbsp;parameter&nbsp;measurements</div>
-              <img className=" w-full h-2" src={line}></img>
+              <img className=" w-full h-2" src={line} alt='line'></img>
             </div>
           </div>
         </div>
@@ -391,7 +391,7 @@ export const Home = () => {
             className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
-            <div className="mb-2 ml-2">
+            <div className="mb-0 md:mb-2 ml-2">
               <div className=" font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
                 Industries:
               </div>
@@ -832,7 +832,7 @@ export const Home = () => {
             <div>Patented Ultrasonic </div>
             <div>
               <div>Waveguide Sensors:</div>
-              <img className=" w-full h-2 -z-10" src={line}></img>
+              <img className=" w-full h-2 -z-10" src={line} alt='line'></img>
             </div>
           </div>
         </div>
@@ -858,6 +858,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6"
                   src={utmaps}
+                  alt='utmaps'
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -872,6 +873,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={utmaps}
+                        alt='utmaps'
                       />
                     </div>
                   </div>
@@ -909,6 +911,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
                   src={ports}
+                  alt='ports'
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -923,6 +926,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ports}
+                        alt='ports'
                       />
                     </div>
                   </div>
@@ -962,6 +966,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
                   src={ztar}
+                  alt='ztar'
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -977,6 +982,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ztar}
+                        alt='ztar'
                       />
                     </div>
                   </div>
@@ -1055,14 +1061,14 @@ export const Home = () => {
             className="w-full -z-10"
             data-aos="zoom-in-up"
             src={newbgcropped}
-            alt="Background Image"
+            alt="Background"
           />
           <div className="absolute flex text-right top-[65%] -left-[1%] rounded-2xl">
             <div>
               <img
                 className="w-12 h-12"
                 src={sensor}
-                alt="Sensor Image"
+                alt="Sensor"
                 onMouseEnter={() => {
                   setHoveredItem("sensor");
                 }}
@@ -1108,7 +1114,7 @@ export const Home = () => {
               <img
                 className="w-12 h-12"
                 src={grp}
-                alt="Sensor Image"
+                alt="Sensor"
                 onMouseEnter={() => {
                   setHoveredItem("grp");
                 }}
@@ -1131,7 +1137,7 @@ export const Home = () => {
               <img
                 className="w-12 h-12"
                 src={zero}
-                alt="Sensor Image"
+                alt="Sensor"
                 onMouseEnter={() => {
                   setHoveredItem("zero");
                 }}
@@ -1154,7 +1160,7 @@ export const Home = () => {
               <img
                 className="w-12 h-12"
                 src={ai}
-                alt="Sensor Image"
+                alt="Sensor"
                 onMouseEnter={() => {
                   setHoveredItem("ai");
                 }}
@@ -1177,7 +1183,7 @@ export const Home = () => {
               <img
                 className="w-12 h-12"
                 src={tool}
-                alt="Sensor Image"
+                alt="Sensor"
                 onMouseEnter={() => {
                   setHoveredItem("tool");
                 }}
@@ -1214,9 +1220,9 @@ export const Home = () => {
               <div>Making a difference with</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
                 <div>the Approach</div>
-                <img className="w-full h-2" src={line}></img>
+                <img className="w-full h-2" src={line} alt='line'></img>
               </div>
-            </div>
+            </div> 
           </div>
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">

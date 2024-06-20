@@ -7,7 +7,7 @@ import Career from '../pages/Career';
 import Media from '../pages/Media';
 import Resource from '../pages/Resource';
 import Contact from '../pages/Contact';
-import CaseStudy from '../pages/CaseStudy';
+//import CaseStudy from '../pages/CaseStudy';
 import AdminLogin from '../pages/AdminLogin';
 import AdminPortal from '../pages/AdminPortal';
 import AdminApplications from '../pages/AdminApplications';
@@ -29,7 +29,7 @@ const RoutingPage = () => {
     "/media",
     "/careers",
     "/contact",
-    "/resources/casestudy",
+    //"/resources/casestudy",
     "/admin@2k24",
     "/admin@2k24Portal",
     "/admin@2k24Applications",
@@ -48,7 +48,7 @@ const RoutingPage = () => {
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/resources/casestudy" element={<CaseStudy />} />
+          {/* <Route path="/resources/casestudy" element={<CaseStudy />} /> */}
           <Route path="/admin@2k24" element={<AdminLogin />} />
           <Route path="/admin@2k24Portal" element={<ProtectedRoute />}>
             <Route path="" element={<AdminPortal />} />

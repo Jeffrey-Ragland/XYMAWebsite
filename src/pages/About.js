@@ -17,7 +17,7 @@ import adv2 from "../Assets/adv2.png";
 import framevector from '../Assets/framevector.png';
 import photo from '../Assets/photo.png';
 import groupPicEdited from '../Assets/groupPicEdited.png';
-import teamLeadPic from '../Assets/teamLeadPhoto.JPG';
+import teamLeadPic from '../Assets/teamLeadPhoto.jpg';
 import designTeam from "../Assets/designTeam.jpg";
 import dataTeam from "../Assets/dataTeam.jpg";
 import electronicsTeam from "../Assets/electronicsTeam.jpg";
@@ -224,11 +224,7 @@ const About = () => {
         ref={coverImageRef}
         className=" relative mt-[10vh] h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl"
       >
-        <img
-          className="h-full w-full object-cover"
-          src={iit}
-          alt="Frame Image"
-        />
+        <img className="h-full w-full object-cover" src={iit} alt="Frame" />
         <div className="absolute h-full w-full inset-0 p-8 md:p-16 text-white">
           <div className="w-full h-full xl:flex">
             <div className="w-full xl:w-[90%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
@@ -335,7 +331,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <GiSoundWaves size={20} />
+            <PiCircuitryLight size={20} />
           </div>
 
           <div
@@ -346,7 +342,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <PiCircuitryLight size={20} />
+            <FaLaptopCode size={20} />
           </div>
 
           <div
@@ -357,7 +353,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <TbBrandPython size={20} />
+            <GiSoundWaves size={20} />
           </div>
 
           <div
@@ -368,7 +364,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <BsClipboardData size={20} />
+            <MdOutlineDesignServices size={20} />
           </div>
 
           <div
@@ -379,7 +375,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <FaLaptopCode size={20} />
+            <TbBrandPython size={20} />
           </div>
 
           <div
@@ -390,7 +386,7 @@ const About = () => {
                 : "text-gray-400"
             }`}
           >
-            <MdOutlineDesignServices size={20} />
+            <BsClipboardData size={20} />
           </div>
 
           <div
@@ -433,7 +429,7 @@ const About = () => {
           <div className="text-center flex justify-center">
             <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
               <div>About XYMA</div>
-              <img className="w-full h-2" src={line}></img>
+              <img className="w-full h-2" src={line} alt="line"></img>
             </div>
           </div>
           <div className="text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl mt-2">
@@ -961,12 +957,13 @@ const About = () => {
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>The Team</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
         <img
           className="mt-4 rounded-2xl"
           src={groupPicEdited}
+          alt="group"
           data-aos="zoom-in-up"
         ></img>
       </section>
@@ -980,32 +977,96 @@ const About = () => {
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>Team Division</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
         <div className="md:mx-[10%] mb-10">
           <img
             className="mt-4 rounded-2xl"
             src={teamLeadPic}
+            alt="teamLeads"
             data-aos="zoom-in-up"
           ></img>
         </div>
       </section>
 
-      {/* ports team */}
+      {/* electronics team */}
       <section
         id="section4"
         ref={sectionRefs.section4}
         className="mx-[5%] md:mx-[8%]"
       >
         <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          PoRTS Team
+          Electronics Team
+        </center>
+        <div className="md:flex gap-8 mb-6 md:mb-10">
+          <div className="w-full md:w-[50%] mb-4 md:mb-0">
+            <img
+              src={electronicsTeam}
+              alt="electronicsTeam"
+              className="rounded-2xl"
+              data-aos="slide-right"
+            />
+          </div>
+          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
+            The electronics team's responsibilities include creating circuit
+            designs, developing embedded systems, and troubleshooting electronic
+            hardware. The team works on projects ranging from consumer
+            electronics to industrial automation, ensuring that devices and
+            systems are reliable, efficient, and meet safety standards. They
+            collaborate with other departments to integrate electronics into
+            products, enhance functionality, and drive innovation in the
+            company's offerings.
+          </div>
+        </div>
+      </section>
+
+      {/* software team */}
+      <section
+        id="section5"
+        ref={sectionRefs.section5}
+        className="mx-[5%] md:mx-[8%]"
+      >
+        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+          Software Development Team
+        </center>
+        <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
+          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
+            The software team is responsible for designing, developing, testing,
+            and maintaining software applications and systems. Their tasks
+            include writing code, debugging, implementing new features, and
+            ensuring software performance and security. The team works on a
+            range of projects, from developing customer-facing applications to
+            internal tools that streamline operations. They use various
+            programming languages to create reliable and user-friendly software
+            solutions. Collaboration with other departments is key to ensuring
+            that the software meets the needs of the business and its customers.
+          </div>
+          <div className="w-full md:w-[50%]">
+            <img
+              src={softwareTeam}
+              alt="softwareTeam"
+              className="rounded-2xl"
+              data-aos="slide-left"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ultrasonic team */}
+      <section
+        id="section6"
+        ref={sectionRefs.section6}
+        className="mx-[5%] md:mx-[8%]"
+      >
+        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+          Ultrasonics Team
         </center>
         <div className="md:flex gap-8 mb-6 md:mb-10">
           <div className="w-full md:w-[50%] mb-4 md:mb-0">
             <img
               src={portsTeam}
-              alt="portsteam"
+              alt="portsTeam"
               className="rounded-2xl"
               data-aos="slide-right"
             />
@@ -1023,30 +1084,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* electronics team */}
+      {/* designing team */}
       <section
-        id="section5"
-        ref={sectionRefs.section5}
+        id="section7"
+        ref={sectionRefs.section7}
         className="mx-[5%] md:mx-[8%]"
       >
         <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Electronics Team
+          Mechanical Designing Team
         </center>
         <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
           <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The electronics team's responsibilities include creating circuit
-            designs, developing embedded systems, and troubleshooting electronic
-            hardware. The team works on projects ranging from consumer
-            electronics to industrial automation, ensuring that devices and
-            systems are reliable, efficient, and meet safety standards. They
-            collaborate with other departments to integrate electronics into
-            products, enhance functionality, and drive innovation in the
-            company's offerings.
+            The designing team is responsible for creating visual and user
+            experience (UX) designs that align with the company’s brand and
+            product goals. Their tasks include developing graphics, layouts, and
+            interfaces. They focus on aesthetics, usability, and user
+            satisfaction, ensuring that designs are both appealing and
+            functional. The team often uses tools like Adobe Creative Suite,
+            Sketch, and Figma, and works closely with other departments, such as
+            marketing and development.
           </div>
           <div className="w-full md:w-[50%]">
             <img
-              src={electronicsTeam}
-              alt="electronicsTeam"
+              src={designTeam}
+              alt="designTeam"
               className="rounded-2xl"
               data-aos="slide-left"
             />
@@ -1056,12 +1117,12 @@ const About = () => {
 
       {/* python team */}
       <section
-        id="section6"
-        ref={sectionRefs.section6}
+        id="section8"
+        ref={sectionRefs.section8}
         className="mx-[5%] md:mx-[8%]"
       >
         <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Python Team
+          Software Backend and Operations Team
         </center>
         <div className="md:flex gap-8 mb-6 md:mb-10">
           <div className="w-full md:w-[50%] mb-4 md:mb-0">
@@ -1085,14 +1146,14 @@ const About = () => {
         </div>
       </section>
 
-      {/* data analysis team */}
+      {/* data team */}
       <section
-        id="section7"
-        ref={sectionRefs.section7}
+        id="section9"
+        ref={sectionRefs.section9}
         className="mx-[5%] md:mx-[8%]"
       >
         <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Data Analysis Team
+          Data Analytics Team
         </center>
         <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
           <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
@@ -1109,69 +1170,6 @@ const About = () => {
             <img
               src={dataTeam}
               alt="dataTeam"
-              className="rounded-2xl"
-              data-aos="slide-left"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* software team */}
-      <section
-        id="section8"
-        ref={sectionRefs.section8}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Software Team
-        </center>
-        <div className="md:flex gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] mb-4 md:mb-0">
-            <img
-              src={softwareTeam}
-              alt="softwareTeam"
-              className="rounded-2xl"
-              data-aos="slide-right"
-            />
-          </div>
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The software team is responsible for designing, developing, testing,
-            and maintaining software applications and systems. Their tasks
-            include writing code, debugging, implementing new features, and
-            ensuring software performance and security. The team works on a
-            range of projects, from developing customer-facing applications to
-            internal tools that streamline operations. They use various
-            programming languages to create reliable and user-friendly software
-            solutions. Collaboration with other departments is key to ensuring
-            that the software meets the needs of the business and its customers.
-          </div>
-        </div>
-      </section>
-
-      {/* designing team */}
-      <section
-        id="section9"
-        ref={sectionRefs.section9}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Design Team
-        </center>
-        <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The designing team is responsible for creating visual and user
-            experience (UX) designs that align with the company’s brand and
-            product goals. Their tasks include developing graphics, layouts, and
-            interfaces. They focus on aesthetics, usability, and user
-            satisfaction, ensuring that designs are both appealing and
-            functional. The team often uses tools like Adobe Creative Suite,
-            Sketch, and Figma, and works closely with other departments, such as
-            marketing and development.
-          </div>
-          <div className="w-full md:w-[50%]">
-            <img
-              src={designTeam}
-              alt="designTeam"
               className="rounded-2xl"
               data-aos="slide-left"
             />
@@ -1218,7 +1216,7 @@ const About = () => {
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>The Vision</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
         <div className="mb-4 md:mb-6 2xl:mb-8 text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl">
@@ -1264,32 +1262,44 @@ const About = () => {
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
             <div>Key Values</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mx-[15%] md:mx-0 text-center lg:text-base xl:text-base 2xl:text-xl mb-4 md:mb-8 xl:mb-12 2xl:mb-16">
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c1}></img>
+            <img
+              className="w-auto md:w-[60%]"
+              src={c1}
+              alt="collaboration"
+            ></img>
             <div className="font-semibold mt-2">Colloboration</div>
           </div>
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c2}></img>
+            <img className="w-auto md:w-[60%]" src={c2} alt="Security"></img>
             <div className="font-semibold mt-2">Security</div>
           </div>
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c3}></img>
+            <img className="w-auto md:w-[60%]" src={c3} alt="Innovation"></img>
             <div className="font-semibold mt-2">Innovation</div>
           </div>
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c4}></img>
+            <img
+              className="w-auto md:w-[60%]"
+              src={c4}
+              alt="Communication"
+            ></img>
             <div className="font-semibold mt-2">Communication</div>
           </div>
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c5}></img>
+            <img
+              className="w-auto md:w-[60%]"
+              src={c5}
+              alt="Accessibility"
+            ></img>
             <div className="font-semibold mt-2">Accessibility</div>
           </div>
           <div className="flex flex-col items-center">
-            <img className="w-auto md:w-[60%]" src={c6}></img>
+            <img className="w-auto md:w-[60%]" src={c6} alt="Efficiency"></img>
             <div className="font-semibold mt-2">Efficiency</div>
           </div>
         </div>
@@ -1367,7 +1377,7 @@ const About = () => {
         </div>
 
         <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
-          <img className="h-12" src={framevector}></img>
+          <img className="h-12" src={framevector} alt='vector'></img>
         </div>
         <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -1378,7 +1388,7 @@ const About = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <img className="w-20" src={photo} alt="Photo" />
+          <img className="w-20" src={photo} alt="pic" />
           <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
             Dr. Nishanth Raja
           </div>

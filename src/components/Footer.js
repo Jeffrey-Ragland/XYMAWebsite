@@ -90,7 +90,7 @@ const Footer = () => {
               <div>XYMA</div>
               <div>
                 <div>Analytics' Innovations</div>
-                <img className="w-full h-2" src={vector} />
+                <img className="w-full h-2" src={vector} alt="Innovations" />
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ const Footer = () => {
           <div className="w-full md:w-[50%] flex text-xs lg:text-sm xl:text-xs 2xl:text-base">
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Quick Links <img className="mt-1 h-0.5 w-5" src={line} />
+                Quick Links <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
               </div>
               <div
                 className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
@@ -201,7 +201,7 @@ const Footer = () => {
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Products <img className="mt-1 h-0.5 w-5" src={line} />
+                Products <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
               </div>
               <div
                 className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
@@ -231,16 +231,16 @@ const Footer = () => {
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Support <img className="mt-1 h-0.5 w-5" src={line} />
+                Support <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
               </div>
               <div
                 className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
                 onClick={() => navigate("/contact")}
               >
-                Contact Us
+                Contact Us 
               </div>
               <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
-                Contact Sales
+                Contact Sales 
               </div>
             </div>
           </div>
@@ -283,17 +283,13 @@ const Footer = () => {
         </div>
         <div className="h-0.5 mt-4 mb-4 w-[90%] bg-[#013872]" />
         {/* footer */}
-        <div className="md:flex justify-between text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-[90%] mb-4 font-light">
+        <div className="md:flex justify-center text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-[90%] mb-4 font-light">
           <div className="md:flex text-center gap-1 justify-center">
             <div className="flex justify-center">
-              <div className="mr-1">© 2022 XYMA Analytics Inc.</div>
+              <div className="mr-1">© 2024 XYMA Analytics Inc.</div>
               <div className="text-gray-400">IIT Madras Research Park, </div>
             </div>
             <div className="text-gray-400">Chennai, 600113</div>
-          </div>
-          <div className="flex gap-8 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
-            <div>Terms & Conditions</div>
-            <div>Privacy Policy</div>
           </div>
         </div>
       </div>

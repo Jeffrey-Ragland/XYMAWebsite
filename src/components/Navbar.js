@@ -6,8 +6,8 @@ import { HeaderData } from "../data/HeaderData";
 import CircleComponent from "../CircleComponent";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -105,7 +105,6 @@ const Navbar = () => {
                     location.pathname === item.path ? "text-orange-400" : ""
                   }`}
                   onClick={() => {
-                    //handleNavItemClick(index);
                     handleBurgerMenu();
                   }}
                 >
@@ -113,7 +112,6 @@ const Navbar = () => {
                     to={item.path}
                     className="w-full h-full flex items-center justify-between px-4"
                   >
-                    {/* <div className="border border-black w-full h-full"> */}
                     {item.title}
                     <div
                       className={`${
@@ -128,7 +126,7 @@ const Navbar = () => {
                 </div>
               ))}
             </div>
-            <div className="p-3 h-[28%] flex items-end">
+            <div className="p-3 h-[30%] flex items-end">
               <div
                 className="text-white py-3 px-4 md:text-lg rounded-full cursor-pointer"
                 style={{
@@ -144,17 +142,13 @@ const Navbar = () => {
               </div>
             </div>
             {/* footer */}
-            <div className="h-[12%] px-4 py-2 text-xs md:text-base border border-t-gray-400">
-              <div className="h-[55%] flex flex-col justify-center">
+            <div className="h-[10%] flex justify-center items-center px-4 py-2 text-xs md:text-base border border-t-gray-400">
+              <div className="flex flex-col justify-center">
                 <div className="flex gap-1 justify-center">
-                  <div>© 2022 XYMA Analytics Inc.</div>
+                  <div>© 2024 XYMA Analytics Inc.</div>
                   <div className="text-gray-400">IIT Madras Research Park,</div>
                 </div>
                 <div className="text-gray-400 text-center">Chennai, 600113</div>
-              </div>
-              <div className="h-[45%] flex gap-6 justify-center items-center py-1">
-                <div>Terms & Conditions</div>
-                <div>Privacy Policy</div>
               </div>
             </div>
           </div>

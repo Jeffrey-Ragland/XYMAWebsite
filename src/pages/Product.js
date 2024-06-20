@@ -341,7 +341,11 @@ const Product = () => {
                 : "border-4 border-black"
             }`}
           >
-            <img src={utmapsLogo} className="h-6 rounded-full"></img>
+            <img
+              src={utmapsLogo}
+              alt="utmapsLogo"
+              className="h-6 rounded-full"
+            ></img>
           </div>
           <div
             onClick={() => handleSectionScroll(sectionRefs.PoRTS)}
@@ -351,7 +355,11 @@ const Product = () => {
                 : "border-4 border-black"
             }`}
           >
-            <img src={portsLogo} className="h-6 rounded-full"></img>
+            <img
+              src={portsLogo}
+              alt="portsLogo"
+              className="h-6 rounded-full"
+            ></img>
           </div>
           <div
             onClick={() => handleSectionScroll(sectionRefs.Ztar)}
@@ -361,7 +369,11 @@ const Product = () => {
                 : "border-4 border-black"
             }`}
           >
-            <img src={ztarLogo} className="h-6 rounded-full"></img>
+            <img
+              src={ztarLogo}
+              alt="ztarLogo"
+              className="h-6 rounded-full"
+            ></img>
           </div>
           <div
             onClick={() => handleSectionScroll(sectionRefs.IPAMS)}
@@ -371,7 +383,11 @@ const Product = () => {
                 : "border-4 border-black"
             }`}
           >
-            <img src={ipamsLogo} className="h-6 rounded-full"></img>
+            <img
+              src={ipamsLogo}
+              alt="ipamsLogo"
+              className="h-6 rounded-full"
+            ></img>
           </div>
         </div>
       )}
@@ -471,14 +487,14 @@ const Product = () => {
               <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={isteel} />
+                    <img className="w-10" src={isteel} alt="steelLogo" />
                   </div>
                   <div className="font-semibold">Steel Manufacturing</div>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={aicon} />
+                    <img className="w-10" src={aicon} alt="aluminumLogo" />
                   </div>
                   <div className="font-semibold">Aluminium Manufacturing</div>
                 </div>
@@ -487,7 +503,7 @@ const Product = () => {
               <div className=" md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white mb-2 md:mb-0">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={semi} />
+                    <img className="w-10" src={semi} alt="semiconductorLogo" />
                   </div>
                   <div className="font-semibold">
                     Semiconductor Manufacturing
@@ -496,7 +512,7 @@ const Product = () => {
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={ref} />
+                    <img className="w-10" src={ref} alt="refiniriesLogo" />
                   </div>
                   <div className="font-semibold">Refiniries</div>
                 </div>
@@ -522,7 +538,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div className=" ">About µTMapS & µSTMapS</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div
@@ -553,7 +569,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div>Specifications</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div className="flex flex-col justify-around  h-full">
@@ -758,14 +774,14 @@ const Product = () => {
               <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={paint} />
+                    <img className="w-10" src={paint} alt="paint" />
                   </div>
                   <div className="font-semibold">Paint Manufacturing</div>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={luboil} />
+                    <img className="w-10" src={luboil} alt="lube"/>
                   </div>
                   <div className="font-semibold">Lubrication Oil</div>
                 </div>
@@ -774,7 +790,7 @@ const Product = () => {
               <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={eor} />
+                    <img className="w-10" src={eor} alt="eor"/>
                   </div>
                   <div className="font-semibold">E.O.R.</div>
                 </div>
@@ -800,7 +816,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div className=" ">About PoRTS</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div
@@ -832,7 +848,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div>Specifications</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div className="flex flex-col justify-around  h-full">
@@ -1082,14 +1098,14 @@ const Product = () => {
               <div className=" md:flex gap-2 mb-2 md:mb-20 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={metal} />
+                    <img className="w-10" src={metal} alt="metal" />
                   </div>
                   <div className="font-semibold">Metal Manufacturing</div>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={refrigerant} />
+                    <img className="w-10" src={refrigerant} alt="refrigerant" />
                   </div>
                   <div className="font-semibold">Refrigerants</div>
                 </div>
@@ -1115,7 +1131,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div className=" ">About Ztar</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
 
@@ -1142,7 +1158,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div>Specifications</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div className="flex flex-col justify-around  h-full">
@@ -1388,7 +1404,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div className=" ">About I-PAMS</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div
@@ -1419,7 +1435,7 @@ const Product = () => {
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
                         <div>Specifications</div>
-                        <img className="w-full h-2" src={line}></img>
+                        <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
                     <div className="flex flex-col justify-around  h-full">

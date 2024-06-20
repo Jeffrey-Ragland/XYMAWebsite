@@ -26,19 +26,11 @@ import image9 from '../Images/Image9.png';
 import image10 from '../Images/Image10.png';
 import image11 from '../Images/Image11.png';
 import VerticalSlider from './VerticalSlider';
-import asain2 from '../Assets/asian2.png';
 import line from "../Assets/underline.png";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { FaPhotoVideo } from "react-icons/fa";
 
 const Media = () => {
-  const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
-  const [isHovered3, setIsHovered3] = useState(false);
-  const [isHovered4, setIsHovered4] = useState(false);
-  const [isHovered5, setIsHovered5] = useState(false);
-  const [isHovered6, setIsHovered6] = useState(false);
-  const [isHovered7, setIsHovered7] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
@@ -256,53 +248,18 @@ const Media = () => {
         <div className="mt-4 md:mt-10 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>Highlights</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt='line'></img>
           </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-[5%] xl:mx-[8%]">
-          <div
-            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
-            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-          >
-            <img src={asian} alt="Asian" style={{ width: "100%" }} />
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Advancing Technology to Foster a Sustainable Energy Landscape
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              February 24, 2024
-            </div>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </div>
-
+          {/* news 1 */}
           <div
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-            onMouseEnter={() => setIsHovered1(true)}
-            onMouseLeave={() => setIsHovered1(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered1 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={shell} alt="Shell" style={{ width: "100%" }} />
-              )}
+              <img src={shell} alt="Shell" style={{ width: "100%" }} />
               <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                 <img src={icon1} alt="Icon 1" className="h-[40px]" />
                 <p className="text-white">SAUR ENERGY</p>
@@ -334,18 +291,13 @@ const Media = () => {
             </center>
           </div>
 
+          {/* news 2 */}
           <div
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-            onMouseEnter={() => setIsHovered2(true)}
-            onMouseLeave={() => setIsHovered2(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered2 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={business} alt="Business" style={{ width: "100%" }} />
-              )}
+              <img src={business} alt="Business" style={{ width: "100%" }} />
               <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
                 <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Businessline</p>
@@ -367,6 +319,48 @@ const Media = () => {
                 onClick={() =>
                   window.open(
                     "https://www.thehindubusinessline.com/business-tech/remote-sensing-with-xyma-analytics/article64577779.ece",
+                    "_blank"
+                  )
+                }
+              >
+                View More
+              </button>
+            </center>
+          </div>
+
+          {/* news 3 */}
+          <div
+            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
+            style={{
+              borderRadius: "14px",
+              width: "100%",
+              margin: "auto",
+              marginTop: "5%",
+            }}
+          >
+            <div style={{ position: "relative" }}>
+              <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
+              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                <img src={icon3} alt="Icon 3" className="h-[40px]" />
+                <p className="text-white mt-1">IIT MADRAS</p>
+              </div>
+            </div>
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+              Sensor for Temperature Measurement at Multiple Points
+            </div>
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+              11th Oct 2021
+            </div>
+            <center>
+              <button
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
                     "_blank"
                   )
                 }
@@ -405,6 +399,7 @@ const Media = () => {
             </div>
           )}
 
+          {/* mobile view load more button to load more news */}
           {!loadMore && (
             <div
               className="cursor-pointer p-2 md:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
@@ -418,8 +413,10 @@ const Media = () => {
             </div>
           )}
 
+          {/* mobile view duplicate news content */}
           {loadMore && (
             <div className="md:hidden">
+              {/* mobile news 4 */}
               <div
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
@@ -428,60 +425,9 @@ const Media = () => {
                   margin: "auto",
                   marginTop: "5%",
                 }}
-                onMouseEnter={() => setIsHovered3(true)}
-                onMouseLeave={() => setIsHovered3(false)}
               >
                 <div style={{ position: "relative" }}>
-                  {isHovered3 ? (
-                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-                  ) : (
-                    <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
-                  )}
-                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                    <img src={icon3} alt="Icon 3" className="h-[40px]" />
-                    <p className="text-white mt-1">IIT MADRAS</p>
-                  </div>
-                </div>
-                <div className="text-sm font-semibold mt-1">
-                  Sensor for Temperature Measurement at Multiple Points
-                </div>
-                <div className="text-xs mt-1 text-[#60646C]">11th Oct 2021</div>
-                <center>
-                  <button
-                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                    onClick={() =>
-                      window.open(
-                        "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
-                        "_blank"
-                      )
-                    }
-                  >
-                    View More
-                  </button>
-                </center>
-              </div>
-
-              <div
-                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-                style={{
-                  borderRadius: "14px",
-                  width: "100%",
-                  margin: "auto",
-                  marginTop: "5%",
-                }}
-                onMouseEnter={() => setIsHovered4(true)}
-                onMouseLeave={() => setIsHovered4(false)}
-              >
-                <div style={{ position: "relative" }}>
-                  {isHovered4 ? (
-                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-                  ) : (
-                    <img src={story} alt="Story" style={{ width: "100%" }} />
-                  )}
+                  <img src={story} alt="Story" style={{ width: "100%" }} />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                     <img src={icon4} alt="Icon 4" className="h-[40px]" />
                     <p className="text-white mt-1">YOUR STORY</p>
@@ -513,6 +459,7 @@ const Media = () => {
                 </center>
               </div>
 
+              {/* mobile news 5 */}
               <div
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
@@ -521,15 +468,9 @@ const Media = () => {
                   margin: "auto",
                   marginTop: "5%",
                 }}
-                onMouseEnter={() => setIsHovered5(true)}
-                onMouseLeave={() => setIsHovered5(false)}
               >
                 <div style={{ position: "relative" }}>
-                  {isHovered5 ? (
-                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-                  ) : (
-                    <img src={cm} alt="Cm" style={{ width: "100%" }} />
-                  )}
+                  <img src={cm} alt="Cm" style={{ width: "100%" }} />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                     <img src={icon2} alt="Icon 2" className="h-[40px]" />
                     <p className="text-white mt-1">Businessline</p>
@@ -561,6 +502,7 @@ const Media = () => {
                 </center>
               </div>
 
+              {/* mobile news 6 */}
               <div
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
@@ -569,15 +511,9 @@ const Media = () => {
                   margin: "auto",
                   marginTop: "5%",
                 }}
-                onMouseEnter={() => setIsHovered6(true)}
-                onMouseLeave={() => setIsHovered6(false)}
               >
                 <div style={{ position: "relative" }}>
-                  {isHovered6 ? (
-                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-                  ) : (
-                    <img src={smart} alt="Smart" style={{ width: "100%" }} />
-                  )}
+                  <img src={smart} alt="Smart" style={{ width: "100%" }} />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                     <img src={icon2} alt="Icon 2" className="h-[40px]" />
                     <p className="text-white mt-1">Newswires</p>
@@ -608,6 +544,7 @@ const Media = () => {
                 </center>
               </div>
 
+              {/* mobile news 7 */}
               <div
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
@@ -616,15 +553,9 @@ const Media = () => {
                   margin: "auto",
                   marginTop: "5%",
                 }}
-                onMouseEnter={() => setIsHovered7(true)}
-                onMouseLeave={() => setIsHovered7(false)}
               >
                 <div style={{ position: "relative" }}>
-                  {isHovered7 ? (
-                    <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-                  ) : (
-                    <img src={pm} alt="Pm" style={{ width: "100%" }} />
-                  )}
+                  <img src={pm} alt="Pm" style={{ width: "100%" }} />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                     <img src={icon5} alt="Icon 2" className="h-[40px]" />
                     <p className="text-white mt-1">ANI Multimedia News</p>
@@ -655,6 +586,37 @@ const Media = () => {
                 </center>
               </div>
 
+              {/* mobile news 8 */}
+              <div
+                className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
+                style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
+              >
+                <img src={asian} alt="Asian" style={{ width: "100%" }} />
+                <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                  Advancing Technology to Foster a Sustainable Energy Landscape
+                </div>
+                <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                  February 24, 2024
+                </div>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
+                        "_blank"
+                      )
+                    }
+                  >
+                    View More
+                  </button>
+                </center>
+              </div>
+
               <div
                 className="cursor-pointer p-2 md:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
                 style={{
@@ -668,6 +630,7 @@ const Media = () => {
             </div>
           )}
 
+          {/* news 4 */}
           <div
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
@@ -676,68 +639,15 @@ const Media = () => {
               margin: "auto",
               marginTop: "5%",
             }}
-            onMouseEnter={() => setIsHovered3(true)}
-            onMouseLeave={() => setIsHovered3(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered3 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
-              )}
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon3} alt="Icon 3" className="h-[40px]" />
-                <p className="text-white mt-1">IIT MADRAS</p>
-              </div>
-            </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Sensor for Temperature Measurement at Multiple Points
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              11th Oct 2021
-            </div>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </div>
-
-          <div
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-            onMouseEnter={() => setIsHovered4(true)}
-            onMouseLeave={() => setIsHovered4(false)}
-          >
-            <div style={{ position: "relative" }}>
-              {isHovered4 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={story} alt="Story" style={{ width: "100%" }} />
-              )}
+              <img src={story} alt="Story" style={{ width: "100%" }} />
               <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                 <img src={icon4} alt="Icon 4" className="h-[40px]" />
                 <p className="text-white mt-1">YOUR STORY</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <div className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-semibold mt-1">
               Prioritize Building Valuable Businesses Over Funding, Advises
               Kalaari Capital's Vani Kola
             </div>
@@ -763,6 +673,7 @@ const Media = () => {
             </center>
           </div>
 
+          {/* news 5 */}
           <div
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
@@ -771,15 +682,9 @@ const Media = () => {
               margin: "auto",
               marginTop: "5%",
             }}
-            onMouseEnter={() => setIsHovered5(true)}
-            onMouseLeave={() => setIsHovered5(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered5 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={cm} alt="Cm" style={{ width: "100%" }} />
-              )}
+              <img src={cm} alt="Cm" style={{ width: "100%" }} />
               <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                 <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Businessline</p>
@@ -810,6 +715,7 @@ const Media = () => {
             </center>
           </div>
 
+          {/* news 6 */}
           <div
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
@@ -818,15 +724,9 @@ const Media = () => {
               margin: "auto",
               marginTop: "5%",
             }}
-            onMouseEnter={() => setIsHovered6(true)}
-            onMouseLeave={() => setIsHovered6(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered6 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={smart} alt="Smart" style={{ width: "100%" }} />
-              )}
+              <img src={smart} alt="Smart" style={{ width: "100%" }} />
               <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                 <img src={icon2} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">Newswires</p>
@@ -857,6 +757,7 @@ const Media = () => {
             </center>
           </div>
 
+          {/* news 7 */}
           <div
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
@@ -865,15 +766,9 @@ const Media = () => {
               margin: "auto",
               marginTop: "5%",
             }}
-            onMouseEnter={() => setIsHovered7(true)}
-            onMouseLeave={() => setIsHovered7(false)}
           >
             <div style={{ position: "relative" }}>
-              {isHovered7 ? (
-                <img src={asain2} alt="Asian2" style={{ width: "100%" }} />
-              ) : (
-                <img src={pm} alt="Pm" style={{ width: "100%" }} />
-              )}
+              <img src={pm} alt="Pm" style={{ width: "100%" }} />
               <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                 <img src={icon5} alt="Icon 2" className="h-[40px]" />
                 <p className="text-white mt-1">ANI Multimedia News</p>
@@ -895,6 +790,42 @@ const Media = () => {
                 onClick={() =>
                   window.open(
                     "https://aninews.in/news/national/general-news/pm-modi-presents-most-creative-creator-award-to-shraddha-rj-raunac-at-bharat-mandapam20240308115958/",
+                    "_blank"
+                  )
+                }
+              >
+                View More
+              </button>
+            </center>
+          </div>
+
+          {/* news 8 */}
+          <div
+            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
+            style={{
+              borderRadius: "14px",
+              width: "100%",
+              margin: "auto",
+              marginTop: "5%",
+            }}
+          >
+            <img src={asian} alt="Asian" style={{ width: "100%" }} />
+            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+              Advancing Technology to Foster a Sustainable Energy Landscape
+            </div>
+            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+              February 24, 2024
+            </div>
+            <center>
+              <button
+                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
                     "_blank"
                   )
                 }
