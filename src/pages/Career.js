@@ -146,45 +146,45 @@ const Career = () => {
 
     // console.log('backend form data',formData)
 
-     fetch("http://localhost:4000/backend/uploadapplicationform", {
-      method: 'POST',
-      body: formData
+     fetch("http://34.93.162.58:4000/backend/uploadapplicationform", {
+       method: "POST",
+       body: formData,
      })
-     .then(response => {
-      if(!response.ok) {
-        //throw new Error('Error uploading application form')
-      } else {
-        toast.success('We have received your response!');
-        setApplicationFormData({
-          Name: "",
-          Email: "",
-          Phone: "",
-          LinkedIn: "",
-          ExpectedSalary: "",
-          PrevJobCompany: "",
-          PrevJobTitle: "",
-          SelfIntro: "",
-          WhyIntrested: "",
-          YourExpectations: "",
-          OurExpectations: "",
-          Relocate: "",
-          StartDate: null,
-          ApplyingForDepartment: "",
-          ApplyingForPosition: "",
-        });
-        setResume(null);
+       .then((response) => {
+         if (!response.ok) {
+           //throw new Error('Error uploading application form')
+         } else {
+           toast.success("We have received your response!");
+           setApplicationFormData({
+             Name: "",
+             Email: "",
+             Phone: "",
+             LinkedIn: "",
+             ExpectedSalary: "",
+             PrevJobCompany: "",
+             PrevJobTitle: "",
+             SelfIntro: "",
+             WhyIntrested: "",
+             YourExpectations: "",
+             OurExpectations: "",
+             Relocate: "",
+             StartDate: null,
+             ApplyingForDepartment: "",
+             ApplyingForPosition: "",
+           });
+           setResume(null);
 
-        const fileInput = document.getElementById('resumeInput');
-        if(fileInput) {
-          fileInput.value = null;
-        }
+           const fileInput = document.getElementById("resumeInput");
+           if (fileInput) {
+             fileInput.value = null;
+           }
 
-        setApplicationFormOpen(false);
-      }
-     })
-     .catch(error => {
-      //console.error(error);
-     });
+           setApplicationFormOpen(false);
+         }
+       })
+       .catch((error) => {
+         //console.error(error);
+       });
   };
 
   const uniqueDepartments = ['All', ...new Set(position.map(position => position.DepartmentName))];
