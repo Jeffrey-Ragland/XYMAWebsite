@@ -8,27 +8,27 @@ const ProtectedRoute = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if(token) {
-            fetch('http://localhost:4000/backend/validateToken',{
-                method: 'POST',
-                headers: {
-                    'Contnt-Type' : 'application/json',
-                    'Authorization' : token
-                }
+            // fetch('http://localhost:4000/backend/validateToken',{
+            fetch("http://34.93.162.58:4000/backend/validateToken", {
+              method: "POST",
+              headers: {
+                "Contnt-Type": "application/json",
+                Authorization: token,
+              },
             })
-            .then(response => response.json())
-            .then(data => {
+              .then((response) => response.json())
+              .then((data) => {
                 if (data.valid) {
                   setIsAuthenticated(true);
-                } 
-                else {
+                } else {
                   localStorage.removeItem("token");
                 }
                 setLoading(false);
-            })
-            .catch(err => {
+              })
+              .catch((err) => {
                 console.log(err);
                 setLoading(false);
-            });
+              });
         }
         else {
             setLoading(false);
