@@ -20,25 +20,24 @@ const AdminLogin = () => {
 
     const handleAdminLoginSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/backend/adminlogin',{
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json',
-            },
-            body: JSON.stringify(formData),
+        fetch("http://34.93.162.58:4000/backend/adminlogin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('server response',data);
-            if(data.token){
-                localStorage.setItem('token',data.token);
-                navigate(data.redirectUrl);
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("server response", data);
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+              navigate(data.redirectUrl);
+            } else {
+              window.alert("Invalid credentials");
             }
-            else {
-                window.alert('Invalid credentials');
-            }
-        })
-        .catch(err => console.log(err));
+          })
+          .catch((err) => console.log(err));
     };
 
   return (

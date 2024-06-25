@@ -12,7 +12,11 @@ import oilRecovery from "../Assets/oilRecovery.png";
 import oilRecovery2 from '../Assets/oilRecovery3.jpg';
 import paints1 from '../Assets/paintsresized.png';
 import paints2 from '../Assets/paints2.jpg';
-import brochure from "../Assets/XymaBrochure.pdf";
+import brochure from "../pdfAssets/XymaBrochure.pdf";
+import lubricantsPdf from '../pdfAssets/lubricants.pdf';
+import paintsPdf from "../pdfAssets/paints.pdf";
+import refiniriesPdf from "../pdfAssets/refiniries.pdf";
+import aluminumPdf from '../pdfAssets/metal.pdf';
 //import { useNavigate } from 'react-router-dom';
 import {
   GiMetalDisc,
@@ -490,7 +494,7 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => window.open(aluminumPdf, "_blank")}
                 >
                   Case Study
                 </span>
@@ -597,7 +601,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => {
+                    window.open(refiniriesPdf, "_blank")
+                  }}
                 >
                   Case Study
                 </span>
@@ -644,7 +650,7 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => window.open(lubricantsPdf, "_blank")}
                 >
                   Case Study
                 </span>
@@ -747,7 +753,7 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => window.open(paintsPdf, "_blank")}
                 >
                   Case Study
                 </span>

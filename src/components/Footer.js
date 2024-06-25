@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoShareSocialSharp } from "react-icons/io5";
-import brochure from '../Assets/XymaBrochure.pdf';
+import brochure from '../pdfAssets/XymaBrochure.pdf';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
