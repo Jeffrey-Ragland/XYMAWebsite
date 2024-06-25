@@ -781,7 +781,7 @@ const Product = () => {
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={luboil} alt="lube" />
+                    <img className="w-10" src={luboil} alt="lube"/>
                   </div>
                   <div className="font-semibold">Lubrication Oil</div>
                 </div>
@@ -790,7 +790,7 @@ const Product = () => {
               <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={eor} alt="eor" />
+                    <img className="w-10" src={eor} alt="eor"/>
                   </div>
                   <div className="font-semibold">E.O.R.</div>
                 </div>
@@ -1575,7 +1575,7 @@ const Product = () => {
             </div>
             <div className="flex justify-center p-0.5">
               <video autoPlay controls>
-                <source src="../Assets/utmapsDemo.mp4" type="video/mp4" />
+                <source src={portsDemo} type="video/mp4" />
               </video>
             </div>
           </div>
