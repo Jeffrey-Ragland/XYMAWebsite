@@ -73,6 +73,7 @@ import "aos/dist/aos.css";
 const About = () => {
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
+  const [activePic, setActivePic] = useState([]);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [boxOneMore, setBoxOneMore] = useState(false);
   const [boxTwoMore, setBoxTwoMore] = useState(false);
@@ -151,7 +152,20 @@ const About = () => {
             Math.max(0, sectionPosition.top);
           const visiblePercentage = (visiblePart / sectionHeight) * 100;
 
-          if (visiblePercentage >= 40) {
+          if (visiblePercentage >= 90) {
+            setActivePic((prevPic) => {
+              if (!prevPic.includes(sectionId)) {
+                return [...prevPic, sectionId];
+              }
+              return prevPic;
+            });
+            setActiveSection((prevActiveSections) => {
+            if (!prevActiveSections.includes(sectionId)) {
+              return [...prevActiveSections, sectionId];
+            }
+            return prevActiveSections;
+          });
+          } else if (visiblePercentage >= 40) {
             setActiveSection((prevActiveSections) => {
               if (!prevActiveSections.includes(sectionId)) {
                 return [...prevActiveSections, sectionId];
@@ -161,6 +175,10 @@ const About = () => {
           } else {
             setActiveSection((prevActiveSections) => {
               return prevActiveSections.filter((id) => id !== sectionId);
+            });
+
+            setActivePic((prevPic) => {
+              return prevPic.filter((id) => id !== sectionId);
             });
           }
         }
@@ -990,223 +1008,255 @@ const About = () => {
         </div>
       </section>
 
-      {/* electronics team */}
-      <section
-        id="section4"
-        ref={sectionRefs.section4}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Electronics Team
-        </center>
-        <div className="md:flex gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] mb-4 md:mb-0">
-            <img
-              src={electronicsTeam}
-              alt="electronicsTeam"
-              className="rounded-2xl"
+      <div className="relative">
+        <div
+          className={`${
+            activePic.length > 0
+              ? "bg-black/20 absolute inset-0 h-full w-full z-10"
+              : ""
+          }`}
+        ></div>
+        {/* electronics team */}
+        <section
+          id="section4"
+          ref={sectionRefs.section4}
+          className={`mx-[5%] md:mx-[8%]  ${
+            activePic.includes("section4")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl `}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Electronics Team
+          </center>
+          <div className="md:flex gap-8 mb-6 md:mb-10">
+            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+              <img
+                src={electronicsTeam}
+                alt="electronicsTeam"
+                className="rounded-2xl"
+              />
+            </div>
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-right"
-            />
+            >
+              The electronics team's responsibilities include creating circuit
+              designs, developing embedded systems, and troubleshooting
+              electronic hardware. The team works on projects ranging from
+              consumer electronics to industrial automation, ensuring that
+              devices and systems are reliable, efficient, and meet safety
+              standards. They collaborate with other departments to integrate
+              electronics into products, enhance functionality, and drive
+              innovation in the company's offerings.
+            </div>
           </div>
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The electronics team's responsibilities include creating circuit
-            designs, developing embedded systems, and troubleshooting electronic
-            hardware. The team works on projects ranging from consumer
-            electronics to industrial automation, ensuring that devices and
-            systems are reliable, efficient, and meet safety standards. They
-            collaborate with other departments to integrate electronics into
-            products, enhance functionality, and drive innovation in the
-            company's offerings.
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* software team */}
-      <section
-        id="section5"
-        ref={sectionRefs.section5}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Software Development Team
-        </center>
-        <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The software team is responsible for designing, developing, testing,
-            and maintaining software applications and systems. Their tasks
-            include writing code, debugging, implementing new features, and
-            ensuring software performance and security. The team works on a
-            range of projects, from developing customer-facing applications to
-            internal tools that streamline operations. They use various
-            programming languages to create reliable and user-friendly software
-            solutions. Collaboration with other departments is key to ensuring
-            that the software meets the needs of the business and its customers.
-          </div>
-          <div className="w-full md:w-[50%]">
-            <img
-              src={softwareTeam}
-              alt="softwareTeam"
-              className="rounded-2xl"
+        {/* software team */}
+        <section
+          id="section5"
+          ref={sectionRefs.section5}
+          className={`mx-[5%] md:mx-[8%] z-10 ${
+            activePic.includes("section5")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Software Development Team
+          </center>
+          <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-left"
-            />
+            >
+              The software team is responsible for designing, developing,
+              testing, and maintaining software applications and systems. Their
+              tasks include writing code, debugging, implementing new features,
+              and ensuring software performance and security. The team works on
+              a range of projects, from developing customer-facing applications
+              to internal tools that streamline operations. They use various
+              programming languages to create reliable and user-friendly
+              software solutions. Collaboration with other departments is key to
+              ensuring that the software meets the needs of the business and its
+              customers.
+            </div>
+            <div className="w-full md:w-[50%]">
+              <img
+                src={softwareTeam}
+                alt="softwareTeam"
+                className="rounded-2xl"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ultrasonic team */}
-      <section
-        id="section6"
-        ref={sectionRefs.section6}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Ultrasonics Team
-        </center>
-        <div className="md:flex gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] mb-4 md:mb-0">
-            <img
-              src={portsTeam}
-              alt="portsTeam"
-              className="rounded-2xl"
+        {/* ultrasonic team */}
+        <section
+          id="section6"
+          ref={sectionRefs.section6}
+          className={`mx-[5%] md:mx-[8%] ${
+            activePic.includes("section6")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Ultrasonics Team
+          </center>
+          <div className="md:flex gap-8 mb-6 md:mb-10">
+            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+              <img src={portsTeam} alt="portsTeam" className="rounded-2xl" />
+            </div>
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-right"
-            />
+            >
+              The ultrasonics team is responsible for developing and
+              implementing ultrasonic technology solutions. This involves using
+              high-frequency sound waves for various applications. The team
+              typically works on designing, testing, and maintaining ultrasonic
+              equipment, ensuring high precision and efficiency in their
+              operations. They collaborate with other departments to integrate
+              ultrasonic solutions into products and processes, improving
+              quality control, safety, and performance.
+            </div>
           </div>
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The ultrasonics team is responsible for developing and implementing
-            ultrasonic technology solutions. This involves using high-frequency
-            sound waves for various applications. The team typically works on
-            designing, testing, and maintaining ultrasonic equipment, ensuring
-            high precision and efficiency in their operations. They collaborate
-            with other departments to integrate ultrasonic solutions into
-            products and processes, improving quality control, safety, and
-            performance.
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* designing team */}
-      <section
-        id="section7"
-        ref={sectionRefs.section7}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Mechanical Designing Team
-        </center>
-        <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The designing team is responsible for creating visual and user
-            experience (UX) designs that align with the company’s brand and
-            product goals. Their tasks include developing graphics, layouts, and
-            interfaces. They focus on aesthetics, usability, and user
-            satisfaction, ensuring that designs are both appealing and
-            functional. The team often uses tools like Adobe Creative Suite,
-            Sketch, and Figma, and works closely with other departments, such as
-            marketing and development.
-          </div>
-          <div className="w-full md:w-[50%]">
-            <img
-              src={designTeam}
-              alt="designTeam"
-              className="rounded-2xl"
+        {/* designing team */}
+        <section
+          id="section7"
+          ref={sectionRefs.section7}
+          className={`mx-[5%] md:mx-[8%] ${
+            activePic.includes("section7")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Mechanical Designing Team
+          </center>
+          <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-left"
-            />
+            >
+              The designing team is responsible for creating visual and user
+              experience (UX) designs that align with the company’s brand and
+              product goals. Their tasks include developing graphics, layouts,
+              and interfaces. They focus on aesthetics, usability, and user
+              satisfaction, ensuring that designs are both appealing and
+              functional. The team often uses tools like Adobe Creative Suite,
+              Sketch, and Figma, and works closely with other departments, such
+              as marketing and development.
+            </div>
+            <div className="w-full md:w-[50%]">
+              <img src={designTeam} alt="designTeam" className="rounded-2xl" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* python team */}
-      <section
-        id="section8"
-        ref={sectionRefs.section8}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Software Backend and Operations Team
-        </center>
-        <div className="md:flex gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] mb-4 md:mb-0">
-            <img
-              src={pythonTeam}
-              alt="pythonTeam"
-              className="rounded-2xl"
+        {/* python team */}
+        <section
+          id="section8"
+          ref={sectionRefs.section8}
+          className={`mx-[5%] md:mx-[8%] ${
+            activePic.includes("section8")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Software Backend and Operations Team
+          </center>
+          <div className="md:flex gap-8 mb-6 md:mb-10">
+            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+              <img src={pythonTeam} alt="pythonTeam" className="rounded-2xl" />
+            </div>
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-right"
-            />
+            >
+              The Python team specializes in developing software solutions using
+              the Python programming language. Their responsibilities include
+              writing and maintaining code for various applications, such as web
+              development, data analysis, machine learning, and automation. The
+              team works on creating efficient, scalable, and maintainable
+              software, leveraging Python's versatility and extensive libraries.
+              They collaborate with other departments to integrate Python-based
+              solutions into projects.
+            </div>
           </div>
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The Python team specializes in developing software solutions using
-            the Python programming language. Their responsibilities include
-            writing and maintaining code for various applications, such as web
-            development, data analysis, machine learning, and automation. The
-            team works on creating efficient, scalable, and maintainable
-            software, leveraging Python's versatility and extensive libraries.
-            They collaborate with other departments to integrate Python-based
-            solutions into projects.
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* data team */}
-      <section
-        id="section9"
-        ref={sectionRefs.section9}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Data Analytics Team
-        </center>
-        <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The data analysis team is responsible for collecting, processing,
-            and interpreting large sets of data to provide actionable insights.
-            Their tasks include data cleaning, statistical analysis, data
-            visualization, and creating reports to support decision-making
-            processes. The team uses various tools and techniques to identify
-            trends, patterns, and correlations within the data, helping the
-            company to optimize operations, understand customer behavior, and
-            drive strategic initiatives.
-          </div>
-          <div className="w-full md:w-[50%]">
-            <img
-              src={dataTeam}
-              alt="dataTeam"
-              className="rounded-2xl"
+        {/* data team */}
+        <section
+          id="section9"
+          ref={sectionRefs.section9}
+          className={`mx-[5%] md:mx-[8%] ${
+            activePic.includes("section9")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Data Analytics Team
+          </center>
+          <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-left"
-            />
+            >
+              The data analysis team is responsible for collecting, processing,
+              and interpreting large sets of data to provide actionable
+              insights. Their tasks include data cleaning, statistical analysis,
+              data visualization, and creating reports to support
+              decision-making processes. The team uses various tools and
+              techniques to identify trends, patterns, and correlations within
+              the data, helping the company to optimize operations, understand
+              customer behavior, and drive strategic initiatives.
+            </div>
+            <div className="w-full md:w-[50%]">
+              <img src={dataTeam} alt="dataTeam" className="rounded-2xl" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* admin team */}
-      <section
-        id="section10"
-        ref={sectionRefs.section10}
-        className="mx-[5%] md:mx-[8%]"
-      >
-        <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
-          Admin Department
-        </center>
-        <div className="md:flex gap-8 mb-6 md:mb-10">
-          <div className="w-full md:w-[50%] mb-4 md:mb-0">
-            <img
-              src={adminTeam}
-              alt="adminTeam"
-              className="rounded-2xl"
+        {/* admin team */}
+        <section
+          id="section10"
+          ref={sectionRefs.section10}
+          className={`mx-[5%] md:mx-[8%] ${
+            activePic.includes("section10")
+              ? "scale-110 shadow-gray-400 shadow-xl relative bg-white z-10"
+              : ""
+          } p-4 duration-200 mb-8 rounded-xl`}
+        >
+          <center className="mb-4 md:mb-6 2xl:mb-8 text-base md:text-xl lg:text-2xl 2xl:text-3xl font-medium">
+            Admin Department
+          </center>
+          <div className="md:flex gap-8 mb-6 md:mb-10">
+            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+              <img src={adminTeam} alt="adminTeam" className="rounded-2xl" />
+            </div>
+            <div
+              className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-right"
-            />
+            >
+              The admin department is responsible for managing the day-to-day
+              administrative functions and ensuring smooth office operations.
+              Their tasks include handling correspondence, managing schedules
+              and appointments, organizing meetings, maintaining records, and
+              overseeing office supplies and equipment. They also coordinate
+              with other departments to support administrative needs, assist
+              with human resources tasks like onboarding and payroll, and ensure
+              compliance with company policies and procedures.
+            </div>
           </div>
-          <div className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center">
-            The admin department is responsible for managing the day-to-day
-            administrative functions and ensuring smooth office operations.
-            Their tasks include handling correspondence, managing schedules and
-            appointments, organizing meetings, maintaining records, and
-            overseeing office supplies and equipment. They also coordinate with
-            other departments to support administrative needs, assist with human
-            resources tasks like onboarding and payroll, and ensure compliance
-            with company policies and procedures.
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section
         id="section11"
@@ -1377,7 +1427,7 @@ const About = () => {
         </div>
 
         <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
-          <img className="h-12" src={framevector} alt='vector'></img>
+          <img className="h-12" src={framevector} alt="vector"></img>
         </div>
         <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting

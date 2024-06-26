@@ -837,7 +837,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="text-center text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-6xl font-semibold mb-2 md:mb-4 2xl:mb-8">
-          Xyma Analytics
+          XYMA Analytics
         </div>
 
         <div className=" mt-3 px-4 md:px-0 md:flex flex-wrap justify-center gap-2 text-[#FE7D18] z-10">
