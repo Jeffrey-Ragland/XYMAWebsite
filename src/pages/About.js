@@ -1036,7 +1036,7 @@ const About = () => {
                 alt="electronicsTeam"
                 className="rounded-2xl"
               />
-            </div>
+            </div>  
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos="slide-right"
