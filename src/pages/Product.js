@@ -758,8 +758,7 @@ const Product = () => {
               <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 PoRTS is an invasive/non-invasive based IIoT-enabled rheology
                 and temperature measurement sensor that continuously captures
-                multiple parameters such as viscosity, density and temperature
-                with a single waveguide unlike discrete measurements with
+                multiple parameters such as viscosity, density and temperature unlike discrete measurements with
                 thermocouple/RTDs or discrete measurements with sampling from
                 viscometer and density meter.
                 <span
@@ -827,8 +826,7 @@ const Product = () => {
                         PoRTS is an invasive/non-invasive based IIoT-enabled
                         rheology and temperature measurement sensor that
                         continuously captures multiple parameters such as
-                        viscosity, density and temperature with a single
-                        waveguide unlike discrete measurements with
+                        viscosity, density and temperature unlike discrete measurements with
                         thermocouple/RTDs or discrete measurements with sampling
                         from viscometer and density meter.
                       </div>

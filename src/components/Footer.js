@@ -7,9 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RWebShare } from "react-web-share";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { IoShareSocialSharp } from "react-icons/io5";
 import brochure from '../pdfAssets/XymaBrochure.pdf';
 
@@ -119,19 +118,6 @@ const Footer = () => {
               unplanned downtime and enhancing process efficiency.
             </div>
             <div className="flex gap-3 mt-4">
-              {/* twitter */}
-              <div
-                className="p-1 rounded-lg cursor-pointer"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open("https://x.com/analyticsxyma?lang=en", "_blank")
-                }
-              >
-                <FaXTwitter size={14} />
-              </div>
               {/* linkedin */}
               <div
                 className="p-1 rounded-lg cursor-pointer"
@@ -148,6 +134,21 @@ const Footer = () => {
               >
                 <FaLinkedinIn size={15} />
               </div>
+
+              {/* youtube */}
+              <div
+                className="p-1 rounded-lg cursor-pointer"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+                onClick={() =>
+                  window.open("http://www.youtube.com/@XymaAnalytics", "_blank")
+                }
+              >
+                <FaYoutube size={14} />
+              </div>
+
               {/* share */}
               <div
                 className="p-1 rounded-lg cursor-pointer"
@@ -171,7 +172,8 @@ const Footer = () => {
           <div className="w-full md:w-[50%] flex text-xs lg:text-sm xl:text-xs 2xl:text-base">
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Quick Links <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
+                Quick Links{" "}
+                <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
               </div>
               <div
                 className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
@@ -201,7 +203,8 @@ const Footer = () => {
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Products <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
+                Products{" "}
+                <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
               </div>
               <div
                 className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
@@ -231,16 +234,16 @@ const Footer = () => {
 
             <div className="w-1/3">
               <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
-                Support <img className="mt-1 h-0.5 w-5" src={line} alt='line'/>
+                Support <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
               </div>
               <div
                 className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
                 onClick={() => navigate("/contact")}
               >
-                Contact Us 
+                Contact Us
               </div>
               <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
-                Contact Sales 
+                Contact Sales
               </div>
             </div>
           </div>

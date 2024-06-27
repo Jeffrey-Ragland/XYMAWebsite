@@ -111,7 +111,21 @@ const About = () => {
   };
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({ duration: 1500 });
+
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   setTimeout(() => {
+    //     AOS.refresh();
+    //   }, 500);
+    // });
+
+    // return () => {
+    //   document.removeEventListener('DOMContentLoaded', () => {
+    //     setTimeout(() => {
+    //       AOS.refresh();
+    //     }, 500);
+    //   });
+    // };
   }, []);
 
   // condition to display icon menu
@@ -1030,16 +1044,19 @@ const About = () => {
             Electronics Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+            <div
+              className="w-full md:w-[50%] mb-4 md:mb-0"
+              data-aos={isLargeScreen ? "" : "slide-right"}
+            >
               <img
                 src={electronicsTeam}
                 alt="electronicsTeam"
                 className="rounded-2xl"
               />
-            </div>  
+            </div>
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-right"
+              data-aos={isLargeScreen ? "slide-right" : ""}
             >
               The electronics team's responsibilities include creating circuit
               designs, developing embedded systems, and troubleshooting
@@ -1069,7 +1086,7 @@ const About = () => {
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-left"
+              data-aos={isLargeScreen ? "slide-left" : ""}
             >
               The software team is responsible for designing, developing,
               testing, and maintaining software applications and systems. Their
@@ -1082,7 +1099,10 @@ const About = () => {
               ensuring that the software meets the needs of the business and its
               customers.
             </div>
-            <div className="w-full md:w-[50%]">
+            <div
+              className="w-full md:w-[50%]"
+              data-aos={isLargeScreen ? "" : "slide-left"}
+            >
               <img
                 src={softwareTeam}
                 alt="softwareTeam"
@@ -1106,12 +1126,15 @@ const About = () => {
             Ultrasonics Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+            <div
+              className="w-full md:w-[50%] mb-4 md:mb-0"
+              data-aos={isLargeScreen ? "" : "slide-right"}
+            >
               <img src={portsTeam} alt="portsTeam" className="rounded-2xl" />
             </div>
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-right"
+              data-aos={isLargeScreen ? "slide-right" : ""}
             >
               The ultrasonics team is responsible for developing and
               implementing ultrasonic technology solutions. This involves using
@@ -1141,7 +1164,7 @@ const About = () => {
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-left"
+              data-aos={isLargeScreen ? "slide-left" : ""}
             >
               The designing team is responsible for creating visual and user
               experience (UX) designs that align with the company’s brand and
@@ -1152,7 +1175,10 @@ const About = () => {
               Sketch, and Figma, and works closely with other departments, such
               as marketing and development.
             </div>
-            <div className="w-full md:w-[50%]">
+            <div
+              className="w-full md:w-[50%]"
+              data-aos={isLargeScreen ? "" : "slide-left"}
+            >
               <img src={designTeam} alt="designTeam" className="rounded-2xl" />
             </div>
           </div>
@@ -1172,12 +1198,15 @@ const About = () => {
             Software Backend and Operations Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+            <div
+              className="w-full md:w-[50%] mb-4 md:mb-0"
+              data-aos={isLargeScreen ? "" : "slide-right"}
+            >
               <img src={pythonTeam} alt="pythonTeam" className="rounded-2xl" />
             </div>
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-right"
+              data-aos={isLargeScreen ? "slide-right" : ""}
             >
               The Python team specializes in developing software solutions using
               the Python programming language. Their responsibilities include
@@ -1207,7 +1236,7 @@ const About = () => {
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-left"
+              data-aos={isLargeScreen ? "slide-left" : ""}
             >
               The data analysis team is responsible for collecting, processing,
               and interpreting large sets of data to provide actionable
@@ -1218,7 +1247,10 @@ const About = () => {
               the data, helping the company to optimize operations, understand
               customer behavior, and drive strategic initiatives.
             </div>
-            <div className="w-full md:w-[50%]">
+            <div
+              className="w-full md:w-[50%]"
+              data-aos={isLargeScreen ? "" : "slide-left"}
+            >
               <img src={dataTeam} alt="dataTeam" className="rounded-2xl" />
             </div>
           </div>
@@ -1238,12 +1270,15 @@ const About = () => {
             Admin Department
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div className="w-full md:w-[50%] mb-4 md:mb-0">
+            <div
+              className="w-full md:w-[50%] mb-4 md:mb-0"
+              data-aos={isLargeScreen ? "" : "slide-right"}
+            >
               <img src={adminTeam} alt="adminTeam" className="rounded-2xl" />
             </div>
             <div
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
-              data-aos="slide-right"
+              data-aos={isLargeScreen ? "slide-right" : ""}
             >
               The admin department is responsible for managing the day-to-day
               administrative functions and ensuring smooth office operations.

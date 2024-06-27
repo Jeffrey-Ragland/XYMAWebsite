@@ -25,7 +25,7 @@ const RoutingPage = () => {
     "/",
     "/about",
     "/products",
-    "/resources",
+    "/industries",
     "/media",
     "/careers",
     "/contact",
@@ -44,7 +44,7 @@ const RoutingPage = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Product />} />
-          <Route path="/resources" element={<Resource />} />
+          <Route path="/industries" element={<Resource />} />
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
           <Route path="/contact" element={<Contact />} />

@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.487a9117.css",
-    "main.js": "/static/js/main.e615bbd4.js",
-    "static/js/453.f2c81f3e.chunk.js": "/static/js/453.f2c81f3e.chunk.js",
+    "main.css": "/static/css/main.81dc4789.css",
+    "main.js": "/static/js/main.512d3c16.js",
+    "static/js/453.4c5ed92a.chunk.js": "/static/js/453.4c5ed92a.chunk.js",
     "static/media/ipamsDemo.mp4": "/static/media/ipamsDemo.8fcbdd99daf4d416d252.mp4",
     "static/media/utmapsDemo.mp4": "/static/media/utmapsDemo.5627d55df171358567e3.mp4",
     "static/media/portsDemo.mp4": "/static/media/portsDemo.58d33679ca100569915e.mp4",
@@ -87,7 +87,6 @@
     "static/media/Image9.png": "/static/media/Image9.bfd678e6130b274f72bd.png",
     "static/media/additionalLogo3.png": "/static/media/additionalLogo3.c4b7faa1ad60967bee0f.png",
     "static/media/lam.png": "/static/media/lam.5c1a355ea20e2f344de1.png",
-    "static/media/reformerTubesHome.png": "/static/media/reformerTubesHome.26562e10b26c1b755d7e.png",
     "static/media/Image10.png": "/static/media/Image10.4f893d472524fd8a9080.png",
     "static/media/Image4.png": "/static/media/Image4.3c77c127579f4f54db5a.png",
     "static/media/additionalLogo4.png": "/static/media/additionalLogo4.8055db317640ab7289ad.png",
@@ -125,8 +124,10 @@
     "static/media/Frameasian.png": "/static/media/Frameasian.d19a8cda6df0e407cfb0.png",
     "static/media/gail.png": "/static/media/gail.6804deb0b7fb2a066492.png",
     "static/media/xymalogo_white.png": "/static/media/xymalogo_white.4e2ffa7fd8e87d8d9843.png",
+    "static/media/semiconductorHome.jpg": "/static/media/semiconductorHome.0732e6059ef2213e4377.jpg",
     "static/media/bpcl2.png": "/static/media/bpcl2.741fe0e1aa4ec8c7d6e8.png",
     "static/media/newAluminium1.png": "/static/media/newAluminium1.612f5afe5291cd5ad389.png",
+    "static/media/miningHome.jpg": "/static/media/miningHome.ac1120786bb54b003caf.jpg",
     "static/media/paintsHome.jpg": "/static/media/paintsHome.2efae6d48ac4be9ea90e.jpg",
     "static/media/ipamsIcon1.png": "/static/media/ipamsIcon1.d61ae2a304b37ef68272.png",
     "static/media/ipamsIcon3.png": "/static/media/ipamsIcon3.485d0337b53de6537152.png",
@@ -157,12 +158,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.487a9117.css.map": "/static/css/main.487a9117.css.map",
-    "main.e615bbd4.js.map": "/static/js/main.e615bbd4.js.map",
-    "453.f2c81f3e.chunk.js.map": "/static/js/453.f2c81f3e.chunk.js.map"
+    "main.81dc4789.css.map": "/static/css/main.81dc4789.css.map",
+    "main.512d3c16.js.map": "/static/js/main.512d3c16.js.map",
+    "453.4c5ed92a.chunk.js.map": "/static/js/453.4c5ed92a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.487a9117.css",
-    "static/js/main.e615bbd4.js"
+    "static/css/main.81dc4789.css",
+    "static/js/main.512d3c16.js"
   ]
 }

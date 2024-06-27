@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import xyma from '../Assets/xymalogo_white.png';
-import { HeaderData } from "../data/HeaderData";
 import CircleComponent from "../CircleComponent";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -22,6 +21,33 @@ const Navbar = () => {
   {
     setBurgerMenuOpen(!burgerMenuOpen);
   }
+
+  const HeaderData = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Products",
+      path: "/products",
+    },
+    {
+      title: "Industries",
+      path: "/industries",
+    },
+    {
+      title: "Careers",
+      path: "/careers",
+    },
+    {
+      title: "Media",
+      path: "/media",
+    },
+    {
+      title: "About Us",
+      path: "/about",
+    },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">

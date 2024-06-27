@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import aluminum from '../Images/al1.png';
 import steel from '../Assets/steelHome.png';
-import reformerTubes from '../Assets/reformerTubesHome.png'
 import lubricants from '../Assets/lubricantsHome.png';
-import oilRecovery from '../Assets/oilRecoveryHome.png'
-import paints from '../Assets/paintsHome.jpg'
+import oilRecovery from '../Assets/oilRecoveryHome.png';
+import paints from '../Assets/paintsHome.jpg';
+import semiconductor from '../Assets/semiconductorHome.jpg';
+import mining from "../Assets/miningHome.jpg";
 import utmaps from '../Assets/newut.jpeg';
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
-import ipams from '../Assets/IPAMS.png'
+import ipams from '../Assets/IPAMS.png';
 import newpage from '../Assets/newpage.png';
 import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
@@ -36,7 +37,7 @@ import grp from '../Assets/Group.png';
 import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
-import line from '../Assets/underline.png'
+import line from '../Assets/underline.png';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GiWaterSplash } from "react-icons/gi";
@@ -46,7 +47,6 @@ import { HiUserGroup } from "react-icons/hi2";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-//import ProgressBar from "react-scroll-progress-bar";
 
 export const Home = () => {
   const [clickedImage, setClickedImage] = useState(aluminum);
@@ -70,10 +70,16 @@ export const Home = () => {
   };
 
   const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
     slidesToShow: 1,
-    rows: 2,
+    slidesToScroll: 1,
+    rows: 1,
     slidesPerRow: 7,
     adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     responsive: [
       {
         breakpoint: 480,
@@ -83,7 +89,7 @@ export const Home = () => {
           speed: 1000,
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 2,
+          rows: 1,
           slidesPerRow: 2,
           adaptiveHeight: true,
           autoplay: true,
@@ -98,7 +104,7 @@ export const Home = () => {
           speed: 1000,
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 2,
+          rows: 1,
           slidesPerRow: 3,
           adaptiveHeight: true,
           autoplay: true,
@@ -240,16 +246,20 @@ export const Home = () => {
         setClickedImage(steel);
         break;
 
-      case "refiniries":
-        setClickedImage(reformerTubes);
-        break;
-
       case "lubricants":
         setClickedImage(lubricants);
         break;
 
       case "oilRecovery":
         setClickedImage(oilRecovery);
+        break;
+
+      case "semiconductor":
+        setClickedImage(semiconductor);
+        break;
+
+      case "mining":
+        setClickedImage(mining);
         break;
 
       case "paints":
@@ -380,7 +390,7 @@ export const Home = () => {
             <div>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
             <div>
               <div>Process&nbsp;parameter&nbsp;measurements</div>
-              <img className=" w-full h-2" src={line} alt='line'></img>
+              <img className=" w-full h-2" src={line} alt="line"></img>
             </div>
           </div>
         </div>
@@ -388,7 +398,7 @@ export const Home = () => {
         <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
           {/* list of elements */}
           <div
-            className="w-full overflow-auto md:w-[14%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
+            className="w-full overflow-auto md:w-[20%] xl:w-[16%] 2xl:w-[15%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
             <div className="mb-0 md:mb-2 ml-2">
@@ -398,9 +408,10 @@ export const Home = () => {
               <div className="border border-[#013872] mx-4 rounded-full" />
             </div>
 
+            {/* aluminum */}
             <div>
               <div
-                className={`md:w-full cursor-pointer p-1 mb-1 flex ${
+                className={`md:w-full cursor-pointer p-1 xl:mb-1 flex ${
                   clickedImage === aluminum && "text-[#013872] font-bold"
                 }`}
                 id="aluminum"
@@ -416,9 +427,10 @@ export const Home = () => {
               )}
             </div>
 
+            {/* steel */}
             <div>
               <div
-                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
                   clickedImage === steel && "text-[#013872] font-bold"
                 }`}
                 id="steel"
@@ -434,27 +446,10 @@ export const Home = () => {
               )}
             </div>
 
+            {/* marine */}
             <div>
               <div
-                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
-                  clickedImage === reformerTubes && "text-[#013872] font-bold"
-                }`}
-                id="refiniries"
-                onClick={handleImageChange}
-              >
-                {clickedImage === reformerTubes && (
-                  <div className="invisible md:visible border border-[#013872]"></div>
-                )}
-                <div className="ml-1 -z-10">Refiniries</div>
-              </div>
-              {clickedImage === reformerTubes && (
-                <div className="border border-[#013872] md:hidden" />
-              )}
-            </div>
-
-            <div>
-              <div
-                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
                   clickedImage === lubricants && "text-[#013872] font-bold"
                 }`}
                 id="lubricants"
@@ -470,9 +465,10 @@ export const Home = () => {
               )}
             </div>
 
+            {/* oil and gas */}
             <div>
               <div
-                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
                   clickedImage === oilRecovery && "text-[#013872] font-bold"
                 }`}
                 id="oilRecovery"
@@ -488,9 +484,48 @@ export const Home = () => {
               )}
             </div>
 
+            {/* semiconductor */}
             <div>
               <div
-                className={`md:w-full flex p-1 mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                  clickedImage === semiconductor && "text-[#013872] font-bold"
+                }`}
+                id="semiconductor"
+                onClick={handleImageChange}
+              >
+                {clickedImage === semiconductor && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Semiconductor</div>
+              </div>
+              {clickedImage === semiconductor && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            {/* mining */}
+            <div>
+              <div
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                  clickedImage === mining && "text-[#013872] font-bold"
+                }`}
+                id="mining"
+                onClick={handleImageChange}
+              >
+                {clickedImage === mining && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Mining</div>
+              </div>
+              {clickedImage === mining && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            {/* specialty chemicals */}
+            <div>
+              <div
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
                   clickedImage === paints && "text-[#013872] font-bold"
                 }`}
                 id="paints"
@@ -499,7 +534,7 @@ export const Home = () => {
                 {clickedImage === paints && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="ml-1 -z-10">Paints</div>
+                <div className="ml-1 -z-10">Specialty&nbsp;Chemicals</div>
               </div>
               {clickedImage === paints && (
                 <div className="border border-[#013872] md:hidden" />
@@ -512,7 +547,7 @@ export const Home = () => {
             <>
               {/* element image*/}
               <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="slide-right"
               >
                 <img
@@ -534,7 +569,7 @@ export const Home = () => {
               </div>
               {/* elements description */}
               <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4 "
                 data-aos="slide-left"
               >
                 <div
@@ -566,7 +601,7 @@ export const Home = () => {
             <>
               {/* element image*/}
               <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
                 <img
@@ -588,7 +623,7 @@ export const Home = () => {
               </div>
               {/* elements description */}
               <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
                 <div
@@ -611,65 +646,12 @@ export const Home = () => {
             </>
           )}
 
-          {/* refiniries content */}
-          {clickedImage === reformerTubes && (
-            <>
-              {/* element image*/}
-              <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
-                data-aos="fade-up"
-              >
-                <img
-                  src={reformerTubes}
-                  alt="reformerTubes"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover"
-                />
-                <div
-                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  REFINIRIES
-                </div>
-              </div>
-              {/* elements description */}
-              <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
-                data-aos="fade-up"
-              >
-                <div
-                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
-                  style={{
-                    color: "transparent",
-                    background:
-                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
-                    backgroundClip: "text",
-                    width: "100%",
-                  }}
-                >
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
-                    20°C
-                  </span>
-                  increase in design temperature reduces operational life of
-                  reformer tubes by
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl ml-2">
-                    50%
-                  </span>
-                </div>
-              </div>
-            </>
-          )}
-
-          {/* lubricants content */}
+          {/* marine content */}
           {clickedImage === lubricants && (
             <>
               {/* element image*/}
               <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
                 <img
@@ -686,12 +668,12 @@ export const Home = () => {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  LUBRICANTS
+                  MARINE
                 </div>
               </div>
               {/* elements description */}
               <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
                 <div
@@ -718,7 +700,7 @@ export const Home = () => {
             <>
               {/* element image*/}
               <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
                 <img
@@ -735,12 +717,12 @@ export const Home = () => {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  OIL&nbsp;RECOVERY
+                  OIL&nbsp;&&nbsp;GAS
                 </div>
               </div>
               {/* elements description */}
               <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
                 <div
@@ -764,17 +746,17 @@ export const Home = () => {
             </>
           )}
 
-          {/* paints content */}
-          {clickedImage === paints && (
+          {/* semiconductor content */}
+          {clickedImage === semiconductor && (
             <>
               {/* element image*/}
               <div
-                className=" flex flex-col items-center justify-center relative w-full md:w-[45%] lg:w-[50%] px-4"
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
                 <img
-                  src={paints}
-                  alt="paints"
+                  src={semiconductor}
+                  alt="semiconductor"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
                 <div
@@ -786,12 +768,116 @@ export const Home = () => {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  PAINTS
+                  SEMICONDUCTOR
                 </div>
               </div>
               {/* elements description */}
               <div
-                className=" w-full md:w-[41%] lg:w-[36%] flex items-center justify-center p-4"
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  In{" "}
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    2023
+                  </span>
+                  , the global semiconductor industry is projected to reach
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl ml-2">
+                    $600
+                  </span>{" "}
+                  billion in annual sales.
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* mining content */}
+          {clickedImage === mining && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={mining}
+                  alt="mining"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  MINING
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
+                data-aos="fade-up"
+              >
+                <div
+                  className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
+                  style={{
+                    color: "transparent",
+                    background:
+                      "linear-gradient(285.12deg, #011D4B 29.02%, #4B95E2 97.82%)",
+                    backgroundClip: "text",
+                    width: "100%",
+                  }}
+                >
+                  The global mining industry employs over{" "}
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                    1.7 million
+                  </span>
+                  people worldwide across various sectors.
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* paints content */}
+          {clickedImage === paints && (
+            <>
+              {/* element image*/}
+              <div
+                className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
+                data-aos="fade-up"
+              >
+                <img
+                  src={paints}
+                  alt="paints"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
+                <div
+                  className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-center"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to bottom, white, rgb(209, 213, 219))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  SPECIALTY&nbsp;CHEMICALS
+                </div>
+              </div>
+              {/* elements description */}
+              <div
+                className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
                 <div
@@ -832,7 +918,7 @@ export const Home = () => {
             <div>Patented Ultrasonic </div>
             <div>
               <div>Waveguide Sensors:</div>
-              <img className=" w-full h-2 -z-10" src={line} alt='line'></img>
+              <img className=" w-full h-2 -z-10" src={line} alt="line"></img>
             </div>
           </div>
         </div>
@@ -858,7 +944,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6"
                   src={utmaps}
-                  alt='utmaps'
+                  alt="utmaps"
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -873,7 +959,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={utmaps}
-                        alt='utmaps'
+                        alt="utmaps"
                       />
                     </div>
                   </div>
@@ -911,7 +997,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
                   src={ports}
-                  alt='ports'
+                  alt="ports"
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -926,7 +1012,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ports}
-                        alt='ports'
+                        alt="ports"
                       />
                     </div>
                   </div>
@@ -966,7 +1052,7 @@ export const Home = () => {
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
                   src={ztar}
-                  alt='ztar'
+                  alt="ztar"
                 />
               </div>
               <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
@@ -982,7 +1068,7 @@ export const Home = () => {
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ztar}
-                        alt='ztar'
+                        alt="ztar"
                       />
                     </div>
                   </div>
@@ -1220,9 +1306,9 @@ export const Home = () => {
               <div>Making a difference with</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
                 <div>the Approach</div>
-                <img className="w-full h-2" src={line} alt='line'></img>
+                <img className="w-full h-2" src={line} alt="line"></img>
               </div>
-            </div> 
+            </div>
           </div>
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
@@ -1376,7 +1462,7 @@ export const Home = () => {
           className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
         >
           <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-            Xyma Analytics' Clients
+            XYMA Analytics' Clients
           </div>
           <div className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
@@ -1394,55 +1480,107 @@ export const Home = () => {
             </div>
 
             <div className="mb-6">
-              <img src={tata} alt='tata' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={tata}
+                alt="tata"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={drdo} alt='drdo' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={drdo}
+                alt="drdo"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={cumi} alt='cumi' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={cumi}
+                alt="cumi"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={lam} alt='lam' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={lam}
+                alt="lam"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={ind} alt='ind' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={ind}
+                alt="ind"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={epri} alt='epri' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={epri}
+                alt="epri"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={skf} alt='skf' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={skf}
+                alt="skf"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={bharat} alt='bharat' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={bharat}
+                alt="bharat"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={ved} alt='ved' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={ved}
+                alt="ved"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={schneider} alt='schneider' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={schneider}
+                alt="schneider"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={reliance} alt='reliance' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={reliance}
+                alt="reliance"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={threeLions} alt='threeLions' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={threeLions}
+                alt="threeLions"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
 
             <div className="mb-6">
-              <img src={cairn} alt='cairn' className=" mx-auto max-w-[145px] h-auto" />
+              <img
+                src={cairn}
+                alt="cairn"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
             </div>
           </Slider>
         </div>
