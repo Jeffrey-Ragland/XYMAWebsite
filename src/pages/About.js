@@ -237,6 +237,12 @@ const About = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* <div className="border border-black h-[200vh]">
+        <div className="h-[50vh] bg-green-200 sticky top-0">card 1</div>
+        <div className="h-[50vh] bg-red-200 sticky top-0">card 2</div>
+        <div className="h-[50vh] bg-blue-200 sticky top-0">card 3</div>
+        <div className="h-[50vh] bg-yellow-200 sticky top-0">card 4</div>
+      </div> */}
       {/* scroll progress bar */}
       <div
         className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"

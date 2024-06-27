@@ -4,12 +4,18 @@ import newAl1 from '../Images/newAluminium1.png';
 import newAl2 from "../Images/newAluminium2.png";
 import steel1 from '../Images/steel1.png';
 import steel2 from '../Images/steel2.png';
-import tube1 from '../Images/tube1.png';
-import tube2 from '../Images/tube2.png';
+import marine1 from '../Images/marine1.jpg';
+import marine2 from "../Images/marine2.jpg";
+// import tube1 from '../Images/tube1.png';
+// import tube2 from '../Images/tube2.png';
 import oil1 from '../Images/oil1.png';
 import oil2 from '../Images/oil2.png';
-import oilRecovery from "../Assets/oilRecovery.png";
-import oilRecovery2 from '../Assets/oilRecovery3.jpg';
+import semiconductor1 from "../Images/semiconductor1.jpg";
+import semiconductor2 from "../Images/semiconductor2.jpg";
+import mining1 from "../Images/mining1.jpg";
+import mining2 from "../Images/mining2.jpg";
+// import oilRecovery from "../Assets/oilRecovery.png";
+// import oilRecovery2 from '../Assets/oilRecovery3.jpg';
 import paints1 from '../Assets/paintsresized.png';
 import paints2 from '../Assets/paints2.jpg';
 import brochure from "../pdfAssets/XymaBrochure.pdf";
@@ -21,10 +27,11 @@ import aluminumPdf from '../pdfAssets/metal.pdf';
 import {
   GiMetalDisc,
   GiMetalBar,
-  GiPipes,
+  GiShipBow,
   GiGreaseTrap,
+  GiCircuitry,
   GiOilPump,
-  GiPaintBucket
+  GiPaintBucket,
 } from "react-icons/gi";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -44,6 +51,7 @@ const Resource = () => {
     section4: useRef(null),
     section5: useRef(null),
     section6: useRef(null),
+    section7: useRef(null),
   };
 
   const toggleContent = (word) => {
@@ -203,7 +211,7 @@ const Resource = () => {
       {/* icon menu */}
       {renderIconMenu && selectedContent === "All" && (
         <div
-          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
+          className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-8 py-4 rounded-r-2xl"
           data-aos=""
         >
           <div
@@ -216,6 +224,7 @@ const Resource = () => {
           >
             <GiMetalDisc size={25} />
           </div>
+
           <div
             onClick={() => handleSectionScroll(sectionRefs.section2)}
             className={`cursor-pointer ${
@@ -226,6 +235,7 @@ const Resource = () => {
           >
             <GiMetalBar size={25} />
           </div>
+
           <div
             onClick={() => handleSectionScroll(sectionRefs.section3)}
             className={`cursor-pointer ${
@@ -234,8 +244,9 @@ const Resource = () => {
                 : "text-gray-400"
             }`}
           >
-            <GiPipes size={25} />
+            <GiShipBow size={25} />
           </div>
+
           <div
             onClick={() => handleSectionScroll(sectionRefs.section4)}
             className={`cursor-pointer ${
@@ -246,6 +257,7 @@ const Resource = () => {
           >
             <GiGreaseTrap size={25} />
           </div>
+
           <div
             onClick={() => handleSectionScroll(sectionRefs.section5)}
             className={`cursor-pointer ${
@@ -254,12 +266,24 @@ const Resource = () => {
                 : "text-gray-400"
             }`}
           >
-            <GiOilPump size={25} />
+            <GiCircuitry size={25} />
           </div>
+
           <div
             onClick={() => handleSectionScroll(sectionRefs.section6)}
             className={`cursor-pointer ${
               activeSection.includes("section6")
+                ? "text-orange-400"
+                : "text-gray-400"
+            }`}
+          >
+            <GiOilPump size={25} />
+          </div>
+
+          <div
+            onClick={() => handleSectionScroll(sectionRefs.section7)}
+            className={`cursor-pointer ${
+              activeSection.includes("section7")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
@@ -275,6 +299,7 @@ const Resource = () => {
           className=" flex md:flex-col gap-2 w-full md:w-[20%] py-6 px-4 overflow-auto text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
           style={{ scrollbarWidth: "none" }}
         >
+          {/* all */}
           <div>
             <div
               onClick={() => toggleContent("All")}
@@ -294,6 +319,7 @@ const Resource = () => {
             )}
           </div>
 
+          {/* aluminum */}
           <div>
             <div
               onClick={() => toggleContent("Aluminum")}
@@ -313,6 +339,7 @@ const Resource = () => {
             )}
           </div>
 
+          {/* steel */}
           <div>
             <div
               onClick={() => toggleContent("Steel")}
@@ -332,7 +359,28 @@ const Resource = () => {
             )}
           </div>
 
+          {/* marine */}
           <div>
+            <div
+              onClick={() => toggleContent("Marine")}
+              className={`${
+                selectedContent === "Marine"
+                  ? "text-[#013872] font-bold"
+                  : "text-[gray]"
+              } cursor-pointer flex`}
+            >
+              {selectedContent === "Marine" && (
+                <div className="invisible md:visible border border-[#013872]"></div>
+              )}
+              <div className="md:ml-1">Marine</div>
+            </div>
+            {selectedContent === "Marine" && (
+              <div className="md:hidden border border-[#013872]"></div>
+            )}
+          </div>
+
+          {/* refiniries */}
+          {/* <div>
             <div
               onClick={() => toggleContent("Refiniries")}
               className={`${
@@ -349,46 +397,69 @@ const Resource = () => {
             {selectedContent === "Refiniries" && (
               <div className="md:hidden border border-[#013872]"></div>
             )}
-          </div>
+          </div> */}
 
+          {/* oil and gas */}
           <div>
             <div
-              onClick={() => toggleContent("Lubricants")}
+              onClick={() => toggleContent("OilAndGas")}
               className={`${
-                selectedContent === "Lubricants"
+                selectedContent === "OilAndGas"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
               } cursor-pointer flex`}
             >
-              {selectedContent === "Lubricants" && (
+              {selectedContent === "OilAndGas" && (
                 <div className="invisible md:visible border border-[#013872]"></div>
               )}
-              <div className="md:ml-1">Lubricants</div>
+              <div className="md:ml-1">Oil&nbsp;&&nbsp;Gas</div>
             </div>
-            {selectedContent === "Lubricants" && (
+            {selectedContent === "OilAndGas" && (
               <div className="md:hidden border border-[#013872]"></div>
             )}
           </div>
 
+          {/* semiconductor */}
           <div>
             <div
-              onClick={() => toggleContent("OilRecovery")}
+              onClick={() => toggleContent("Semiconductor")}
               className={`${
-                selectedContent === "OilRecovery"
+                selectedContent === "Semiconductor"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
               } cursor-pointer flex`}
             >
-              {selectedContent === "OilRecovery" && (
+              {selectedContent === "Semiconductor" && (
                 <div className="invisible md:visible border border-[#013872]"></div>
               )}
-              <div className="md:ml-1">Oil&nbsp;Recovery</div>
+              <div className="md:ml-1">Semiconductor</div>
             </div>
-            {selectedContent === "OilRecovery" && (
+            {selectedContent === "Semiconductor" && (
               <div className="md:hidden border border-[#013872]"></div>
             )}
           </div>
 
+          {/* mining */}
+          <div>
+            <div
+              onClick={() => toggleContent("Mining")}
+              className={`${
+                selectedContent === "Mining"
+                  ? "text-[#013872] font-bold"
+                  : "text-[gray]"
+              } cursor-pointer flex`}
+            >
+              {selectedContent === "Mining" && (
+                <div className="invisible md:visible border border-[#013872]"></div>
+              )}
+              <div className="md:ml-1">Mining</div>
+            </div>
+            {selectedContent === "Mining" && (
+              <div className="md:hidden border border-[#013872]"></div>
+            )}
+          </div>
+
+          {/* specialty chemicals */}
           <div>
             <div
               onClick={() => toggleContent("Paints")}
@@ -401,7 +472,7 @@ const Resource = () => {
               {selectedContent === "Paints" && (
                 <div className="invisible md:visible border border-[#013872]"></div>
               )}
-              <div className="md:ml-1">Paints</div>
+              <div className="md:ml-1">Specialty&nbsp;Chemicals</div>
             </div>
             {selectedContent === "Paints" && (
               <div className="md:hidden border border-[#013872]"></div>
@@ -583,8 +654,8 @@ const Resource = () => {
             </div>
           )}
 
-          {/* refiniries content */}
-          {(selectedContent === "Refiniries" || selectedContent === "All") && (
+          {/* marine content */}
+          {(selectedContent === "Marine" || selectedContent === "All") && (
             <div
               id="section3"
               ref={sectionRefs.section3}
@@ -593,7 +664,7 @@ const Resource = () => {
             >
               <div className="mb-4 flex justify-between">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                  Refiniries
+                  Marine
                 </div>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
@@ -602,7 +673,7 @@ const Resource = () => {
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
                   onClick={() => {
-                    window.open(refiniriesPdf, "_blank")
+                    window.open(refiniriesPdf, "_blank");
                   }}
                 >
                   Case Study
@@ -612,28 +683,37 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={tube1} alt='refiniries1'/>
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={marine1}
+                      alt="marine1"
+                    />
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    A 20°C temperature rise cuts reformer tube lifespan by half
+                    The marine industry handles over 90% of the world's trade,
+                    transporting around 11 billion tons of goods each year.
                   </div>
                 </div>
 
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={tube2} alt='refiniries2'></img>
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={marine2}
+                      alt="marine2"
+                    ></img>
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    A 20°C temperature increase halves the lifespan of reformer
-                    tubes
+                    The marine industry employs more than 1.6 million seafarers
+                    globally, supporting the backbone of international trade.
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* lubricants content */}
-          {(selectedContent === "Lubricants" || selectedContent === "All") && (
+          {/* oil and gas content */}
+          {(selectedContent === "OilAndGas" || selectedContent === "All") && (
             <div
               id="section4"
               ref={sectionRefs.section4}
@@ -642,7 +722,7 @@ const Resource = () => {
             >
               <div className="mb-4 flex justify-between">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                  Lubricants
+                  Oil&nbsp;&&nbsp;Gas
                 </div>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
@@ -659,7 +739,7 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={oil1} alt='lubricants1'/>
+                    <img className="w-full h-full" src={oil1} alt="oil1" />
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     30% of maintenance budget influenced by lubricants,
@@ -669,7 +749,7 @@ const Resource = () => {
 
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={oil2} alt='lubricants2'></img>
+                    <img className="w-full h-full" src={oil2} alt="oil2"></img>
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Lubricants significantly affect operational costs,
@@ -680,8 +760,9 @@ const Resource = () => {
             </div>
           )}
 
-          {/* oil recovery content */}
-          {(selectedContent === "OilRecovery" || selectedContent === "All") && (
+          {/* semiconductor content */}
+          {(selectedContent === "Semiconductor" ||
+            selectedContent === "All") && (
             <div
               id="section5"
               ref={sectionRefs.section5}
@@ -690,7 +771,7 @@ const Resource = () => {
             >
               <div className="mb-4 flex justify-between">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                  Oil Recovery
+                  Semiconductor
                 </div>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
@@ -709,13 +790,13 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={oilRecovery} alt='oil1'
+                      src={semiconductor1}
+                      alt="semiconductor1"
                     />
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    1.3 lakhs/day would be the worth of injection polymer of
-                    unknown viscosity flooded in EOR due to unavailability of
-                    continuous viscosity measurement technique.
+                    In 2023, the Global Semiconductor Industry is Projected to
+                    Reach $600 Billion in Annual Sales.
                   </div>
                 </div>
 
@@ -723,12 +804,72 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={oilRecovery2} alt='oil2'
+                      src={semiconductor2}
+                      alt="semiconductor2"
                     ></img>
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    Enhanced oil recovery 'EOR' techniques can improve recovery
-                    rates from 20-40% to 30-60% of the original oil in place.
+                    The semiconductor industry is crucial for modern
+                    electronics, with a market value projected to exceed $600
+                    billion by 2025.
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* mining content */}
+          {(selectedContent === "Mining" || selectedContent === "All") && (
+            <div
+              id="section6"
+              ref={sectionRefs.section6}
+              className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
+              data-aos="zoom-out"
+            >
+              <div className="mb-4 flex justify-between">
+                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                  Mining
+                </div>
+                <span
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() => window.open(brochure, "_blank")}
+                >
+                  Case Study
+                </span>
+              </div>
+
+              <div className="md:flex gap-4">
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={mining1}
+                      alt="mining1"
+                    />
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    The mining industry, worth over $1.5 trillion, supplies
+                    crucial minerals and metals for global manufacturing and
+                    construction.
+                  </div>
+                </div>
+
+                <div className="w-full md:w-1/2">
+                  <div className="mb-4">
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={mining2}
+                      alt="mining2"
+                    ></img>
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                    The mining industry extracts essential minerals and metals
+                    vital for global economic development and industrial
+                    production.
                   </div>
                 </div>
               </div>
@@ -738,8 +879,8 @@ const Resource = () => {
           {/* paints content */}
           {(selectedContent === "Paints" || selectedContent === "All") && (
             <div
-              id="section6"
-              ref={sectionRefs.section6}
+              id="section7"
+              ref={sectionRefs.section7}
               className="p-4 rounded-xl mb-4 bg-[#FCFCFD] border border-[#CDCED6] font-medium"
               data-aos="zoom-out"
             >
@@ -762,7 +903,11 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="rounded-2xl w-full h-full" src={paints1} alt='paint1'/>
+                    <img
+                      className="rounded-2xl w-full h-full"
+                      src={paints1}
+                      alt="paint1"
+                    />
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Water-based paints account for about 80% of all paints sold
@@ -774,13 +919,13 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={paints2} alt='paint2'
+                      src={paints2}
+                      alt="paint2"
                     ></img>
                   </div>
                   <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The use of low-VOC paints has increased by over 50% in the
-                    past decade due to environmental regulations and consumer
-                    demand.
+                    past decade due to environmental regulations.
                   </div>
                 </div>
               </div>

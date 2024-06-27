@@ -80,6 +80,7 @@ export const Home = () => {
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 4000,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 480,
@@ -94,6 +95,7 @@ export const Home = () => {
           adaptiveHeight: true,
           autoplay: true,
           autoplaySpeed: 2000,
+          pauseOnHover: false,
         },
       },
       {
@@ -109,6 +111,7 @@ export const Home = () => {
           adaptiveHeight: true,
           autoplay: true,
           autoplaySpeed: 2000,
+          pauseOnHover: false,
         },
       },
     ],
@@ -582,7 +585,7 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     10°C
                   </span>
                   deviation in ideal bath temperature reduces current
@@ -590,7 +593,9 @@ export const Home = () => {
                   <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mx-2">
                     PFC
                   </span>
-                  emissions
+                  emissions */}
+                  Continuous Temperature Monitoring of Collector Bars, Side
+                  Shell and Cryolite Bath.
                 </div>
               </div>
             </>
@@ -636,11 +641,13 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     $5.1M
                   </span>
                   would be worth of steel produced by extending ladle life for 1
-                  set of cycle
+                  set of cycle */}
+                  Continuous Temperature Profile Monitoring of Galvanizing Line
+                  for Zinc Process.
                 </div>
               </div>
             </>
@@ -689,7 +696,7 @@ export const Home = () => {
                   <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     30%
                   </span>
-                  of maintenance budget is affected by lubricants.
+                  of Maintenance Budget is Affected by Lubricants.
                 </div>
               </div>
             </>
@@ -735,12 +742,14 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     1.3
                   </span>
                   lakhs/day would be the worth of injection polymer of unknown
                   viscosity flooded in EOR due to unavailability of continuous
-                  viscosity measurement technique.
+                  viscosity measurement technique. */}
+                  Continuous Skin Temperature Monitoring of Reformer Tubes &
+                  Continuous Oil Condition Monitoring.
                 </div>
               </div>
             </>
@@ -790,11 +799,11 @@ export const Home = () => {
                   <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     2023
                   </span>
-                  , the global semiconductor industry is projected to reach
+                  , the Global Semiconductor Industry is Projected to Reach
                   <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl ml-2">
                     $600
                   </span>{" "}
-                  billion in annual sales.
+                  Billion in Annual Sales.
                 </div>
               </div>
             </>
@@ -840,11 +849,7 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  The global mining industry employs over{" "}
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
-                    1.7 million
-                  </span>
-                  people worldwide across various sectors.
+                  Continuous Thickness Monitoring of Ceramic Liners.
                 </div>
               </div>
             </>
@@ -890,8 +895,9 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  Batch non-homogeneity due to unavailability of continuous
-                  viscosity measurement technique.
+                  {/* Batch non-homogeneity due to unavailability of continuous
+                  viscosity measurement technique. */}
+                  Real-Time Monitoring of Viscosity and Temperature in Paint Mixtures, Maintains Paint Consistency and Improves Paint Quality.
                 </div>
               </div>
             </>
