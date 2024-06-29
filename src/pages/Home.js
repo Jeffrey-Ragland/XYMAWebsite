@@ -47,6 +47,7 @@ import { GiWaterSplash } from "react-icons/gi";
 import { MdOutlineSensors } from "react-icons/md";
 import { SiBlueprint } from "react-icons/si";
 import { HiUserGroup } from "react-icons/hi2";
+import { FaAngleRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -329,7 +330,7 @@ export const Home = () => {
           <img
             src={homeImage}
             alt="cover"
-            className="max-w-[100px] md:max-w-[200px] 2xl:max-w-[300px] rounded-md hover:scale-110 duration-200"
+            className="max-w-[100px] md:max-w-[200px] 2xl:max-w-[300px] rounded-md"
           />
           {miniCoverEnter && (
             <div className="bg-gray/60 text-white absolute bottom-0 w-full py-1 md:py-3 2xl:py-4 px-2 text-center backdrop-blur-sm text-[10px] md:text-sm xl:text-base 2xl:text-xl font-normal md:font-medium">
@@ -337,12 +338,14 @@ export const Home = () => {
             </div>
           )}
         </div>
+
         <button
-          className="bg-white text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-3 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200"
+          className="bg-white text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-2 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200 flex items-center gap-4"
           onClick={() => window.open(brochure, "_blank")}
         >
-          Download&nbsp;Brochure
+          Download&nbsp;Brochure <span><FaAngleRight size={20}/></span>
         </button>
+
         <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
           <div className="flex xl:flex-col gap-2 md:gap-4">
             <div data-aos="slide-right">Prevent</div>

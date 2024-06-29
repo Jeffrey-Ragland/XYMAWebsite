@@ -18,12 +18,7 @@ import mining2 from "../Images/mining2.jpg";
 // import oilRecovery2 from '../Assets/oilRecovery3.jpg';
 import paints1 from '../Assets/paintsresized.png';
 import paints2 from '../Assets/paints2.jpg';
-import brochure from "../pdfAssets/XymaBrochure.pdf";
-import lubricantsPdf from '../pdfAssets/lubricants.pdf';
-import paintsPdf from "../pdfAssets/paints.pdf";
-import refiniriesPdf from "../pdfAssets/refiniries.pdf";
-import aluminumPdf from '../pdfAssets/metal.pdf';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   GiMetalDisc,
   GiMetalBar,
@@ -58,11 +53,8 @@ const Resource = () => {
     setSelectedContent(word);
   };
 
-  //const navigate = useNavigate();
-  // const handleCaseStudyClick = () => {
-  //   navigate("/resources/casestudy");
-  // };
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -379,26 +371,6 @@ const Resource = () => {
             )}
           </div>
 
-          {/* refiniries */}
-          {/* <div>
-            <div
-              onClick={() => toggleContent("Refiniries")}
-              className={`${
-                selectedContent === "Refiniries"
-                  ? "text-[#013872] font-bold"
-                  : "text-[gray]"
-              } cursor-pointer flex`}
-            >
-              {selectedContent === "Refiniries" && (
-                <div className="invisible md:visible border border-[#013872]"></div>
-              )}
-              <div className="md:ml-1">Refiniries</div>
-            </div>
-            {selectedContent === "Refiniries" && (
-              <div className="md:hidden border border-[#013872]"></div>
-            )}
-          </div> */}
-
           {/* oil and gas */}
           <div>
             <div
@@ -565,7 +537,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(aluminumPdf, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/aluminum");
+                  }}
                 >
                   Case Study
                 </span>
@@ -621,7 +595,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/steel");
+                  }}
                 >
                   Case Study
                 </span>
@@ -673,7 +649,7 @@ const Resource = () => {
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
                   onClick={() => {
-                    window.open(refiniriesPdf, "_blank");
+                    navigate("/industries/marine");
                   }}
                 >
                   Case Study
@@ -730,7 +706,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(lubricantsPdf, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/OilAndGas");
+                  }}
                 >
                   Case Study
                 </span>
@@ -779,7 +757,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/semiconductor");
+                  }}
                 >
                   Case Study
                 </span>
@@ -836,7 +816,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(brochure, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/mining");
+                  }}
                 >
                   Case Study
                 </span>
@@ -894,7 +876,9 @@ const Resource = () => {
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                   }}
-                  onClick={() => window.open(paintsPdf, "_blank")}
+                  onClick={() => {
+                    navigate("/industries/SpecialtyChemicals");
+                  }}
                 >
                   Case Study
                 </span>

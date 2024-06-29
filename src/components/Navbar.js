@@ -68,13 +68,21 @@ const Navbar = () => {
                   <NavLink
                     to={item.path}
                     className={`${
-                      location.pathname === item.path && "text-orange-400"
+                      location.pathname === item.path ||
+                      (item.path === "/industries" &&
+                        location.pathname.startsWith("/industries"))
+                        ? "text-orange-400"
+                        : ""
                     }`}
                   >
                     <span>{item.title}</span>
                   </NavLink>
 
-                  {location.pathname === item.path && <CircleComponent />}
+                  {(location.pathname === item.path ||
+                    (item.path === "/industries" &&
+                      location.pathname.startsWith("/industries"))) && (
+                    <CircleComponent />
+                  )}
                 </div>
               ))}
             </div>
@@ -128,7 +136,11 @@ const Navbar = () => {
                 <div
                   key={index}
                   className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl  ${
-                    location.pathname === item.path ? "text-orange-400" : ""
+                    location.pathname === item.path ||
+                    (item.path === "/industries" &&
+                      location.pathname.startsWith("/industries"))
+                      ? "text-orange-400"
+                      : ""
                   }`}
                   onClick={() => {
                     handleBurgerMenu();
@@ -141,7 +153,9 @@ const Navbar = () => {
                     {item.title}
                     <div
                       className={`${
-                        location.pathname === item.path
+                        location.pathname === item.path ||
+                        (item.path === "/industries" &&
+                          location.pathname.startsWith("/industries"))
                           ? "text-orange-400"
                           : "text-gray-400"
                       }`}
