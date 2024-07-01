@@ -257,11 +257,7 @@ const Career = () => {
           </div>
 
           <div className="text-[#60646C] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl w-[90%] md:w-[80%] text-center mb-12">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries.
+            XYMA Analytics stands as a Beacon of Innovation. We don't just talk Tech, we prove it. Our Technology has transformed multiple Industries. We as a Community, work relentlessly towards new Horizons in Deep Tech, Innovation and Excellence.
           </div>
 
           <div>
@@ -681,11 +677,7 @@ const Career = () => {
 
       <div className="mt-4 w-full flex justify-center">
         <p className="text-[#60646C] w-[80%] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries.
+          For exciting news please visit our LinkedIn page !
         </p>
       </div>
     </div>

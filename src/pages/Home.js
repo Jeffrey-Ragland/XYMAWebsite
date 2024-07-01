@@ -38,8 +38,12 @@ import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
 import line from '../Assets/underline.png';
+import potline from '../Assets/potline.png';
+import awardPhoto from '../Assets/awardPhoto.jpg';
 import homeImage from '../Assets/homeImage.jpeg';
 import homeVideo from '../Assets/homeVideo.mp4';
+import OilVideo from '../Assets/ioclFinal.mp4';
+import miningVideo from '../Assets/cumiFinal.mp4';
 import brochure from "../pdfAssets/XymaBrochure.pdf";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -63,7 +67,7 @@ export const Home = () => {
   const [renderIconMenu, setRenderIconMenu] = useState(false);
   const [activeSection, setActiveSection] = useState([]);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [miniCoverEnter, setMiniCoverEnter] = useState(false);
+  // const [miniCoverEnter, setMiniCoverEnter] = useState(false);
  
   const coverImageRef = useRef(null);
 
@@ -315,8 +319,9 @@ export const Home = () => {
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source src={homeVideo} type="video/mp4" />
         </video>
+
         {/* cover image - small */}
-        <div
+        {/* <div
           className="absolute right-2 bottom-2 border-4 md:border-8 cursor-pointer z-20 rounded-md"
           style={{
             borderColor: "orange",
@@ -337,13 +342,16 @@ export const Home = () => {
               Vedanta Plant Product Installation
             </div>
           )}
-        </div>
+        </div> */}
 
         <button
-          className="bg-white text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-2 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200 flex items-center gap-4"
+          className="bg-white/50 text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-2 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200 flex items-center gap-4"
           onClick={() => window.open(brochure, "_blank")}
         >
-          Download&nbsp;Brochure <span><FaAngleRight size={20}/></span>
+          Download&nbsp;Brochure{" "}
+          <span>
+            <FaAngleRight size={20} />
+          </span>
         </button>
 
         <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
@@ -594,9 +602,9 @@ export const Home = () => {
                 data-aos="slide-right"
               >
                 <img
-                  src={aluminum}
-                  alt="aluminum"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                  src={potline}
+                  alt="potline"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover border border-orange-400 "
                 />
                 <div
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
@@ -625,7 +633,7 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     10°C
                   </span>
                   deviation in ideal bath temperature reduces current
@@ -633,9 +641,10 @@ export const Home = () => {
                   <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mx-2">
                     PFC
                   </span>
-                  emissions */}
-                  Continuous Temperature Monitoring of Collector Bars, Side
-                  Shell and Cryolite Bath.
+                  emissions
+                  {/* • Continuous Temperature Monitoring of Collector Bars and Side
+                  Shell of Potline. <br />• Continuous Temperature Moitoring of
+                  Cryolite Bath. */}
                 </div>
               </div>
             </>
@@ -681,13 +690,13 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     $5.1M
                   </span>
                   would be worth of steel produced by extending ladle life for 1
-                  set of cycle */}
-                  Continuous Temperature Profile Monitoring of Galvanizing Line
-                  for Zinc Process.
+                  set of cycle
+                  {/* Continuous Temperature Profile Monitoring of Galvanizing Line
+                  for Zinc Process. */}
                 </div>
               </div>
             </>
@@ -750,11 +759,14 @@ export const Home = () => {
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
-                <img
-                  src={oilRecovery}
-                  alt="oilRecovery"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover"
-                />
+                <video
+                  autoPlay
+                  loop
+                  controls
+                  className="rounded-2xl shadow-white shadow-2xl"
+                >
+                  <source src={OilVideo} type="video/mp4" />
+                </video>
                 <div
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
@@ -782,14 +794,14 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  {/* <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
+                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
                     1.3
                   </span>
                   lakhs/day would be the worth of injection polymer of unknown
                   viscosity flooded in EOR due to unavailability of continuous
-                  viscosity measurement technique. */}
-                  Continuous Skin Temperature Monitoring of Reformer Tubes &
-                  Continuous Oil Condition Monitoring.
+                  viscosity measurement technique.
+                  {/* Continuous Skin Temperature Monitoring of Reformer Tubes &
+                  Continuous Oil Condition Monitoring. */}
                 </div>
               </div>
             </>
@@ -857,11 +869,14 @@ export const Home = () => {
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
-                <img
-                  src={mining}
-                  alt="mining"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover"
-                />
+                <video
+                  autoPlay
+                  loop
+                  controls
+                  className="rounded-2xl shadow-white shadow-2xl"
+                >
+                  <source src={miningVideo} type="video/mp4" />
+                </video>
                 <div
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
@@ -1351,9 +1366,9 @@ export const Home = () => {
             className=" flex justify-center items-center  xl:mx-[8%]"
           >
             <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-              <div>Making a difference with</div>
+              <div>Making Way for</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
-                <div>the Approach</div>
+                <div>Sustainable&nbsp;Industry</div>
                 <img className="w-full h-2" src={line} alt="line"></img>
               </div>
             </div>
@@ -1361,7 +1376,7 @@ export const Home = () => {
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
             <div
-              className="w-full md:w-[35%] p-4  rounded-lg flex flex-col gap-2 text-center py-8 md:py-16 lg:py-24 2xl:py-32 justify-center"
+              className="w-full md:w-[35%] px-4 2xl:px-8 rounded-lg flex flex-col gap-2 text-center py-8 md:py-12 xl:py-16 justify-center"
               data-aos="flip-right"
               style={{
                 background:
@@ -1369,17 +1384,14 @@ export const Home = () => {
               }}
             >
               <div className=" flex justify-center">
-                <img className="w-[75px]" src={trophy} alt="Trophy icon" />
+                <img className="rounded-lg" src={awardPhoto} alt="award" />
               </div>
-              <div className="text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-semibold">
-                <div>Award Winning</div>
-                <div>Technology</div>
+              <div className="text-xl lg:text-2xl 2xl:text-4xl font-semibold">
+                <div>Award Winning Technology</div>
               </div>
 
-              <div className="text-xs lg:text-base 2xl:text-xl">
-                The team leverages state-of-the-art, award-winning, ultrasonic
-                waveguide technology developed through 25+ years of research and
-                development.
+              <div className="text-sm lg:text-base xl:text-lg 2xl:text-xl">
+                Winner of National Technology Award 2023 - Start up.
               </div>
             </div>
 

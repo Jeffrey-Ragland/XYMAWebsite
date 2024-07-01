@@ -28,30 +28,13 @@ import pythonTeam from "../Assets/pythonTeam.jpg";
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
-import xyma from '../Brand/xyma.png';
 import iitmic from '../Brand/iitmic.png';
-import sg from "../Brand/sg2.png";
-import ind from "../Brand/iocl2.png";
-import bharat from "../Brand/bpcl2.png";
-import ved from "../Brand/vedanta2.png";
-import lam from "../Brand/lam.png";
-import epri from "../Brand/epri.png";
-import skf from "../Brand/skf.png";
-import schneider from "../Brand/schneider.png";
-import drdo from "../Brand/drdo.png";
-import cumi from "../Brand/cumi.png";
-import threeLions from "../Brand/threeLions.png";
-import cairn from "../Brand/cairn.png";
-import startup from '../Brand/startupIndia.png';
 import nasscom from '../Brand/nasscom.png';
 import shell from '../Brand/shell.png';
-import srf from "../Brand/srf.png";
-import forge from '../Brand/forge.png';
-import ventureEight from '../Brand/8xVentures.png';
-import venture from '../Brand/venture.png';
-import gail from '../Brand/gail.png';
-import ab from '../Brand/ab.png';
-import nalco from '../Brand/nalco.jpg';
+import cnde from '../Brand/cnde.png';
+import fcri from '../Brand/fcri.png';
+import ibm from '../Brand/ibm.png';
+import qualcomm from "../Brand/qualcomm.png";
 import Slider from "react-slick";
 import { RiMapPinTimeLine } from "react-icons/ri";
 import { GrGroup } from "react-icons/gr";
@@ -75,9 +58,6 @@ const About = () => {
   const [activeSection, setActiveSection] = useState([]);
   const [activePic, setActivePic] = useState([]);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [boxOneMore, setBoxOneMore] = useState(false);
-  const [boxTwoMore, setBoxTwoMore] = useState(false);
-  const [boxThreeMore, setBoxThreeMore] = useState(false);
 
   const { width } = useWindowSize();
   const isLargeScreen = width >= 768;
@@ -112,20 +92,6 @@ const About = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
-
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   setTimeout(() => {
-    //     AOS.refresh();
-    //   }, 500);
-    // });
-
-    // return () => {
-    //   document.removeEventListener('DOMContentLoaded', () => {
-    //     setTimeout(() => {
-    //       AOS.refresh();
-    //     }, 500);
-    //   });
-    // };
   }, []);
 
   // condition to display icon menu
@@ -237,12 +203,6 @@ const About = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* <div className="border border-black h-[200vh]">
-        <div className="h-[50vh] bg-green-200 sticky top-0">card 1</div>
-        <div className="h-[50vh] bg-red-200 sticky top-0">card 2</div>
-        <div className="h-[50vh] bg-blue-200 sticky top-0">card 3</div>
-        <div className="h-[50vh] bg-yellow-200 sticky top-0">card 4</div>
-      </div> */}
       {/* scroll progress bar */}
       <div
         className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
@@ -543,444 +503,140 @@ const About = () => {
           <div className=" md:flex justify-between mb-2">
             {/* box 1 */}
             <div
-              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
+              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0 shadow-2xl"
               id="box1"
             >
-              <div className=" w-full h-full">
-                <div className=" flex items-center mb-2">
-                  <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                    May-2019
-                  </span>
-                </div>
-                <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-2">
-                  Incorporation of Xyma Analytics at IITM IC
-                </div>
-                <div className="mb-2 mx-[10%]">
-                  <div className="flex items-center gap-2">
-                    <div className="w-1/2 flex justify-center">
-                      <img
-                        src={xyma}
-                        alt="xymalogo"
-                        className="w-[80%] object-cover"
-                      />
-                    </div>
-                    <div className="w-1/2 flex justify-center">
-                      <img
-                        src={iitmic}
-                        alt="iitmic"
-                        className="w-[80%] object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className=" flex items-center mb-2">
-                  <span
-                    className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full px-2 py-1 text-white cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                    onClick={() => setBoxOneMore(true)}
-                  >
-                    View More
-                  </span>
-                </div>
-              </div>
-              {/* empty div for arrow 1 - small screen*/}
-              <div className=" absolute w-4 bottom-0 right-[10%]" id="box5" />
-
-              {boxOneMore && (
-                <div className="absolute inset-0 border border-[#CDCED6] rounded-2xl  h-full bg-white p-4 flex gap-2">
-                  <div
-                    className="absolute right-4 top-4 cursor-pointer text-[#FE6F17]"
-                    onClick={() => setBoxOneMore(false)}
-                  >
-                    <FaArrowRightToBracket size={20} />
-                  </div>
-                  <div className="w-1/2 flex flex-col">
-                    <div className="flex">
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Sep-2019
-                      </span>
-                    </div>
-                    <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-4 mt-2">
-                      DPIIT Approval [DIPP3990]
-                    </div>
-                    <div className=" flex-1 flex items-center">
-                      <div className="flex justify-center ">
-                        <img
-                          src={startup}
-                          alt="startup"
-                          className="w-[95%] object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="border border-[#CDCED6] my-4"></div>
-                  <div className="w-1/2 flex flex-col">
-                    <div>
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Mar-2020
-                      </span>
-                    </div>
-                    <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mt-2">
-                      Product Delivered to SGRI
-                    </div>
-                    <div className="flex-1 flex items-center">
-                      <div className="flex justify-center">
-                        <img
-                          src={sg}
-                          alt="sg"
-                          className="w-[90%] object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* text 1 */}
-            <div className=" relative w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-              Lorem Ipsum has been the industry's standard dummy text when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book.
-            </div>
-          </div>
-
-          <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
-            {/* text 2 */}
-            <div className="w-[60%] md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-              Lorem Ipsum has been the industry's standard dummy text when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book.
-            </div>
-            {/* box 2 */}
-            <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-2">
               <div className="flex gap-2">
-                <div className=" w-1/2">
-                  <div className="flex items-center px-4 mb-2">
-                    <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                      Feb-2021
-                    </span>
+                <div className=" w-1/2 flex flex-col items-center">
+                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-2">
+                    Incubation Partner
                   </div>
-                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-1">
-                    Accelerators
-                  </div>
-                  {/* empty div for arrow */}
-                  <div
-                    className=" absolute left-0 top-[45%]  w-1"
-                    id="box2"
-                  ></div>
-                  {/* empty div for arrow */}
-                  <div className="absolute left-0 top-1/2  w-1" id="box3"></div>
-                  <div className="mb-4 mx-[10%]">
-                    <div className="">
-                      <div className="flex justify-center mb-4">
-                        <img
-                          src={nasscom}
-                          alt="nasscom"
-                          className="w-[80%] object-cover"
-                        />
-                      </div>
-                      <div className="flex justify-center mb-4">
-                        <img
-                          src={shell}
-                          alt="shell"
-                          className="w-[80%] object-cover"
-                        />
-                      </div>
-                    </div>
+                  <div className="flex justify-center">
+                    <img
+                      src={iitmic}
+                      alt="iitmic"
+                      className="w-[80%] object-cover"
+                    />
                   </div>
                 </div>
 
                 <div className="border border-[#CDCED6] mt-4"></div>
 
-                <div className=" w-1/2 flex flex-col">
-                  <div className="flex items-center px-4 mb-2">
-                    <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                      Sep-2021
-                    </span>
+                <div className=" w-1/2 flex flex-col justify-between items-center">
+                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl">
+                    Accelerators
                   </div>
-                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-1">
-                    Product Delivered
+                  <div className="flex justify-center">
+                    <img
+                      src={nasscom}
+                      alt="nasscom"
+                      className="w-[80%] object-cover"
+                    />
                   </div>
-                  <div className="mb-2 mx-[10%] flex-1 flex items-center">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1/2 flex justify-center">
-                        <img
-                          src={bharat}
-                          alt="bharat"
-                          className="w-[80%] object-cover"
-                        />
-                      </div>
-                      <div className="w-1/2 flex justify-center">
-                        <img
-                          src={ind}
-                          alt="ind"
-                          className="w-[80%] object-cover"
-                        />
-                      </div>
-                    </div>
+                  <div className="flex justify-center">
+                    <img
+                      src={shell}
+                      alt="shell"
+                      className="w-[80%] object-cover"
+                    />
                   </div>
                 </div>
               </div>
-              <div className="flex items-center px-4 mb-4">
-                <span
-                  className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full px-2 py-1 text-white cursor-pointer"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
-                  onClick={() => setBoxTwoMore(true)}
-                >
-                  View More
-                </span>
+              {/* empty div for arrow 1 - small screen*/}
+              <div className=" absolute w-4 bottom-0 right-[10%]" id="box5" />
+            </div>
+
+            {/* text 1 */}
+            <div className=" relative w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+              Through strategic alliances with governmental bodies at national
+              levels, we have cultivated a network of support that enriches our
+              endeavors. These partnerships provide us with regulatory guidance
+              and access to funding streams that empower us to innovate and
+              execute our initiatives effectively.
+            </div>
+          </div>
+
+          <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
+            {/* text 2 */}
+            <div className="w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+              Together with our government allies and corporates, we are shaping
+              a brighter future and creating lasting value for our stakeholders.
+            </div>
+            {/* box 2 */}
+            <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-2 shadow-2xl">
+              <div>
+                <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-4 text-center">
+                  Callibration Partners
+                </div>
+                {/* empty div for arrow */}
+                <div
+                  className=" absolute left-0 top-[45%]  w-1"
+                  id="box2"
+                ></div>
+                {/* empty div for arrow */}
+                <div className="absolute left-0 top-1/2  w-1" id="box3"></div>
+
+                <div className="flex justify-center gap-4">
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src={cnde}
+                      alt="cnde"
+                      className="w-[80%] object-cover"
+                    />
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src={fcri}
+                      alt="fcri"
+                      className="w-[80%] object-cover"
+                    />
+                  </div>
+                </div>
               </div>
+
               {/* empty div for arrow 1 - small screen*/}
               <div className="absolute w-4 top-[10%] right-[20%]" id="box6" />
               {/* empty div for arrow 2 - small screen */}
               <div className="absolute w-4 bottom-0 right-[10%]" id="box7" />
-
-              {boxTwoMore && (
-                <div className="absolute inset-0 border border-[#CDCED6] rounded-2xl  h-full bg-white p-4 flex gap-2">
-                  <div
-                    className="absolute right-4 top-4 cursor-pointer text-[#FE6F17]"
-                    onClick={() => setBoxTwoMore(false)}
-                  >
-                    <FaArrowRightToBracket size={20} />
-                  </div>
-                  <div className="w-1/2 flex flex-col">
-                    <div className="flex">
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Mar-2022
-                      </span>
-                    </div>
-                    <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-2 mt-2">
-                      Project Delivered for Vedanta & SRF
-                    </div>
-                    <div>
-                      <div className="flex justify-center mb-2">
-                        <img
-                          src={ved}
-                          alt="vedanta"
-                          className="w-[60%] object-cover"
-                        />
-                      </div>
-                      <div className="flex justify-center">
-                        <img
-                          src={srf}
-                          alt="srf"
-                          className="w-[60%] object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="border border-[#CDCED6] my-4"></div>
-                  <div className="w-1/2 flex flex-col">
-                    <div>
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Apr-2020
-                      </span>
-                    </div>
-                    <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mt-2">
-                      Seed Investment
-                    </div>
-                    <div className="flex-1 flex flex-col justify-center">
-                      <div className="flex gap-1">
-                        <div className="flex justify-center w-1/2">
-                          <img
-                            src={forge}
-                            alt="forge"
-                            className="w-[60%] object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center items-center w-1/2">
-                          <img
-                            src={ventureEight}
-                            alt="8Exventure"
-                            className="h-6 md:h-4 lg:h-6 2xl:h-10 object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex gap-1">
-                        <div className="flex justify-center items-center w-1/2">
-                          <img
-                            src={venture}
-                            alt="ventureCatalyst"
-                            className="h-5 md:h-3 lg:h-5 2xl:h-9 object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center w-1/2">
-                          <img
-                            src={gail}
-                            alt="gail"
-                            className="w-[60%] object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
           <div className=" md:flex justify-between">
             {/* box 3 */}
             <div
-              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0"
+              className="relative border border-[#CDCED6] w-full md:w-[35%] p-4 rounded-2xl mb-4 md:mb-0 shadow-2xl"
               id="box4"
             >
               <div className=" w-full">
-                <div className="flex gap-1">
-                  <div className="w-1/2 ">
-                    <div className="flex items-center mb-2">
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Sep-2022
-                      </span>
-                    </div>
-                    <div className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2">
-                      Project Initiated
-                    </div>
-                    <div className="flex justify-center mb-2 ">
-                      <img
-                        src={lam}
-                        alt="lam"
-                        className="w-[60%] object-cover "
-                      />
-                    </div>
-                    <div className="flex justify-center">
-                      <img
-                        src={epri}
-                        alt="epri"
-                        className="w-[60%] object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="border border-[#CDCED6] mt-8 mr-4"></div>
-
-                  <div className="w-1/2 flex flex-col">
-                    <div className="flex items-center mb-2">
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Sep-2023
-                      </span>
-                    </div>
-                    <div className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2">
-                      Product Delivered
-                    </div>
-                    <div className="flex-1 flex flex-col justify-center">
-                      <div className="flex gap-1">
-                        <div className="flex justify-center w-1/2">
-                          <img
-                            src={skf}
-                            alt="skf"
-                            className="w-full object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center items-center w-1/2">
-                          <img
-                            src={cumi}
-                            alt="cumi"
-                            className="w-full object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex gap-1">
-                        <div className="flex justify-center items-center w-1/2">
-                          <img
-                            src={drdo}
-                            alt="drdo"
-                            className="w-full object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center w-1/2">
-                          <img
-                            src={schneider}
-                            alt="schneider"
-                            className="w-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2 text-center">
+                  Technological Partners
                 </div>
-                <div className="flex items-center mb-2">
-                  <span
-                    className="text-xs lg:text-sm xl:text-xs 2xl:text-sm rounded-full px-2 py-1 text-white cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                    onClick={() => setBoxThreeMore(true)}
-                  >
-                    View More
-                  </span>
+                <div className="flex flex-col justify-center gap-4">
+                  <div className="flex justify-center">
+                    <img
+                      src={qualcomm}
+                      alt="qualcomm"
+                      className="max-w-[150px] object-cover"
+                    />
+                  </div>
+                  <div className="flex justify-center">
+                    <img
+                      src={ibm}
+                      alt="ibm"
+                      className="max-w-[150px] object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               {/* empty div for arrow 2 - small screen*/}
               <div className="absolute w-4 top-[10%] right-[20%]" id="box8" />
-
-              {boxThreeMore && (
-                <div className="absolute inset-0 border border-[#CDCED6] rounded-2xl  h-full bg-white p-4 flex gap-2">
-                  <div
-                    className="absolute right-4 top-4 cursor-pointer text-[#FE6F17]"
-                    onClick={() => setBoxThreeMore(false)}
-                  >
-                    <FaArrowRightToBracket size={20} />
-                  </div>
-                  <div className="flex flex-col  ">
-                    <div className="flex">
-                      <span className="rounded-full px-2 py-1 text-xs lg:text-sm xl:text-xs 2xl:text-sm bg-[#FEE1B7] font-medium">
-                        Mar-2024
-                      </span>
-                    </div>
-                    <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-4 mt-2">
-                      Project Initiated
-                    </div>
-                    <div className="flex  ">
-                      <div className="w-1/2">
-                        <div className="flex justify-center mb-2">
-                          <img
-                            src={threeLions}
-                            alt="threeLions"
-                            className="w-[60%] object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center items-center">
-                          <img
-                            src={nalco}
-                            alt="nalco"
-                            className="w-[40%] object-cover"
-                          />
-                        </div>
-                      </div>
-                      <div className="w-1/2">
-                        <div className="flex justify-center items-center mb-2">
-                          <img
-                            src={cairn}
-                            alt="cairn"
-                            className="w-[50%] object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center">
-                          <img
-                            src={ab}
-                            alt="ab"
-                            className="w-[50%] object-cover"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
             {/* text 3 */}
-            <div className="w-full md:w-[30%] text-sm lg:text-base xl:text-sm 2xl:text-lg font-medium flex items-center text-left mb-4 md:mb-0">
-              Lorem Ipsum has been the industry's standard dummy text when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book.
+            <div className="w-full md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+              Our primary focus centers on the dynamic fusion of Ultrasonic
+              Technology and Artificial Intelligence, a synergistic pairing
+              poised to revolutionize industrial landscapes. Through exhaustive
+              Research and Development endeavors, we meticulously sculpt and
+              refine our offerings to clients
             </div>
           </div>
         </div>
@@ -1467,7 +1123,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
+        {/* <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
           <img className="h-12" src={framevector} alt="vector"></img>
         </div>
         <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">
@@ -1486,7 +1142,7 @@ const About = () => {
           <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
             C.E.O. and Co-founder
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );
