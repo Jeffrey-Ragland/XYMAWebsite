@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import xyma from "../Assets/xymalogo_white.png";
+import xyma from '../Brand/xyma.png';
 import adminLoginBg from '../Assets/adminLoginBg.JPG';
 import { TbSquareRoundedChevronsLeftFilled } from "react-icons/tb";
 

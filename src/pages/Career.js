@@ -6,6 +6,7 @@ import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import noData from '../Assets/noData.jpg';
 import { IoMdClose } from "react-icons/io";
+import { FaAnglesRight } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -190,9 +191,9 @@ const Career = () => {
   const uniqueDepartments = ['All', ...new Set(position.map(position => position.DepartmentName))];
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="h-[10vh]"></div>
-      <ToastContainer/>
+      <ToastContainer />
       {/* scroll progress bar */}
       <div
         className="fixed w-full h-[1vh] top-[9vh] left-0 z-30"
@@ -257,7 +258,10 @@ const Career = () => {
           </div>
 
           <div className="text-[#60646C] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl w-[90%] md:w-[80%] text-center mb-12">
-            XYMA Analytics stands as a Beacon of Innovation. We don't just talk Tech, we prove it. Our Technology has transformed multiple Industries. We as a Community, work relentlessly towards new Horizons in Deep Tech, Innovation and Excellence.
+            XYMA Analytics stands as a Beacon of Innovation. We don't just talk
+            Tech, we prove it. Our Technology has transformed multiple
+            Industries. We as a Community, work relentlessly towards new
+            Horizons in Deep Tech, Innovation and Excellence.
           </div>
 
           <div>
@@ -311,36 +315,39 @@ const Career = () => {
                     pos.DepartmentName === selectedDepartment
                 )
                 .map((pos) => (
-                    <div key={pos._id} className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2">
-                      {selectedDepartment === "All" && (
-                        <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
-                          {pos.DepartmentName}
-                        </div>
-                      )}
-                      <div className="text-lg md:text-xl 2xl:text-2xl font-medium">
-                        {pos.Position}
+                  <div
+                    key={pos._id}
+                    className="relative border border-gray-300 p-4 rounded-xl mb-4 flex flex-col gap-2"
+                  >
+                    {selectedDepartment === "All" && (
+                      <div className="text-lg md:text-xl 2xl:text-3xl font-semibold">
+                        {pos.DepartmentName}
                       </div>
-                      <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                        {pos.PositionDescription}
-                      </div>
-                      <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
-                        Apply Before:
-                        {new Date(pos.LastDate).toLocaleDateString("en-GB")}
-                      </div>
-                      <button
-                        className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
-                        style={{
-                          background:
-                            "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                        }}
-                        onClick={() => {
-                          setSelectedPosition(pos);
-                          setApplicationFormOpen(true);
-                        }}
-                      >
-                        Apply Now
-                      </button>
+                    )}
+                    <div className="text-lg md:text-xl 2xl:text-2xl font-medium">
+                      {pos.Position}
                     </div>
+                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                      {pos.PositionDescription}
+                    </div>
+                    <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                      Apply Before:
+                      {new Date(pos.LastDate).toLocaleDateString("en-GB")}
+                    </div>
+                    <button
+                      className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-white text-sm 2xl-text-base"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                      }}
+                      onClick={() => {
+                        setSelectedPosition(pos);
+                        setApplicationFormOpen(true);
+                      }}
+                    >
+                      Apply Now
+                    </button>
+                  </div>
                 ))}
             </div>
           </div>
@@ -675,10 +682,26 @@ const Career = () => {
         </div>
       )}
 
-      <div className="mt-4 w-full flex justify-center">
-        <p className="text-[#60646C] w-[80%] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl text-center">
-          For exciting news please visit our LinkedIn page !
-        </p>
+      <div
+        className="mt-4 flex justify-center items-center font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl hover:scale-105 duration-200 cursor-pointer"
+        style={{
+          background:
+            "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
+          WebkitBackgroundClip: "text",
+          color: "transparent",
+          backgroundColor: "rgba(255, 255, 255, 1)",
+        }}
+        onClick={() =>
+          window.open(
+            "https://www.linkedin.com/company/xyma-analytics?original_referer=https%3A%2F%2Fwww.xyma.in%2F",
+            "_blank"
+          )
+        }
+      >
+        For exciting news please visit our LinkedIn page
+        <div className="text-orange-400 ml-2">
+          <FaAnglesRight size={25} />
+        </div>
       </div>
     </div>
   );
