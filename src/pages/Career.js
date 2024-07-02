@@ -377,7 +377,7 @@ const Career = () => {
                 <div className="mb-4 flex justify-center">
                   <img src={noData} alt="noData" className=" h-20" />
                 </div>
-                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl">
+                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center">
                   Sorry, No openings available at the moment.
                 </div>
               </div>
@@ -683,7 +683,7 @@ const Career = () => {
       )}
 
       <div
-        className="mt-4 flex justify-center items-center font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl hover:scale-105 duration-200 cursor-pointer"
+        className="mt-4 flex items-center justify-center font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl hover:scale-105 duration-200 cursor-pointer mx-[5%] text-center"
         style={{
           background:
             "linear-gradient(93.85deg, #FFF346 -0.32%, #EE5853 133.89%)",
@@ -698,10 +698,7 @@ const Career = () => {
           )
         }
       >
-        For exciting news please visit our LinkedIn page
-        <div className="text-orange-400 ml-2">
-          <FaAnglesRight size={25} />
-        </div>
+        For exciting news please visit our LinkedIn page ➯
       </div>
     </div>
   );

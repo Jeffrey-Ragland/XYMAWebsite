@@ -55,7 +55,7 @@ const PaintCS = () => {
         />
       </div>
 
-      <div className="mt-6 md:mt-12 mb-2 flex justify-between items-center">
+      <div className="mt-6 md:mt-12 mb-2 flex justify-between items-center flex-wrap">
         <div className="flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
           <div
             className="cursor-pointer md:flex items-center 2xl:hidden"

@@ -642,7 +642,7 @@ const Resource = () => {
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Marine
                 </div>
-                <span
+                {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
                     background:
@@ -653,7 +653,7 @@ const Resource = () => {
                   }}
                 >
                   Case Study
-                </span>
+                </span> */}
               </div>
 
               <div className="md:flex gap-4">
@@ -751,7 +751,7 @@ const Resource = () => {
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Semiconductor
                 </div>
-                <span
+                {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
                     background:
@@ -762,7 +762,7 @@ const Resource = () => {
                   }}
                 >
                   Case Study
-                </span>
+                </span> */}
               </div>
 
               <div className="md:flex gap-4">
@@ -810,7 +810,7 @@ const Resource = () => {
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Mining
                 </div>
-                <span
+                {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
                     background:
@@ -821,7 +821,7 @@ const Resource = () => {
                   }}
                 >
                   Case Study
-                </span>
+                </span> */}
               </div>
 
               <div className="md:flex gap-4">

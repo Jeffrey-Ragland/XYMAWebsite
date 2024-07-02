@@ -61,7 +61,7 @@ const OilAndGasCS = () => {
         />
       </div>
 
-      <div className="mt-6 md:mt-12 mb-2 flex justify-between items-center">
+      <div className="mt-6 md:mt-12 mb-2 flex flex-wrap justify-between items-center">
         <div className="flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
           <div
             className="cursor-pointer md:flex items-center 2xl:hidden"
@@ -83,7 +83,7 @@ const OilAndGasCS = () => {
         </div>
 
         <div className="bg-gray-200 text-xs md:text-sm 2xl:text-base text-gray-500 rounded-2xl py-1 px-3 font-medium">
-          6 Min Read
+          6&nbsp;Min&nbsp;Read
         </div>
       </div>
 
