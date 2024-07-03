@@ -8,6 +8,7 @@ import noData from '../Assets/noData.jpg';
 import { IoMdClose } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import * as pdfjsLib from 'pdfjs-dist/webpack';
 
 const Career = () => {
   
@@ -80,17 +81,48 @@ const Career = () => {
   }
   //console.log('application form data',applicationFormData);
 
+  const checkPdfPages = async (file) => {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    return pdf.numPages;
+  };
+
   //application form -> resume
-  const handleResumeChange = (e) => {
+  // const handleResumeChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if(file && file.type === 'application/pdf') {
+  //     setResume(file);
+  //   } else {
+  //     toast.warning('Please upload only PDF file!');
+  //     e.target.value = null;
+  //     setResume(null);
+  //   };
+  // };
+
+  const handleResumeChange = async (e) => {
     const file = e.target.files[0];
-    if(file && file.type === 'application/pdf') {
-      setResume(file);
+    if (file && file.type === "application/pdf") {
+      const numPages = await checkPdfPages(file);
+      if (numPages <= 5) {
+        setResume(file);
+      } else {
+        toast.warning("Please upload a PDF file with less than 5 pages!");
+        e.target.value = null;
+        setResume(null);
+      }
     } else {
-      toast.warning('Please upload only PDF file!');
+      toast.warning("Please upload only a PDF file!");
       e.target.value = null;
       setResume(null);
-    };
+    }
   };
+
+   const handleResumeKeyDown = (e) => {
+     if (e.key === "Enter") {
+       e.preventDefault(); 
+       e.stopPropagation();
+     }
+   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleProgressScroll);
@@ -99,7 +131,7 @@ const Career = () => {
 
   //getting position details from db
   const fetchPosition = () => {
-    //fetch("http://localhost:4000/backend/getposition", 
+    // fetch("http://localhost:4000/backend/getposition",{
       fetch("http://34.93.162.58:4000/backend/getposition", {
         method: "GET",
         headers: {
@@ -146,45 +178,46 @@ const Career = () => {
 
     // console.log('backend form data',formData)
 
-     fetch("http://34.93.162.58:4000/backend/uploadapplicationform", {
-       method: "POST",
-       body: formData,
-     })
-       .then((response) => {
-         if (!response.ok) {
-           //throw new Error('Error uploading application form')
-         } else {
-           toast.success("We have received your response!");
-           setApplicationFormData({
-             Name: "",
-             Email: "",
-             Phone: "",
-             LinkedIn: "",
-             ExpectedSalary: "",
-             PrevJobCompany: "",
-             PrevJobTitle: "",
-             SelfIntro: "",
-             WhyIntrested: "",
-             YourExpectations: "",
-             OurExpectations: "",
-             Relocate: "",
-             StartDate: null,
-             ApplyingForDepartment: "",
-             ApplyingForPosition: "",
-           });
-           setResume(null);
+    fetch("http://34.93.162.58:4000/backend/uploadapplicationform", {
+    // fetch("http://localhost:4000/backend/uploadapplicationform", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          //throw new Error('Error uploading application form')
+        } else {
+          toast.success("We have received your response!");
+          setApplicationFormData({
+            Name: "",
+            Email: "",
+            Phone: "",
+            LinkedIn: "",
+            ExpectedSalary: "",
+            PrevJobCompany: "",
+            PrevJobTitle: "",
+            SelfIntro: "",
+            WhyIntrested: "",
+            YourExpectations: "",
+            OurExpectations: "",
+            Relocate: "",
+            StartDate: null,
+            ApplyingForDepartment: "",
+            ApplyingForPosition: "",
+          });
+          setResume(null);
 
-           const fileInput = document.getElementById("resumeInput");
-           if (fileInput) {
-             fileInput.value = null;
-           }
+          const fileInput = document.getElementById("resumeInput");
+          if (fileInput) {
+            fileInput.value = null;
+          }
 
-           setApplicationFormOpen(false);
-         }
-       })
-       .catch((error) => {
-         //console.error(error);
-       });
+          setApplicationFormOpen(false);
+        }
+      })
+      .catch((error) => {
+        //console.error(error);
+      });
   };
 
   const uniqueDepartments = ['All', ...new Set(position.map(position => position.DepartmentName))];
@@ -389,23 +422,58 @@ const Career = () => {
       {applicationFormOpen && selectedPosition && (
         <div className="fixed inset-0 h-full bg-black/40 flex justify-center items-center">
           <div
-            className="bg-white h-[75%] max-w-[90%] border border-gray-400 rounded-md p-4 overflow-auto"
+            className="bg-white h-[75%] max-w-[90%] border border-gray-400 rounded-md overflow-auto"
             style={{ scrollbarWidth: "none" }}
           >
-            <div className="flex gap-2 justify-between items-center mb-2 font-semibold">
+            <div
+              className="flex gap-2 justify-between items-center font-semibold p-2 sticky top-0 text-white"
+              style={{
+                background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
+              }}
+            >
               <div>
                 Applying for {selectedPosition.Position},{" "}
                 {selectedPosition.DepartmentName}
               </div>
               <div
-                className="cursor-pointer rounded-full hover:bg-gray-400 duration-200"
-                onClick={() => setApplicationFormOpen(false)}
+                className="cursor-pointer rounded-full hover:bg-gray-400 duration-200 bg-orange-400 p-0.5"
+                onClick={() => {
+                  setApplicationFormOpen(false);
+                  setApplicationFormData({
+                    Name: "",
+                    Email: "",
+                    Phone: "",
+                    LinkedIn: "",
+                    ExpectedSalary: "",
+                    PrevJobCompany: "",
+                    PrevJobTitle: "",
+                    SelfIntro: "",
+                    WhyIntrested: "",
+                    YourExpectations: "",
+                    OurExpectations: "",
+                    Relocate: "",
+                    StartDate: null,
+                    ApplyingForDepartment: "",
+                    ApplyingForPosition: "",
+                  });
+                  setResume(null);
+                }}
               >
                 <IoMdClose size={20} />
               </div>
+              
             </div>
+
+            <div
+              className="h-1"
+              style={{
+                background:
+                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+              }}
+            />
+
             <form
-              className="flex flex-col gap-2 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl"
+              className="flex flex-col gap-2 text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl p-4"
               onSubmit={handleApplicationFormSubmit}
             >
               <div>
@@ -535,12 +603,16 @@ const Career = () => {
                     <span className="text-[#CE2C31]">*</span>
                   </label>
                 </div>
-                <div className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 mt-1">
+                <div
+                  className="border border-gray-400 rounded-lg p-1 text-gray-800 focus:outline-none focus:border-gray-600 mt-1 overflow-auto"
+                  style={{ scrollbarWidth: "none" }}
+                >
                   <input
                     id="resumeInput"
                     type="file"
                     accept=".pdf"
                     onChange={handleResumeChange}
+                    onKeyDown={handleResumeKeyDown}
                     required
                   />
                 </div>

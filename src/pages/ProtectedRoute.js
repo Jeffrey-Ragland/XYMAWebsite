@@ -19,6 +19,7 @@ const ProtectedRoute = () => {
               .then((response) => response.json())
               .then((data) => {
                 if (data.valid) {
+                 // console.log(data.valid)
                   setIsAuthenticated(true);
                 } else {
                   localStorage.removeItem("token");

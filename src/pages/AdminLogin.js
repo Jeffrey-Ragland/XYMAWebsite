@@ -21,6 +21,7 @@ const AdminLogin = () => {
     const handleAdminLoginSubmit = (e) => {
         e.preventDefault();
         fetch("http://34.93.162.58:4000/backend/adminlogin", {
+        // fetch("http://localhost:4000/backend/adminlogin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

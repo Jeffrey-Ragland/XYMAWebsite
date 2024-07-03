@@ -22,7 +22,6 @@ import backend from '../Assets/backend.jpg';
 import sensor from '../Assets/sensordept.jpeg';
 import finance from '../Assets/finance.jpg';
 import admin from '../Assets/admin.jpg';
-import recruit from '../Assets/recruit.jpg';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -104,6 +103,7 @@ const AdminPortal = () => {
     e.preventDefault();
     console.log(formData);
     fetch("http://34.93.162.58:4000/backend/addposition", {
+    // fetch("http://localhost:4000/backend/addposition", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -133,6 +133,7 @@ const AdminPortal = () => {
   //getting position details from db
   const fetchPosition = () => {
     fetch("http://34.93.162.58:4000/backend/getposition", {
+    // fetch("http://localhost:4000/backend/getposition", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
