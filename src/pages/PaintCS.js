@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HiChevronLeft } from "react-icons/hi2";
-import csImg1 from "../Images/paint1.png";
-import csImg2 from "../Images/paint2.png";
+import csImg1 from "../Assets/paint1.png";
+import csImg2 from "../Assets/paint2.png";
 import paints from "../Assets/paints2.jpg";
 import line from "../Assets/underline.png";
 import { useNavigate } from "react-router-dom";

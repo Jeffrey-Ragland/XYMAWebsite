@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
-import video2 from '../Images/contactOverlay2.mp4';
-import map from '../Images/map.png';
-import mail from '../Images/mail.png';
-import call from '../Images/call.png'
-import location from '../Images/location.png'; 
+import video from '../videoAssets/contactOverlay.mp4';
+import map from '../Assets/map.png';
+import mail from '../Assets/mail.png';
+import call from '../Assets/call.png'
+import location from '../Assets/location.png'; 
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import AOS from "aos";
@@ -21,7 +21,7 @@ const ContactPage = () => {
     company: "",
     solution: "",
     details: "",
-  });
+  }); 
 
   const handleSubmitButtonClick = () => {
     setSubmitButtonClicked(true);
@@ -127,7 +127,7 @@ const ContactPage = () => {
       <section>
         <div className=" relative h-[60vh] md:h-[70vh] xl:h-[90vh] shadow-white shadow-2xl">
           <video autoPlay loop muted className="h-full w-full object-cover">
-            <source src={video2} type="video/mp4" />
+            <source src={video} type="video/mp4" />
           </video>
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">

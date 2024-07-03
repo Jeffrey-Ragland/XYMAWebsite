@@ -6,7 +6,6 @@ import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import noData from '../Assets/noData.jpg';
 import { IoMdClose } from "react-icons/io";
-import { FaAnglesRight } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

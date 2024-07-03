@@ -1,17 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import aluminum from '../Images/al1.png';
+import "./Sb.css";
 import steel from '../Assets/steelHome.png';
 import lubricants from '../Assets/lubricantsHome.png';
-import oilRecovery from '../Assets/oilRecoveryHome.png';
 import paints from '../Assets/paintsHome.jpg';
 import semiconductor from '../Assets/semiconductorHome.jpg';
-import mining from "../Assets/miningHome.jpg";
 import utmaps from '../Assets/newut.jpeg';
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
 import ipams from '../Assets/IPAMS.png';
-import newpage from '../Assets/newpage.png';
-import trophy from '../Assets/trophy.png';
 import client from '../Assets/client.png';
 import real from '../Assets/real.png';
 import solution from '../Assets/solution.png';
@@ -38,12 +34,11 @@ import zero from '../Assets/zero.png';
 import ai from '../Assets/ai.png';
 import tool from '../Assets/tool.png';
 import line from '../Assets/underline.png';
-import potline from '../Assets/potline.png';
 import awardPhoto from '../Assets/awardPhoto.jpg';
-import homeImage from '../Assets/homeImage.jpeg';
-import homeVideo from '../Assets/homeVideo.mp4';
-import OilVideo from '../Assets/ioclFinal.mp4';
-import miningVideo from '../Assets/cumiFinal.mp4';
+import homeVideo from '../videoAssets/homeVideo.mp4';
+import aluminumVideo from '../videoAssets/aluminumVideo.mp4';
+import OilVideo from '../videoAssets/ioclFinal.mp4';
+import miningVideo from '../videoAssets/cumiFinal.mp4';
 import brochure from "../pdfAssets/XymaBrochure.pdf";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -57,7 +52,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
-  const [clickedImage, setClickedImage] = useState(aluminum);
+  const [clickedImage, setClickedImage] = useState(aluminumVideo);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [overlay, setOverlay] = useState(false);
   const [utmapsBadge, setUtmapsBadge] = useState(false);
@@ -251,7 +246,7 @@ export const Home = () => {
   const handleImageChange = (event) => {
     switch (event.target.id) {
       case "aluminum":
-        setClickedImage(aluminum);
+        setClickedImage(aluminumVideo);
         break;
 
       case "steel":
@@ -263,7 +258,7 @@ export const Home = () => {
         break;
 
       case "oilRecovery":
-        setClickedImage(oilRecovery);
+        setClickedImage(OilVideo);
         break;
 
       case "semiconductor":
@@ -271,7 +266,7 @@ export const Home = () => {
         break;
 
       case "mining":
-        setClickedImage(mining);
+        setClickedImage(miningVideo);
         break;
 
       case "paints":
@@ -463,17 +458,17 @@ export const Home = () => {
             <div>
               <div
                 className={`md:w-full cursor-pointer p-1 xl:mb-1 flex ${
-                  clickedImage === aluminum && "text-[#013872] font-bold"
+                  clickedImage === aluminumVideo && "text-[#013872] font-bold"
                 }`}
                 id="aluminum"
                 onClick={handleImageChange}
               >
-                {clickedImage === aluminum && (
+                {clickedImage === aluminumVideo && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Aluminum</div>
               </div>
-              {clickedImage === aluminum && (
+              {clickedImage === aluminumVideo && (
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
@@ -520,17 +515,17 @@ export const Home = () => {
             <div>
               <div
                 className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
-                  clickedImage === oilRecovery && "text-[#013872] font-bold"
+                  clickedImage === OilVideo && "text-[#013872] font-bold"
                 }`}
                 id="oilRecovery"
                 onClick={handleImageChange}
               >
-                {clickedImage === oilRecovery && (
+                {clickedImage === OilVideo && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Oil&nbsp;&&nbsp;Gas</div>
               </div>
-              {clickedImage === oilRecovery && (
+              {clickedImage === OilVideo && (
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
@@ -558,17 +553,17 @@ export const Home = () => {
             <div>
               <div
                 className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
-                  clickedImage === mining && "text-[#013872] font-bold"
+                  clickedImage === miningVideo && "text-[#013872] font-bold"
                 }`}
                 id="mining"
                 onClick={handleImageChange}
               >
-                {clickedImage === mining && (
+                {clickedImage === miningVideo && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
                 <div className="ml-1 -z-10">Mining</div>
               </div>
-              {clickedImage === mining && (
+              {clickedImage === miningVideo && (
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
@@ -594,18 +589,28 @@ export const Home = () => {
           </div>
 
           {/* aluminum content */}
-          {clickedImage === aluminum && (
+          {clickedImage === aluminumVideo && (
             <>
               {/* element image*/}
               <div
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="slide-right"
               >
-                <img
+                {/* <img
                   src={potline}
                   alt="potline"
                   className="shadow-white shadow-2xl rounded-2xl object-cover border border-orange-400 "
-                />
+                /> */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  controls
+                  playsInline
+                  className="rounded-2xl shadow-white shadow-2xl"
+                >
+                  <source src={aluminumVideo} type="video/mp4" />
+                </video>
                 <div
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
@@ -752,7 +757,7 @@ export const Home = () => {
           )}
 
           {/* oil recovery content */}
-          {clickedImage === oilRecovery && (
+          {clickedImage === OilVideo && (
             <>
               {/* element image*/}
               <div
@@ -862,7 +867,7 @@ export const Home = () => {
           )}
 
           {/* mining content */}
-          {clickedImage === mining && (
+          {clickedImage === miningVideo && (
             <>
               {/* element image*/}
               <div
@@ -1212,7 +1217,7 @@ export const Home = () => {
             src={newbgcropped}
             alt="Background"
           />
-          <div className="absolute flex text-right top-[65%] -left-[1%] rounded-2xl">
+          <div className="absolute flex text-right top-[65%] -left-[4%] 2xl:-left-[2%] rounded-2xl">
             <div>
               <img
                 className="w-12 h-12"
@@ -1327,7 +1332,7 @@ export const Home = () => {
               AI&nbsp;Enable&nbsp;Corrective&nbsp;Actions
             </div>
           </div>
-          <div className="absolute flex text-right top-[65%] -right-[1%] rounded-2xl">
+          <div className="absolute flex text-right top-[65%] -right-[4%] 2xl:-right-[2%] rounded-2xl">
             <div>
               <img
                 className="w-12 h-12"
@@ -1495,8 +1500,8 @@ export const Home = () => {
                 </div>
                 <div>Continuous multi-parameter measurements &#10039;</div>
                 <div>
-                  Continuous contact & non-contact based level
-                  measurement&#10039;
+                  Continuous contact & non-contact based level measurement
+                  &#10039;
                 </div>
 
                 {/* duplicate */}
@@ -1506,8 +1511,8 @@ export const Home = () => {
                 </div>
                 <div>Continuous multi-parameter measurements &#10039;</div>
                 <div>
-                  Continuous contact & non-contact based level
-                  measurement&#10039;
+                  Continuous contact & non-contact based level measurement
+                  &#10039;
                 </div>
               </div>
             </div>

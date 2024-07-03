@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { HiChevronLeft } from 'react-icons/hi2';
-import aluminum from '../Images/al1.png';
-import csImg1 from '../Images/aluminumCS1.png';
-import csImg2 from "../Images/aluminumCS2.png";
-import csImg3 from "../Images/aluminumCS3.png";
-import csImg4 from "../Images/aluminumCS4.png";
+import aluminum from "../Assets/newAluminium1.png";
+import csImg1 from '../Assets/aluminumCS1.png';
+import csImg2 from "../Assets/aluminumCS2.png";
+import csImg3 from "../Assets/aluminumCS3.png";
+import csImg4 from "../Assets/aluminumCS4.png";
 import line from "../Assets/underline.png";
 import { useNavigate } from 'react-router-dom';
 import { FaFileDownload } from "react-icons/fa";

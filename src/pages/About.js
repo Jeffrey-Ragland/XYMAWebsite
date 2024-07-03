@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import iit from '../Assets/Frameiit.png';
 import frame1 from '../Assets/Frame1.png';
-import frame21 from '../Assets/Frame21.png';
+import frame2 from '../Assets/Frame2.png';
 import frame3 from '../Assets/Frame3.png';
 import frame4 from '../Assets/Frame4.png';
 import c1 from '../Assets/Framec1.png';
@@ -14,8 +14,6 @@ import ceo from "../Assets/ceo.jpg";
 import cto from "../Assets/cto.jpg";
 import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
-import framevector from '../Assets/framevector.png';
-import photo from '../Assets/photo.png';
 import groupPicEdited from '../Assets/groupPicEdited.png';
 import teamLeadPic from '../Assets/teamLeadPhoto.jpg';
 import designTeam from "../Assets/designTeam.jpg";
@@ -975,25 +973,25 @@ const About = () => {
         </div>
         <div className="grid grid-cols-2 md:flex gap-4 py-2">
           <img
-            className="w-[100%] md:w-[24%] md:h-[50%]"
+            className="w-[100%] md:w-[24%] md:h-[50%] rounded-2xl"
             src={frame1}
             alt="Frame 1"
             data-aos="fade-up"
           />
           <img
-            className="w-[100%] md:w-[24%] md:h-[50%]"
-            src={frame21}
+            className="w-[100%] md:w-[24%] md:h-[50%] rounded-2xl"
+            src={frame2}
             alt="Frame 2"
             data-aos="fade-up"
           />
           <img
-            className="w-[100%] md:w-[24%] md:h-[50%]"
+            className="w-[100%] md:w-[24%] md:h-[50%] rounded-2xl"
             src={frame3}
             alt="Frame 3"
             data-aos="fade-up"
           />
           <img
-            className="w-[100%] md:w-[24%] md:h-[50%]"
+            className="w-[100%] md:w-[24%] md:h-[50%] rounded-2xl"
             src={frame4}
             alt="Frame 4"
             data-aos="fade-up"

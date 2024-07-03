@@ -1,26 +1,22 @@
 import React, { useState, useEffect, useRef} from 'react';
 import cs from '../Assets/cs.png';
-import newAl1 from '../Images/newAluminium1.png';
-import newAl2 from "../Images/newAluminium2.png";
-import steel1 from '../Images/steel1.png';
-import steel2 from '../Images/steel2.png';
-import marine1 from '../Images/marine1.jpg';
-import marine2 from "../Images/marine2.jpg";
-// import tube1 from '../Images/tube1.png';
-// import tube2 from '../Images/tube2.png';
-import oil1 from '../Images/oil1.png';
-import oil2 from '../Images/oil2.png';
-import semiconductor1 from "../Images/semiconductor1.jpg";
-import semiconductor2 from "../Images/semiconductor2.jpg";
-import mining1 from "../Images/mining1.jpg";
-import mining2 from "../Images/mining2.jpg";
-// import oilRecovery from "../Assets/oilRecovery.png";
-// import oilRecovery2 from '../Assets/oilRecovery3.jpg';
-import paints1 from '../Assets/paintsresized.png';
+import newAl1 from '../Assets/newAluminium1.png';
+import newAl2 from "../Assets/newAluminium2.png";
+import steel1 from '../Assets/steel1.png';
+import steel2 from '../Assets/steel2.png';
+import marine1 from '../Assets/marine1.jpg';
+import marine2 from "../Assets/marine2.jpg";
+import oil1 from '../Assets/oil1.png';
+import oil2 from '../Assets/oil2.png';
+import semiconductor1 from "../Assets/semiconductor1.jpg";
+import semiconductor2 from "../Assets/semiconductor2.jpg";
+import mining1 from "../Assets/mining1.jpg";
+import mining2 from "../Assets/mining2.jpg";
+import paints1 from '../Assets/paintsresized.png'; 
 import paints2 from '../Assets/paints2.jpg';
 import { useNavigate } from 'react-router-dom';
 import {
-  GiMetalDisc,
+  GiMetalDisc, 
   GiMetalBar,
   GiShipBow,
   GiGreaseTrap,

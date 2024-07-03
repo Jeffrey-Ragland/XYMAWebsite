@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { HiChevronLeft } from "react-icons/hi2";
-import steel from "../Images/steel1.png";
-import csImg1 from '../Images/steelChallenge.png';
-import csImg2 from "../Images/steelMonitoring.png";
+import steel from "../Assets/steel3.png";
+import csImg1 from '../Assets/steelChallenge.png';
+import csImg2 from "../Assets/steelMonitoring.png";
 import line from "../Assets/underline.png";
 import { useNavigate } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";
@@ -83,7 +83,7 @@ const SteelCS = () => {
 
       <div className="md:flex mb-4">
         <div className=" w-full md:w-1/2 p-4 md:p-8 flex items-center justify-center">
-          <img src={steel} alt="steel" data-aos="zoom-out" />
+          <img src={steel} alt="steel" data-aos="zoom-out" className="rounded-3xl"/>
         </div>
 
         <div className=" w-full md:w-1/2 md:p-8 text-sm lg:text-xl xl:text-2xl 2xl:text-4xl font-semibold text-center flex items-center">
