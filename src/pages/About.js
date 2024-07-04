@@ -37,7 +37,7 @@ import Slider from "react-slick";
 import { RiMapPinTimeLine } from "react-icons/ri";
 import { GrGroup } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
-import { FaListCheck, FaArrowRightToBracket } from "react-icons/fa6";
+import { FaListCheck } from "react-icons/fa6";
 import { LiaSitemapSolid } from "react-icons/lia";
 import { GiSoundWaves } from "react-icons/gi";
 import { PiCircuitryLight } from "react-icons/pi";
@@ -227,7 +227,7 @@ const About = () => {
               <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold">
                 2019
               </div>
-              <div className="text-lg md:text-3xl lg:text-4xl 2xl:text-6xl font-normal">
+              <div className="text-lg md:text-3xl xl:text-4xl 2xl:text-6xl font-normal">
                 Founded through the CNDE, IIT <br /> Madras, and incubated at
                 IIT Madras <br /> Incubation Cell
               </div>
@@ -898,14 +898,10 @@ const About = () => {
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-left" : ""}
             >
-              The data analysis team is responsible for collecting, processing,
-              and interpreting large sets of data to provide actionable
-              insights. Their tasks include data cleaning, statistical analysis,
-              data visualization, and creating reports to support
-              decision-making processes. The team uses various tools and
-              techniques to identify trends, patterns, and correlations within
-              the data, helping the company to optimize operations, understand
-              customer behavior, and drive strategic initiatives.
+              We process Waveguide temperature data to extract valuable
+              insights, using advanced techniques to predict future trends. Our
+              team integrates deep learning, computer vision, and thermal
+              cameras to uphold the highest standards of work safety.
             </div>
             <div
               className="w-full md:w-[50%]"

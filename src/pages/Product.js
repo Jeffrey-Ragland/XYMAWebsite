@@ -222,7 +222,7 @@ const Product = () => {
               alt="image1"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Multi-point Temperature Measurements
               </div>
               <div
@@ -251,7 +251,7 @@ const Product = () => {
               alt="image2"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Multi - Parameter Measurements
               </div>
               <div
@@ -280,7 +280,7 @@ const Product = () => {
               alt="image3"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Powered by AI
               </div>
               <div
@@ -756,9 +756,9 @@ const Product = () => {
               <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 PoRTS is an invasive/non-invasive based IIoT-enabled rheology
                 and temperature measurement sensor that continuously captures
-                multiple parameters such as viscosity, density and temperature unlike discrete measurements with
-                thermocouple/RTDs or discrete measurements with sampling from
-                viscometer and density meter.
+                multiple parameters such as viscosity, density and temperature
+                unlike discrete measurements with thermocouple/RTDs or discrete
+                measurements with sampling from viscometer and density meter.
                 <span
                   className="text-[#01285C] font-semibold cursor-pointer ml-1"
                   onClick={() => setRenderReadMorePorts(true)}
@@ -778,7 +778,7 @@ const Product = () => {
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={luboil} alt="lube"/>
+                    <img className="w-10" src={luboil} alt="lube" />
                   </div>
                   <div className="font-semibold">Lubrication Oil</div>
                 </div>
@@ -787,7 +787,7 @@ const Product = () => {
               <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
-                    <img className="w-10" src={eor} alt="eor"/>
+                    <img className="w-10" src={eor} alt="eor" />
                   </div>
                   <div className="font-semibold">E.O.R.</div>
                 </div>
@@ -824,9 +824,10 @@ const Product = () => {
                         PoRTS is an invasive/non-invasive based IIoT-enabled
                         rheology and temperature measurement sensor that
                         continuously captures multiple parameters such as
-                        viscosity, density and temperature unlike discrete measurements with
-                        thermocouple/RTDs or discrete measurements with sampling
-                        from viscometer and density meter.
+                        viscosity, density and temperature unlike discrete
+                        measurements with thermocouple/RTDs or discrete
+                        measurements with sampling from viscometer and density
+                        meter.
                       </div>
                       <div>
                         The edge computing unit in the XYMA Electronics Unit
@@ -1503,7 +1504,7 @@ const Product = () => {
       {/* utmaps product video */}
       {renderUtmapsVideo && (
         <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
-          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+          <div className="fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xl:w-[75%] ">
             <div className="">
               <div
                 className=" flex gap-2 justify-between p-3 text-white"
@@ -1542,7 +1543,7 @@ const Product = () => {
       {/* ports product video */}
       {renderPortsVideo && (
         <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
-          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xl:w-[75%]">
             <div className="">
               <div
                 className=" flex gap-2 justify-between p-3 text-white"
@@ -1581,7 +1582,7 @@ const Product = () => {
       {/* ztar product video */}
       {renderZtarVideo && (
         <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
-          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xl:w-[75%]">
             <div className="">
               <div
                 className=" flex gap-2 justify-between p-3 text-white"
@@ -1620,7 +1621,7 @@ const Product = () => {
       {/* ipams product video */}
       {renderIpamsVideo && (
         <div className="fixed inset-0 w-full h-full bg-black/80 z-50">
-          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md">
+          <div className="  fixed bg-white text-3xl text-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] xl:w-[75%]">
             <div className="">
               <div
                 className=" flex gap-2 justify-between p-3 text-white"

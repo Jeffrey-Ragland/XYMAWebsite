@@ -244,11 +244,11 @@ const Career = () => {
       <section className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl">
         <img
           src={newframe6}
-          alt="Frame Image"
+          alt="Frame"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
-          <div className="text-white text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+          <div className="text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
             <div>"Together,</div>
             <div className="ml-6">we shine"</div>
           </div>
@@ -297,7 +297,7 @@ const Career = () => {
           </div>
 
           <div>
-            <img className="h-[90px] w-[90px]" src={photo} alt="photo" />
+            <img className="h-[90px] w-[90px]" src={photo} alt="line" />
           </div>
           <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl">
             Dr. Nishanth Raja
@@ -312,7 +312,7 @@ const Career = () => {
         <div className="mt-10 md:mt-0 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <div>Opportunities</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt='line'></img>
           </div>
         </div>
 

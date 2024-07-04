@@ -131,7 +131,7 @@ const ContactPage = () => {
           </video>
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
-            <div className="text-xl md:text-4xl xl:text-3xl 2xl:text-5xl font-medium md:font-semibold">
+            <div className="text-xl md:text-3xl 2xl:text-5xl font-medium md:font-semibold">
               Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics
               Today
             </div>

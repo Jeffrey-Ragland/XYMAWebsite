@@ -305,39 +305,10 @@ export const Home = () => {
         className="relative h-[60vh] md:h-[70vh] xl:h-[90vh] w-full shadow-white shadow-2xl"
         ref={coverImageRef}
       >
-        {/* <img
-          src={newpage}
-          alt="cover"
-          className="absolute w-full h-full object-cover"
-        /> */}
         {/* cover video */}
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source src={homeVideo} type="video/mp4" />
         </video>
-
-        {/* cover image - small */}
-        {/* <div
-          className="absolute right-2 bottom-2 border-4 md:border-8 cursor-pointer z-20 rounded-md"
-          style={{
-            borderColor: "orange",
-            background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-            borderImage:
-              "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%) 1",
-          }}
-          onMouseEnter={() => setMiniCoverEnter(true)}
-          onMouseLeave={() => setMiniCoverEnter(false)}
-        >
-          <img
-            src={homeImage}
-            alt="cover"
-            className="max-w-[100px] md:max-w-[200px] 2xl:max-w-[300px] rounded-md"
-          />
-          {miniCoverEnter && (
-            <div className="bg-gray/60 text-white absolute bottom-0 w-full py-1 md:py-3 2xl:py-4 px-2 text-center backdrop-blur-sm text-[10px] md:text-sm xl:text-base 2xl:text-xl font-normal md:font-medium">
-              Vedanta Plant Product Installation
-            </div>
-          )}
-        </div> */}
 
         <button
           className="bg-white/50 text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-2 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200 flex items-center gap-4"
@@ -349,7 +320,7 @@ export const Home = () => {
           </span>
         </button>
 
-        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
+        <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
           <div className="flex xl:flex-col gap-2 md:gap-4">
             <div data-aos="slide-right">Prevent</div>
             <div data-aos="slide-right">Unplanned</div>

@@ -172,10 +172,10 @@ const Resource = () => {
           alt="Case Studies"
         />
         <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
-          <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+          <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
             Case Studies
           </div>
-          <div className="text-center mt-4 mx-[25%] md:mx-[30%] xl:mx-[20%] text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+          <div className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
             Xyma Analytics Case Studies are documented examples illustrating the
             application and effectiveness of Xyma Analytics' solutions in
             real-world scenarios

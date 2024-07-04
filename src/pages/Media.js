@@ -222,7 +222,7 @@ const Media = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center">
-            <div className="text-white text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+            <div className="text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
               News Room
             </div>
             <div className="text-white mt-2 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">

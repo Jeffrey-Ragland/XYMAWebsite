@@ -159,7 +159,7 @@ const Footer = () => {
               >
                 <RWebShare
                   data={{
-                    url: "http://34.93.162.58:3000/",
+                    url: "https://www.xyma.in/",
                     title: "XYMA Analytics Website",
                   }}
                 >
