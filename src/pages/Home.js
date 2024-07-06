@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 import "./Sb.css";
 import steel from '../Assets/steelHome.png';
 import lubricants from '../Assets/lubricantsHome.png';
@@ -65,6 +66,7 @@ export const Home = () => {
   // const [miniCoverEnter, setMiniCoverEnter] = useState(false);
  
   const coverImageRef = useRef(null);
+  const navigate = useNavigate();
 
   const sectionRefs = {
     section1: useRef(null),
@@ -278,6 +280,13 @@ export const Home = () => {
     }
   };
 
+  
+  const handleProductClick = (sectionId) => {
+    if (window.innerWidth >= 1024) {
+    navigate(`/products#${sectionId}`);
+    }
+  };
+ 
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []); 
@@ -978,6 +987,7 @@ export const Home = () => {
                 handleOverlayLeave();
                 handleUtmapsBadgeLeave();
               }}
+              onClick={() => handleProductClick("uTMapS")}
             >
               <div>
                 <img
@@ -1031,6 +1041,7 @@ export const Home = () => {
                 handleOverlayLeave();
                 handlePortsBadgeLeave();
               }}
+              onClick={() => handleProductClick("PoRTS")}
             >
               <div>
                 <img
@@ -1086,6 +1097,7 @@ export const Home = () => {
                 handleOverlayLeave();
                 handleZtarBadgeLeave();
               }}
+              onClick={() => handleProductClick("Ztar")}
             >
               <div>
                 <img
@@ -1139,6 +1151,7 @@ export const Home = () => {
                 handleOverlayLeave();
                 setIpamsBadge(false);
               }}
+              onClick={() => handleProductClick("IPAMS")}
             >
               <div>
                 <img
