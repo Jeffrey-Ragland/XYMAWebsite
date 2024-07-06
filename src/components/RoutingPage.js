@@ -74,7 +74,11 @@ const RoutingPage = () => {
           <Route path="/admin@2k24Applications" element={<ProtectedRoute />}>
             <Route path="" element={<AdminApplications />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<div>
+            <Navbar />
+            <Home />
+            <Footer />
+          </div>} />
         </Routes>
       </div>
       {!isAdminRoute && !isNotFoundRoute && <Footer />}
