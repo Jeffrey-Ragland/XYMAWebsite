@@ -258,7 +258,7 @@ const About = () => {
                   20+
                 </div>
                 <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
-                  Projects&nbsp;Accross
+                  Projects&nbsp;Across
                   <br />
                   Globe
                 </div>
