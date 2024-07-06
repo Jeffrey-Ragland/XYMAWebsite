@@ -228,8 +228,8 @@ const About = () => {
                 2019
               </div>
               <div className="text-lg md:text-3xl xl:text-4xl 2xl:text-6xl font-normal">
-                Founded through the CNDE, IIT <br /> Madras, and incubated at
-                IIT Madras <br /> Incubation Cell
+                Founded through the shine of CNDE, <br />
+                IIT Madras, and incubated at IIT Madras <br /> Incubation Cell
               </div>
             </div>
             <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
@@ -574,7 +574,7 @@ const About = () => {
                 {/* empty div for arrow */}
                 <div className="absolute left-0 top-1/2  w-1" id="box3"></div>
 
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center gap-4 py-4">
                   <div className="flex justify-center mb-4">
                     <img
                       src={cnde}
@@ -606,21 +606,14 @@ const About = () => {
             >
               <div className=" w-full">
                 <div className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2 text-center">
-                  Technological Partners
+                  Technological Partner
                 </div>
                 <div className="flex flex-col justify-center gap-4">
-                  <div className="flex justify-center">
+                  <div className="flex justify-center py-12 px-4 2xl:px-16 2xl:py-16">
                     <img
                       src={qualcomm}
                       alt="qualcomm"
-                      className="max-w-[150px] object-cover"
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <img
-                      src={ibm}
-                      alt="ibm"
-                      className="max-w-[150px] object-cover"
+                      className=""
                     />
                   </div>
                 </div>

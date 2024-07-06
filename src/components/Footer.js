@@ -10,7 +10,7 @@ import { RWebShare } from "react-web-share";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { IoShareSocialSharp } from "react-icons/io5";
-import brochure from '../pdfAssets/XymaBrochure.pdf';
+import brochure from '../pdfAssets/Newsletter.pdf';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -104,7 +104,7 @@ const Footer = () => {
               className="bg-white text-[#01285C] rounded-full w-44 px-1"
               onClick={handleBrochureDownload}
             >
-              Download&nbsp;Brochure
+              Download&nbsp;Newsletter
             </button>
           </div>
         </div>
@@ -242,9 +242,9 @@ const Footer = () => {
               >
                 Contact Us
               </div>
-              <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
+              {/* <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
                 Contact Sales
-              </div>
+              </div> */}
             </div>
           </div>
 

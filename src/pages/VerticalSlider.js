@@ -10,7 +10,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className=""
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
         {/* duplicate */}
@@ -19,7 +19,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className="slider-image"
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
       </div>
@@ -29,7 +29,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className="slider-image"
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
         {/* dupe */}
@@ -38,7 +38,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className="slider-image"
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
       </div>
@@ -48,7 +48,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className="slider-image"
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
         {/* dupe */}
@@ -57,7 +57,7 @@ function VerticalLoopSlider({ images }) {
             key={index}
             className="slider-image"
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`pic ${index + 1}`}
           />
         ))}
       </div>

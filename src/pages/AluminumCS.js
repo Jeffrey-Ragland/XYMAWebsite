@@ -74,7 +74,7 @@ const AluminumCS = () => {
           <div>Aluminum</div>
           <div className="flex flex-col items-center">
             <div>Case&nbsp;Study</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt='line'></img>
           </div>
         </div>
 

@@ -78,7 +78,7 @@ const OilAndGasCS = () => {
           <div>Oil&nbsp;&&nbsp;Gas</div>
           <div className="flex flex-col items-center">
             <div>Case&nbsp;Studies</div>
-            <img className="w-full h-2" src={line}></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
 

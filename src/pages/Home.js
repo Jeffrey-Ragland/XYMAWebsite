@@ -1498,7 +1498,7 @@ export const Home = () => {
           className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
         >
           <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-            XYMA Analytics' Clients
+            Our Clients
           </div>
           <div className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
