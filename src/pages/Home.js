@@ -41,6 +41,9 @@ import aluminumVideo from '../videoAssets/aluminumVideo.mp4';
 import OilVideo from '../videoAssets/ioclFinal.mp4';
 import miningVideo from '../videoAssets/cumiFinal.mp4';
 import brochure from "../pdfAssets/XymaBrochure.pdf";
+import ipamsBadge2 from "../Assets/IPAMSBadge.png";
+import portsBadge2 from "../Assets/portsBadge.png";
+import ztarBadge2 from "../Assets/ZtarBadge.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GiWaterSplash } from "react-icons/gi";
@@ -1046,7 +1049,7 @@ export const Home = () => {
               <div>
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
-                  src={ports}
+                  src={portsBadge2}
                   alt="ports"
                 />
               </div>
@@ -1102,7 +1105,7 @@ export const Home = () => {
               <div>
                 <img
                   className="object-cover object-top rounded-full w-6 h-6 bg-black"
-                  src={ztar}
+                  src={ztarBadge2}
                   alt="ztar"
                 />
               </div>
@@ -1156,7 +1159,7 @@ export const Home = () => {
               <div>
                 <img
                   className="object-cover object-center rounded-full w-6 h-6 p-0.5 bg-black"
-                  src={ipams}
+                  src={ipamsBadge2}
                   alt="ipams"
                 />
               </div>
