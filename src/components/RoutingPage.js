@@ -17,7 +17,7 @@ import MiningCS from '../pages/MiningCS';
 import AdminLogin from '../pages/AdminLogin';
 import AdminPortal from '../pages/AdminPortal';
 import AdminApplications from '../pages/AdminApplications';
-import NotFound from '../pages/NotFound';
+// import NotFound from '../pages/NotFound';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
@@ -51,7 +51,7 @@ const RoutingPage = () => {
     <div className="font-satoshi">
       <ScrollToTop />
       {!isAdminRoute && !isNotFoundRoute && <Navbar />}
-      <div>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -80,7 +80,7 @@ const RoutingPage = () => {
             <Footer />
           </div>} />
         </Routes>
-      </div>
+      </main>
       {!isAdminRoute && !isNotFoundRoute && <Footer />}
     </div>
   );

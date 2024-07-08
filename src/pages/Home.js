@@ -338,16 +338,16 @@ export const Home = () => {
             <div data-aos="slide-right">Unplanned</div>
           </div>
           <div data-aos="slide-right">Downtime</div>
-          <div
+          <p
             className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-xl mt-2 font-normal md:font-medium"
             data-aos="slide-right"
           >
             "The Disruptive Ultrasonic Waveguide Technology"
-          </div>
+          </p>
         </div>
       </section>
       {/* bottom text */}
-      <div
+      <h1
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
         style={{
           backgroundImage:
@@ -357,83 +357,83 @@ export const Home = () => {
         }}
       >
         XYMA ANALYTICS
-      </div>
+      </h1>
 
       {/* icon menu */}
       {renderIconMenu && (
-        <div
+        <nav
           className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-12 py-4 rounded-r-2xl"
           data-aos=""
         >
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiWaterSplash size={25} />
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <MdOutlineSensors size={25} />
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <SiBlueprint size={25} />
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <HiUserGroup size={25} />
-          </div>
-        </div>
+          </button>
+        </nav>
       )}
 
       {/* elements section */}
       <section id="section1" ref={sectionRefs.section1} className="pt-1">
         {/* text with underline */}
-        <div
+        <header
           // ref={sectionRefs.section1}
           className="flex justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]"
         >
-          <div className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-            <div>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</div>
+          <h2 className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+            <p>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</p>
             <div>
-              <div>Process&nbsp;parameter&nbsp;measurements</div>
+              <p>Process&nbsp;parameter&nbsp;measurements</p>
               <img className=" w-full h-2" src={line} alt="line"></img>
             </div>
-          </div>
-        </div>
+          </h2>
+        </header>
         {/* elements cards */}
         <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
           {/* list of elements */}
-          <div
+          <aside
             className="w-full overflow-auto md:w-[20%] xl:w-[16%] 2xl:w-[15%] text-gray-500 flex items-center mb-2 md:mb-0 md:items-start md:justify-start md:flex-col text-sm lg:text-lg xl:text-base 2xl:text-2xl font-medium"
             style={{ scrollbarWidth: "none" }}
           >
             <div className="mb-0 md:mb-2 ml-2">
-              <div className=" font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
+              <h3 className=" font-bold text-[#013872] text-base lg:text-2xl 2xl:text-3xl">
                 Industries:
-              </div>
+              </h3>
               <div className="border border-[#013872] mx-4 rounded-full" />
             </div>
 
@@ -569,21 +569,16 @@ export const Home = () => {
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
-          </div>
+          </aside>
 
           {/* aluminum content */}
           {clickedImage === aluminumVideo && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="slide-right"
               >
-                {/* <img
-                  src={potline}
-                  alt="potline"
-                  className="shadow-white shadow-2xl rounded-2xl object-cover border border-orange-400 "
-                /> */}
                 <video
                   autoPlay
                   loop
@@ -594,7 +589,7 @@ export const Home = () => {
                 >
                   <source src={aluminumVideo} type="video/mp4" />
                 </video>
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -604,14 +599,14 @@ export const Home = () => {
                   }}
                 >
                   ALUMINUM
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4 "
                 data-aos="slide-left"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -633,7 +628,7 @@ export const Home = () => {
                   {/* • Continuous Temperature Monitoring of Collector Bars and Side
                   Shell of Potline. <br />• Continuous Temperature Moitoring of
                   Cryolite Bath. */}
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -642,7 +637,7 @@ export const Home = () => {
           {clickedImage === steel && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -651,7 +646,7 @@ export const Home = () => {
                   alt="steel"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -661,14 +656,14 @@ export const Home = () => {
                   }}
                 >
                   STEEL
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -685,7 +680,7 @@ export const Home = () => {
                   set of cycle
                   {/* Continuous Temperature Profile Monitoring of Galvanizing Line
                   for Zinc Process. */}
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -694,7 +689,7 @@ export const Home = () => {
           {clickedImage === lubricants && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -703,7 +698,7 @@ export const Home = () => {
                   alt="lubricants"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -713,14 +708,14 @@ export const Home = () => {
                   }}
                 >
                   MARINE
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -734,7 +729,7 @@ export const Home = () => {
                     30%
                   </span>
                   of Maintenance Budget is Affected by Lubricants.
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -743,7 +738,7 @@ export const Home = () => {
           {clickedImage === OilVideo && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -755,7 +750,7 @@ export const Home = () => {
                 >
                   <source src={OilVideo} type="video/mp4" />
                 </video>
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -765,14 +760,14 @@ export const Home = () => {
                   }}
                 >
                   OIL&nbsp;&&nbsp;GAS
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -790,7 +785,7 @@ export const Home = () => {
                   viscosity measurement technique.
                   {/* Continuous Skin Temperature Monitoring of Reformer Tubes &
                   Continuous Oil Condition Monitoring. */}
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -799,7 +794,7 @@ export const Home = () => {
           {clickedImage === semiconductor && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -808,7 +803,7 @@ export const Home = () => {
                   alt="semiconductor"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -818,14 +813,14 @@ export const Home = () => {
                   }}
                 >
                   SEMICONDUCTOR
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -844,7 +839,7 @@ export const Home = () => {
                     $600
                   </span>{" "}
                   Billion in Annual Sales.
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -853,7 +848,7 @@ export const Home = () => {
           {clickedImage === miningVideo && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -865,7 +860,7 @@ export const Home = () => {
                 >
                   <source src={miningVideo} type="video/mp4" />
                 </video>
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -875,14 +870,14 @@ export const Home = () => {
                   }}
                 >
                   MINING
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -893,7 +888,7 @@ export const Home = () => {
                   }}
                 >
                   Continuous Thickness Monitoring of Ceramic Liners.
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -902,7 +897,7 @@ export const Home = () => {
           {clickedImage === paints && (
             <>
               {/* element image*/}
-              <div
+              <figure
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
@@ -911,7 +906,7 @@ export const Home = () => {
                   alt="paints"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
-                <div
+                <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-center"
                   style={{
                     backgroundImage:
@@ -921,14 +916,14 @@ export const Home = () => {
                   }}
                 >
                   SPECIALTY&nbsp;CHEMICALS
-                </div>
-              </div>
+                </figcaption>
+              </figure>
               {/* elements description */}
               <div
                 className=" w-full md:w-[37%] xl:w-[36%] 2xl:w-[35%] flex items-center justify-center p-4"
                 data-aos="fade-up"
               >
-                <div
+                <article
                   className=" text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center"
                   style={{
                     color: "transparent",
@@ -943,7 +938,7 @@ export const Home = () => {
                   Real-Time Monitoring of Viscosity and Temperature in Paint
                   Mixtures, Maintains Paint Consistency and Improves Paint
                   Quality.
-                </div>
+                </article>
               </div>
             </>
           )}
@@ -961,25 +956,25 @@ export const Home = () => {
             overlay ? "opacity-40" : "opacity-0"
           }`}
         ></div>
-        <div
+        <header
           // ref={sectionRefs.section2}
           className="flex justify-center relative text-center mb-1 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mx-[5%]"
         >
-          <div className="flex flex-wrap justify-center gap-1">
+          <h2 className="flex flex-wrap justify-center gap-1">
             <div>Patented Ultrasonic </div>
             <div>
               <div>Waveguide Sensors:</div>
               <img className=" w-full h-2 -z-10" src={line} alt="line"></img>
             </div>
-          </div>
-        </div>
-        <div className="text-center text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-6xl font-semibold mb-2 md:mb-4 2xl:mb-8">
+          </h2>
+        </header>
+        <h3 className="text-center text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-6xl font-semibold mb-2 md:mb-4 2xl:mb-8">
           XYMA Analytics
-        </div>
+        </h3>
 
         <div className=" mt-3 px-4 md:px-0 md:flex flex-wrap justify-center gap-2 text-[#FE7D18] z-10">
           {/* utmaps badge */}
-          <div>
+          <article>
             <div
               className="mb-2 border border-[#FE9D1C] rounded-full cursor-pointer flex p-1 px-2 gap-2 bg-[#FFF6EA] relative"
               onMouseEnter={() => {
@@ -999,38 +994,38 @@ export const Home = () => {
                   alt="utmaps"
                 />
               </div>
-              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+              <h1 className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 μTMapS: Multi-Point Temperature
-              </div>
+              </h1>
             </div>
             <div className="flex justify-end md:justify-normal">
               {utmapsBadge && (
                 <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[500px] z-10 text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <figure className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={utmaps}
                         alt="utmaps"
                       />
-                    </div>
+                    </figure>
                   </div>
                   <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                    <div className="text-base font-bold text-black mb-1">
+                    <h2 className="text-base font-bold text-black mb-1">
                       μTMapS & μSTMapS
-                    </div>
-                    <div className="text-xs text-justify">
+                    </h2>
+                    <p className="text-xs text-justify">
                       μTMapS & μSTMapS are IIoT-enabled temperature measurement
                       temperature profiling sensors that captures continuos
                       measurements at multiple points with asingle customized
                       waveguide with multiple configurations in contrast to
                       based thermocouples/RTDs or contactless IR guns
-                    </div>
+                    </p>
                   </div>
                 </div>
               )}
             </div>
-          </div>
+          </article>
 
           {/* ports badge */}
           <div>
@@ -1053,27 +1048,27 @@ export const Home = () => {
                   alt="ports"
                 />
               </div>
-              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+              <h1 className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 PoRTS: Multi-Parameter Measurement
-              </div>
+              </h1>
             </div>
             <div className="flex justify-end md:justify-normal">
               {portsBadge && (
                 <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[500px] z-10  text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <figure className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ports}
                         alt="ports"
                       />
-                    </div>
+                    </figure>
                   </div>
                   <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                    <div className="text-base font-bold text-black mb-1">
+                    <h2 className="text-base font-bold text-black mb-1">
                       PoRTS
-                    </div>
-                    <div className="text-xs text-justify">
+                    </h2>
+                    <p className="text-xs text-justify">
                       PoRTS is an invasive/non-invasive based IIoT-enabled
                       rheology and temperature mesurement sensor that
                       continuously captures multiple parameters such as
@@ -1081,7 +1076,7 @@ export const Home = () => {
                       unlike discrete measurement with thermocouple/RTDs or
                       discrete measurements with sampling from viscometer and
                       density meter.
-                    </div>
+                    </p>
                   </div>
                 </div>
               )}
@@ -1109,33 +1104,33 @@ export const Home = () => {
                   alt="ztar"
                 />
               </div>
-              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+              <h1 className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 Ztar: Contact/Non-contact based Level
-              </div>
+              </h1>
             </div>
 
             <div className="flex justify-end md:justify-normal">
               {ztarBadge && (
                 <div className="absolute bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[350px] z-10 text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <figure className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
                         className="object-cover object-top rounded-xl w-[50%] md:w-[75%] h-full"
                         src={ztar}
                         alt="ztar"
                       />
-                    </div>
+                    </figure>
                   </div>
                   <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                    <div className="text-base font-bold text-black mb-1">
+                    <h2 className="text-base font-bold text-black mb-1">
                       Ztar
-                    </div>
-                    <div className="text-xs text-justify">
+                    </h2>
+                    <p className="text-xs text-justify">
                       Ztar is a contact/contactless IIoT-enabled level that
                       captures continuous level across any hazardous environment
                       with accuracy in contrast to radar-based level measurement
                       sensors.
-                    </div>
+                    </p>
                   </div>
                 </div>
               )}
@@ -1163,33 +1158,33 @@ export const Home = () => {
                   alt="ipams"
                 />
               </div>
-              <div className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
+              <h1 className="text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl font-semibold">
                 I-PAMS: Asset Monitoring
-              </div>
+              </h1>
             </div>
 
             <div className="flex justify-end md:justify-normal">
               {ipamsBadge && (
                 <div className="absolute right-[2%] bg-white border border-[#FE9D1C] rounded-xl w-[70%] md:w-[350px] z-10 text-gray-500 md:flex">
                   <div className="bg-white rounded-t-xl md:rounded-l-xl h-[150px] w-full md:w-[40%] p-1">
-                    <div className="w-full h-full bg-black rounded-xl flex justify-center ">
+                    <figure className="w-full h-full bg-black rounded-xl flex justify-center ">
                       <img
                         className="object-cover object-center p-5"
                         src={ipams}
                         alt="ipams"
                       />
-                    </div>
+                    </figure>
                   </div>
                   <div className="bg-white w-full md:w-[60%] p-1 rounded-b-xl md:rounded-r-xl">
-                    <div className="text-base font-bold text-black mb-1">
+                    <h2 className="text-base font-bold text-black mb-1">
                       I-PAMS
-                    </div>
-                    <div className="text-xs text-justify">
+                    </h2>
+                    <p className="text-xs text-justify">
                       I-PAMS is out Industrial-IoT based asset monitoring system
                       for industries. It provides real-time data visualization
                       and detailed analysis delivering complete process control
                       to the operator.
-                    </div>
+                    </p>
                   </div>
                 </div>
               )}
@@ -1219,13 +1214,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "sensor" && (
-              <div className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
+              <h3 className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
                 Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Sensor&nbsp;Life&nbsp;up&nbsp;to&nbsp;50,000&nbsp;hrs
-            </div>
+            </h3>
           </div>
           <div className="absolute flex text-right top-[30%] left-[4%] rounded-2xl">
             <div>
@@ -1242,13 +1237,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "iot" && (
-              <div className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
+              <h3 className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
                 Multi - Point Measurement
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Multi&nbsp;Point&nbsp;Measurement
-            </div>
+            </h3>
           </div>
           <div className="absolute flex text-right top-[3%] left-[20%] rounded-2xl">
             <div>
@@ -1265,13 +1260,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "grp" && (
-              <div className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
+              <h3 className="md:hidden text-[10px] absolute top-1/2 left-[105%] transform -translate-y-1/2 bg-white p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] text-left font-medium">
                 Energy Management System-IoT
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
               Energy&nbsp;Management&nbsp;System&nbsp;IoT
-            </div>
+            </h3>
           </div>
           <div className="absolute flex text-right top-[3%] right-[20%] rounded-2xl">
             <div>
@@ -1288,13 +1283,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "zero" && (
-              <div className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
+              <h3 className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
                 Zero&nbsp;Manual Intervention
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               Zero&nbsp;Manual&nbsp;Intervention
-            </div>
+            </h3>
           </div>
           <div className="absolute flex text-right top-[30%] right-[4%] rounded-2xl">
             <div>
@@ -1311,13 +1306,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "ai" && (
-              <div className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
+              <h3 className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
                 AI&nbsp;Enable&nbsp;Corrective Actions
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               AI&nbsp;Enable&nbsp;Corrective&nbsp;Actions
-            </div>
+            </h3>
           </div>
           <div className="absolute flex text-right top-[65%] -right-[4%] 2xl:-right-[2%] rounded-2xl">
             <div>
@@ -1334,13 +1329,13 @@ export const Home = () => {
               />
             </div>
             {hoveredItem === "tool" && (
-              <div className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
+              <h3 className="md:hidden text-xs p-1 rounded-xl border border-[#FE9D1C] text-[#FE7D18] absolute top-1/2 right-[105%] transform -translate-y-1/2 bg-white text-right font-medium ">
                 Retrofit Benifits
-              </div>
+              </h3>
             )}
-            <div className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
               Retrofit&nbsp;Benifits
-            </div>
+            </h3>
           </div>
         </div>
       </section>
@@ -1357,13 +1352,13 @@ export const Home = () => {
             // ref={sectionRefs.section3}
             className=" flex justify-center items-center  xl:mx-[8%]"
           >
-            <div className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+            <header className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
               <div>Making Way for</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
                 <div>Sustainable&nbsp;Industry</div>
                 <img className="w-full h-2" src={line} alt="line"></img>
               </div>
-            </div>
+            </header>
           </div>
 
           <div className=" mt-4 mx-[5%] xl:mx-[8%] flex flex-col md:flex-row p-4 gap-3">
@@ -1379,12 +1374,12 @@ export const Home = () => {
                 <img className="rounded-lg" src={awardPhoto} alt="award" />
               </div>
               <div className="text-xl lg:text-2xl 2xl:text-4xl font-semibold">
-                <div>Award Winning Technology</div>
+                <h1>Award Winning Technology</h1>
               </div>
 
-              <div className="text-sm lg:text-base xl:text-lg 2xl:text-xl">
+              <h2 className="text-sm lg:text-base xl:text-lg 2xl:text-xl">
                 Winner of National Technology Award 2023 - Start up.
-              </div>
+              </h2>
             </div>
 
             <div className=" w-full md:w-[65%] flex flex-col gap-3">
@@ -1398,14 +1393,14 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={client} alt="Client icon" />
                     </div>
-                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
+                    <h3 className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Client-Centric
-                    </div>
+                    </h3>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
+                  <p className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     The Solution is provided based on in-depth understanding of
                     clients needs addressing the relevant challenges.
-                  </div>
+                  </p>
                 </div>
 
                 {/* white box 2 */}
@@ -1417,15 +1412,15 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={solution} alt="solution" />
                     </div>
-                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
+                    <h3 className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Customization for Solutions
-                    </div>
+                    </h3>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
+                  <p className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Gain immediate access to valuable data through the
                     technology's adaptability with material selection and
                     configuration for waveguides.
-                  </div>
+                  </p>
                 </div>
               </div>
 
@@ -1439,15 +1434,15 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={real} alt="real" />
                     </div>
-                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
+                    <h3 className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       Real-Time Insights
-                    </div>
+                    </h3>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
+                  <p className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Gain immediate access to valuable data through our
                     supervised sensing capabilities, empowering informed
                     decision-making.
-                  </div>
+                  </p>
                 </div>
 
                 {/* white box 4 */}
@@ -1459,13 +1454,13 @@ export const Home = () => {
                     <div className=" flex items-center justify-center">
                       <img className="w-12 " src={time} alt="time" />
                     </div>
-                    <div className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
+                    <h3 className=" flex items-center text-black text-lg  lg:text-2xl 2xl:text-3xl font-semibold">
                       On-Time Delivery
-                    </div>
+                    </h3>
                   </div>
-                  <div className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
+                  <p className=" text-[#60646C] text-left text-sm lg:text-base 2xl:text-xl">
                     Committed to adhering to project timelines and satisfaction.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1481,26 +1476,26 @@ export const Home = () => {
           <div className="sliding-text-container " data-aos="slide-left">
             <div className="flex">
               <div className="mt-2.5 sliding-text text-white gap-1">
-                <div>Continuous Wear Monitoring &#10039;</div>
-                <div>
+                <h3>Continuous Wear Monitoring &#10039;</h3>
+                <h3>
                   Continuous Multi-point temperature measurements &#10039;
-                </div>
-                <div>Continuous multi-parameter measurements &#10039;</div>
-                <div>
+                </h3>
+                <h3>Continuous multi-parameter measurements &#10039;</h3>
+                <h3>
                   Continuous contact & non-contact based level measurement
                   &#10039;
-                </div>
+                </h3>
 
                 {/* duplicate */}
-                <div>Continuous Wear Monitoring &#10039;</div>
-                <div>
+                <h3>Continuous Wear Monitoring &#10039;</h3>
+                <h3>
                   Continuous Multi-point temperature measurements &#10039;
-                </div>
-                <div>Continuous multi-parameter measurements &#10039;</div>
-                <div>
+                </h3>
+                <h3>Continuous multi-parameter measurements &#10039;</h3>
+                <h3>
                   Continuous contact & non-contact based level measurement
                   &#10039;
-                </div>
+                </h3>
               </div>
             </div>
           </div>
@@ -1509,131 +1504,135 @@ export const Home = () => {
 
       {/* clients section */}
       <section id="section4" ref={sectionRefs.section4} className=" ">
-        <div
+        <header
           // ref={sectionRefs.section4}
           className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
         >
-          <div className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+          <h1 className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
             Our Clients
-          </div>
-          <div className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
+          </h1>
+          <p className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing
             environmental impact, increasing cost savings, and enhancing process
             efficiency.
-          </div>
-        </div>
+          </p>
+        </header>
 
         {/* client logo carousel*/}
         <div className="mt-16 mb-8 md:mx-[8%]">
           <Slider {...settings}>
-            <div className="mb-6">
-              <img src={sg} alt="sg" className="mx-auto max-w-[145px] h-auto" />
-            </div>
+            <figure className="mb-6">
+              <img
+                src={sg}
+                alt="saint-gobain-logo"
+                className="mx-auto max-w-[145px] h-auto"
+              />
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={tata}
-                alt="tata"
+                alt="tata-steel-logo"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={drdo}
-                alt="drdo"
+                alt="Defence-Research-and-Development-Organisation-logo"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={cumi}
                 alt="cumi"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={lam}
                 alt="lam"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={ind}
                 alt="ind"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={epri}
                 alt="epri"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={skf}
                 alt="skf"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={bharat}
                 alt="bharat"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={ved}
                 alt="ved"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={schneider}
                 alt="schneider"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={reliance}
                 alt="reliance"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={threeLions}
                 alt="threeLions"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
 
-            <div className="mb-6">
+            <figure className="mb-6">
               <img
                 src={cairn}
                 alt="cairn"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </div>
+            </figure>
           </Slider>
         </div>
       </section>

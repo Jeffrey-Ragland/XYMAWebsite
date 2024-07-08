@@ -74,7 +74,7 @@ const AluminumCS = () => {
           <div>Aluminum</div>
           <div className="flex flex-col items-center">
             <div>Case&nbsp;Study</div>
-            <img className="w-full h-2" src={line} alt='line'></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
 
@@ -84,8 +84,13 @@ const AluminumCS = () => {
       </div>
 
       <div className="md:flex mb-4">
-        <div className=" w-full md:w-1/2 p-4 md:p-8 flex items-center justify-center">
-          <img src={aluminum} alt="Aluminum" data-aos="zoom-out" />
+        <div className=" w-full md:w-1/2 p-4 md:p-8 flex items-center justify-center ">
+          <img
+            src={aluminum}
+            alt="Aluminum"
+            data-aos="zoom-out"
+            className="rounded-2xl"
+          />
         </div>
 
         <div className=" w-full md:w-1/2 md:p-8 text-sm lg:text-xl xl:text-2xl 2xl:text-4xl font-semibold text-center flex items-center">

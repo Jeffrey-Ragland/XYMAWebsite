@@ -57,7 +57,6 @@ const Footer = () => {
               autoClose: 5000,
             });
             // console.log('subscribed successfully');
-            // window.alert('subsxcribed successfully');
             setEmail("");
           } else {
             // console.error('subscription failed')
@@ -69,14 +68,14 @@ const Footer = () => {
     };
 
   return (
-    <div
+    <footer
       className="mt-24"
       style={{
         background: "linear-gradient(90deg, #00133D 0%, #01285C 100%)",
       }}
     >
       <ToastContainer />
-      <div className="flex justify-center items-center">
+      <section className="flex justify-center items-center">
         <div
           className="mt-[-50px] rounded-3xl w-full md:w-[90%] md:flex text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold p-4 px-8"
           style={{
@@ -84,11 +83,11 @@ const Footer = () => {
           }}
         >
           <div className=" w-full md:w-[60%] flex flex-col items-center md:items-start">
-            <div>Enhance&nbsp;Process&nbsp;Efficiency&nbsp;through</div>
+            <p>Enhance&nbsp;Process&nbsp;Efficiency&nbsp;through</p>
             <div className="flex gap-2">
-              <div>XYMA</div>
+              <p>XYMA</p>
               <div>
-                <div>Analytics' Innovations</div>
+                <p>Analytics' Innovations</p>
                 <img className="w-full h-2" src={vector} alt="Innovations" />
               </div>
             </div>
@@ -108,15 +107,16 @@ const Footer = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="w-full flex flex-col items-center mt-12">
+      </section>
+
+      <section className="w-full flex flex-col items-center mt-12">
         <div className="w-[90%] text-white flex flex-col md:flex-row gap-2">
           <div className="w-full md:w-[25%] flex flex-col items-center md:items-start">
             <img className="w-32 h-14" src={logo} alt="Logo"></img>
-            <div className="text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-full md:w-[80%] mt-2 text-center md:text-left">
+            <p className="text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-full md:w-[80%] mt-2 text-center md:text-left">
               Patented Ultrasonic Waveguide based sensors for preventing
               unplanned downtime and enhancing process efficiency.
-            </div>
+            </p>
             <div className="flex gap-3 mt-4">
               {/* linkedin */}
               <div
@@ -169,90 +169,96 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[50%] flex text-xs lg:text-sm xl:text-xs 2xl:text-base">
+          <nav className="w-full md:w-[50%] flex text-xs lg:text-sm xl:text-xs 2xl:text-base">
             <div className="w-1/3">
-              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
+              <h2 className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Quick Links{" "}
                 <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
-              </div>
-              <div
-                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
-                onClick={() => navigate("/about")}
-              >
-                About Us
-              </div>
-              <div
-                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
-                onClick={() => navigate("/careers")}
-              >
-                Career
-              </div>
-              <div
-                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
-                onClick={() => navigate("/media")}
-              >
-                Media
-              </div>
-              <div
-                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
-                onClick={() => navigate("/resources")}
-              >
-                Resources
-              </div>
+              </h2>
+              <ul>
+                <li
+                  className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                  onClick={() => navigate("/about")}
+                >
+                  About Us
+                </li>
+                <li
+                  className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                  onClick={() => navigate("/careers")}
+                >
+                  Career
+                </li>
+                <li
+                  className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                  onClick={() => navigate("/media")}
+                >
+                  Media
+                </li>
+                <li
+                  className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                  onClick={() => navigate("/resources")}
+                >
+                  Resources
+                </li>
+              </ul>
             </div>
 
             <div className="w-1/3">
-              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
+              <h2 className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Products{" "}
                 <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
-              </div>
-              <div
-                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
-                onClick={() => handleProductClick("uTMapS")}
-              >
-                μTMapS
-              </div>
-              <div
-                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
-                onClick={() => handleProductClick("PoRTS")}
-              >
-                PoRTS
-              </div>
-              <div
-                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
-                onClick={() => handleProductClick("Ztar")}
-              >
-                Ztar
-              </div>
-              <div
-                className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
-                onClick={() => handleProductClick("IPAMS")}
-              >
-                I-PAMS
-              </div>
+              </h2>
+              <ul>
+                <li
+                  className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                  onClick={() => handleProductClick("uTMapS")}
+                >
+                  μTMapS
+                </li>
+                <li
+                  className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                  onClick={() => handleProductClick("PoRTS")}
+                >
+                  PoRTS
+                </li>
+                <li
+                  className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                  onClick={() => handleProductClick("Ztar")}
+                >
+                  Ztar
+                </li>
+                <li
+                  className="mb-3 hover:text-orange-500 duration-200 cursor-pointer"
+                  onClick={() => handleProductClick("IPAMS")}
+                >
+                  I-PAMS
+                </li>
+              </ul>
             </div>
 
             <div className="w-1/3">
-              <div className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
+              <h2 className="font-semibold mb-5 text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Support <img className="mt-1 h-0.5 w-5" src={line} alt="line" />
-              </div>
-              <div
-                className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
-                onClick={() => navigate("/contact")}
-              >
-                Contact Us
-              </div>
+              </h2>
+              <ul>
+                <li
+                  className="mb-3 cursor-pointer hover:text-orange-500 duration-200"
+                  onClick={() => navigate("/contact")}
+                >
+                  Contact Us
+                </li>
+              </ul>
               {/* <div className="mb-3 cursor-pointer hover:text-orange-500 duration-200">
                 Contact Sales
               </div> */}
             </div>
-          </div>
+          </nav>
 
-          <div className="w-full md:w-[25%] flex items-start justify-center">
+          <aside className="w-full md:w-[25%] flex items-start justify-center">
             <div className="flex flex-col items-start p-4 gap-2.5 w-full bg-black/40 rounded-xl">
-              <div className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
+              <h2 className="text-sm lg:text-base xl:text-sm 2xl:text-lg">
                 Subscribe Now
-              </div>
+              </h2>
               <form
                 className="flex gap-2 items-center w-full"
                 onSubmit={handleSubscriptionSubmit}
@@ -282,21 +288,21 @@ const Footer = () => {
                 </div>
               </form>
             </div>
-          </div>
+          </aside>
         </div>
         <div className="h-0.5 mt-4 mb-4 w-[90%] bg-[#013872]" />
         {/* footer */}
         <div className="md:flex justify-center text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-[90%] mb-4 font-light">
           <div className="md:flex text-center gap-1 justify-center">
             <div className="flex justify-center">
-              <div className="mr-1">© 2024 XYMA Analytics Inc.</div>
-              <div className="text-gray-400">IIT Madras Research Park, </div>
+              <path className="mr-1">© 2024 XYMA Analytics Inc.</path>
+              <address className="text-gray-400">IIT Madras Research Park, </address>
             </div>
-            <div className="text-gray-400">Chennai, 600113</div>
+            <address className="text-gray-400">Chennai, 600113</address>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </footer>
   );
 }
 

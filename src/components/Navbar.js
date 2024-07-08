@@ -50,8 +50,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="h-[9vh]">
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="h-[9vh]">
         <div
           className="h-full flex items-center px-4"
           style={{
@@ -62,9 +62,9 @@ const Navbar = () => {
             <div className="h-full flex items-center">
               <img className="h-[80%]" src={xyma} alt="Logo" />
             </div>
-            <div className="hidden lg:flex gap-8 items-center">
+            <ul className="hidden lg:flex gap-8 items-center">
               {HeaderData.map((item, index) => (
-                <div key={index} className="">
+                <li key={index} className="">
                   <NavLink
                     to={item.path}
                     className={`${
@@ -83,11 +83,11 @@ const Navbar = () => {
                       location.pathname.startsWith("/industries"))) && (
                     <CircleComponent />
                   )}
-                </div>
+                </li>
               ))}
-            </div>
-            <div
-              className="hidden lg:block text-white py-3 px-4 xl:py-2 xl:px-3 2xl:py-3 2xl:px-4 rounded-full cursor-pointer"
+            </ul>
+            <button
+              className="hidden lg:block text-white py-3 px-4 xl:py-2 xl:px-3 2xl:py-3 2xl:px-4 rounded-full"
               style={{
                 background:
                   "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -95,27 +95,26 @@ const Navbar = () => {
               onClick={handleContactClick}
             >
               Get in Touch
-            </div>
+            </button>
             {!burgerMenuOpen && (
-              <div
-                className="flex items-center justify-center lg:hidden cursor-pointer"
+              <button
+                className="flex items-center justify-center lg:hidden"
                 onClick={handleBurgerMenu}
               >
                 <IoMenu size={30} />
-              </div>
+              </button>
             )}
             {burgerMenuOpen && (
-              <div
+              <button
                 className="flex items-center justify-center lg:hidden cursor-pointer"
                 onClick={handleBurgerMenu}
               >
                 <IoCloseSharp size={30} />
-              </div>
+              </button>
             )}
           </div>
         </div>
-        {/*  */}
-      </div>
+      </nav>
 
       {/* hamburger menu */}
       {burgerMenuOpen && (
@@ -126,14 +125,14 @@ const Navbar = () => {
               background: "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
             }}
           ></div>
-          <div
+          <nav
             className="bg-white h-[90vh] w-full lg:hidden"
             // data-aos="slide-down"
             // data-aos-duration="800"
           >
-            <div className="h-[60%]">
+            <ul className="h-[60%]">
               {HeaderData.map((item, index) => (
-                <div
+                <li
                   key={index}
                   className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl  ${
                     location.pathname === item.path ||
@@ -163,12 +162,12 @@ const Navbar = () => {
                       <FiArrowUpRight size={25} />
                     </div>
                   </NavLink>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <div className="p-3 h-[30%] flex items-end">
-              <div
-                className="text-white py-3 px-4 md:text-lg rounded-full cursor-pointer"
+              <button
+                className="text-white py-3 px-4 md:text-lg rounded-full"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -179,10 +178,10 @@ const Navbar = () => {
                 }}
               >
                 Get in Touch
-              </div>
+              </button>
             </div>
             {/* footer */}
-            <div className="h-[10%] flex justify-center items-center px-4 py-2 text-xs md:text-base border border-t-gray-400">
+            <footer className="h-[10%] flex justify-center items-center px-4 py-2 text-xs md:text-base border border-t-gray-400">
               <div className="flex flex-col justify-center">
                 <div className="flex gap-1 justify-center">
                   <div>© 2024 XYMA Analytics Inc.</div>
@@ -190,11 +189,11 @@ const Navbar = () => {
                 </div>
                 <div className="text-gray-400 text-center">Chennai, 600113</div>
               </div>
-            </div>
-          </div>
+            </footer>
+          </nav>
         </>
       )}
-    </nav>
+    </header>
   );
 };
 
