@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://xyma.co.in/sitemap.xml
+Sitemap: https://xyma.in/sitemap.xml

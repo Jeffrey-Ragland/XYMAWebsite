@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- <url>
+    <url>
         <loc>https://xyma.in/</loc>
         <lastmod>2024-07-08T14:00:00+00:00</lastmod>
     </url>
@@ -47,9 +47,9 @@
     <url>
         <loc>https://xyma.in/contact</loc>
         <lastmod>2024-07-08T14:00:00+00:00</lastmod>
-    </url> -->
+    </url>
 
-    <url>
+    <!-- <url>
         <loc>https://xyma.co.in/</loc>
         <lastmod>2024-07-08T14:00:00+00:00</lastmod>
     </url>
@@ -92,5 +92,5 @@
     <url>
         <loc>https://xyma.co.in/contact</loc>
         <lastmod>2024-07-08T14:00:00+00:00</lastmod>
-    </url>
+    </url> -->
     </urlset>
