@@ -3,15 +3,15 @@ import cs from '../Assets/cs.png';
 import newAl1 from '../Assets/newAluminium1.png';
 import newAl2 from "../Assets/newAluminium2.png";
 import steel1 from '../Assets/steel1.png';
-import steel2 from '../Assets/steel2.png';
+import steel2 from '../Assets/steel3.png';
 import marine1 from '../Assets/marine1.jpg';
-import marine2 from "../Assets/marine2.jpg";
-import oil1 from '../Assets/oil1.png';
+import marine2 from "../Assets/marine2.png";
+import oil1 from '../Assets/tube1.png';
 import oil2 from '../Assets/oil2.png';
 import semiconductor1 from "../Assets/semiconductor1.jpg";
 import semiconductor2 from "../Assets/semiconductor2.jpg";
 import mining1 from "../Assets/mining1.jpg";
-import mining2 from "../Assets/mining2.jpg";
+import mining2 from "../Assets/mining2.png";
 import paints1 from '../Assets/paintsresized.png'; 
 import paints2 from '../Assets/paints2.jpg';
 import { useNavigate } from 'react-router-dom';
@@ -458,71 +458,6 @@ const Resource = () => {
               className="rounded-2xl mb-4 border border-[#CDCED6] font-medium p-4"
               data-aos="slide-left"
             >
-              {/* <div className="w-full md:w-1/2 p-4">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
-                  Aluminum
-                </div>
-                <div className="mb-4 relative">
-                  <img className="w-full h-full" src={aluminum} />
-                  <span
-                    className="absolute bottom-4 right-4 bg-white text-xs 2xl:text-sm rounded-full p-1 cursor-pointer"
-                    onClick={handleCaseStudyClick}
-                  >
-                    Case Studies
-                  </span>
-                </div>
-                <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl font-medium">
-                  A 10°C temperature deviation reduces efficiency, promotes
-                  anode effect, and increases PFC emissions.
-                </div>
-              </div> */}
-              {/* empty line */}
-              {/* <div className="border border-[#CDCED6] my-[10%]" />
-              <div className="w-full md:w-1/2 p-4">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl mb-4">
-                  All
-                </div>
-                <div className="flex p-4">
-                  <div className="w-[30%] flex items-center justify-center">
-                    <img
-                      className="border border-gray-300 rounded-lg"
-                      src={all1}
-                    />
-                  </div>
-                  <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
-                    A 10°C shift lowers efficiency, boosts anode effect, and
-                    raises PFC emissions.
-                  </div>
-                </div> */}
-              {/* empty line */}
-              {/* <div className="border border-[#CDCED6] mx-[5%]" />
-                <div className="flex p-4">
-                  <div className="w-[30%] flex items-center justify-center">
-                    <img
-                      className="border border-gray-300 rounded-lg"
-                      src={all2}
-                    />
-                  </div>
-                  <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
-                    Extending the ladle life for one cycle would result in steel
-                    production worth $5.1 million.
-                  </div>
-                </div> */}
-              {/* empty line */}
-              {/* <div className="border border-[#CDCED6] mx-[5%]" />
-                <div className="flex p-4">
-                  <div className="w-[30%] flex items-center justify-center">
-                    <img
-                      className="border border-gray-300 rounded-lg "
-                      src={all3}
-                    />
-                  </div>
-                  <div className="w-[70%] px-2 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-medium">
-                    20°C rise halves reformer tube lifespan; design temperature
-                    crucial.
-                  </div>
-                </div>
-              </div> */}
               <div className="mb-4 flex justify-between">
                 <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Aluminum
@@ -545,12 +480,12 @@ const Resource = () => {
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
                     <img
-                      className="w-full h-full"
+                      className="w-full h-full rounded-2xl"
                       src={newAl1}
                       alt="aluminum1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     A 10°C temperature deviation reduces efficiency, promotes
                     anode effect, and increases PFC emissions.
                   </div>
@@ -559,7 +494,7 @@ const Resource = () => {
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
                     <img
-                      className="w-full h-full"
+                      className="w-full h-full rounded-2xl"
                       src={newAl2}
                       alt="aluminum2"
                     ></img>
@@ -602,9 +537,9 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={steel1} alt="steel1" />
+                    <img className="w-full h-full rounded-2xl" src={steel1} alt="steel1" />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     Extending ladle life for one cycle yields steel worth $5.1M
                   </div>
                 </div>
@@ -612,7 +547,7 @@ const Resource = () => {
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
                     <img
-                      className="w-full h-full"
+                      className="w-full h-full rounded-2xl"
                       src={steel2}
                       alt="steel2"
                     ></img>
@@ -661,7 +596,7 @@ const Resource = () => {
                       alt="marine1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     The marine industry handles over 90% of the world's trade,
                     transporting around 11 billion tons of goods each year.
                   </div>
@@ -715,7 +650,7 @@ const Resource = () => {
                   <div className="mb-4">
                     <img className="w-full h-full" src={oil1} alt="oil1" />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     30% of maintenance budget influenced by lubricants,
                     highlighting their significant role in operational expenses
                   </div>
@@ -770,7 +705,7 @@ const Resource = () => {
                       alt="semiconductor1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     In 2023, the Global Semiconductor Industry is Projected to
                     Reach $600 Billion in Annual Sales.
                   </div>
@@ -829,7 +764,7 @@ const Resource = () => {
                       alt="mining1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     The mining industry, worth over $1.5 trillion, supplies
                     crucial minerals and metals for global manufacturing and
                     construction.
@@ -889,7 +824,7 @@ const Resource = () => {
                       alt="paint1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     Water-based paints account for about 80% of all paints sold
                     in the residential market.
                   </div>
