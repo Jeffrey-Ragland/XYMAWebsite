@@ -1108,27 +1108,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className="flex justify-center mt-10 md:mb-12 2xl:mt-16">
-          <img className="h-12" src={framevector} alt="vector"></img>
-        </div>
-        <div className="text-[#60646C] text-center px-1 md:px-24 text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl font-semibold mb-4 md:mb-6 2xl:mb-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries.
-        </div>
-
-        <div className="flex flex-col items-center">
-          <img className="w-20" src={photo} alt="pic" />
-          <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl mt-2">
-            Dr. Nishanth Raja
-          </div>
-          <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
-            C.E.O. and Co-founder
-          </div>
-        </div> */}
       </section>
     </div>
   );

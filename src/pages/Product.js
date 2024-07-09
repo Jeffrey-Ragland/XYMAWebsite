@@ -212,7 +212,7 @@ const Product = () => {
           }}
         />
       </div>
-      <div ref={coverImageRef} className="shadow-white shadow-2xl relative">
+      <main ref={coverImageRef} className="shadow-white shadow-2xl relative">
         <Slider ref={sliderRef} {...settings}>
           {/* image 1 */}
           <div className="h-[60vh] md:h-[70vh] xl:h-[90vh] relative">
@@ -222,10 +222,10 @@ const Product = () => {
               alt="image1"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <h1 className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Multi-point Temperature Measurements
-              </div>
-              <div
+              </h1>
+              <p
                 className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-medium md:font-semibold"
                 style={{
                   background:
@@ -236,10 +236,10 @@ const Product = () => {
                 }}
               >
                 Up to 1450° C
-              </div>
-              <div className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
+              </p>
+              <h2 className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
                 “The Disruptive Ultrasonic Waveguide Technology”
-              </div>
+              </h2>
             </div>
           </div>
 
@@ -251,10 +251,10 @@ const Product = () => {
               alt="image2"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <h1 className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Multi - Parameter Measurements
-              </div>
-              <div
+              </h1>
+              <p
                 className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-medium md:font-semibold"
                 style={{
                   background:
@@ -265,10 +265,10 @@ const Product = () => {
                 }}
               >
                 Viscosity, Density, Temperature
-              </div>
-              <div className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
+              </p>
+              <h2 className=" text-xs md:text-lg lg:text-xl xl:text-base  2xl:text-xl font-normal md:font-medium text-center xl:text-left">
                 “The Disruptive Ultrasonic Waveguide Technology”
-              </div>
+              </h2>
             </div>
           </div>
 
@@ -280,10 +280,10 @@ const Product = () => {
               alt="image3"
             />
             <div className=" inset-0 xl:w-[32%] 2xl:w-[42%] flex flex-col gap-2 lg:gap-4 absolute m-[8%] text-white  items-center justify-center xl:items-start xl:justify-start">
-              <div className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
+              <h1 className=" text-2xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold text-center xl:text-left">
                 Powered by AI
-              </div>
-              <div
+              </h1>
+              <h2
                 className=" p-1 text-center xl:text-left text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-medium md:font-semibold"
                 style={{
                   background:
@@ -295,7 +295,7 @@ const Product = () => {
               >
                 IIoT Enabled, Data Analytics, Anomaly Detection, Predictive
                 Maintenance
-              </div>
+              </h2>
             </div>
           </div>
         </Slider>
@@ -312,7 +312,7 @@ const Product = () => {
         </div>
 
         {/* bottom text */}
-        <div
+        <h3
           className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
           style={{
             backgroundImage:
@@ -322,18 +322,18 @@ const Product = () => {
           }}
         >
           XYMA PRODUCTS
-        </div>
-      </div>
+        </h3>
+      </main>
 
       {/* icon menu */}
       {renderIconMenu && (
-        <div
+        <nav
           className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
           data-aos=""
         >
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.uTMapS)}
-            className={`cursor-pointer rounded-full   ${
+            className={`rounded-full   ${
               activeSection.includes("uTMapS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
@@ -344,10 +344,10 @@ const Product = () => {
               alt="utmapsLogo"
               className="h-6 rounded-full"
             ></img>
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.PoRTS)}
-            className={`cursor-pointer bg-black rounded-full ${
+            className={`bg-black rounded-full ${
               activeSection.includes("PoRTS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
@@ -358,10 +358,10 @@ const Product = () => {
               alt="portsLogo"
               className="h-6 rounded-full"
             ></img>
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.Ztar)}
-            className={`cursor-pointer bg-black rounded-full ${
+            className={`bg-black rounded-full ${
               activeSection.includes("Ztar")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
@@ -372,10 +372,10 @@ const Product = () => {
               alt="ztarLogo"
               className="h-6 rounded-full"
             ></img>
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => handleSectionScroll(sectionRefs.IPAMS)}
-            className={`cursor-pointer bg-black rounded-full ${
+            className={`bg-black rounded-full ${
               activeSection.includes("IPAMS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
@@ -386,8 +386,8 @@ const Product = () => {
               alt="ipamsLogo"
               className="h-6 rounded-full"
             ></img>
-          </div>
-        </div>
+          </button>
+        </nav>
       )}
 
       {/* product cards */}
@@ -420,7 +420,7 @@ const Product = () => {
                     WebkitBackdropFilter: "blur(10px)",
                   }}
                 >
-                  <div
+                  <h1
                     className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                     style={{
                       background:
@@ -432,20 +432,20 @@ const Product = () => {
                     }}
                   >
                     μTMapS
-                  </div>
-                  <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                  </h1>
+                  <h2 className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                     A single customizable waveguide can measure temperature at
                     10 points over 50 meters length.
-                  </div>
+                  </h2>
                 </div>
               </div>
             </div>
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
               {/* heading and play button */}
               <div className="  md:flex items-start justify-between gap-2 mb-2">
-                <div className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
+                <h1 className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Multi-Point Temperature Mapping Sensor
-                </div>
+                </h1>
                 <div
                   className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
                   onClick={() => setRenderUtmapsVideo(true)}
@@ -461,13 +461,13 @@ const Product = () => {
 
               {/* orange tab */}
               <div className="md:flex">
-                <div className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                <h2 className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
                   Temperature Range: 25° C to 1450° C
-                </div>
+                </h2>
               </div>
 
               {/* description */}
-              <div className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
+              <p className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 µTMapS & µSTMapS are IIoT-enabled temperature measurement and
                 temperature profiling sensors that captures continuous
                 measurements at multiple points with a single customizable
@@ -479,7 +479,7 @@ const Product = () => {
                 >
                   Read More...
                 </span>
-              </div>
+              </p>
 
               {/* cards */}
               <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
@@ -487,14 +487,14 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={isteel} alt="steelLogo" />
                   </div>
-                  <div className="font-semibold">Steel Manufacturing</div>
+                  <h3 className="font-semibold">Steel Manufacturing</h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={aicon} alt="aluminumLogo" />
                   </div>
-                  <div className="font-semibold">Aluminium Manufacturing</div>
+                  <h3 className="font-semibold">Aluminium Manufacturing</h3>
                 </div>
               </div>
 
@@ -503,16 +503,16 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={semi} alt="semiconductorLogo" />
                   </div>
-                  <div className="font-semibold">
+                  <h3 className="font-semibold">
                     Semiconductor Manufacturing
-                  </div>
+                  </h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={ref} alt="refiniriesLogo" />
                   </div>
-                  <div className="font-semibold">Refiniries</div>
+                  <h3 className="font-semibold">Refiniries</h3>
                 </div>
               </div>
             </div>
@@ -524,34 +524,34 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto  ">
+                  <figure className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto  ">
                     <img
                       className="h-60 md:h-auto"
                       src={utmap}
                       alt="utmaps"
                       data-aos="slide-left"
                     />
-                  </div>
-                  <div className="  w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl h-[30%] md:h-auto ">
+                  </figure>
+                  <div className=" w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl h-[30%] md:h-auto ">
                     <div className="flex">
-                      <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div className=" ">About µTMapS & µSTMapS</div>
+                      <figure className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
+                        <figcaption>About µTMapS & µSTMapS</figcaption>
                         <img className="w-full h-2" src={line} alt="line"></img>
-                      </div>
+                      </figure>
                     </div>
-                    <div
+                    <article
                       className="overflow-auto"
                       style={{ scrollbarWidth: "none" }}
                     >
-                      <div className="mb-2 2xl:mb-6">
+                      <p className="mb-2 2xl:mb-6">
                         µTMapS & µSTMapS are IIoT-enabled temperature
                         measurement and temperature profiling sensors that
                         captures continuous measurements at multiple points with
                         a single customizable waveguide with multiple
                         configurations in contrast to contact based
                         thermocouples/RTDs or contactless IR guns.
-                      </div>
-                      <div>
+                      </p>
+                      <p>
                         The edge computing unit in the XYMA Electronics Unit
                         performs advanced computations to extract temperature
                         data from the received ultrasonic signals. The output
@@ -560,13 +560,13 @@ const Product = () => {
                         communication technology via a transmitting unit.The
                         status can be monitored in DCS system and displayed on
                         XYMA's customizable dashboard.
-                      </div>
-                    </div>
+                      </p>
+                    </article>
                   </div>
                   <div className="  w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div>Specifications</div>
+                        <h5>Specifications</h5>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
@@ -576,13 +576,13 @@ const Product = () => {
                           <img src={additionalLogo1} alt="additionalLogo1" />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h5 className="text-[#01285C] font-semibold">
                             Functions:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h5>
+                          <p className="text-[#60646C]">
                             Measures Unit Temperature (µTMapS), Skin Temperature
                             (µSTMapS)
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -595,12 +595,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h5 className="text-[#01285C] font-semibold">
                             Measuring&nbsp;Range:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h5>
+                          <p className="text-[#60646C]">
                             Temperature: 25 °C to 1450 °C
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -613,12 +613,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h5 className="text-[#01285C] font-semibold">
                             Resolution:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h5>
+                          <p className="text-[#60646C]">
                             Temperature: 0.01 °C
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -631,12 +631,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h5 className="text-[#01285C] font-semibold">
                             Accuracy:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h5>
+                          <p className="text-[#60646C]">
                             Temperature: ±1 °C
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -649,12 +649,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h5 className="text-[#01285C] font-semibold">
                             Power&nbsp;Supply:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h5>
+                          <p className="text-[#60646C]">
                             Compatible with Industrial Standards
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -698,7 +698,7 @@ const Product = () => {
                     WebkitBackdropFilter: "blur(10px)",
                   }}
                 >
-                  <div
+                  <h1
                     className=" text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                     style={{
                       background:
@@ -710,20 +710,20 @@ const Product = () => {
                     }}
                   >
                     PoRTS
-                  </div>
-                  <div className="text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                  </h1>
+                  <p className="text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                     A single customizable wavelength can measure viscosity,
                     density & Temperature continuously.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
               {/* heading and play button */}
               <div className="  md:flex items-start justify-between gap-2 mb-2">
-                <div className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
+                <h1 className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Multi-Parameter Measurement Sensor
-                </div>
+                </h1>
                 <div
                   className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
                   onClick={() => setRenderPortsVideo(true)}
@@ -739,21 +739,21 @@ const Product = () => {
 
               {/* orange tab */}
               <div className="md:flex flex-wrap lg:gap-2 text-[clamp(16px,1vw,20px)] font-medium">
-                <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+                <h1 className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
                   Viscosity: 50 cP - 15000 cP
-                </div>
+                </h1>
 
-                <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
+                <h1 className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2 lg:mb-0">
                   Density: 700 kg/m³ to 1200 kg/m³
-                </div>
+                </h1>
 
-                <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                <h1 className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
                   Temperature: 20° C to 400° C
-                </div>
+                </h1>
               </div>
 
               {/* description */}
-              <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
+              <p className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 PoRTS is an invasive/non-invasive based IIoT-enabled rheology
                 and temperature measurement sensor that continuously captures
                 multiple parameters such as viscosity, density and temperature
@@ -765,7 +765,7 @@ const Product = () => {
                 >
                   Read More...
                 </span>
-              </div>
+              </p>
 
               {/* cards */}
               <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
@@ -773,14 +773,14 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={paint} alt="paint" />
                   </div>
-                  <div className="font-semibold">Paint Manufacturing</div>
+                  <h3 className="font-semibold">Paint Manufacturing</h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={luboil} alt="lube" />
                   </div>
-                  <div className="font-semibold">Lubrication Oil</div>
+                  <h3 className="font-semibold">Lubrication Oil</h3>
                 </div>
               </div>
 
@@ -789,7 +789,7 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={eor} alt="eor" />
                   </div>
-                  <div className="font-semibold">E.O.R.</div>
+                  <h3 className="font-semibold">E.O.R.</h3>
                 </div>
               </div>
             </div>
@@ -801,26 +801,26 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className="w-full md:w-[20%] h-[30%] md:h-auto   flex items-center justify-center">
+                  <figure className="w-full md:w-[20%] h-[30%] md:h-auto   flex items-center justify-center">
                     <img
                       className="h-60 md:h-auto"
                       src={ports}
                       alt="ports"
                       data-aos="slide-left"
                     />
-                  </div>
+                  </figure>
                   <div className=" w-full md:w-[40%] h-[30%] md:h-auto px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div className=" ">About PoRTS</div>
+                        <h1>About PoRTS</h1>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
-                    <div
+                    <article
                       className="overflow-auto"
                       style={{ scrollbarWidth: "none" }}
                     >
-                      <div className="mb-2 2xl:mb-6">
+                      <p className="mb-2 2xl:mb-6">
                         PoRTS is an invasive/non-invasive based IIoT-enabled
                         rheology and temperature measurement sensor that
                         continuously captures multiple parameters such as
@@ -828,8 +828,8 @@ const Product = () => {
                         measurements with thermocouple/RTDs or discrete
                         measurements with sampling from viscometer and density
                         meter.
-                      </div>
-                      <div>
+                      </p>
+                      <p>
                         The edge computing unit in the XYMA Electronics Unit
                         performs advanced computations to extract measurement
                         data from received ultrasonic signals. The output from
@@ -838,13 +838,13 @@ const Product = () => {
                         communication technology via a transmitting unit. The
                         status can be monitored in DCS system and displayed on
                         XYMA's customizable dashboard.
-                      </div>
-                    </div>
+                      </p>
+                    </article>
                   </div>
                   <div className=" w-full md:w-[40%] h-[40%] md:h-auto   px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div>Specifications</div>
+                        <h3>Specifications</h3>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
@@ -854,12 +854,12 @@ const Product = () => {
                           <img src={additionalLogo1} alt="additionalLogo1" />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h4 className="text-[#01285C] font-semibold">
                             Functions:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h4>
+                          <p className="text-[#60646C]">
                             Measures Viscosity, Density and Temperature
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -872,27 +872,27 @@ const Product = () => {
                           />
                         </div>
                         <div className="w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h4 className="text-[#01285C] font-semibold">
                             Measuring&nbsp;Range:
-                          </div>
+                          </h4>
                           <div className="text-[#60646C]">
                             <div className="flex items-center gap-1">
-                              <div className="text-[#01285C]">Viscosity:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">
+                              <p className="text-[#01285C]">Viscosity:</p>
+                              <p className="text-xs md:text-sm 2xl:text-lg">
                                 50cP - 15000 cP,
-                              </div>
+                              </p>
                             </div>
                             <div className="flex items-center gap-1">
-                              <div className="text-[#01285C]">Density:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">
+                              <p className="text-[#01285C]">Density:</p>
+                              <p className="text-xs md:text-sm 2xl:text-lg">
                                 700 kg/m³ to 1200 kg/m³,
-                              </div>
+                              </p>
                             </div>
                             <div className="flex items-center gap-1">
-                              <div className="text-[#01285C]">Temperature:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">
+                              <p className="text-[#01285C]">Temperature:</p>
+                              <p className="text-xs md:text-sm 2xl:text-lg">
                                 20 °C - 400 °C
-                              </div>
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -907,29 +907,29 @@ const Product = () => {
                           />
                         </div>
                         <div className="w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h4 className="text-[#01285C] font-semibold">
                             Resolution:
-                          </div>
+                          </h4>
                           <div className="text-[#60646C]">
                             <div className="flex gap-2">
                               <div className="flex items-center gap-1">
-                                <div className="text-[#01285C]">Viscosity:</div>
-                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                <p className="text-[#01285C]">Viscosity:</p>
+                                <p className="text-xs md:text-sm 2xl:text-lg">
                                   10cP,
-                                </div>
+                                </p>
                               </div>
                               <div className="flex items-center gap-1">
-                                <div className="text-[#01285C]">Density:</div>
-                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                <p className="text-[#01285C]">Density:</p>
+                                <p className="text-xs md:text-sm 2xl:text-lg">
                                   1 kg/m³,
-                                </div>
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-1">
-                              <div className="text-[#01285C]">Temperature:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">
+                              <p className="text-[#01285C]">Temperature:</p>
+                              <p className="text-xs md:text-sm 2xl:text-lg">
                                 0.1 °C
-                              </div>
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -944,29 +944,29 @@ const Product = () => {
                           />
                         </div>
                         <div className="w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h4 className="text-[#01285C] font-semibold">
                             Accuracy:
-                          </div>
+                          </h4>
                           <div className="text-[#60646C]">
                             <div className="flex gap-2">
                               <div className="flex items-center gap-1">
-                                <div className="text-[#01285C]">Viscosity:</div>
-                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                <p className="text-[#01285C]">Viscosity:</p>
+                                <p className="text-xs md:text-sm 2xl:text-lg">
                                   ±1 %,
-                                </div>
+                                </p>
                               </div>
                               <div className="flex items-center gap-1">
-                                <div className="text-[#01285C]">Density:</div>
-                                <div className="text-xs md:text-sm 2xl:text-lg">
+                                <p className="text-[#01285C]">Density:</p>
+                                <p className="text-xs md:text-sm 2xl:text-lg">
                                   ±1 %
-                                </div>
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-1">
-                              <div className="text-[#01285C]">Temperature:</div>
-                              <div className="text-xs md:text-sm 2xl:text-lg">
+                              <p className="text-[#01285C]">Temperature:</p>
+                              <p className="text-xs md:text-sm 2xl:text-lg">
                                 ±1 °C
-                              </div>
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -981,12 +981,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <h4 className="text-[#01285C] font-semibold">
                             Power&nbsp;Supply:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </h4>
+                          <p className="text-[#60646C]">
                             Compatible with Industrial Standards
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1030,7 +1030,7 @@ const Product = () => {
                     WebkitBackdropFilter: "blur(10px)",
                   }}
                 >
-                  <div
+                  <h1
                     className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                     style={{
                       background:
@@ -1042,21 +1042,21 @@ const Product = () => {
                     }}
                   >
                     Ztar
-                  </div>
-                  <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                  </h1>
+                  <p className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                     A single wavelength can measure viscosity, density &
                     Temperature continuously.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly">
               {/* heading and play button */}
               <div className=" md:flex items-start justify-between gap-2 mb-2">
-                <div className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
+                <h1 className="mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   Ultrasonic contact & non-contact based level measurement
                   sensor
-                </div>
+                </h1>
                 <div
                   className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
                   onClick={() => setRenderZtarVideo(true)}
@@ -1072,13 +1072,13 @@ const Product = () => {
 
               {/* orange tab */}
               <div className="md-flex">
-                <div className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                <h2 className=" w-full md:w-auto md:inline-block px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
                   Level: 0.03 m to 10 m
-                </div>
+                </h2>
               </div>
 
               {/* description */}
-              <div className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
+              <p className=" text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 Ztar is a contact/contactless IIoT-enabled level measurement
                 sensor that captures continuous level across any hazardous
                 environment with accuracy in contrast to radar-based level
@@ -1089,7 +1089,7 @@ const Product = () => {
                 >
                   Read More...
                 </span>
-              </div>
+              </p>
 
               {/* cards */}
               <div className=" md:flex gap-2 mb-2 md:mb-20 text-sm lg:text-base 2xl:text-xl">
@@ -1097,14 +1097,14 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={metal} alt="metal" />
                   </div>
-                  <div className="font-semibold">Metal Manufacturing</div>
+                  <h3 className="font-semibold">Metal Manufacturing</h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={refrigerant} alt="refrigerant" />
                   </div>
-                  <div className="font-semibold">Refrigerants</div>
+                  <h3 className="font-semibold">Refrigerants</h3>
                 </div>
               </div>
             </div>
@@ -1116,45 +1116,45 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className="w-full md:w-[20%] h-[30%] md:h-auto  flex items-center justify-center">
+                  <figure className="w-full md:w-[20%] h-[30%] md:h-auto  flex items-center justify-center">
                     <img
                       className="h-60 md:h-auto"
                       src={ztar}
                       alt="ztar"
                       data-aos="slide-left"
                     />
-                  </div>
+                  </figure>
                   <div className=" w-full md:w-[40%] h-[30%] md:h-auto px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div className=" ">About Ztar</div>
+                        <h1>About Ztar</h1>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
 
-                    <div
+                    <article
                       className="overflow-auto"
                       style={{ scrollbarWidth: "none" }}
                     >
-                      <div className="mb-2 2xl:mb-6">
+                      <p className="mb-2 2xl:mb-6">
                         Ztar is a contact/contactless IIoT-enabled level
                         measurement sensor that captures continuous level across
                         any hazardous environment with accuracy in contrast to
                         radar-based level measurement sensors.
-                      </div>
-                      <div>
+                      </p>
+                      <p>
                         Ztar is a waveguide based ultrasonic level sensor that
                         provides accurate measurements even at higher
                         temperatures. It is compatible with corrosive and
                         hazardous fluids due to wide range of waveguide
                         materials.
-                      </div>
-                    </div>
+                      </p>
+                    </article>
                   </div>
                   <div className=" w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div>Specifications</div>
+                        <h2>Specifications</h2>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
@@ -1164,12 +1164,12 @@ const Product = () => {
                           <img src={additionalLogo1} alt="additionalLogo1" />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Functions:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             Measures Fluid Level
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -1182,12 +1182,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Measuring&nbsp;Level:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             Level: 0.03 m to 10 m
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -1200,10 +1200,10 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Resolution:
-                          </div>
-                          <div className="text-[#60646C]">Level: 1 mm</div>
+                          </p>
+                          <p className="text-[#60646C]">Level: 1 mm</p>
                         </div>
                       </div>
 
@@ -1216,10 +1216,10 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Accuracy:
-                          </div>
-                          <div className="text-[#60646C]">Level: ±1 %</div>
+                          </p>
+                          <p className="text-[#60646C]">Level: ±1 %</p>
                         </div>
                       </div>
 
@@ -1232,12 +1232,12 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Power&nbsp;Supply:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             Compatible with Industrial Standards
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1283,7 +1283,7 @@ const Product = () => {
                     WebkitBackdropFilter: "blur(10px)",
                   }}
                 >
-                  <div
+                  <h1
                     className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-1"
                     style={{
                       background:
@@ -1295,20 +1295,20 @@ const Product = () => {
                     }}
                   >
                     I-PAMS
-                  </div>
-                  <div className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
+                  </h1>
+                  <p className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
                     Provides real-time data visualization and detailed analysis
                     delivering complete process control.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
             <div className=" w-full md:w-[55%] xl:p-2 md:p-4 flex flex-col justify-evenly ">
               {/* heading and play button */}
               <div className="  md:flex items-start justify-between gap-2 mb-2">
-                <div className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
+                <h1 className=" mb-2 md:mb-0 text-lg lg:text-2xl 2xl:text-4xl font-semibold">
                   IoT for Plant Asset Monitoring System
-                </div>
+                </h1>
                 <div
                   className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
                   onClick={() => setRenderIpamsVideo(true)}
@@ -1324,13 +1324,13 @@ const Product = () => {
 
               {/* orange tab */}
               <div className="md:flex">
-                <div className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
+                <h2 className="px-2 py-1 rounded-full text-[clamp(16px,1vw,20px)] font-medium text-[#FE7D18] border border-[#FE9D1C] bg-[#FFF6EA] text-center mb-2">
                   Real Time Monitoring Access
-                </div>
+                </h2>
               </div>
 
               {/* description */}
-              <div className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
+              <p className="  text-[#60646C] text-[clamp(16px,1.2vw,20px)] mb-2 font-medium">
                 I-PAMS is out Industrial-IoT based asset monitoring system for
                 industries. It provides real-time data visualization and
                 detailed analysis delivering complete process control to the
@@ -1341,7 +1341,7 @@ const Product = () => {
                 >
                   Read More...
                 </span>
-              </div>
+              </p>
 
               {/* cards */}
               <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
@@ -1353,7 +1353,7 @@ const Product = () => {
                       alt="ipamsIcon1"
                     />
                   </div>
-                  <div className="font-semibold">Real-time Thermal Mapping</div>
+                  <h3 className="font-semibold">Real-time Thermal Mapping</h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
@@ -1364,7 +1364,7 @@ const Product = () => {
                       alt="ipamsIcon2"
                     />
                   </div>
-                  <div className="font-semibold">Predictive Maintenance</div>
+                  <h3 className="font-semibold">Predictive Maintenance</h3>
                 </div>
               </div>
 
@@ -1377,7 +1377,7 @@ const Product = () => {
                       alt="ipamsIcon3"
                     />
                   </div>
-                  <div className="font-semibold">Data Visualization</div>
+                  <h3 className="font-semibold">Data Visualization</h3>
                 </div>
               </div>
             </div>
@@ -1389,34 +1389,34 @@ const Product = () => {
               >
                 {/* content */}
                 <div className="md:flex h-full">
-                  <div className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto p-4">
+                  <figure className="w-full md:w-[20%] flex items-center justify-center h-[30%] md:h-auto p-4">
                     <img
                       className="h-60 md:h-auto"
                       src={ipams}
                       alt="ipams"
                       data-aos="slide-left"
                     />
-                  </div>
+                  </figure>
                   <div className="w-full md:w-[40%] px-4 py-4 flex flex-col gap-2 2xl:gap-6 text-[#60646C] text-justify text-xs md:text-sm lg:text-base 2xl:text-2xl h-[30%] md:h-auto ">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div className=" ">About I-PAMS</div>
+                        <h1>About I-PAMS</h1>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
-                    <div
+                    <article
                       className="overflow-auto"
                       style={{ scrollbarWidth: "none" }}
                     >
-                      <div className="mb-2 2xl:mb-6">
+                      <p className="mb-2 2xl:mb-6">
                         I-PAMS is out Industrial-IoT based asset monitoring
                         system for industries. It provides real-time data
                         visualization and detailed analysis delivering complete
                         process control to the operator. It enables report
                         generation through a wide range of formats including
                         CSV, PDF etc.
-                      </div>
-                      <div>
+                      </p>
+                      <p>
                         I-PAMS also provides a wide range of widgets which are
                         easily accessible. These widgets will be then used to
                         visualize the data.Since I-PAMS provide real time
@@ -1425,13 +1425,13 @@ const Product = () => {
                         for predictive maintenance. Through digital twin, the
                         user can create a digital model of physical asset to
                         increase the overall efficiency.
-                      </div>
-                    </div>
+                      </p>
+                    </article>
                   </div>
                   <div className="w-full md:w-[40%] h-[40%] md:h-auto px-4 py-4 flex flex-col gap-2 text-black text-left text-sm lg:text-base 2xl:text-xl  ">
                     <div className="flex">
                       <div className="text-black font-semibold text-base md:text-lg lg:text-xl 2xl:text-3xl">
-                        <div>Specifications</div>
+                        <h2>Specifications</h2>
                         <img className="w-full h-2" src={line} alt="line"></img>
                       </div>
                     </div>
@@ -1441,12 +1441,12 @@ const Product = () => {
                           <img src={additionalLogo1} alt="additionalLogo1" />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Functions:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             Real Time Monitoring Assets
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -1459,13 +1459,13 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Security&nbsp;Protocol:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             HTTPS(TCL/SSL), IPsec, SSH, WPA/WPA2/2PA3, Bcrypt,
                             Keberos
-                          </div>
+                          </p>
                         </div>
                       </div>
 
@@ -1478,13 +1478,13 @@ const Product = () => {
                           />
                         </div>
                         <div className="flex gap-2 w-[88%]">
-                          <div className="text-[#01285C] font-semibold">
+                          <p className="text-[#01285C] font-semibold">
                             Data&nbsp;Connectivity Protocol:
-                          </div>
-                          <div className="text-[#60646C]">
+                          </p>
+                          <p className="text-[#60646C]">
                             Zigbee, WiFi(2.49Hz, 5.49Hz), Bluetooth-LE, LORA,
                             RS-232, Tcp/Ip, Modbus, RS-485, Cellular
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </div>
