@@ -377,7 +377,7 @@ const Media = () => {
             >
               <button
                 onClick={() => handleSectionScroll(sectionRefs.section1)}
-                className={`${
+                className={`hover:text-orange-400 ${
                   activeSection.includes("section1")
                     ? "text-orange-400"
                     : "text-gray-400"
@@ -387,7 +387,7 @@ const Media = () => {
               </button>
               <button
                 onClick={() => handleSectionScroll(sectionRefs.section2)}
-                className={`${
+                className={`hover:text-orange-400 ${
                   activeSection.includes("section2")
                     ? "text-orange-400"
                     : "text-gray-400"

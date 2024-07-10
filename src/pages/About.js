@@ -287,7 +287,7 @@ const About = () => {
         >
           <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -298,7 +298,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -309,7 +309,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -320,7 +320,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -331,7 +331,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section5)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section5")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -342,7 +342,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section6)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section6")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -353,7 +353,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section7)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section7")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -364,7 +364,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section8)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section8")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -375,7 +375,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section9)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section9")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -386,7 +386,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section10)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section10")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -397,7 +397,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section11)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section11")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -408,7 +408,7 @@ const About = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section12)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section12")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -1019,7 +1019,9 @@ const About = () => {
               src={c4}
               alt="Communication"
             ></img>
-            <figcaption className="font-semibold mt-2">Communication</figcaption>
+            <figcaption className="font-semibold mt-2">
+              Communication
+            </figcaption>
           </figure>
           <figure className="flex flex-col items-center">
             <img
@@ -1027,7 +1029,9 @@ const About = () => {
               src={c5}
               alt="Accessibility"
             ></img>
-            <figcaption className="font-semibold mt-2">Accessibility</figcaption>
+            <figcaption className="font-semibold mt-2">
+              Accessibility
+            </figcaption>
           </figure>
           <figure className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c6} alt="Efficiency"></img>

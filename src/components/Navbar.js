@@ -64,10 +64,10 @@ const Navbar = () => {
             </div>
             <ul className="hidden lg:flex gap-8 items-center">
               {HeaderData.map((item, index) => (
-                <li key={index} className="">
+                <li key={index}>
                   <NavLink
                     to={item.path}
-                    className={`${
+                    className={`hover:text-orange-400 duration-200 ${
                       location.pathname === item.path ||
                       (item.path === "/industries" &&
                         location.pathname.startsWith("/industries"))
@@ -86,16 +86,27 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button
-              className="hidden lg:block text-white py-3 px-4 xl:py-2 xl:px-3 2xl:py-3 2xl:px-4 rounded-full"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-              }}
-              onClick={handleContactClick}
-            >
-              Get in Touch
-            </button>
+            <div className="flex flex-col items-center">
+              <button
+                className={`hidden lg:block text-white py-3 px-4 xl:py-2 xl:px-3 2xl:py-3 2xl:px-4 rounded-full mb-0.5 hover:scale-105 duration-200`}
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                }}
+                onClick={handleContactClick}
+              >
+                Get in Touch
+              </button>
+              {location.pathname === "/contact" && (
+                <div
+                  className="w-10 h-1 rounded-full"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                />
+              )}
+            </div>
             {!burgerMenuOpen && (
               <button
                 className="flex items-center justify-center lg:hidden"

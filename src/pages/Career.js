@@ -312,7 +312,7 @@ const Career = () => {
         <div className="mt-10 md:mt-0 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
             <h1>Opportunities</h1>
-            <img className="w-full h-2" src={line} alt='line'></img>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
 
@@ -326,7 +326,7 @@ const Career = () => {
               {uniqueDepartments.map((department) => (
                 <div
                   key={department}
-                  className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
+                  className={`cursor-pointer rounded-full  py-1.5 px-4 border hover:bg-[#01285C] hover:text-white hover:border-[#01285C] duration-200 ${
                     selectedDepartment === department
                       ? "bg-[#01285C] text-white border-[#01285C]"
                       : "bg-[#EEF6FF] text-[#013872] border-[#B4CEEC]"
@@ -393,7 +393,7 @@ const Career = () => {
               {dummyContent.map((dep, index) => (
                 <div
                   key={index}
-                  className={`cursor-pointer rounded-full  py-1.5 px-4 border ${
+                  className={`cursor-pointer rounded-full  py-1.5 px-4 border hover:bg-[#01285C] hover:text-white hover:border-[#01285C] duration-200 ${
                     selectedDummyContent === dep
                       ? "bg-[#01285C] text-white border-[#01285C]"
                       : "bg-[#EEF6FF] text-[#013872] border-[#B4CEEC]"
@@ -461,7 +461,6 @@ const Career = () => {
               >
                 <IoMdClose size={20} />
               </div>
-              
             </div>
 
             <div

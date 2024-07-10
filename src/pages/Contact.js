@@ -172,10 +172,10 @@ const ContactPage = () => {
         <div className="">
           <div className="flex justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
             <p>Get</p>
-            <p>
+            <div>
               <div>In&nbsp;Touch</div>
               <img className="w-full h-2" src={line} alt="line"></img>
-            </p>
+            </div>
           </div>
 
           <p className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2 mb-2">
@@ -371,11 +371,11 @@ const ContactPage = () => {
               <h3 className="ml-4 text-[#60646C] font-semibold">
                 Current Location:
                 <p className="text-black">XYMA ANALYTICS PRIVATE LIMITED</p>
-                <address className="text-black">
+                <p className="text-black">
                   B4-01, 4th Floor, Phase II, B-Block, IITM Research Park,
                   <br /> Kanagam Road, Taramani, Chennai, TamilNadu,
                   <br /> India - 600113.
-                </address>
+                </p>
               </h3>
             </div>
 

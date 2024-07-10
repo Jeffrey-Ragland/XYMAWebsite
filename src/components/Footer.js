@@ -120,7 +120,7 @@ const Footer = () => {
             <div className="flex gap-3 mt-4">
               {/* linkedin */}
               <div
-                className="p-1 rounded-lg cursor-pointer"
+                className="p-1 rounded-lg cursor-pointer hover:scale-110 duration-200"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -137,7 +137,7 @@ const Footer = () => {
 
               {/* youtube */}
               <div
-                className="p-1 rounded-lg cursor-pointer"
+                className="p-1 rounded-lg cursor-pointer hover:scale-110 duration-200"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -151,7 +151,7 @@ const Footer = () => {
 
               {/* share */}
               <div
-                className="p-1 rounded-lg cursor-pointer"
+                className="p-1 rounded-lg cursor-pointer hover:scale-110 duration-200"
                 style={{
                   background:
                     "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -295,7 +295,7 @@ const Footer = () => {
         <div className="md:flex justify-center text-white text-xs lg:text-sm xl:text-xs 2xl:text-base w-[90%] mb-4 font-light">
           <div className="md:flex text-center gap-1 justify-center">
             <div className="flex justify-center">
-              <path className="mr-1">© 2024 XYMA Analytics Inc.</path>
+              <p className="mr-1">© 2024 XYMA Analytics Inc.</p>
               <address className="text-gray-400">
                 IIT Madras Research Park,{" "}
               </address>

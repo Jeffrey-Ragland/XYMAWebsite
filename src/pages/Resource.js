@@ -204,7 +204,7 @@ const Resource = () => {
         >
           <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -215,7 +215,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -226,7 +226,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -237,7 +237,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -248,7 +248,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section5)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section5")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -259,7 +259,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section6)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section6")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -270,7 +270,7 @@ const Resource = () => {
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section7)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section7")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -291,7 +291,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("All")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "All"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -311,7 +311,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Aluminum")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Aluminum"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -331,7 +331,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Steel")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Steel"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -351,7 +351,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Marine")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Marine"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -371,7 +371,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("OilAndGas")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "OilAndGas"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -391,7 +391,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Semiconductor")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Semiconductor"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -411,7 +411,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Mining")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Mining"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -431,7 +431,7 @@ const Resource = () => {
           <div>
             <div
               onClick={() => toggleContent("Paints")}
-              className={`${
+              className={`hover:text-[#013872] hover:font-bold ${
                 selectedContent === "Paints"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
@@ -463,7 +463,7 @@ const Resource = () => {
                   Aluminum
                 </h1>
                 <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -521,7 +521,7 @@ const Resource = () => {
                   Steel
                 </h1>
                 <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -537,7 +537,11 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full rounded-2xl" src={steel1} alt="steel1" />
+                    <img
+                      className="w-full h-full rounded-2xl"
+                      src={steel1}
+                      alt="steel1"
+                    />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     Extending ladle life for one cycle yields steel worth $5.1M
@@ -574,7 +578,7 @@ const Resource = () => {
                   Marine
                 </h1>
                 {/* <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -632,7 +636,7 @@ const Resource = () => {
                   Oil&nbsp;&&nbsp;Gas
                 </h1>
                 <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -683,7 +687,7 @@ const Resource = () => {
                   Semiconductor
                 </h1>
                 {/* <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -742,7 +746,7 @@ const Resource = () => {
                   Mining
                 </h1>
                 {/* <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
@@ -802,7 +806,7 @@ const Resource = () => {
                   Paints
                 </h1>
                 <span
-                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
+                  className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",

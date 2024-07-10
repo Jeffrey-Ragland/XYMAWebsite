@@ -333,7 +333,7 @@ const Product = () => {
         >
           <button
             onClick={() => handleSectionScroll(sectionRefs.uTMapS)}
-            className={`rounded-full   ${
+            className={`rounded-full ${
               activeSection.includes("uTMapS")
                 ? "border-4 border-orange-400"
                 : "border-4 border-black"
@@ -447,7 +447,7 @@ const Product = () => {
                   Multi-Point Temperature Mapping Sensor
                 </h1>
                 <div
-                  className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                  className="flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer hover:scale-110 duration-200"
                   onClick={() => setRenderUtmapsVideo(true)}
                 >
                   <div className="text-[#FE9D1C]">
@@ -474,7 +474,7 @@ const Product = () => {
                 waveguide with multiple configurations in contrast to contact
                 based thermocouples/RTDs or contactless IR guns.
                 <span
-                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  className="text-orange-500 font-bold cursor-pointer ml-1 hover:font-black"
                   onClick={() => setRenderReadMoreUtmaps(true)}
                 >
                   Read More...
@@ -503,9 +503,7 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={semi} alt="semiconductorLogo" />
                   </div>
-                  <h3 className="font-semibold">
-                    Semiconductor Manufacturing
-                  </h3>
+                  <h3 className="font-semibold">Semiconductor Manufacturing</h3>
                 </div>
 
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
@@ -519,8 +517,12 @@ const Product = () => {
             {/* utmaps additional description */}
             {renderReadMoreUtmaps && (
               <div
-                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg"
                 data-aos="zoom-in"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFFFFF 0%, #FFF6EA 100%)",
+                }}
               >
                 {/* content */}
                 <div className="md:flex h-full">
@@ -616,9 +618,7 @@ const Product = () => {
                           <h5 className="text-[#01285C] font-semibold">
                             Resolution:
                           </h5>
-                          <p className="text-[#60646C]">
-                            Temperature: 0.01 °C
-                          </p>
+                          <p className="text-[#60646C]">Temperature: 0.01 °C</p>
                         </div>
                       </div>
 
@@ -634,9 +634,7 @@ const Product = () => {
                           <h5 className="text-[#01285C] font-semibold">
                             Accuracy:
                           </h5>
-                          <p className="text-[#60646C]">
-                            Temperature: ±1 °C
-                          </p>
+                          <p className="text-[#60646C]">Temperature: ±1 °C</p>
                         </div>
                       </div>
 
@@ -661,7 +659,7 @@ const Product = () => {
                   </div>
                 </div>
                 <button
-                  className="text-orange-400 absolute right-2 top-2"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200 absolute right-2 top-2"
                   onClick={() => setRenderReadMoreUtmaps(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -725,7 +723,7 @@ const Product = () => {
                   Multi-Parameter Measurement Sensor
                 </h1>
                 <div
-                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
+                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer hover:scale-110 duration-200"
                   onClick={() => setRenderPortsVideo(true)}
                 >
                   <div className="text-[#FE9D1C]">
@@ -760,7 +758,7 @@ const Product = () => {
                 unlike discrete measurements with thermocouple/RTDs or discrete
                 measurements with sampling from viscometer and density meter.
                 <span
-                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  className="text-orange-500 hover:font-black font-bold cursor-pointer ml-1"
                   onClick={() => setRenderReadMorePorts(true)}
                 >
                   Read More...
@@ -796,8 +794,12 @@ const Product = () => {
             {/* ports additional description */}
             {renderReadMorePorts && (
               <div
-                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg "
                 data-aos="zoom-in"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFFFFF 0%, #FFF6EA 100%)",
+                }}
               >
                 {/* content */}
                 <div className="md:flex h-full">
@@ -993,7 +995,7 @@ const Product = () => {
                   </div>
                 </div>
                 <button
-                  className="text-orange-400 absolute right-2 top-2"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200 absolute right-2 top-2"
                   onClick={() => setRenderReadMorePorts(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1058,7 +1060,7 @@ const Product = () => {
                   sensor
                 </h1>
                 <div
-                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer"
+                  className=" flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2 cursor-pointer hover:scale-110 duration-200"
                   onClick={() => setRenderZtarVideo(true)}
                 >
                   <div className="text-[#FE9D1C]">
@@ -1084,7 +1086,7 @@ const Product = () => {
                 environment with accuracy in contrast to radar-based level
                 measurement sensors.
                 <span
-                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  className="text-orange-500 hover:font-black font-bold cursor-pointer ml-1"
                   onClick={() => setRenderReadMoreZtar(true)}
                 >
                   Read More...
@@ -1111,8 +1113,12 @@ const Product = () => {
             {/* ztar additional description */}
             {renderReadMoreZtar && (
               <div
-                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg "
                 data-aos="zoom-in"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFFFFF 0%, #FFF6EA 100%)",
+                }}
               >
                 {/* content */}
                 <div className="md:flex h-full">
@@ -1167,9 +1173,7 @@ const Product = () => {
                           <p className="text-[#01285C] font-semibold">
                             Functions:
                           </p>
-                          <p className="text-[#60646C]">
-                            Measures Fluid Level
-                          </p>
+                          <p className="text-[#60646C]">Measures Fluid Level</p>
                         </div>
                       </div>
 
@@ -1244,7 +1248,7 @@ const Product = () => {
                   </div>
                 </div>
                 <button
-                  className="text-orange-400 absolute right-2 top-2"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200 absolute right-2 top-2"
                   onClick={() => setRenderReadMoreZtar(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1310,7 +1314,7 @@ const Product = () => {
                   IoT for Plant Asset Monitoring System
                 </h1>
                 <div
-                  className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer"
+                  className="  flex rounded-full items-center justify-center gap-1 bg-[#01285C] h-4 py-4 px-2  cursor-pointer hover:scale-110 duration-200"
                   onClick={() => setRenderIpamsVideo(true)}
                 >
                   <div className="text-[#FE9D1C]">
@@ -1336,7 +1340,7 @@ const Product = () => {
                 detailed analysis delivering complete process control to the
                 operator.
                 <span
-                  className="text-[#01285C] font-semibold cursor-pointer ml-1"
+                  className="text-orange-500 hover:font-black font-bold cursor-pointer ml-1"
                   onClick={() => setRenderReadMoreIpams(true)}
                 >
                   Read More...
@@ -1384,8 +1388,12 @@ const Product = () => {
             {/* ipams additional description */}
             {renderReadMoreIpams && (
               <div
-                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
+                className="w-full h-full absolute inset-0 border border-[#E0E1E6] rounded-lg"
                 data-aos="zoom-in"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #FFFFFF 0%, #FFF6EA 100%)",
+                }}
               >
                 {/* content */}
                 <div className="md:flex h-full">
@@ -1491,7 +1499,7 @@ const Product = () => {
                   </div>
                 </div>
                 <button
-                  className="text-orange-400 absolute right-2 top-2"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200 absolute right-2 top-2"
                   onClick={() => setRenderReadMoreIpams(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1517,7 +1525,7 @@ const Product = () => {
                   μTMapS&nbsp;Product&nbsp;Demo
                 </div>
                 <button
-                  className="text-orange-400"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200"
                   onClick={() => setRenderUtmapsVideo(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1556,7 +1564,7 @@ const Product = () => {
                   PoRTS&nbsp;Product&nbsp;Demo
                 </div>
                 <button
-                  className="text-orange-400"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200"
                   onClick={() => setRenderPortsVideo(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1595,7 +1603,7 @@ const Product = () => {
                   Ztar&nbsp;Product&nbsp;Demo
                 </div>
                 <button
-                  className="text-orange-400"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200"
                   onClick={() => setRenderZtarVideo(false)}
                 >
                   <IoMdCloseCircle size={30} />
@@ -1634,7 +1642,7 @@ const Product = () => {
                   I-PAMS&nbsp;Product&nbsp;Demo
                 </div>
                 <button
-                  className="text-orange-400"
+                  className="text-orange-400 hover:text-[#fc0b03] duration-200"
                   onClick={() => setRenderIpamsVideo(false)}
                 >
                   <IoMdCloseCircle size={30} />

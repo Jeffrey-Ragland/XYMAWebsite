@@ -367,7 +367,7 @@ export const Home = () => {
         >
           <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -377,7 +377,7 @@ export const Home = () => {
           </button>
           <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -387,7 +387,7 @@ export const Home = () => {
           </button>
           <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -397,7 +397,7 @@ export const Home = () => {
           </button>
           <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`${
+            className={`hover:text-orange-400 ${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
@@ -440,7 +440,7 @@ export const Home = () => {
             {/* aluminum */}
             <div>
               <div
-                className={`md:w-full cursor-pointer p-1 xl:mb-1 flex ${
+                className={`md:w-full cursor-pointer p-1 xl:mb-1 flex hover:text-[#013872] hover:font-bold ${
                   clickedImage === aluminumVideo && "text-[#013872] font-bold"
                 }`}
                 id="aluminum"
@@ -459,7 +459,7 @@ export const Home = () => {
             {/* steel */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === steel && "text-[#013872] font-bold"
                 }`}
                 id="steel"
@@ -478,7 +478,7 @@ export const Home = () => {
             {/* marine */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === lubricants && "text-[#013872] font-bold"
                 }`}
                 id="lubricants"
@@ -497,7 +497,7 @@ export const Home = () => {
             {/* oil and gas */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === OilVideo && "text-[#013872] font-bold"
                 }`}
                 id="oilRecovery"
@@ -516,7 +516,7 @@ export const Home = () => {
             {/* semiconductor */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === semiconductor && "text-[#013872] font-bold"
                 }`}
                 id="semiconductor"
@@ -535,7 +535,7 @@ export const Home = () => {
             {/* mining */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === miningVideo && "text-[#013872] font-bold"
                 }`}
                 id="mining"
@@ -554,7 +554,7 @@ export const Home = () => {
             {/* specialty chemicals */}
             <div>
               <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer ${
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
                   clickedImage === paints && "text-[#013872] font-bold"
                 }`}
                 id="paints"
@@ -1218,7 +1218,7 @@ export const Home = () => {
                 Sensor&nbsp;Life&nbsp;up&nbsp;to 50,000 hrs
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md border border-[#FE9D1C] shadow-orange-200 shadow-lg text-[#FE7D18] font-medium bg-white">
               Sensor&nbsp;Life&nbsp;up&nbsp;to&nbsp;50,000&nbsp;hrs
             </h3>
           </div>
@@ -1241,7 +1241,7 @@ export const Home = () => {
                 Multi - Point Measurement
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C]  text-[#FE7D18] font-medium bg-white shadow-orange-200 shadow-lg">
               Multi&nbsp;Point&nbsp;Measurement
             </h3>
           </div>
@@ -1264,7 +1264,7 @@ export const Home = () => {
                 Energy Management System-IoT
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 left-auto right-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C]  text-[#FE7D18] font-medium bg-white shadow-orange-200 shadow-lg">
               Energy&nbsp;Management&nbsp;System&nbsp;IoT
             </h3>
           </div>
@@ -1287,7 +1287,7 @@ export const Home = () => {
                 Zero&nbsp;Manual Intervention
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 right-auto left-[105%] transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C]  text-[#FE7D18] font-medium bg-white text-left shadow-orange-200 shadow-lg">
               Zero&nbsp;Manual&nbsp;Intervention
             </h3>
           </div>
@@ -1310,7 +1310,7 @@ export const Home = () => {
                 AI&nbsp;Enable&nbsp;Corrective Actions
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C]  text-[#FE7D18] font-medium bg-white text-left shadow-orange-200 shadow-lg">
               AI&nbsp;Enable&nbsp;Corrective&nbsp;Actions
             </h3>
           </div>
@@ -1333,7 +1333,7 @@ export const Home = () => {
                 Retrofit Benifits
               </h3>
             )}
-            <h3 className="hidden md:block text-[10px] 2xl:text-sm absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C] shadow-2xl text-[#FE7D18] font-medium bg-white text-left">
+            <h3 className="hidden md:block text-[10px] xl:text-sm 2xl:text-lg absolute top-1/2 left-[105%] right-auto transform -translate-y-1/2 p-1 rounded-md  border border-[#FE9D1C]  text-[#FE7D18] font-medium bg-white text-left shadow-orange-200 shadow-lg">
               Retrofit&nbsp;Benifits
             </h3>
           </div>
@@ -1508,9 +1508,12 @@ export const Home = () => {
           // ref={sectionRefs.section4}
           className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
         >
-          <h1 className="text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-            Our Clients
-          </h1>
+          <div className="text-center flex justify-center">
+            <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
+              <h1>Our&nbsp;Clients</h1>
+              <img className="w-full h-2" src={line} alt="line"></img>
+            </div>
+          </div>
           <p className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
             stages, our aim is to aid Industry 4.0 transformation while reducing
