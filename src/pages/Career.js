@@ -249,12 +249,12 @@ const Career = () => {
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
           <div className="text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
-            <div>"Together,</div>
-            <div className="ml-6">we shine"</div>
+            <h1>"Together,</h1>
+            <h1 className="ml-6">we shine"</h1>
           </div>
-          <div className="text-white mt-3 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+          <p className="text-white mt-3 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
             We help you grow along with us
-          </div>
+          </p>
           <button
             className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1 hover:scale-90 duration-200"
             style={{
@@ -262,7 +262,7 @@ const Career = () => {
             }}
             onClick={handleButtonClick}
           >
-            <div className="">Know More</div>
+            <div>Know More</div>
             <div className="mt-0.5">
               <IoChevronDown size={15} />
             </div>
@@ -271,7 +271,7 @@ const Career = () => {
       </section>
 
       {/* bottom text */}
-      <div
+      <h3
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
         style={{
           backgroundImage:
@@ -281,7 +281,7 @@ const Career = () => {
         }}
       >
         WORK AT XYMA
-      </div>
+      </h3>
 
       <div className="flex items-center mb-16 mt-10">
         <div className="w-full flex flex-col items-center">
@@ -289,29 +289,29 @@ const Career = () => {
             <img className="h-[50px] w-[65px]" src={framevector} alt="quote" />
           </div>
 
-          <div className="text-[#60646C] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl w-[90%] md:w-[80%] text-center mb-12">
+          <p className="text-[#60646C] font-semibold text-base md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl w-[90%] md:w-[80%] text-center mb-12">
             XYMA Analytics stands as a Beacon of Innovation. We don't just talk
             Tech, we prove it. Our Technology has transformed multiple
             Industries. We as a Community, work relentlessly towards new
             Horizons in Deep Tech, Innovation and Excellence.
-          </div>
+          </p>
 
           <div>
             <img className="h-[90px] w-[90px]" src={photo} alt="line" />
           </div>
-          <div className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl">
+          <p className="text-[#1C2024] font-semibold md:text-lg lg:text-xl 2xl:text-2xl">
             Dr. Nishanth Raja
-          </div>
-          <div className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
+          </p>
+          <p className="text-[#60646C] text-xs md:text-sm lg:text-base xl:text-sm 2xl:text-lg">
             C.E.O. and Co-founder
-          </div>
+          </p>
         </div>
       </div>
 
       <section ref={sectionRef} className=" mb-12 2xl:mb-16">
         <div className="mt-10 md:mt-0 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-            <div>Opportunities</div>
+            <h1>Opportunities</h1>
             <img className="w-full h-2" src={line} alt='line'></img>
           </div>
         </div>
@@ -409,9 +409,9 @@ const Career = () => {
                 <div className="mb-4 flex justify-center">
                   <img src={noData} alt="noData" className=" h-20" />
                 </div>
-                <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center">
+                <p className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center">
                   Sorry, No openings available at the moment.
-                </div>
+                </p>
               </div>
             </div>
           </div>

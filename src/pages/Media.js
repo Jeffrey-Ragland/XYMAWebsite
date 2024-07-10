@@ -222,16 +222,16 @@ const Media = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center">
-            <div className="text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+            <h1 className="text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
               News Room
-            </div>
-            <div className="text-white mt-2 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+            </h1>
+            <p className="text-white mt-2 md:mt-5 text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
               Spotlight on XYMA Analytics
-            </div>
+            </p>
           </div>
         </div>
         {/* bottom text */}
-        <div
+        <h3
           className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
           style={{
             backgroundImage:
@@ -241,20 +241,20 @@ const Media = () => {
           }}
         >
           XYMA NEWS
-        </div>
+        </h3>
       </section>
 
       <section id="section1" ref={sectionRefs.section1}>
         <div className="mt-4 md:mt-10 text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-            <div>Highlights</div>
-            <img className="w-full h-2" src={line} alt='line'></img>
+            <h1>Highlights</h1>
+            <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-[5%] xl:mx-[8%]">
           {/* news 1 */}
-          <div
+          <figure
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
           >
@@ -265,13 +265,13 @@ const Media = () => {
                 <p className="text-white">SAUR ENERGY</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Shell Launches 'Digital Track' for Indian Startups under its E4
               Programme
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated On Thu, Jul 8th, 2021
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -289,10 +289,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 2 */}
-          <div
+          <figure
             className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
           >
@@ -303,12 +303,12 @@ const Media = () => {
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Start-up tech. Remote sensing with XYMA Analytics
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated - January 09, 2022
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -326,16 +326,15 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 3 */}
-          <div
+          <figure
             className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
               width: "100%",
               margin: "auto",
-              marginTop: "5%",
             }}
           >
             <div style={{ position: "relative" }}>
@@ -345,12 +344,12 @@ const Media = () => {
                 <p className="text-white mt-1">IIT MADRAS</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Sensor for Temperature Measurement at Multiple Points
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               11th Oct 2021
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -368,35 +367,35 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* icon menu */}
           {renderIconMenu && (
-            <div
+            <nav
               className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 px-1 md:flex flex-col gap-12 py-2 rounded-r-2xl text-xs font-medium"
               data-aos=""
             >
-              <div
+              <button
                 onClick={() => handleSectionScroll(sectionRefs.section1)}
-                className={`cursor-pointer  ${
+                className={`${
                   activeSection.includes("section1")
                     ? "text-orange-400"
                     : "text-gray-400"
                 }`}
               >
                 <IoNewspaperOutline size={25} />
-              </div>
-              <div
+              </button>
+              <button
                 onClick={() => handleSectionScroll(sectionRefs.section2)}
-                className={`cursor-pointer ${
+                className={`${
                   activeSection.includes("section2")
                     ? "text-orange-400"
                     : "text-gray-400"
                 }`}
               >
                 <FaPhotoVideo size={25} />
-              </div>
-            </div>
+              </button>
+            </nav>
           )}
 
           {/* mobile view load more button to load more news */}
@@ -417,7 +416,7 @@ const Media = () => {
           {loadMore && (
             <div className="md:hidden">
               {/* mobile news 4 */}
-              <div
+              <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -433,13 +432,13 @@ const Media = () => {
                     <p className="text-white mt-1">YOUR STORY</p>
                   </div>
                 </div>
-                <div className="text-sm font-semibold mt-1">
+                <figcaption className="text-sm font-semibold mt-1">
                   Prioritize Building Valuable Businesses Over Funding, Advises
                   Kalaari Capital's Vani Kola
-                </div>
-                <div className="text-xs mt-1 mb-1 text-[#60646C]">
+                </figcaption>
+                <p className="text-xs mt-1 mb-1 text-[#60646C]">
                   Wednesday July 14, 2021
-                </div>
+                </p>
                 <center>
                   <button
                     className="text-white mt-2 text-sm rounded-full px-4 py-2 mb-2"
@@ -457,10 +456,10 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </div>
+              </figure>
 
               {/* mobile news 5 */}
-              <div
+              <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -476,13 +475,13 @@ const Media = () => {
                     <p className="text-white mt-1">Businessline</p>
                   </div>
                 </div>
-                <div className="text-sm font-semibold mt-1">
+                <figcaption className="text-sm font-semibold mt-1">
                   TN Chief Minister awards cheques worth ₹95 lakh to 19
                   start-ups
-                </div>
-                <div className="text-xs mt-1 text-[#60646C]">
+                </figcaption>
+                <p className="text-xs mt-1 text-[#60646C]">
                   Updated - December 23, 2021
-                </div>
+                </p>
                 <center>
                   <button
                     className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
@@ -500,10 +499,10 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </div>
+              </figure>
 
               {/* mobile news 6 */}
-              <div
+              <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -519,12 +518,10 @@ const Media = () => {
                     <p className="text-white mt-1">Newswires</p>
                   </div>
                 </div>
-                <div className="text-sm font-semibold mt-1">
+                <figcaption className="text-sm font-semibold mt-1">
                   SmartHub.ai and XYMA Partnership Announcement
-                </div>
-                <div className="text-xs mt-1 text-[#60646C]">
-                  March 01, 2022
-                </div>
+                </figcaption>
+                <p className="text-xs mt-1 text-[#60646C]">March 01, 2022</p>
                 <center>
                   <button
                     className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
@@ -542,10 +539,10 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </div>
+              </figure>
 
               {/* mobile news 7 */}
-              <div
+              <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -561,12 +558,12 @@ const Media = () => {
                     <p className="text-white mt-1">ANI Multimedia News</p>
                   </div>
                 </div>
-                <div className="text-sm font-semibold mt-1">
+                <figcaption className="text-sm font-semibold mt-1">
                   PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
-                </div>
-                <div className="text-xs mt-1 text-[#60646C]">
+                </figcaption>
+                <p className="text-xs mt-1 text-[#60646C]">
                   Updated: Mar 02, 2024
-                </div>
+                </p>
                 <center>
                   <button
                     className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
@@ -584,20 +581,20 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </div>
+              </figure>
 
               {/* mobile news 8 */}
-              <div
+              <figure
                 className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
                 style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
               >
                 <img src={asian} alt="Asian" style={{ width: "100%" }} />
-                <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
                   Advancing Technology to Foster a Sustainable Energy Landscape
-                </div>
-                <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                </figcaption>
+                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
                   February 24, 2024
-                </div>
+                </p>
                 <center>
                   <button
                     className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -615,7 +612,7 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </div>
+              </figure>
 
               <div
                 className="cursor-pointer p-2 md:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
@@ -631,7 +628,7 @@ const Media = () => {
           )}
 
           {/* news 4 */}
-          <div
+          <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -647,13 +644,13 @@ const Media = () => {
                 <p className="text-white mt-1">YOUR STORY</p>
               </div>
             </div>
-            <div className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-semibold mt-1">
+            <figcaption className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-semibold mt-1">
               Prioritize Building Valuable Businesses Over Funding, Advises
               Kalaari Capital's Vani Kola
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 mb-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 mb-1 text-[#60646C]">
               Wednesday July 14, 2021
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-2 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -671,10 +668,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 5 */}
-          <div
+          <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -690,12 +687,12 @@ const Media = () => {
                 <p className="text-white mt-1">Businessline</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               TN Chief Minister awards cheques worth ₹95 lakh to 19 start-ups
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated - December 23, 2021
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -713,10 +710,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 6 */}
-          <div
+          <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -732,12 +729,12 @@ const Media = () => {
                 <p className="text-white mt-1">Newswires</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               SmartHub.ai and XYMA Partnership Announcement
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               March 01, 2022
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -755,10 +752,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 7 */}
-          <div
+          <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -774,12 +771,12 @@ const Media = () => {
                 <p className="text-white mt-1">ANI Multimedia News</p>
               </div>
             </div>
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               Updated: Mar 02, 2024
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -797,10 +794,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
 
           {/* news 8 */}
-          <div
+          <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
             style={{
               borderRadius: "14px",
@@ -810,12 +807,12 @@ const Media = () => {
             }}
           >
             <img src={asian} alt="Asian" style={{ width: "100%" }} />
-            <div className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
               Advancing Technology to Foster a Sustainable Energy Landscape
-            </div>
-            <div className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+            </figcaption>
+            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
               February 24, 2024
-            </div>
+            </p>
             <center>
               <button
                 className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
@@ -833,7 +830,7 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </div>
+          </figure>
         </div>
       </section>
 
@@ -846,22 +843,22 @@ const Media = () => {
               alt="Background"
               className="h-[40px]"
             />
-            <div className="font-semibold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-[#013872] w-[90%] md:w-[60%] text-center">
+            <p className="font-semibold text-xl md:text-3xl lg:text-4xl 2xl:text-5xl text-[#013872] w-[90%] md:w-[60%] text-center">
               "Strength lies in togetherness, creativity is embraced with
               inclusivity, and passion flourishes with freedom."
-            </div>
+            </p>
           </div>
 
           <div className="flex w-full md:w-1/2 h-[70%] md:h-full overflow-hidden">
-            <div className="flex justify-center">
+            <figure className="flex justify-center">
               <VerticalSlider images={images1} />
-            </div>
-            <div className="flex justify-center -mt-20 xl:-mt-32">
+            </figure>
+            <figure className="flex justify-center -mt-20 xl:-mt-32">
               <VerticalSlider images={images2} />
-            </div>
-            <div className="flex justify-center">
+            </figure>
+            <figure className="flex justify-center">
               <VerticalSlider images={images3} />
-            </div>
+            </figure>
           </div>
         </div>
       </section>

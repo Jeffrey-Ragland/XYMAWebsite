@@ -94,13 +94,13 @@ const Footer = () => {
           </div>
           <div className=" w-full md:w-[40%] text-xs lg:text-sm xl:text-xs 2xl:text-base p-2 md:p-4 flex gap-2 justify-center h-16 md:h-auto mt-2 md:mt-0">
             <button
-              className="bg-[#01285C] text-white rounded-full w-44 px-1"
+              className="bg-[#01285C] text-white rounded-full w-44 px-1 hover:scale-105 duration-200"
               onClick={handleContactClick}
             >
               Get&nbsp;in&nbsp;Touch
             </button>
             <button
-              className="bg-white text-[#01285C] rounded-full w-44 px-1"
+              className="bg-white text-[#01285C] rounded-full w-44 px-1 hover:scale-105 duration-200"
               onClick={handleBrochureDownload}
             >
               Download&nbsp;Newsletter
@@ -296,7 +296,9 @@ const Footer = () => {
           <div className="md:flex text-center gap-1 justify-center">
             <div className="flex justify-center">
               <path className="mr-1">© 2024 XYMA Analytics Inc.</path>
-              <address className="text-gray-400">IIT Madras Research Park, </address>
+              <address className="text-gray-400">
+                IIT Madras Research Park,{" "}
+              </address>
             </div>
             <address className="text-gray-400">Chennai, 600113</address>
           </div>

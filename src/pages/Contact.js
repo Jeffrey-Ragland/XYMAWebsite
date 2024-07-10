@@ -131,10 +131,10 @@ const ContactPage = () => {
           </video>
 
           <div className="absolute inset-0 text-white flex flex-col gap-4 justify-center items-center mx-[15%] text-center">
-            <div className="text-xl md:text-3xl 2xl:text-5xl font-medium md:font-semibold">
+            <h1 className="text-xl md:text-3xl 2xl:text-5xl font-medium md:font-semibold">
               Unlock Insights, Elevate Performance - Reach Out to XYMA Analytics
               Today
-            </div>
+            </h1>
             <button
               className="text-white text-xs md:text-base lg:text-lg xl:text-xs text 2xl:text-xl font-normal md:font-medium py-2 px-3 md:px-5 mt-3 rounded-full flex items-center gap-1 hover:scale-90 duration-200"
               style={{
@@ -153,7 +153,7 @@ const ContactPage = () => {
       </section>
 
       {/* bottom text */}
-      <div
+      <h3
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[25px] md:-mt-[50px] 2xl:-mt-[65px]"
         style={{
           backgroundImage:
@@ -163,7 +163,7 @@ const ContactPage = () => {
         }}
       >
         CONTACT US
-      </div>
+      </h3>
 
       <section
         ref={sectionRef}
@@ -171,17 +171,17 @@ const ContactPage = () => {
       >
         <div className="">
           <div className="flex justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
-            <div>Get</div>
-            <div className="">
+            <p>Get</p>
+            <p>
               <div>In&nbsp;Touch</div>
               <img className="w-full h-2" src={line} alt="line"></img>
-            </div>
+            </p>
           </div>
 
-          <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2 mb-2">
+          <p className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2 mb-2">
             Our attention is fully focused on You. Do not hesitate to contact us
             at any time
-          </div>
+          </p>
 
           <div className="mb-4">
             <form
@@ -318,29 +318,29 @@ const ContactPage = () => {
 
       <section className="mb-8 md:mb-12 2xl:mb-16">
         <div className="flex justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center">
-          <div>Around the world:</div>
+          <h2>Around the world:</h2>
           <div className="">
-            <div>XYMA&nbsp;Analytics</div>
+            <h2>XYMA&nbsp;Analytics</h2>
             <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
 
-        <div className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2">
+        <p className="text-[#60646C] text-sm md:text-base lg:text-lg xl:text-base 2xl:text-xl text-center mt-2">
           Installations of Ultrasonic Waveguide Sensors in different countries
-        </div>
-        <div className=" h-[200px] md:h-auto">
+        </p>
+        <figure className=" h-[200px] md:h-auto">
           <img
             className="object-cover w-full h-full"
             src={map}
             alt="map"
             data-aos="fade"
           ></img>
-        </div>
+        </figure>
       </section>
 
       <div className="text-center flex justify-center">
         <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold mb-4 md:mb-6 2xl:mb-8">
-          <div>Location</div>
+          <h2>Location</h2>
           <img className="w-full h-2" src={line} alt="line"></img>
         </div>
       </div>
@@ -368,31 +368,31 @@ const ContactPage = () => {
                 src={location}
                 alt="Location Icon"
               />
-              <div className="ml-4 text-[#60646C] font-semibold">
+              <h3 className="ml-4 text-[#60646C] font-semibold">
                 Current Location:
-                <div className="text-black">XYMA ANALYTICS PRIVATE LIMITED</div>
-                <div className="text-black">
+                <p className="text-black">XYMA ANALYTICS PRIVATE LIMITED</p>
+                <address className="text-black">
                   B4-01, 4th Floor, Phase II, B-Block, IITM Research Park,
                   <br /> Kanagam Road, Taramani, Chennai, TamilNadu,
                   <br /> India - 600113.
-                </div>
-              </div>
+                </address>
+              </h3>
             </div>
 
             <div className="mt-3 flex border border-gray-300 rounded-xl p-2">
               <img className="w-7 h-7 mt-0.5" src={mail} alt="Mail Icon" />
-              <div className="ml-4 text-[#60646C] font-semibold">
+              <h3 className="ml-4 text-[#60646C] font-semibold">
                 Email Address:
-                <div className="text-black">info@xyma.in</div>
-              </div>
+                <p className="text-black">info@xyma.in</p>
+              </h3>
             </div>
 
             <div className="mt-3 flex border border-gray-300 rounded-xl p-2">
               <img className="w-7 h-7 mt-0.5" src={call} alt="mobile Icon" />
-              <div className="ml-4 text-[#60646C] font-semibold">
+              <h3 className="ml-4 text-[#60646C] font-semibold">
                 Contact:
-                <div className="text-black">(+91) 9442949347</div>
-              </div>
+                <p className="text-black">(+91) 9442949347</p>
+              </h3>
             </div>
           </div>
         </div>

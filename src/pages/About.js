@@ -223,51 +223,51 @@ const About = () => {
         <div className="absolute h-full w-full inset-0 p-8 md:p-16 text-white">
           <div className="w-full h-full xl:flex">
             <div className="w-full xl:w-[90%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
-              <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold">
+              <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold">
                 2019
-              </div>
-              <div className="text-lg md:text-3xl xl:text-4xl 2xl:text-6xl font-normal">
+              </p>
+              <p className="text-lg md:text-3xl xl:text-4xl 2xl:text-6xl font-normal">
                 Founded through the shine of CNDE, <br />
                 IIT Madras, and incubated at IIT Madras <br /> Incubation Cell
-              </div>
+              </p>
             </div>
             <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
               <div>
-                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   50+
-                </div>
-                <div className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                </p>
+                <p className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Years&nbsp;of&nbsp;Industrial
                   <br />
                   Experience
-                </div>
+                </p>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   15+
-                </div>
-                <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                </p>
+                <p className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Intellectual
                   <br />
                   Properties
-                </div>
+                </p>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
+                <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
                   20+
-                </div>
-                <div className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
+                </p>
+                <p className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Projects&nbsp;Across
                   <br />
                   Globe
-                </div>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* bottom text */}
-      <div
+      <h3
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px] mb-[20px] md:mb-[70px]"
         style={{
           backgroundImage:
@@ -277,162 +277,162 @@ const About = () => {
         }}
       >
         ABOUT US
-      </div>
+      </h3>
 
       {/* icon menu */}
       {renderIconMenu && (
-        <div
+        <nav
           className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-5 py-4 rounded-r-2xl"
           data-aos=""
         >
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <RiMapPinTimeLine size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GrGroup size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <LiaSitemapSolid size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <PiCircuitryLight size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section5)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section5")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <FaLaptopCode size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section6)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section6")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiSoundWaves size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section7)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section7")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <MdOutlineDesignServices size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section8)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section8")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <TbBrandPython size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section9)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section9")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <BsClipboardData size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section10)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section10")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GrUserAdmin size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section11)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section11")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiAchievement size={20} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section12)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section12")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <FaListCheck size={20} />
-          </div>
-        </div>
+          </button>
+        </nav>
       )}
 
       <section id="section1" ref={sectionRefs.section1}>
         <div className="mt-8 mx-[5%] mb-8 md:mb-12">
           <div className="text-center flex justify-center">
             <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-              <div>About XYMA</div>
+              <h1>About XYMA</h1>
               <img className="w-full h-2" src={line} alt="line"></img>
             </div>
           </div>
-          <div className="text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl mt-2">
+          <p className="text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl mt-2">
             "XYMA Analytics is a deep-tech company started from IIT Madras,
             serving 15+ MNCs globally now to provide them with accurate
             multi-point temperature and multi-parameter measurements through
             patented ultrasonic waveguide technology."
-          </div>
+          </p>
         </div>
 
         {/* arrow box */}
@@ -505,38 +505,38 @@ const About = () => {
             >
               <div className="flex gap-2">
                 <div className=" w-1/2 flex flex-col items-center">
-                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-2">
+                  <h2 className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl mb-2">
                     Incubation Partner
-                  </div>
-                  <div className="flex justify-center">
+                  </h2>
+                  <figure className="flex justify-center">
                     <img
                       src={iitmic}
                       alt="iitmic"
                       className="w-[80%] object-cover"
                     />
-                  </div>
+                  </figure>
                 </div>
 
                 <div className="border border-[#CDCED6] mt-4"></div>
 
                 <div className=" w-1/2 flex flex-col justify-between items-center">
-                  <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl">
+                  <h2 className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl">
                     Accelerators
-                  </div>
-                  <div className="flex justify-center">
+                  </h2>
+                  <figure className="flex justify-center">
                     <img
                       src={nasscom}
                       alt="nasscom"
                       className="w-[80%] object-cover"
                     />
-                  </div>
-                  <div className="flex justify-center">
+                  </figure>
+                  <figure className="flex justify-center">
                     <img
                       src={shell}
                       alt="shell"
                       className="w-[80%] object-cover"
                     />
-                  </div>
+                  </figure>
                 </div>
               </div>
               {/* empty div for arrow 1 - small screen*/}
@@ -544,27 +544,27 @@ const About = () => {
             </div>
 
             {/* text 1 */}
-            <div className=" relative w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+            <p className=" relative w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
               Through strategic alliances with governmental bodies at national
               levels, we have cultivated a network of support that enriches our
               endeavors. These partnerships provide us with regulatory guidance
               and access to funding streams that empower us to innovate and
               execute our initiatives effectively.
-            </div>
+            </p>
           </div>
 
           <div className=" flex flex-col-reverse md:flex-row justify-between mb-2">
             {/* text 2 */}
-            <div className="w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+            <p className="w-[60%] md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
               Together with our government allies and corporates, we are shaping
               a brighter future and creating lasting value for our stakeholders.
-            </div>
+            </p>
             {/* box 2 */}
             <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-2 shadow-2xl">
               <div>
-                <div className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-4 text-center">
+                <h2 className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-4 text-center">
                   Callibration Partners
-                </div>
+                </h2>
                 {/* empty div for arrow */}
                 <div
                   className=" absolute left-0 top-[45%]  w-1"
@@ -574,20 +574,20 @@ const About = () => {
                 <div className="absolute left-0 top-1/2  w-1" id="box3"></div>
 
                 <div className="flex justify-center gap-4 py-4">
-                  <div className="flex justify-center mb-4">
+                  <figure className="flex justify-center mb-4">
                     <img
                       src={cnde}
                       alt="cnde"
                       className="w-[80%] object-cover"
                     />
-                  </div>
-                  <div className="flex justify-center mb-4">
+                  </figure>
+                  <figure className="flex justify-center mb-4">
                     <img
                       src={fcri}
                       alt="fcri"
                       className="w-[80%] object-cover"
                     />
-                  </div>
+                  </figure>
                 </div>
               </div>
 
@@ -604,30 +604,26 @@ const About = () => {
               id="box4"
             >
               <div className=" w-full">
-                <div className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2 text-center">
+                <h2 className="font-semibold lg:text-base xl:text-base 2xl:text-xl mb-2 text-center">
                   Technological Partner
-                </div>
+                </h2>
                 <div className="flex flex-col justify-center gap-4">
-                  <div className="flex justify-center py-12 px-4 2xl:px-16 2xl:py-16">
-                    <img
-                      src={qualcomm}
-                      alt="qualcomm"
-                      className=""
-                    />
-                  </div>
+                  <figure className="flex justify-center py-12 px-4 2xl:px-16 2xl:py-16">
+                    <img src={qualcomm} alt="qualcomm" className="" />
+                  </figure>
                 </div>
               </div>
               {/* empty div for arrow 2 - small screen*/}
               <div className="absolute w-4 top-[10%] right-[20%]" id="box8" />
             </div>
             {/* text 3 */}
-            <div className="w-full md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
+            <p className="w-full md:w-[30%] text-xs lg:text-sm 2xl:text-lg font-medium flex items-center text-center mb-4 md:mb-0">
               Our primary focus centers on the dynamic fusion of Ultrasonic
               Technology and Artificial Intelligence, a synergistic pairing
               poised to revolutionize industrial landscapes. Through exhaustive
               Research and Development endeavors, we meticulously sculpt and
               refine our offerings to clients
-            </div>
+            </p>
           </div>
         </div>
       </section>
@@ -640,7 +636,7 @@ const About = () => {
         {/* group pic */}
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-            <div>The Team</div>
+            <h1>The Team</h1>
             <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
@@ -660,18 +656,18 @@ const About = () => {
       >
         <div className="text-center flex justify-center mb-4 md:mb-6 2xl:mb-8">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
-            <div>Team Division</div>
+            <h2>Team Division</h2>
             <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
-        <div className="md:mx-[10%] mb-10">
+        <figure className="md:mx-[10%] mb-10">
           <img
             className="mt-4 rounded-2xl"
             src={teamLeadPic}
             alt="teamLeads"
             data-aos="zoom-in-up"
           ></img>
-        </div>
+        </figure>
       </section>
 
       <div className="relative">
@@ -696,7 +692,7 @@ const About = () => {
             Electronics Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div
+            <figure
               className="w-full md:w-[50%] mb-4 md:mb-0"
               data-aos={isLargeScreen ? "" : "slide-right"}
             >
@@ -705,8 +701,8 @@ const About = () => {
                 alt="electronicsTeam"
                 className="rounded-2xl"
               />
-            </div>
-            <div
+            </figure>
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-right" : ""}
             >
@@ -718,7 +714,7 @@ const About = () => {
               standards. They collaborate with other departments to integrate
               electronics into products, enhance functionality, and drive
               innovation in the company's offerings.
-            </div>
+            </p>
           </div>
         </section>
 
@@ -736,7 +732,7 @@ const About = () => {
             Software Development Team
           </center>
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-            <div
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-left" : ""}
             >
@@ -750,8 +746,8 @@ const About = () => {
               software solutions. Collaboration with other departments is key to
               ensuring that the software meets the needs of the business and its
               customers.
-            </div>
-            <div
+            </p>
+            <figure
               className="w-full md:w-[50%]"
               data-aos={isLargeScreen ? "" : "slide-left"}
             >
@@ -760,7 +756,7 @@ const About = () => {
                 alt="softwareTeam"
                 className="rounded-2xl"
               />
-            </div>
+            </figure>
           </div>
         </section>
 
@@ -778,13 +774,13 @@ const About = () => {
             Ultrasonics Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div
+            <figure
               className="w-full md:w-[50%] mb-4 md:mb-0"
               data-aos={isLargeScreen ? "" : "slide-right"}
             >
               <img src={portsTeam} alt="portsTeam" className="rounded-2xl" />
-            </div>
-            <div
+            </figure>
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-right" : ""}
             >
@@ -796,7 +792,7 @@ const About = () => {
               operations. They collaborate with other departments to integrate
               ultrasonic solutions into products and processes, improving
               quality control, safety, and performance.
-            </div>
+            </p>
           </div>
         </section>
 
@@ -814,7 +810,7 @@ const About = () => {
             Mechanical Designing Team
           </center>
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-            <div
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-left" : ""}
             >
@@ -826,13 +822,13 @@ const About = () => {
               functional. The team often uses tools like Adobe Creative Suite,
               Sketch, and Figma, and works closely with other departments, such
               as marketing and development.
-            </div>
-            <div
+            </p>
+            <figure
               className="w-full md:w-[50%]"
               data-aos={isLargeScreen ? "" : "slide-left"}
             >
               <img src={designTeam} alt="designTeam" className="rounded-2xl" />
-            </div>
+            </figure>
           </div>
         </section>
 
@@ -850,13 +846,13 @@ const About = () => {
             Software Backend and Operations Team
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div
+            <figure
               className="w-full md:w-[50%] mb-4 md:mb-0"
               data-aos={isLargeScreen ? "" : "slide-right"}
             >
               <img src={pythonTeam} alt="pythonTeam" className="rounded-2xl" />
-            </div>
-            <div
+            </figure>
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-right" : ""}
             >
@@ -868,7 +864,7 @@ const About = () => {
               software, leveraging Python's versatility and extensive libraries.
               They collaborate with other departments to integrate Python-based
               solutions into projects.
-            </div>
+            </p>
           </div>
         </section>
 
@@ -886,7 +882,7 @@ const About = () => {
             Data Analytics Team
           </center>
           <div className="flex flex-col-reverse md:flex-row gap-8 mb-6 md:mb-10">
-            <div
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-left" : ""}
             >
@@ -894,13 +890,13 @@ const About = () => {
               insights, using advanced techniques to predict future trends. Our
               team integrates deep learning, computer vision, and thermal
               cameras to uphold the highest standards of work safety.
-            </div>
-            <div
+            </p>
+            <figure
               className="w-full md:w-[50%]"
               data-aos={isLargeScreen ? "" : "slide-left"}
             >
               <img src={dataTeam} alt="dataTeam" className="rounded-2xl" />
-            </div>
+            </figure>
           </div>
         </section>
 
@@ -918,13 +914,13 @@ const About = () => {
             Admin Department
           </center>
           <div className="md:flex gap-8 mb-6 md:mb-10">
-            <div
+            <figure
               className="w-full md:w-[50%] mb-4 md:mb-0"
               data-aos={isLargeScreen ? "" : "slide-right"}
             >
               <img src={adminTeam} alt="adminTeam" className="rounded-2xl" />
-            </div>
-            <div
+            </figure>
+            <p
               className="w-full md:w-[50%] text-center text-[#60646C] text-xs lg:text-base 2xl:text-2xl flex items-center -z-10"
               data-aos={isLargeScreen ? "slide-right" : ""}
             >
@@ -936,7 +932,7 @@ const About = () => {
               with other departments to support administrative needs, assist
               with human resources tasks like onboarding and payroll, and ensure
               compliance with company policies and procedures.
-            </div>
+            </p>
           </div>
         </section>
       </div>
@@ -948,18 +944,18 @@ const About = () => {
       >
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
-            <div>The Vision</div>
+            <h1>The Vision</h1>
             <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
-        <div className="mb-4 md:mb-6 2xl:mb-8 text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl">
+        <p className="mb-4 md:mb-6 2xl:mb-8 text-[#60646C] text-center text-sm md:text-base lg:text-base xl:text-base 2xl:text-xl">
           Our vision is to provide reliable measurements at the most unreliable
           times. Democratize sensor-based process efficiency in Industries by
           enabling them with rich data sets of process parameters. Provide
           plant-wide distributed and concurrent sensing solutions for disruptive
           data-driven decision making with enhanced sustainability.
-        </div>
-        <div className="grid grid-cols-2 md:flex gap-4 py-2">
+        </p>
+        <figure className="grid grid-cols-2 md:flex gap-4 py-2">
           <img
             className="w-[100%] md:w-[24%] md:h-[50%] rounded-2xl"
             src={frame1}
@@ -984,7 +980,7 @@ const About = () => {
             alt="Frame 4"
             data-aos="fade-up"
           />
-        </div>
+        </figure>
       </section>
 
       <section
@@ -994,118 +990,120 @@ const About = () => {
       >
         <div className="text-center flex justify-center">
           <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4 md:mb-6 2xl:mb-8">
-            <div>Key Values</div>
+            <h1>Key Values</h1>
             <img className="w-full h-2" src={line} alt="line"></img>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4 md:flex justify-evenly mx-[15%] md:mx-0 text-center lg:text-base xl:text-base 2xl:text-xl mb-4 md:mb-8 xl:mb-12 2xl:mb-16">
-          <div className="flex flex-col items-center">
+          <figure className="flex flex-col items-center">
             <img
               className="w-auto md:w-[60%]"
               src={c1}
               alt="collaboration"
             ></img>
-            <div className="font-semibold mt-2">Colloboration</div>
-          </div>
-          <div className="flex flex-col items-center">
+            <figcaption className="font-semibold mt-2">
+              Colloboration
+            </figcaption>
+          </figure>
+          <figure className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c2} alt="Security"></img>
-            <div className="font-semibold mt-2">Security</div>
-          </div>
-          <div className="flex flex-col items-center">
+            <figcaption className="font-semibold mt-2">Security</figcaption>
+          </figure>
+          <figure className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c3} alt="Innovation"></img>
-            <div className="font-semibold mt-2">Innovation</div>
-          </div>
-          <div className="flex flex-col items-center">
+            <figcaption className="font-semibold mt-2">Innovation</figcaption>
+          </figure>
+          <figure className="flex flex-col items-center">
             <img
               className="w-auto md:w-[60%]"
               src={c4}
               alt="Communication"
             ></img>
-            <div className="font-semibold mt-2">Communication</div>
-          </div>
-          <div className="flex flex-col items-center">
+            <figcaption className="font-semibold mt-2">Communication</figcaption>
+          </figure>
+          <figure className="flex flex-col items-center">
             <img
               className="w-auto md:w-[60%]"
               src={c5}
               alt="Accessibility"
             ></img>
-            <div className="font-semibold mt-2">Accessibility</div>
-          </div>
-          <div className="flex flex-col items-center">
+            <figcaption className="font-semibold mt-2">Accessibility</figcaption>
+          </figure>
+          <figure className="flex flex-col items-center">
             <img className="w-auto md:w-[60%]" src={c6} alt="Efficiency"></img>
-            <div className="font-semibold mt-2">Efficiency</div>
-          </div>
+            <figcaption className="font-semibold mt-2">Efficiency</figcaption>
+          </figure>
         </div>
 
         <div className=" md:flex mx-[5%] md:mx-[8%] xl:mx-[15%]">
           {/* react slick carousel */}
           <div className="  w-full md:w-[40%]">
             <Slider {...settings} className=" ">
-              <div className=" text-center">
+              <figure className=" text-center">
                 <img
                   className=" w-full object-cover rounded-2xl"
                   src={ceo}
                   alt="ceo"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
+                <p className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
                   Dr. Nishanth Raja
-                </div>
-                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                </p>
+                <p className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   CEO and Co-founder
-                </div>
-              </div>
-              <div className=" text-center">
+                </p>
+              </figure>
+              <figure className=" text-center">
                 <img
                   className=" w-full object-cover rounded-2xl"
                   src={cto}
                   alt="cto"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
+                <p className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
                   Aswin Kumar Kathirvel
-                </div>
-                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                </p>
+                <p className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   CTO and Co-founder
-                </div>
-              </div>
-              <div className="text-center">
+                </p>
+              </figure>
+              <figure className="text-center">
                 <img
                   className="w-full object-cover rounded-2xl"
                   src={adv1}
                   alt="adv1"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
+                <p className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
                   Prof. Krishnan Balasubramaniam
-                </div>
-                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                </p>
+                <p className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   Founder & Advisor
-                </div>
-              </div>
-              <div className="text-center">
+                </p>
+              </figure>
+              <figure className="text-center">
                 <img
                   className="w-full object-cover rounded-2xl"
                   src={adv2}
                   alt="adv2"
                 />
-                <div className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
+                <p className="text-[#1C2024] font-semibold md:text-base lg:text-base 2xl:text-xl mt-2">
                   Prof. Prabhu Rajagopal
-                </div>
-                <div className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
+                </p>
+                <p className="text-[#60646C] text-xs lg:text-sm 2xl:text-base">
                   Founder & Advisor
-                </div>
-              </div>
+                </p>
+              </figure>
             </Slider>
           </div>
 
           <div className=" w-full md:w-[60%] flex flex-col justify-start py-4 px-8 mt-8 2xl:mt-20">
-            <div className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
+            <h2 className="text-center font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-4xl text-[#1C2024]">
               The Mission
-            </div>
-            <div className="text-center text-[#60646C] text-sm lg:text-base xl:text-base 2xl:text-xl mt-2">
+            </h2>
+            <p className="text-center text-[#60646C] text-sm lg:text-base xl:text-base 2xl:text-xl mt-2">
               Our mission is to increase efficiency in operations through
               IIoT-enabled process parameter monitoring and AI-based predictive
               maintenance to enhance asset life and prevent unplanned downtime
               with Ultrasonic Waveguide Technology.
-            </div>
+            </p>
           </div>
         </div>
       </section>

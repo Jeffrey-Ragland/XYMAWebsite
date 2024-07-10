@@ -172,19 +172,19 @@ const Resource = () => {
           alt="Case Studies"
         />
         <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
-          <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
+          <h1 className="text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
             Case Studies
-          </div>
-          <div className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
+          </h1>
+          <h2 className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
             Xyma Analytics Case Studies are documented examples illustrating the
             application and effectiveness of Xyma Analytics' solutions in
             real-world scenarios
-          </div>
+          </h2>
         </div>
       </section>
 
       {/* bottom text */}
-      <div
+      <h3
         className="text-center font-semibold text-[40px] md:text-[90px] 2xl:text-[120px] -mt-[20px] md:-mt-[50px] 2xl:-mt-[65px]"
         style={{
           backgroundImage:
@@ -194,91 +194,91 @@ const Resource = () => {
         }}
       >
         CASE STUDIES
-      </div>
+      </h3>
 
       {/* icon menu */}
       {renderIconMenu && selectedContent === "All" && (
-        <div
+        <nav
           className="hidden border border-r-orange-400 border-t-orange-400 border-b-orange-400 bg-white z-40 fixed left-0 top-1/2 transform -translate-y-1/2 text-xl px-2 md:flex flex-col gap-8 py-4 rounded-r-2xl"
           data-aos=""
         >
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section1)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section1")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiMetalDisc size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section2)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section2")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiMetalBar size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section3")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiShipBow size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section4")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiGreaseTrap size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section5)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section5")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiCircuitry size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section6)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section6")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiOilPump size={25} />
-          </div>
+          </button>
 
-          <div
+          <button
             onClick={() => handleSectionScroll(sectionRefs.section7)}
-            className={`cursor-pointer ${
+            className={`${
               activeSection.includes("section7")
                 ? "text-orange-400"
                 : "text-gray-400"
             }`}
           >
             <GiPaintBucket size={25} />
-          </div>
-        </div>
+          </button>
+        </nav>
       )}
 
       {/* resources title */}
@@ -459,9 +459,9 @@ const Resource = () => {
               data-aos="slide-left"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Aluminum
-                </div>
+                </h1>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -485,10 +485,10 @@ const Resource = () => {
                       alt="aluminum1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     A 10°C temperature deviation reduces efficiency, promotes
                     anode effect, and increases PFC emissions.
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -499,10 +499,10 @@ const Resource = () => {
                       alt="aluminum2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     20°C rise halves reformer tube lifespan; design temperature
                     crucial.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -517,9 +517,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Steel
-                </div>
+                </h1>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -539,9 +539,9 @@ const Resource = () => {
                   <div className="mb-4">
                     <img className="w-full h-full rounded-2xl" src={steel1} alt="steel1" />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     Extending ladle life for one cycle yields steel worth $5.1M
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -552,10 +552,10 @@ const Resource = () => {
                       alt="steel2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Extending the lifespan of the ladle for one cycle results in
                     producing steel valued at $5.1 million
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -570,9 +570,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Marine
-                </div>
+                </h1>
                 {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -596,10 +596,10 @@ const Resource = () => {
                       alt="marine1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     The marine industry handles over 90% of the world's trade,
                     transporting around 11 billion tons of goods each year.
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -610,10 +610,10 @@ const Resource = () => {
                       alt="marine2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The marine industry employs more than 1.6 million seafarers
                     globally, supporting the backbone of international trade.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -628,9 +628,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Oil&nbsp;&&nbsp;Gas
-                </div>
+                </h1>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -650,20 +650,20 @@ const Resource = () => {
                   <div className="mb-4">
                     <img className="w-full h-full" src={oil1} alt="oil1" />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     30% of maintenance budget influenced by lubricants,
                     highlighting their significant role in operational expenses
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
                     <img className="w-full h-full" src={oil2} alt="oil2"></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     Lubricants significantly affect operational costs,
                     accounting for 30% of the maintenance budget
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -679,9 +679,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Semiconductor
-                </div>
+                </h1>
                 {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -705,10 +705,10 @@ const Resource = () => {
                       alt="semiconductor1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     In 2023, the Global Semiconductor Industry is Projected to
                     Reach $600 Billion in Annual Sales.
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -719,11 +719,11 @@ const Resource = () => {
                       alt="semiconductor2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The semiconductor industry is crucial for modern
                     electronics, with a market value projected to exceed $600
                     billion by 2025.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -738,9 +738,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Mining
-                </div>
+                </h1>
                 {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -764,11 +764,11 @@ const Resource = () => {
                       alt="mining1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     The mining industry, worth over $1.5 trillion, supplies
                     crucial minerals and metals for global manufacturing and
                     construction.
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -779,11 +779,11 @@ const Resource = () => {
                       alt="mining2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The mining industry extracts essential minerals and metals
                     vital for global economic development and industrial
                     production.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -798,9 +798,9 @@ const Resource = () => {
               data-aos="zoom-out"
             >
               <div className="mb-4 flex justify-between">
-                <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Paints
-                </div>
+                </h1>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer"
                   style={{
@@ -824,10 +824,10 @@ const Resource = () => {
                       alt="paint1"
                     />
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     Water-based paints account for about 80% of all paints sold
                     in the residential market.
-                  </div>
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -838,10 +838,10 @@ const Resource = () => {
                       alt="paint2"
                     ></img>
                   </div>
-                  <div className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
+                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
                     The use of low-VOC paints has increased by over 50% in the
                     past decade due to environmental regulations.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
