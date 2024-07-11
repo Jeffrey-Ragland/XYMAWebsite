@@ -102,8 +102,8 @@ const AdminPortal = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    fetch("http://34.93.162.58:4000/backend/addposition", {
-    // fetch("http://localhost:4000/backend/addposition", {
+    fetch("http://43.204.133.45:4000/sensor/addposition", {
+      // fetch("http://localhost:4000/backend/addposition", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -132,8 +132,8 @@ const AdminPortal = () => {
 
   //getting position details from db
   const fetchPosition = () => {
-    fetch("http://34.93.162.58:4000/backend/getposition", {
-    // fetch("http://localhost:4000/backend/getposition", {
+    fetch("http://43.204.133.45:4000/sensor/getposition", {
+      // fetch("http://localhost:4000/backend/getposition", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -168,7 +168,7 @@ const AdminPortal = () => {
 
   //deleting position from db
   const handleDeletePosition = (positionId) => {
-    fetch(`http://34.93.162.58:4000/backend/deleteposition/${positionId}`, {
+    fetch(`http://43.204.133.45:4000/sensor/deleteposition/${positionId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -194,7 +194,7 @@ const AdminPortal = () => {
     const positionsToDelete = position.filter(pos => pos.DepartmentName === department);
 
     positionsToDelete.forEach(pos => {
-      fetch(`http://34.93.162.58:4000/backend/deleteposition/${pos._id}`, {
+      fetch(`http://43.204.133.45:4000/sensor/deleteposition/${pos._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -219,7 +219,7 @@ const AdminPortal = () => {
   //update position name
   const handleUpdatePositionName = (positionId) => {
     const editedName = editedPositions[positionId];
-    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
+    fetch(`http://43.204.133.45:4000/sensor/updateposition/${positionId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -250,7 +250,7 @@ const AdminPortal = () => {
   // update position description
   const handleUpdatePositionDesc = (positionId) => {
     const editedDesc = editedPositionDesc[positionId];
-    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
+    fetch(`http://43.204.133.45:4000/sensor/updateposition/${positionId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -281,7 +281,7 @@ const AdminPortal = () => {
   // update last date
   const handleUpdateDate = (positionId) => {
     const editedDate = editedDates[positionId];
-    fetch(`http://34.93.162.58:4000/backend/updateposition/${positionId}`, {
+    fetch(`http://43.204.133.45:4000/sensor/updateposition/${positionId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const ProtectedRoute = () => {
         const token = localStorage.getItem('token');
         if(token) {
             // fetch('http://localhost:4000/backend/validateToken',{
-            fetch("http://34.93.162.58:4000/backend/validateToken", {
+            fetch("http://43.204.133.45:4000/sensor/validateToken", {
               method: "POST",
               headers: {
                 "Contnt-Type": "application/json",
@@ -19,7 +19,7 @@ const ProtectedRoute = () => {
               .then((response) => response.json())
               .then((data) => {
                 if (data.valid) {
-                 // console.log(data.valid)
+                  // console.log(data.valid)
                   setIsAuthenticated(true);
                 } else {
                   localStorage.removeItem("token");

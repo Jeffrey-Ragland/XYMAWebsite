@@ -25,6 +25,7 @@ import ipamsIcon2 from "../Assets/ipamsIcon2.png";
 import ipamsIcon3 from "../Assets/ipamsIcon3.png";
 import utmapsDemo from '../videoAssets/utmapsDemo.mp4';
 import portsDemo from "../videoAssets/portsDemo.mp4";
+import ztarDemo from '../videoAssets/ztarDemo.mp4';
 import ipamsDemo from "../videoAssets/ipamsDemo.mp4";
 import additionalLogo1 from '../Assets/additionalLogo1.png';
 import additionalLogo2 from "../Assets/additionalLogo2.png";
@@ -1619,7 +1620,7 @@ const Product = () => {
             </div>
             <div className="flex justify-center p-0.5">
               <video autoPlay controls>
-                <source src={portsDemo} type="video/mp4" />
+                <source src={ztarDemo} type="video/mp4" />
               </video>
             </div>
           </div>

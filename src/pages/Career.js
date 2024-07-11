@@ -132,7 +132,7 @@ const Career = () => {
   //getting position details from db
   const fetchPosition = () => {
     // fetch("http://localhost:4000/backend/getposition",{
-      fetch("http://34.93.162.58:4000/backend/getposition", {
+      fetch("http://43.204.133.45:4000/sensor/getposition", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -178,8 +178,8 @@ const Career = () => {
 
     // console.log('backend form data',formData)
 
-    fetch("http://34.93.162.58:4000/backend/uploadapplicationform", {
-    // fetch("http://localhost:4000/backend/uploadapplicationform", {
+    fetch("http://43.204.133.45:4000/sensor/uploadapplicationform", {
+      // fetch("http://localhost:4000/backend/uploadapplicationform", {
       method: "POST",
       body: formData,
     })

@@ -16,8 +16,8 @@ const AdminApplications = () => {
   const [selectedApplicationUserId, setSelectedApplicationUserId] = useState(null);
   const [openUserApplication, setOpenUserApplication] = useState(false);
   const fetchApplicationForm = () => {
-    fetch("http://34.93.162.58:4000/backend/getapplicationform")
-    // fetch("http://localhost:4000/backend/getapplicationform")
+    fetch("http://43.204.133.45:4000/sensor/getapplicationform")
+      // fetch("http://localhost:4000/backend/getapplicationform")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
