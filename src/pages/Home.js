@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./Sb.css";
-import steel from '../Assets/steelHome.png';
-import lubricants from '../Assets/lubricantsHome.png';
-import paints from '../Assets/paintsHome.jpg';
-import semiconductor from '../Assets/semiconductorHome.jpg';
+import steel from '../Assets/steel1.png';
+import lubricants from '../Assets/marine2.jpeg';
+import paints from "../Assets/paintsresized.jpg";
+import semiconductor from '../Assets/semiconductor1.jpg';
 import utmaps from '../Assets/newut.jpeg';
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";

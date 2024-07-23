@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HiChevronLeft } from "react-icons/hi2";
 import csImg1 from "../Assets/paint1.png";
 import csImg2 from "../Assets/paint2.png";
-import paints from "../Assets/paints2.jpg";
+import paints from "../Assets/paintsresized.jpg";
 import line from "../Assets/underline.png";
 import { useNavigate } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";

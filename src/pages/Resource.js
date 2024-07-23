@@ -5,14 +5,14 @@ import newAl2 from "../Assets/newAluminium2.png";
 import steel1 from '../Assets/steel1.png';
 import steel2 from '../Assets/steel3.png';
 import marine1 from '../Assets/marine1.jpg';
-import marine2 from "../Assets/marine2.png";
-import oil1 from '../Assets/tube1.png';
+import marine2 from "../Assets/marine2.jpeg";
+import oil1 from '../Assets/refiniries2new.png';
 import oil2 from '../Assets/oil2.png';
 import semiconductor1 from "../Assets/semiconductor1.jpg";
 import semiconductor2 from "../Assets/semiconductor2.jpg";
 import mining1 from "../Assets/mining1.jpg";
 import mining2 from "../Assets/mining2.png";
-import paints1 from '../Assets/paintsresized.png'; 
+import paints1 from '../Assets/paintsresized.jpg'; 
 import paints2 from '../Assets/paints2.jpg';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -176,8 +176,8 @@ const Resource = () => {
             Case Studies
           </h1>
           <h2 className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
-            Xyma Analytics Case Studies are documented examples illustrating the
-            application and effectiveness of Xyma Analytics' solutions in
+            XYMA Analytics Case Studies are documented examples illustrating the
+            application and effectiveness of XYMA Analytics' solutions in
             real-world scenarios
           </h2>
         </div>
@@ -485,9 +485,10 @@ const Resource = () => {
                       alt="aluminum1"
                     />
                   </div>
-                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
-                    A 10°C temperature deviation reduces efficiency, promotes
-                    anode effect, and increases PFC emissions.
+                  <p className="text-base md:text-lg  2xl:text-2xl mb-4 md:mb-0">
+                    How XYMA analytics can increase Profitability by 7% to 9%
+                    through wireless continuous real-time temperature monitoring
+                    of POT Lines.
                   </p>
                 </div>
 
@@ -499,9 +500,9 @@ const Resource = () => {
                       alt="aluminum2"
                     ></img>
                   </div>
-                  <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    20°C rise halves reformer tube lifespan; design temperature
-                    crucial.
+                  <p className="text-base md:text-lg  2xl:text-2xl">
+                    World's 1st Real-time Temperature Monitoring of Collector
+                    Bar and Side Shell of PotLine and Cryolite Bath.
                   </p>
                 </div>
               </div>
@@ -544,8 +545,9 @@ const Resource = () => {
                     />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
-                    Extending ladle life for one cycle yields steel worth $5.1M
-                  </p>
+                    How XYMA Analytics can Increase life of Tundish & reduce
+                    TUN (Tundish Usage Number) % per tonne of Steel.
+                  </p> 
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -652,7 +654,7 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full" src={oil1} alt="oil1" />
+                    <img className="w-full h-full rounded-2xl" src={oil1} alt="oil1" />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     30% of maintenance budget influenced by lubricants,

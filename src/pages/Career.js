@@ -4,7 +4,7 @@ import framevector from '../Assets/framevector.png'
 import photo from '../Assets/photo.png'
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
-import noData from '../Assets/noData.jpg';
+import noData from '../Assets/noData.jpeg';
 import { IoMdClose } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
