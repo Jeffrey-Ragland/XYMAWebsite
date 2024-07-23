@@ -9,7 +9,7 @@ const ProtectedRoute = () => {
         const token = localStorage.getItem('token');
         if(token) {
             // fetch('http://localhost:4000/backend/validateToken',{
-            fetch("http://43.204.133.45:4000/sensor/validateToken", {
+            fetch("https://database.xyma.live/sensor/validateToken", {
               method: "POST",
               headers: {
                 "Contnt-Type": "application/json",

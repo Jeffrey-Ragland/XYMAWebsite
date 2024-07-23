@@ -413,15 +413,20 @@ export const Home = () => {
         {/* text with underline */}
         <header
           // ref={sectionRefs.section1}
-          className="flex justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 lg:mb-16 mx-[5%] md:mx-[8%] xl:mx-[5%]"
+          className="flex flex-col justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 mx-[5%] md:mx-[8%] xl:mx-[5%]"
         >
-          <h2 className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-            <p>Impact&nbsp;of&nbsp;discrete&nbsp;inaccurate</p>
+          <h2 className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center ">
+            <p>XYMA&nbsp;Sensors:&nbsp;Transforming</p>
             <div>
-              <p>Process&nbsp;parameter&nbsp;measurements</p>
+              <p>Industries&nbsp;into&nbsp;Digital&nbsp;Industry</p>
               <img className=" w-full h-2" src={line} alt="line"></img>
             </div>
           </h2>
+          <p className="text-center text-[#60646C] mx-[5%] md:mx-[10%] text-sm md:text-base lg:text-lg 2xl:text-2xl font-medium">
+            We are known for improving Production and Product Quality by
+            ensuring Optimum Investment for Production Costs and increasing
+            Asset Life and Safety.
+          </p>
         </header>
         {/* elements cards */}
         <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
@@ -1352,10 +1357,10 @@ export const Home = () => {
             // ref={sectionRefs.section3}
             className=" flex justify-center items-center  xl:mx-[8%]"
           >
-            <header className="md:flex gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
-              <div>Making Way for</div>
+            <header className="md:flex md:flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center">
+              <div>Enhancing&nbsp;Profitable,</div>
               <div className="mx-[8%] md:mx-0 flex flex-col items-center">
-                <div>Sustainable&nbsp;Industry</div>
+                <div>Competitive&nbsp;and&nbsp;Sustainable&nbsp;Business</div>
                 <img className="w-full h-2" src={line} alt="line"></img>
               </div>
             </header>

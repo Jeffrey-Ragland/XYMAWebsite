@@ -39,7 +39,7 @@ const Footer = () => {
     const handleSubscriptionSubmit = (e) => {
       e.preventDefault();
       const toastId = toast.loading('Sending response...',{closeButton : true});
-      fetch("http://43.204.133.45:4000/sensor/subscription", {
+      fetch("https://database.xyma.live/sensor/subscription", {
         // fetch('http://localhost:4000/backend/subscription', {
         method: "POST",
         headers: {

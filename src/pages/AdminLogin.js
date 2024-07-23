@@ -20,7 +20,7 @@ const AdminLogin = () => {
 
     const handleAdminLoginSubmit = (e) => {
         e.preventDefault();
-        fetch("http://43.204.133.45:4000/sensor/adminlogin", {
+        fetch("https://database.xyma.live/sensor/adminlogin", {
           // fetch("http://localhost:4000/backend/adminlogin", {
           method: "POST",
           headers: {

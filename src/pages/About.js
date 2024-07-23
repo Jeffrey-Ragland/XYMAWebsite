@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import iit from '../Assets/Frameiit.png';
 import frame1 from '../Assets/Frame1.png';
-import frame2 from '../Assets/Frame2.jpg';
+import frame2 from '../Assets/Frame2.png';
 import frame3 from '../Assets/Frame3.png';
 import frame4 from '../Assets/Frame4.png';
 import c1 from '../Assets/Framec1.png';

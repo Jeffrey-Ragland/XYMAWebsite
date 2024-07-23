@@ -41,7 +41,7 @@ const ContactPage = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const toastId = toast.loading("Sending response...", { closeButton: true });
-    fetch("http://43.204.133.45:4000/sensor/contacts", {
+    fetch("https://database.xyma.live/sensor/contacts", {
       // http://localhost:4000/backend/contacts
       method: "POST",
       headers: {

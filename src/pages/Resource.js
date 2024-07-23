@@ -173,8 +173,8 @@ const Resource = () => {
         />
         <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
           <h1 className="text-xl md:text-3xl xl:text-5xl 2xl:text-6xl font-medium md:font-semibold text-center">
-            Digitalizing Manufacturing Industry <br />
-            with XYMA Sensors
+            "Digitalizing Manufacturing Industry <br />
+            with XYMA Sensors"
           </h1>
           {/* <h2 className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
             Case Studies
