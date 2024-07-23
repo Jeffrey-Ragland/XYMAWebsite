@@ -32,6 +32,8 @@ import shell from '../Brand/shell.png';
 import cnde from '../Brand/cnde.png';
 import fcri from '../Brand/fcri.png';
 import qualcomm from "../Brand/qualcomm.png";
+import skf from '../Brand/skf2.png';
+import schneider from '../Brand/schneider2.png';
 import Slider from "react-slick";
 import { RiMapPinTimeLine } from "react-icons/ri";
 import { GrGroup } from "react-icons/gr";
@@ -623,6 +625,46 @@ const About = () => {
               poised to revolutionize industrial landscapes. Through exhaustive
               Research and Development endeavors, we meticulously sculpt and
               refine our offerings to clients
+            </p>
+          </div>
+        </div>
+
+        <center className="text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold mb-4">
+          Testimonials
+        </center>
+        <div className="mx-[8%] flex flex-col md:flex-row gap-8 mb-8">
+          <div className="flex flex-col border border-[#CDCED6] rounded-2xl shadow-2xl px-4 py-8 2xl:px-6 2xl:py-10">
+            <div className="flex justify-center mb-4">
+              <img src={skf} alt="skfLogo" className="max-w-[145px]" />
+            </div>
+            <p className="mb-2 text-[#60646C] text-xs lg:text-base 2xl:text-2xl text-justify">
+              "XYMA's groundbreaking technology promises to revolutionize
+              multipoint and multi-parameter measurements, offering precision,
+              versatility, and sustainability in one remarkable package. Excited
+              for a long-term partnership with this innovative team!"
+            </p>
+            <p className="flex justify-end text-xs lg:text-base 2xl:text-2xl font-medium text-gray-700">
+              -CEO at Vesta Si Sweden AB, an SKF Group Company
+            </p>
+          </div>
+
+          <div className="flex flex-col border border-[#CDCED6] rounded-2xl shadow-2xl px-4 py-8 2xl:px-6 2xl:py-10">
+            <div className="flex justify-center mb-4">
+              <img
+                src={schneider}
+                alt="schneiderLogo"
+                className="max-w-[145px]"
+              />
+            </div>
+            <p className="mb-2 text-[#60646C] text-xs lg:text-base 2xl:text-2xl text-justify">
+              "The sensor has truly transformed our paint manufacturing process,
+              ensuring real-time monitoring, improved accuracy, enhanced output
+              quality, and helped us derive data-driven decisions. We are
+              positive about the prospect of continuing further integration of
+              the sensors into more OEM units"
+            </p>
+            <p className="flex justify-end text-xs lg:text-base 2xl:text-2xl font-medium text-gray-700">
+              -Senior Principal Technical Expert, Schneider Electric
             </p>
           </div>
         </div>

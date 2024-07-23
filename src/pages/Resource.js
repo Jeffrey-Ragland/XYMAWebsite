@@ -172,14 +172,13 @@ const Resource = () => {
           alt="Case Studies"
         />
         <div className="absolute inset-0 text-white flex flex-col items-center justify-center">
-          <h1 className="text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-medium md:font-semibold">
-            Case Studies
+          <h1 className="text-xl md:text-3xl xl:text-5xl 2xl:text-6xl font-medium md:font-semibold text-center">
+            Digitalizing Manufacturing Industry <br />
+            with XYMA Sensors
           </h1>
-          <h2 className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
-            XYMA Analytics Case Studies are documented examples illustrating the
-            application and effectiveness of XYMA Analytics' solutions in
-            real-world scenarios
-          </h2>
+          {/* <h2 className="text-center mt-4 mx-[10%] xl:mx-[20%] text-xs md:text-lg  xl:text-base 2xl:text-2xl font-normal md:font-medium">
+            Case Studies
+          </h2> */}
         </div>
       </section>
 
@@ -486,9 +485,8 @@ const Resource = () => {
                     />
                   </div>
                   <p className="text-base md:text-lg  2xl:text-2xl mb-4 md:mb-0">
-                    How XYMA analytics can increase Profitability by 7% to 9%
-                    through wireless continuous real-time temperature monitoring
-                    of POT Lines.
+                    World's 1st Real-time Temperature Monitoring of Collector
+                    Bar and Side Shell of PotLine and Cryolite Bath.
                   </p>
                 </div>
 
@@ -501,8 +499,9 @@ const Resource = () => {
                     ></img>
                   </div>
                   <p className="text-base md:text-lg  2xl:text-2xl">
-                    World's 1st Real-time Temperature Monitoring of Collector
-                    Bar and Side Shell of PotLine and Cryolite Bath.
+                    How XYMA analytics can increase Profitability by 7% to 9%
+                    through wireless continuous real-time temperature monitoring
+                    of POT Lines.
                   </p>
                 </div>
               </div>
@@ -545,9 +544,9 @@ const Resource = () => {
                     />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
-                    How XYMA Analytics can Increase life of Tundish & reduce
-                    TUN (Tundish Usage Number) % per tonne of Steel.
-                  </p> 
+                    How XYMA Analytics can Increase life of Tundish & reduce TUN
+                    (Tundish Usage Number) % per tonne of Steel.
+                  </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
@@ -654,7 +653,11 @@ const Resource = () => {
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
                   <div className="mb-4">
-                    <img className="w-full h-full rounded-2xl" src={oil1} alt="oil1" />
+                    <img
+                      className="w-full h-full rounded-2xl"
+                      src={oil1}
+                      alt="oil1"
+                    />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
                     30% of maintenance budget influenced by lubricants,
