@@ -511,7 +511,7 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={ref} alt="refiniriesLogo" />
                   </div>
-                  <h3 className="font-semibold">Refiniries</h3>
+                  <h3 className="font-semibold">Refineries</h3>
                 </div>
               </div>
             </div>

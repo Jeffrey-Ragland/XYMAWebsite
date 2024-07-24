@@ -415,18 +415,23 @@ export const Home = () => {
           // ref={sectionRefs.section1}
           className="flex flex-col justify-center items-center mb-4 md:mb-6 mt-4 md:mt-8 lg:mt-12 mx-[5%] md:mx-[8%] xl:mx-[5%]"
         >
-          <h2 className="md:flex flex-wrap justify-center gap-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center ">
+          <h2 className="md:flex flex-wrap justify-center gap-2 mb-2 text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold text-center ">
             <p>XYMA&nbsp;Sensors:&nbsp;Transforming</p>
             <div>
               <p>Industries&nbsp;into&nbsp;Digital&nbsp;Industry</p>
               <img className=" w-full h-2" src={line} alt="line"></img>
             </div>
           </h2>
-          <p className="text-center text-[#60646C] mx-[5%] md:mx-[10%] text-sm md:text-base lg:text-lg 2xl:text-2xl font-medium">
-            We are known for improving Production and Product Quality by
-            ensuring Optimum Investment for Production Costs and increasing
-            Asset Life and Safety.
-          </p>
+          <div className="flex flex-col md:flex-row gap-2  text-[#60646C] mx-[5%] md:mx-[10%] text-sm md:text-base lg:text-lg 2xl:text-2xl font-medium">
+            <p className="font-semibold ">
+              We&nbsp;are&nbsp;renowned&nbsp;for
+            </p>
+            <ul className="ml-4 2xl:ml-8" style={{ listStyleType: "disc" }}>
+              <li>Improving Production and Product Quality.</li>
+              <li>Ensuring Optimum Investment for Production Costs.</li>
+              <li>Increasing Asset Life and Safety.</li>
+            </ul>
+          </div>
         </header>
         {/* elements cards */}
         <div className="md:flex mx-[5%] xl:mx-[8%] mb-8 md:mb-16 lg:mb-24 2xl:mb-32">
@@ -1521,9 +1526,9 @@ export const Home = () => {
           </div>
           <p className="flex justify-center items-center mt-3 text-center text-[#60646C] mx-[5%] md:mx-[8%] xl:mx-[12%] text-sm md:text-base lg:text-lg 2xl:text-xl font-medium">
             Committed to client satisfaction with constant support at all
-            stages, our aim is to aid Industry 4.0 transformation while reducing
-            environmental impact, increasing cost savings, and enhancing process
-            efficiency.
+            stages, our aim is to aid Industry 4.0 transformation while
+            increasing cost savings, enhancing process efficiency and reducing
+            environmental impact.
           </p>
         </header>
 
