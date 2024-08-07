@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import CookieConsent from 'react-cookie-consent';
-import privacy from './pdfAssets/Privacy Policy.pdf';
+import privacy from './pdfAssets/XYMAPrivacyPolicy2024.pdf';
 import RoutingPage from './components/RoutingPage';
 import './App.css';
 
