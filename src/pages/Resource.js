@@ -223,7 +223,7 @@ const Resource = () => {
             <GiMetalBar size={25} />
           </button>
 
-          <button
+          {/* <button
             onClick={() => handleSectionScroll(sectionRefs.section3)}
             className={`hover:text-orange-400 ${
               activeSection.includes("section3")
@@ -232,7 +232,7 @@ const Resource = () => {
             }`}
           >
             <GiTank size={25} />
-          </button>
+          </button> */}
 
           <button
             onClick={() => handleSectionScroll(sectionRefs.section4)}
@@ -347,7 +347,7 @@ const Resource = () => {
           </div>
 
           {/* defence */}
-          <div>
+          {/* <div>
             <div
               onClick={() => toggleContent("Defence")}
               className={`hover:text-[#013872] hover:font-bold ${
@@ -364,7 +364,7 @@ const Resource = () => {
             {selectedContent === "Defence" && (
               <div className="md:hidden border border-[#013872]"></div>
             )}
-          </div>
+          </div> */}
 
           {/* oil and gas */}
           <div>
@@ -567,7 +567,7 @@ const Resource = () => {
           )}
 
           {/* defence content */}
-          {(selectedContent === "Defence" || selectedContent === "All") && (
+          {/* {(selectedContent === "Defence" || selectedContent === "All") && (
             <div
               id="section3"
               ref={sectionRefs.section3}
@@ -577,7 +577,7 @@ const Resource = () => {
               <div className="mb-4 flex justify-between">
                 <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
                   Defence
-                </h1>
+                </h1> */}
                 {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
                   style={{
@@ -590,7 +590,7 @@ const Resource = () => {
                 >
                   Case Study
                 </span> */}
-              </div>
+              {/* </div>
 
               <div className="md:flex gap-4">
                 <div className="w-full md:w-1/2">
@@ -623,7 +623,7 @@ const Resource = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
 
           {/* oil and gas content */}
           {(selectedContent === "OilAndGas" || selectedContent === "All") && (
@@ -809,7 +809,7 @@ const Resource = () => {
             >
               <div className="mb-4 flex justify-between">
                 <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                  Paints
+                  Specialty&nbsp;Chemicals
                 </h1>
                 <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"

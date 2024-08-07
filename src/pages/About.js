@@ -580,7 +580,7 @@ const About = () => {
             <div className="relative border border-[#CDCED6] w-full md:w-[35%] rounded-2xl mb-4 md:mb-0 py-2 shadow-2xl">
               <div>
                 <h2 className="font-semibold text-sm lg:text-base xl:text-base 2xl:text-xl px-4 mb-4 text-center">
-                  Callibration Partners
+                  Research Partners
                 </h2>
                 {/* empty div for arrow */}
                 <div
