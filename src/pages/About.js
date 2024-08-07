@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {useTypewriter, Cursor} from 'react-simple-typewriter';
+import CountUp from 'react-countup';
 import iit from '../Assets/Frameiit.png';
 import frame1 from '../Assets/Frame1.png';
 import frame2 from '../Assets/Frame2.png';
@@ -200,6 +202,17 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleProgressScroll);
   }, []);
 
+  // typewriting style cover text
+  const [typeEffect] = useTypewriter({
+    words: [
+      "Founded through the shine of CNDE, IIT Madras and incubated at IIT Madras \nIncubation Cell",
+    ],
+    loop: {},
+    typeSpeed: 10,
+    deleteSpeed: 20,
+    delaySpeed: 3000
+  });
+
   return (
     <div className="overflow-hidden">
       {/* scroll progress bar */}
@@ -223,20 +236,22 @@ const About = () => {
       >
         <img className="h-full w-full object-cover" src={iit} alt="Frame" />
         <div className="absolute h-full w-full inset-0 p-8 md:p-16 text-white">
-          <div className="w-full h-full xl:flex">
-            <div className="w-full xl:w-[90%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
+          <div className="w-full h-full xl:flex justify-between">
+            <div className="w-full xl:w-[55%] h-[70%] xl:h-full flex flex-col gap-4 justify-center text-center xl:text-left">
               <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold">
                 2019
               </p>
               <p className="text-lg md:text-3xl xl:text-4xl 2xl:text-6xl font-normal">
-                Founded through the shine of CNDE, <br />
-                IIT Madras, and incubated at IIT Madras <br /> Incubation Cell
+                {typeEffect}{" "}
+                <span className="text-orange-500 font-black">
+                  <Cursor />
+                </span>
               </p>
             </div>
             <div className="w-full xl:w-[10%] h-[30%] xl:h-full flex xl:flex-col justify-evenly">
               <div>
                 <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
-                  50+
+                  <CountUp start={0} end={50} duration={3} delay={0} />+
                 </p>
                 <p className="text-xs md:text-lg lg:text-xxl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Years&nbsp;of&nbsp;Industrial
@@ -246,7 +261,7 @@ const About = () => {
               </div>
               <div>
                 <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
-                  15+
+                  <CountUp start={0} end={15} duration={3} delay={0} />+
                 </p>
                 <p className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Intellectual
@@ -256,7 +271,7 @@ const About = () => {
               </div>
               <div>
                 <p className="text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-semibold md:font-bold mb-2">
-                  20+
+                  <CountUp start={0} end={20} duration={3} delay={0} />+
                 </p>
                 <p className="text-xs md:text-lg lg:text-xl xl:text-base 2xl:text-2xl font-normal md:font-medium">
                   Projects&nbsp;Across

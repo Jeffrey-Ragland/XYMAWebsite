@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import image1 from "../Assets/productCover1.png";
 import image2 from "../Assets/productCover2.png";
 import image3 from "../Assets/productCover3.png";
@@ -36,12 +36,13 @@ import additionalLogo6 from "../Assets/additionalLogo6.png";
 import additionalLogo7 from "../Assets/additionalLogo7.png";
 import line from "../Assets/underline.png";
 import { RiPlayCircleFill } from "react-icons/ri";
+import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
+import { IoMdCloseCircle } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IoMdCloseCircle } from "react-icons/io";
 
 const Product = () => {
   const [currentSlide, setCurrentSlide] = useState(0); //cover image slide
@@ -60,6 +61,7 @@ const Product = () => {
   const sliderRef = useRef(null);
   const coverImageRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const sectionRefs = {
     uTMapS: useRef(null),
@@ -484,18 +486,40 @@ const Product = () => {
 
               {/* cards */}
               <div className=" md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
-                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
-                  <div className="flex items-center justify-center">
-                    <img className="w-10" src={isteel} alt="steelLogo" />
+                <div className="rounded-lg w-full md:w-1/2 flex items-center justify-between gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
+                  <div className="flex items-center justify-center gap-2">
+                    <div>
+                      <img className="w-10" src={isteel} alt="steelLogo" />
+                    </div>
+                    <h3 className="font-semibold">Steel Manufacturing</h3>
                   </div>
-                  <h3 className="font-semibold">Steel Manufacturing</h3>
+                  <div
+                    className="text-orange-400 text-2xl 2xl:text-3xl cursor-pointer hover:scale-125 duration-200"
+                    onClick={() => {
+                      navigate("/industries/steel");
+                    }}
+                  >
+                    <HiMiniArrowTopRightOnSquare />
+                  </div>
                 </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
-                  <div className="flex items-center justify-center">
-                    <img className="w-10" src={aicon} alt="aluminumLogo" />
+                <div className="rounded-lg w-full md:w-1/2 flex items-center justify-between gap-2 p-2 border border-[#D9D9E0] bg-white">
+                  <div className="flex items-center justify-center gap-2">
+                    <div>
+                      <img className="w-10" src={aicon} alt="aluminumLogo" />
+                    </div>
+                    <h3 className="font-semibold text-sm 2xl:text-xl">
+                      Aluminium Manufacturing
+                    </h3>
                   </div>
-                  <h3 className="font-semibold">Aluminium Manufacturing</h3>
+                  <div
+                    className="text-orange-400 text-2xl 2xl:text-3xl cursor-pointer hover:scale-125 duration-200"
+                    onClick={() => {
+                      navigate("/industries/aluminum");
+                    }}
+                  >
+                    <HiMiniArrowTopRightOnSquare />
+                  </div>
                 </div>
               </div>
 
@@ -504,14 +528,26 @@ const Product = () => {
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={semi} alt="semiconductorLogo" />
                   </div>
-                  <h3 className="font-semibold">Semiconductor Manufacturing</h3>
+                  <h3 className="font-semibold text-sm 2xl:text-xl">
+                    Semiconductor Manufacturing
+                  </h3>
                 </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
-                  <div className="flex items-center justify-center">
-                    <img className="w-10" src={ref} alt="refiniriesLogo" />
+                <div className="rounded-lg w-full md:w-1/2 flex items-center justify-between gap-2 p-2 border border-[#D9D9E0] bg-white">
+                  <div className="flex items-center justify-center gap-2">
+                    <div>
+                      <img className="w-10" src={ref} alt="refiniriesLogo" />
+                    </div>
+                    <h3 className="font-semibold">Refineries</h3>
                   </div>
-                  <h3 className="font-semibold">Refineries</h3>
+                  <div
+                    className="text-orange-400 text-2xl 2xl:text-3xl cursor-pointer hover:scale-125 duration-200"
+                    onClick={() => {
+                      navigate("/industries/OilAndGas");
+                    }}
+                  >
+                    <HiMiniArrowTopRightOnSquare />
+                  </div>
                 </div>
               </div>
             </div>
@@ -768,29 +804,49 @@ const Product = () => {
 
               {/* cards */}
               <div className="md:flex gap-2 mb-2 text-sm lg:text-base 2xl:text-xl">
-                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
-                  <div className="flex items-center justify-center">
-                    <img className="w-10" src={paint} alt="paint" />
+                <div className="rounded-lg w-full md:w-1/2 flex items-center justify-between gap-2 border border-[#D9D9E0] bg-white p-2 mb-2 md:mb-0">
+                  <div className="flex items-center justify-center gap-2">
+                    <div>
+                      <img className="w-10" src={paint} alt="paint" />
+                    </div>
+                    <h3 className="font-semibold">Paint Manufacturing</h3>
                   </div>
-                  <h3 className="font-semibold">Paint Manufacturing</h3>
+                  <div
+                    className="text-orange-400 text-2xl 2xl:text-3xl cursor-pointer hover:scale-125 duration-200"
+                    onClick={() => {
+                      navigate("/industries/SpecialtyChemicals");
+                    }}
+                  >
+                    <HiMiniArrowTopRightOnSquare />
+                  </div>
                 </div>
 
-                <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
-                  <div className="flex items-center justify-center">
-                    <img className="w-10" src={luboil} alt="lube" />
+                <div className="rounded-lg w-full md:w-1/2 flex items-center justify-between gap-2 p-2 border border-[#D9D9E0] bg-white">
+                  <div className="flex items-center justify-center gap-2">
+                    <div>
+                      <img className="w-10" src={luboil} alt="lube" />
+                    </div>
+                    <h3 className="font-semibold">Lubrication Oil</h3>
                   </div>
-                  <h3 className="font-semibold">Lubrication Oil</h3>
+                  <div
+                    className="text-orange-400 text-2xl 2xl:text-3xl cursor-pointer hover:scale-125 duration-200"
+                    onClick={() => {
+                      navigate("/industries/OilAndGas");
+                    }}
+                  >
+                    <HiMiniArrowTopRightOnSquare />
+                  </div>
                 </div>
               </div>
 
-              <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
+              {/* <div className="md:flex gap-2  mb-2 text-sm lg:text-base 2xl:text-xl">
                 <div className="rounded-lg w-full md:w-1/2 flex items-center gap-2 p-2 border border-[#D9D9E0] bg-white">
                   <div className="flex items-center justify-center">
                     <img className="w-10" src={eor} alt="eor" />
                   </div>
                   <h3 className="font-semibold">E.O.R.</h3>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* ports additional description */}
             {renderReadMorePorts && (

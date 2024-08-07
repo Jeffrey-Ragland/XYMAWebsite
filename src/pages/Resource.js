@@ -4,8 +4,6 @@ import newAl1 from '../Assets/newAluminium1.png';
 import newAl2 from "../Assets/newAluminium2.png";
 import steel1 from '../Assets/steel1.png';
 import steel2 from '../Assets/steel3.png';
-import marine1 from '../Assets/marine1.jpg';
-import marine2 from "../Assets/marine2.jpeg";
 import oil1 from '../Assets/refiniries2new.png';
 import oil2 from '../Assets/oil2.png';
 import semiconductor1 from "../Assets/semiconductor1.jpg";
@@ -14,15 +12,17 @@ import mining1 from "../Assets/mining1.jpg";
 import mining2 from "../Assets/mining2.png";
 import paints1 from '../Assets/paintsresized.jpg'; 
 import paints2 from '../Assets/paints2.jpg';
+import defence1 from '../Assets/defence.jpg';
+import defence2 from '../Assets/defence2.jpeg';
 import { useNavigate } from 'react-router-dom';
 import {
-  GiMetalDisc, 
+  GiMetalDisc,
   GiMetalBar,
-  GiShipBow,
   GiGreaseTrap,
   GiCircuitry,
   GiOilPump,
   GiPaintBucket,
+  GiTank,
 } from "react-icons/gi";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -231,7 +231,7 @@ const Resource = () => {
                 : "text-gray-400"
             }`}
           >
-            <GiShipBow size={25} />
+            <GiTank size={25} />
           </button>
 
           <button
@@ -346,22 +346,22 @@ const Resource = () => {
             )}
           </div>
 
-          {/* marine */}
+          {/* defence */}
           <div>
             <div
-              onClick={() => toggleContent("Marine")}
+              onClick={() => toggleContent("Defence")}
               className={`hover:text-[#013872] hover:font-bold ${
-                selectedContent === "Marine"
+                selectedContent === "Defence"
                   ? "text-[#013872] font-bold"
                   : "text-[gray]"
               } cursor-pointer flex`}
             >
-              {selectedContent === "Marine" && (
+              {selectedContent === "Defence" && (
                 <div className="invisible md:visible border border-[#013872]"></div>
               )}
-              <div className="md:ml-1">Marine</div>
+              <div className="md:ml-1">Defence</div>
             </div>
-            {selectedContent === "Marine" && (
+            {selectedContent === "Defence" && (
               <div className="md:hidden border border-[#013872]"></div>
             )}
           </div>
@@ -566,8 +566,8 @@ const Resource = () => {
             </div>
           )}
 
-          {/* marine content */}
-          {(selectedContent === "Marine" || selectedContent === "All") && (
+          {/* defence content */}
+          {(selectedContent === "Defence" || selectedContent === "All") && (
             <div
               id="section3"
               ref={sectionRefs.section3}
@@ -576,7 +576,7 @@ const Resource = () => {
             >
               <div className="mb-4 flex justify-between">
                 <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-3xl 2xl:text-4xl">
-                  Marine
+                  Defence
                 </h1>
                 {/* <span
                   className="text-sm text-white px-2 py-1 rounded-full mt-2 cursor-pointer hover:scale-110 duration-200"
@@ -597,13 +597,14 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={marine1}
-                      alt="marine1"
+                      src={defence1}
+                      alt="defence1"
                     />
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl mb-4 md:mb-0">
-                    The marine industry handles over 90% of the world's trade,
-                    transporting around 11 billion tons of goods each year.
+                    Data acquisition systems in the defense industry enhance the
+                    accuracy of weapon systems and surveillance
+                    technologies.
                   </p>
                 </div>
 
@@ -611,13 +612,13 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={marine2}
-                      alt="marine2"
+                      src={defence2}
+                      alt="defence2"
                     ></img>
                   </div>
                   <p className="text-base md:text-lg lg:text-xl 2xl:text-2xl">
-                    The marine industry employs more than 1.6 million seafarers
-                    globally, supporting the backbone of international trade.
+                    Approximately 70% of defense industry advancements have been driven by data
+                    acquisition and analytics technologies.
                   </p>
                 </div>
               </div>

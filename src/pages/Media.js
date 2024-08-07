@@ -416,7 +416,7 @@ const Media = () => {
           {loadMore && (
             <div className="md:hidden">
               {/* mobile news 4 */}
-              <figure
+              {/* <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -456,7 +456,7 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </figure>
+              </figure> */}
 
               {/* mobile news 5 */}
               <figure
@@ -542,7 +542,7 @@ const Media = () => {
               </figure>
 
               {/* mobile news 7 */}
-              <figure
+              {/* <figure
                 className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
                 style={{
                   borderRadius: "14px",
@@ -581,10 +581,10 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </figure>
+              </figure> */}
 
               {/* mobile news 8 */}
-              <figure
+              {/* <figure
                 className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
                 style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
               >
@@ -612,7 +612,7 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </figure>
+              </figure> */}
 
               <div
                 className="cursor-pointer p-2 md:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
@@ -628,7 +628,7 @@ const Media = () => {
           )}
 
           {/* news 4 */}
-          <figure
+          {/* <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -668,7 +668,7 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </figure>
+          </figure> */}
 
           {/* news 5 */}
           <figure
@@ -755,7 +755,7 @@ const Media = () => {
           </figure>
 
           {/* news 7 */}
-          <figure
+          {/* <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
             style={{
               borderRadius: "14px",
@@ -794,10 +794,10 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </figure>
+          </figure> */}
 
           {/* news 8 */}
-          <figure
+          {/* <figure
             className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
             style={{
               borderRadius: "14px",
@@ -830,7 +830,7 @@ const Media = () => {
                 View More
               </button>
             </center>
-          </figure>
+          </figure> */}
         </div>
       </section>
 

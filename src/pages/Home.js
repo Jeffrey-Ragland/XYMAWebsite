@@ -40,6 +40,7 @@ import homeVideo from '../videoAssets/homeVideo.mp4';
 import aluminumVideo from '../videoAssets/aluminumVideo.mp4';
 import OilVideo from '../videoAssets/ioclFinal.mp4';
 import miningVideo from '../videoAssets/cumiFinal.mp4';
+import defenceImage from '../Assets/defence.jpg';
 import brochure from "../pdfAssets/XymaBrochure.pdf";
 import ipamsBadge2 from "../Assets/IPAMSBadge.png";
 import portsBadge2 from "../Assets/portsBadge.png";
@@ -259,7 +260,7 @@ export const Home = () => {
         break;
 
       case "lubricants":
-        setClickedImage(lubricants);
+        setClickedImage(defenceImage);
         break;
 
       case "oilRecovery":
@@ -423,9 +424,7 @@ export const Home = () => {
             </div>
           </h2>
           <div className="flex flex-col md:flex-row gap-2  text-[#60646C] mx-[5%] md:mx-[10%] text-sm md:text-base lg:text-lg 2xl:text-2xl font-medium">
-            <p className="font-semibold ">
-              We&nbsp;are&nbsp;renowned&nbsp;for
-            </p>
+            <p className="font-semibold ">We&nbsp;are&nbsp;renowned&nbsp;for</p>
             <ul className="ml-4 2xl:ml-8" style={{ listStyleType: "disc" }}>
               <li>Improving Production and Product Quality.</li>
               <li>Ensuring Optimum Investment for Production Costs.</li>
@@ -466,6 +465,44 @@ export const Home = () => {
               )}
             </div>
 
+            {/* oil and gas */}
+            <div>
+              <div
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
+                  clickedImage === OilVideo && "text-[#013872] font-bold"
+                }`}
+                id="oilRecovery"
+                onClick={handleImageChange}
+              >
+                {clickedImage === OilVideo && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Oil&nbsp;&&nbsp;Gas</div>
+              </div>
+              {clickedImage === OilVideo && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
+            {/* mining */}
+            <div>
+              <div
+                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
+                  clickedImage === miningVideo && "text-[#013872] font-bold"
+                }`}
+                id="mining"
+                onClick={handleImageChange}
+              >
+                {clickedImage === miningVideo && (
+                  <div className="invisible md:visible border border-[#013872]"></div>
+                )}
+                <div className="ml-1 -z-10">Mining</div>
+              </div>
+              {clickedImage === miningVideo && (
+                <div className="border border-[#013872] md:hidden" />
+              )}
+            </div>
+
             {/* steel */}
             <div>
               <div
@@ -489,36 +526,17 @@ export const Home = () => {
             <div>
               <div
                 className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
-                  clickedImage === lubricants && "text-[#013872] font-bold"
+                  clickedImage === defenceImage && "text-[#013872] font-bold"
                 }`}
                 id="lubricants"
                 onClick={handleImageChange}
               >
-                {clickedImage === lubricants && (
+                {clickedImage === defenceImage && (
                   <div className="invisible md:visible border border-[#013872]"></div>
                 )}
-                <div className="ml-1 -z-10">Marine</div>
+                <div className="ml-1 -z-10">Defence</div>
               </div>
-              {clickedImage === lubricants && (
-                <div className="border border-[#013872] md:hidden" />
-              )}
-            </div>
-
-            {/* oil and gas */}
-            <div>
-              <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
-                  clickedImage === OilVideo && "text-[#013872] font-bold"
-                }`}
-                id="oilRecovery"
-                onClick={handleImageChange}
-              >
-                {clickedImage === OilVideo && (
-                  <div className="invisible md:visible border border-[#013872]"></div>
-                )}
-                <div className="ml-1 -z-10">Oil&nbsp;&&nbsp;Gas</div>
-              </div>
-              {clickedImage === OilVideo && (
+              {clickedImage === defenceImage && (
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
@@ -538,25 +556,6 @@ export const Home = () => {
                 <div className="ml-1 -z-10">Semiconductor</div>
               </div>
               {clickedImage === semiconductor && (
-                <div className="border border-[#013872] md:hidden" />
-              )}
-            </div>
-
-            {/* mining */}
-            <div>
-              <div
-                className={`md:w-full flex p-1 xl:mb-1 cursor-pointer hover:text-[#013872] hover:font-bold ${
-                  clickedImage === miningVideo && "text-[#013872] font-bold"
-                }`}
-                id="mining"
-                onClick={handleImageChange}
-              >
-                {clickedImage === miningVideo && (
-                  <div className="invisible md:visible border border-[#013872]"></div>
-                )}
-                <div className="ml-1 -z-10">Mining</div>
-              </div>
-              {clickedImage === miningVideo && (
                 <div className="border border-[#013872] md:hidden" />
               )}
             </div>
@@ -695,8 +694,8 @@ export const Home = () => {
             </>
           )}
 
-          {/* marine content */}
-          {clickedImage === lubricants && (
+          {/* defence content */}
+          {clickedImage === defenceImage && (
             <>
               {/* element image*/}
               <figure
@@ -704,8 +703,8 @@ export const Home = () => {
                 data-aos="fade-up"
               >
                 <img
-                  src={lubricants}
-                  alt="lubricants"
+                  src={defenceImage}
+                  alt="defence"
                   className="shadow-white shadow-2xl rounded-2xl object-cover"
                 />
                 <figcaption
@@ -717,7 +716,7 @@ export const Home = () => {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  MARINE
+                  DEFENCE
                 </figcaption>
               </figure>
               {/* elements description */}
@@ -735,10 +734,7 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  <span className="font-black text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mr-2">
-                    30%
-                  </span>
-                  of Maintenance Budget is Affected by Lubricants.
+                  We aid the Defence Industry using our Rapid Data Acquisition Technology.
                 </article>
               </div>
             </>

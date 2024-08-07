@@ -89,6 +89,7 @@ const OilAndGasCS = () => {
         </div>
 
         {/* refiniries case study */}
+
         <h2 className="font-semibold text-lg md:text-2xl lg:text-3xl 2xl:text-5xl mx-[3%]">
           Refineries:
         </h2>
