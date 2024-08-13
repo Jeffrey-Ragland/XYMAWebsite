@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import media from '../Assets/Framemedia.png';
-import asian from '../Assets/Frameasian.png';
 import shell from '../Assets/Frameshell.png';
 import icon1 from '../Assets/Frameicon1.png';
 import business from '../Assets/business.png';
 import icon2 from '../Assets/icon2.png';
 import iitm from '../Assets/iitm.png';
 import icon3 from '../Assets/icon3.png';
-import story from '../Assets/story.png';
-import icon4 from '../Assets/icon4.png';
 import cm from '../Assets/cm.png';
 import smart from '../Assets/smart.png';
-import pm from '../Assets/pm.png';
-import icon5 from '../Assets/icon5.png';
 import icon6 from '../Assets/66.png';
+import newsDD from '../Assets/MediaNewsDD.png';
+import newsTOI from '../Assets/MediaNewsTOI.png';
+import newsWiresLogo from '../Assets/newsWiresLogo.png'
+import toiLogo from '../Assets/toiLogo.png';
+import ddLogo from '../Assets/ddLogo.png';
 import image1 from '../Assets/Image1.png';
 import image2 from '../Assets/Image2.png';
 import image3 from '../Assets/Image3.png';
@@ -252,122 +252,277 @@ const Media = () => {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 mx-[5%] xl:mx-[8%]">
-          {/* news 1 */}
-          <figure
-            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={shell} alt="Shell" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon1} alt="Icon 1" className="h-[40px]" />
-                <p className="text-white">SAUR ENERGY</p>
+        <div className="mt-10 mx-[5%] xl:mx-[8%]">
+          <div className="flex flex-col md:flex-row gap-4 md:mb-4">
+            {/* news 1 */}
+            <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img
+                  src={newsDD}
+                  alt="DD Thumbnail"
+                  className="w-full rounded-xl"
+                />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img
+                    src={ddLogo}
+                    alt="DD Logo"
+                    className="h-[40px] rounded-md"
+                  />
+                  <p className="text-white">DD Tamil</p>
+                </div>
               </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Shell Launches 'Digital Track' for Indian Startups under its E4
-              Programme
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              Updated On Thu, Jul 8th, 2021
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.saurenergy.com/solar-energy-news/shell-launches-digital-track-for-indian-start-ups-under-its-e4-programme",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure>
+              <div>
+                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                  Startup Handshake - Interview with DD Tamil
+                </figcaption>
+                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                  Updated - Jun 23rd, 2024
+                </p>
+              </div>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://youtu.be/tWcYGGV8vRk?si=XcOBGJmpfOuxRir1",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
 
-          {/* news 2 */}
-          <figure
-            className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={business} alt="Business" style={{ width: "100%" }} />
-              <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
-                <img src={icon2} alt="Icon 2" className="h-[40px]" />
-                <p className="text-white mt-1">Businessline</p>
+            {/* news 2 */}
+            <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img src={shell} alt="Shell" className="w-full" />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img src={icon1} alt="Icon 1" className="h-[40px]" />
+                  <p className="text-white">SAUR ENERGY</p>
+                </div>
               </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Start-up tech. Remote sensing with XYMA Analytics
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              Updated - January 09, 2022
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.thehindubusinessline.com/business-tech/remote-sensing-with-xyma-analytics/article64577779.ece",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                Shell Launches 'Digital Track' for Indian Startups under its E4
+                Programme
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Jul 8th, 2021
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.saurenergy.com/solar-energy-news/shell-launches-digital-track-for-indian-start-ups-under-its-e4-programme",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
 
-          {/* news 3 */}
-          <figure
-            className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-            }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={iitm} alt="Iitm" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon3} alt="Icon 3" className="h-[40px]" />
-                <p className="text-white mt-1">IIT MADRAS</p>
+            {/* news 3 */}
+            <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img src={business} alt="Business" className="w-full" />
+                <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
+                  <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                  <p className="text-white mt-1">Businessline</p>
+                </div>
               </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Sensor for Temperature Measurement at Multiple Points
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              11th Oct 2021
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                Start-up tech. Remote sensing with XYMA Analytics
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Jan 9th, 2022
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.thehindubusinessline.com/business-tech/remote-sensing-with-xyma-analytics/article64577779.ece",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
+            {/* news 4 */}
+            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img src={iitm} alt="Iitm" className="w-full" />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img src={icon3} alt="Icon 3" className="h-[40px]" />
+                  <p className="text-white mt-1">IIT MADRAS</p>
+                </div>
+              </div>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                Sensor for Temperature Measurement at Multiple Points
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Oct 11th, 2021
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+
+            {/* news 5 */}
+            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img src={cm} alt="Cm" className="w-full" />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                  <p className="text-white mt-1">Businessline</p>
+                </div>
+              </div>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                TN Chief Minister awards cheques worth ₹95 lakh to 19 start-ups
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Dec 23rd, 2021
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.thehindubusinessline.com/companies/tn-chief-minister-awards-cheques-worth-95-lakh-to-19-start-ups/article38020063.ece",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+
+            {/* news 6 */}
+            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img src={smart} alt="Smart" className="w-full" />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img
+                    src={newsWiresLogo}
+                    alt="newsWires Logo"
+                    className="h-[40px] rounded-md"
+                  />
+                  <p className="text-white mt-1">Newswires</p>
+                </div>
+              </div>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                SmartHub.ai and XYMA Partnership Announcement
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Mar 1st, 2022
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.einnews.com/pr_news/564327124/smarthub-ai-and-xyma-partnership-announcement",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
+            {/* news 7 */}
+            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img
+                  src={newsTOI}
+                  alt="Times of  India Cover"
+                  className="w-full rounded-xl"
+                />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img
+                    src={toiLogo}
+                    alt="Times of India Logo"
+                    className="h-[40px] rounded-md"
+                  />
+                  <p className="text-white">Times of India</p>
+                </div>
+              </div>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                They sensed an oppurtunity and took it
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Feb 20th, 2023
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://timesofindia.indiatimes.com/city/chennai/they-sensed-an-opportunity-and-took-it/articleshow/98083290.cms",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+
+            {/* empty div for alignment */}
+            <div className="hidden md:block w-1/3" />
+            <div className="hidden md:block w-1/3" />
+          </div>
 
           {/* icon menu */}
           {renderIconMenu && (
@@ -416,39 +571,30 @@ const Media = () => {
           {loadMore && (
             <div className="md:hidden">
               {/* mobile news 4 */}
-              {/* <figure
-                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-                style={{
-                  borderRadius: "14px",
-                  width: "100%",
-                  margin: "auto",
-                  marginTop: "5%",
-                }}
-              >
-                <div style={{ position: "relative" }}>
-                  <img src={story} alt="Story" style={{ width: "100%" }} />
+              <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto">
+                <div className="relative">
+                  <img src={iitm} alt="Iitm" className="w-full" />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                    <img src={icon4} alt="Icon 4" className="h-[40px]" />
-                    <p className="text-white mt-1">YOUR STORY</p>
+                    <img src={icon3} alt="Icon 3" className="h-[40px]" />
+                    <p className="text-white mt-1">IIT MADRAS</p>
                   </div>
                 </div>
-                <figcaption className="text-sm font-semibold mt-1">
-                  Prioritize Building Valuable Businesses Over Funding, Advises
-                  Kalaari Capital's Vani Kola
+                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                  Sensor for Temperature Measurement at Multiple Points
                 </figcaption>
-                <p className="text-xs mt-1 mb-1 text-[#60646C]">
-                  Wednesday July 14, 2021
+                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                  11th Oct 2021
                 </p>
                 <center>
                   <button
-                    className="text-white mt-2 text-sm rounded-full px-4 py-2 mb-2"
+                    className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
                     style={{
                       background:
                         "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
                     }}
                     onClick={() =>
                       window.open(
-                        "https://yourstory.com/herstory/2024/03/kalaari-capital-vani-kola-entrepreneurship-shesparks",
+                        "https://www.iitm.ac.in/happenings/press-releases-and-coverages/remote-sensing-xyma-analytics",
                         "_blank"
                       )
                     }
@@ -456,20 +602,12 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </figure> */}
+              </figure>
 
               {/* mobile news 5 */}
-              <figure
-                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-                style={{
-                  borderRadius: "14px",
-                  width: "100%",
-                  margin: "auto",
-                  marginTop: "5%",
-                }}
-              >
-                <div style={{ position: "relative" }}>
-                  <img src={cm} alt="Cm" style={{ width: "100%" }} />
+              <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
+                <div className="relative">
+                  <img src={cm} alt="Cm" className="w-full" />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                     <img src={icon2} alt="Icon 2" className="h-[40px]" />
                     <p className="text-white mt-1">Businessline</p>
@@ -502,19 +640,15 @@ const Media = () => {
               </figure>
 
               {/* mobile news 6 */}
-              <figure
-                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-                style={{
-                  borderRadius: "14px",
-                  width: "100%",
-                  margin: "auto",
-                  marginTop: "5%",
-                }}
-              >
-                <div style={{ position: "relative" }}>
-                  <img src={smart} alt="Smart" style={{ width: "100%" }} />
+              <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
+                <div className="relative">
+                  <img src={smart} alt="Smart" className="w-full" />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                    <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                    <img
+                      src={newsWiresLogo}
+                      alt="newsWires Logo"
+                      className="h-[40px]"
+                    />
                     <p className="text-white mt-1">Newswires</p>
                   </div>
                 </div>
@@ -542,58 +676,27 @@ const Media = () => {
               </figure>
 
               {/* mobile news 7 */}
-              {/* <figure
-                className=" border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-                style={{
-                  borderRadius: "14px",
-                  width: "100%",
-                  margin: "auto",
-                  marginTop: "5%",
-                }}
-              >
-                <div style={{ position: "relative" }}>
-                  <img src={pm} alt="Pm" style={{ width: "100%" }} />
+              <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
+                <div className="relative">
+                  <img
+                    src={newsTOI}
+                    alt="Times of  India Cover"
+                    className="w-full rounded-lg"
+                  />
                   <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                    <img src={icon5} alt="Icon 2" className="h-[40px]" />
-                    <p className="text-white mt-1">ANI Multimedia News</p>
+                    <img
+                      src={toiLogo}
+                      alt="Times of India Logo"
+                      className="h-[40px] rounded-md"
+                    />
+                    <p className="text-white">Times of India</p>
                   </div>
                 </div>
-                <figcaption className="text-sm font-semibold mt-1">
-                  PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
-                </figcaption>
-                <p className="text-xs mt-1 text-[#60646C]">
-                  Updated: Mar 02, 2024
-                </p>
-                <center>
-                  <button
-                    className="text-white mt-1 text-sm rounded-full px-4 py-2 mb-2"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                    onClick={() =>
-                      window.open(
-                        "https://aninews.in/news/national/general-news/pm-modi-presents-most-creative-creator-award-to-shraddha-rj-raunac-at-bharat-mandapam20240308115958/",
-                        "_blank"
-                      )
-                    }
-                  >
-                    View More
-                  </button>
-                </center>
-              </figure> */}
-
-              {/* mobile news 8 */}
-              {/* <figure
-                className="border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
-                style={{ borderRadius: "14px", width: "100%", margin: "auto" }}
-              >
-                <img src={asian} alt="Asian" style={{ width: "100%" }} />
                 <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-                  Advancing Technology to Foster a Sustainable Energy Landscape
+                  They sensed an oppurtunity and took it
                 </figcaption>
                 <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-                  February 24, 2024
+                  Updated - Feb 20th, 2023
                 </p>
                 <center>
                   <button
@@ -604,7 +707,7 @@ const Media = () => {
                     }}
                     onClick={() =>
                       window.open(
-                        "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
+                        "https://timesofindia.indiatimes.com/city/chennai/they-sensed-an-opportunity-and-took-it/articleshow/98083290.cms",
                         "_blank"
                       )
                     }
@@ -612,7 +715,7 @@ const Media = () => {
                     View More
                   </button>
                 </center>
-              </figure> */}
+              </figure>
 
               <div
                 className="cursor-pointer p-2 md:hidden text-center text-white rounded-full text-sm font-medium mt-4 hover:scale-90 duration-300"
@@ -626,211 +729,6 @@ const Media = () => {
               </div>
             </div>
           )}
-
-          {/* news 4 */}
-          {/* <figure
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={story} alt="Story" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon4} alt="Icon 4" className="h-[40px]" />
-                <p className="text-white mt-1">YOUR STORY</p>
-              </div>
-            </div>
-            <figcaption className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-semibold mt-1">
-              Prioritize Building Valuable Businesses Over Funding, Advises
-              Kalaari Capital's Vani Kola
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 mb-1 text-[#60646C]">
-              Wednesday July 14, 2021
-            </p>
-            <center>
-              <button
-                className="text-white mt-2 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://yourstory.com/herstory/2024/03/kalaari-capital-vani-kola-entrepreneurship-shesparks",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure> */}
-
-          {/* news 5 */}
-          <figure
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={cm} alt="Cm" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon2} alt="Icon 2" className="h-[40px]" />
-                <p className="text-white mt-1">Businessline</p>
-              </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              TN Chief Minister awards cheques worth ₹95 lakh to 19 start-ups
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              Updated - December 23, 2021
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.thehindubusinessline.com/companies/tn-chief-minister-awards-cheques-worth-95-lakh-to-19-start-ups/article38020063.ece",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure>
-
-          {/* news 6 */}
-          <figure
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={smart} alt="Smart" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon2} alt="Icon 2" className="h-[40px]" />
-                <p className="text-white mt-1">Newswires</p>
-              </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              SmartHub.ai and XYMA Partnership Announcement
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              March 01, 2022
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://www.einnews.com/pr_news/564327124/smarthub-ai-and-xyma-partnership-announcement",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure>
-
-          {/* news 7 */}
-          {/* <figure
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300"
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-          >
-            <div style={{ position: "relative" }}>
-              <img src={pm} alt="Pm" style={{ width: "100%" }} />
-              <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                <img src={icon5} alt="Icon 2" className="h-[40px]" />
-                <p className="text-white mt-1">ANI Multimedia News</p>
-              </div>
-            </div>
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              PM Modi honors Shraddha and RJ Raunac at Bharat Mandapam
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              Updated: Mar 02, 2024
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://aninews.in/news/national/general-news/pm-modi-presents-most-creative-creator-award-to-shraddha-rj-raunac-at-bharat-mandapam20240308115958/",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure> */}
-
-          {/* news 8 */}
-          {/* <figure
-            className="hidden md:block border border-gray-300 p-1 hover:scale-90 transition-transform duration-300 "
-            style={{
-              borderRadius: "14px",
-              width: "100%",
-              margin: "auto",
-              marginTop: "5%",
-            }}
-          >
-            <img src={asian} alt="Asian" style={{ width: "100%" }} />
-            <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-              Advancing Technology to Foster a Sustainable Energy Landscape
-            </figcaption>
-            <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-              February 24, 2024
-            </p>
-            <center>
-              <button
-                className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://asiannews.in/accelerating-technology-for-a-cleaner-energy-future/",
-                    "_blank"
-                  )
-                }
-              >
-                View More
-              </button>
-            </center>
-          </figure> */}
         </div>
       </section>
 
