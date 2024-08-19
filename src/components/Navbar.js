@@ -99,7 +99,7 @@ const Navbar = () => {
               </button>
               {location.pathname === "/contact" && (
                 <div
-                  className="w-10 h-1 rounded-full"
+                  className="hidden lg:block w-10 h-1 rounded-full"
                   style={{
                     background:
                       "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",

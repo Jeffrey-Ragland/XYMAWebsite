@@ -282,7 +282,7 @@ const ContactPage = () => {
                   <span className="text-[#CE2C31]">*</span>
                 </label>
                 <textarea
-                  className="w-full appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600 h-16 md:h-20"
+                  className="w-full resize-none appearance-none border border-gray-400 rounded-lg p-2 text-gray-800 leading-tight focus:outline-none focus:border-gray-600 h-16 md:h-20"
                   id="details"
                   name="details"
                   value={formData.details}
