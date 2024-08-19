@@ -187,7 +187,7 @@ const OilAndGasCS = () => {
             </figure>
           </div>
           <p className="text-gray-800 text-xs md:text-base 2xl:text-xl font-medium mx-[20%] md:mx-0 text-center">
-            Installing XYMA Product, μTMaPS in IOCL
+            Installing XYMA Product, μTMapS in IOCL
           </p>
         </div>
 
