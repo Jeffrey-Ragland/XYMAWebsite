@@ -126,7 +126,7 @@ const OtherProjects = () => {
               <p>
                 Implement a predictive data analysis model for heat stress
                 monitoring, featuring a centralized alarm unit to ensure
-                immediate and effective response to critical heat stress levels
+                immediate and effective response to critical heat stress levels.
               </p>
             </p>
           </div>
@@ -188,7 +188,7 @@ const OtherProjects = () => {
               </p>
               <p>
                 The Thermal and Acoustic Camera is an all-in-one solution
-                engineered to keep your workplace safe, efficient, and compliant
+                engineered to keep your workplace safe, efficient  and compliant
                 with safety regulations.
               </p>
             </p>
