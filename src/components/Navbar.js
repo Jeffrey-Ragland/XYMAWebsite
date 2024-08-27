@@ -44,11 +44,11 @@ const Navbar = () => {
       path: "/media",
     },
     {
-      title: "About Us",
+      title: "About\u00A0Us",
       path: "/about",
     },
     {
-      title: "Other Projects",
+      title: "Other\u00A0Projects",
       path: "/otherProjects",
     },
   ];
@@ -66,7 +66,7 @@ const Navbar = () => {
             <div className="h-full flex items-center">
               <img className="h-[80%]" src={xyma} alt="Logo" />
             </div>
-            <ul className="hidden lg:flex gap-8 items-center">
+            <ul className="hidden lg:flex gap-4 xl:gap-8 items-center">
               {HeaderData.map((item, index) => (
                 <li key={index}>
                   <NavLink
@@ -99,7 +99,7 @@ const Navbar = () => {
                 }}
                 onClick={handleContactClick}
               >
-                Get in Touch
+                Get&nbsp;in&nbsp;Touch
               </button>
               {location.pathname === "/contact" && (
                 <div

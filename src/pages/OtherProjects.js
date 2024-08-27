@@ -70,7 +70,7 @@ const OtherProjects = () => {
       </h3>
 
       {/* product cards */}
-      <div className="mx-[5%] xl:mx-[8%] flex flex-col items-center gap-4">
+      <div className="mx-[5%] xl:mx-[8%] flex flex-col items-center gap-4 2xl:gap-8">
         {/* product 1 */}
         <div
           className="flex flex-col gap-2 md:flex-row p-4 border border-[#E0E1E6] rounded-lg bg-[#F9F9FB] shadow-lg"
