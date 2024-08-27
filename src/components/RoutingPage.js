@@ -17,6 +17,7 @@ import MiningCS from '../pages/MiningCS';
 import AdminLogin from '../pages/AdminLogin';
 import AdminPortal from '../pages/AdminPortal';
 import AdminApplications from '../pages/AdminApplications';
+import OtherProjects from '../pages/OtherProjects';
 // import NotFound from '../pages/NotFound';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -42,6 +43,7 @@ const RoutingPage = () => {
     "/industries/marine",
     "/industries/semiconductor",
     "/industries/mining",
+    "/otherProjects",
     "/admin@2k24",
     "/admin@2k24Portal",
     "/admin@2k24Applications",
@@ -67,6 +69,7 @@ const RoutingPage = () => {
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path='/otherProjects' element={<OtherProjects />} />
           <Route path="/admin@2k24" element={<AdminLogin />} />
           <Route path="/admin@2k24Portal" element={<ProtectedRoute />}>
             <Route path="" element={<AdminPortal />} />

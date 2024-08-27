@@ -47,6 +47,10 @@ const Navbar = () => {
       title: "About Us",
       path: "/about",
     },
+    {
+      title: "Other Projects",
+      path: "/otherProjects",
+    },
   ];
 
   return (
