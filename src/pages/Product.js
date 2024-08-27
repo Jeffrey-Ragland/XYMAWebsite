@@ -747,7 +747,7 @@ const Product = () => {
                     PoRTS
                   </h1>
                   <p className="text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
-                    A single customizable wavelength can measure viscosity,
+                    A single customizable waveguide can measure viscosity,
                     density & Temperature continuously.
                   </p>
                 </div>
@@ -1103,7 +1103,7 @@ const Product = () => {
                     Ztar
                   </h1>
                   <p className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
-                    A single wavelength can measure viscosity, density &
+                    A single waveguide can measure viscosity, density &
                     Temperature continuously.
                   </p>
                 </div>
