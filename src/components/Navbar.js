@@ -5,7 +5,7 @@ import xyma from '../Assets/xymalogo_white.png';
 import CircleComponent from "../CircleComponent";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
-import mainProductsCover from '../Assets/newbgcropped.png';
+import mainProductsCover from '../Assets/productHover.png';
 import otherProductsCover from '../Assets/heatStressMonitor.png';
 // import AOS from "aos";
 // import "aos/dist/aos.css";
