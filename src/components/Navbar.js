@@ -181,7 +181,7 @@ const Navbar = () => {
 
                     <NavLink
                       to={HeaderData[6].path}
-                      className={`border  bg-[#F9F9FB] p-4 rounded-lg shadow-lg flex w-[40%] 2xl:w-[35%] hover:scale-[1.02] duration-200 cursor-pointer ${
+                      className={`border bg-[#F9F9FB] p-4 rounded-lg shadow-lg flex w-[40%] 2xl:w-[35%] hover:scale-[1.02] duration-200 cursor-pointer ${
                         location.pathname === HeaderData[6].path
                           ? "border-orange-500"
                           : "border-[#E0E1E6]"
@@ -396,9 +396,7 @@ const Navbar = () => {
             <ul className="h-[60%]">
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[0].path ||
-                  (HeaderData[0].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
+                  location.pathname === HeaderData[0].path
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -426,18 +424,12 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[1].path ||
-                  (HeaderData[1].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
-                    ? "text-orange-400"
-                    : ""
-                }`}
-                onClick={() => {
-                  handleBurgerMenu();
-                }}
+                className={`group w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl `}
+                // onClick={() => {
+                //   handleBurgerMenu();
+                // }}
               >
-                <NavLink
+                {/* <NavLink
                   to={HeaderData[1].path}
                   className="w-full h-full flex items-center justify-between px-4"
                 >
@@ -453,7 +445,74 @@ const Navbar = () => {
                   >
                     <FiArrowUpRight size={25} />
                   </div>
-                </NavLink>
+                </NavLink> */}
+
+                <div
+                  to={HeaderData[1].path}
+                  className="h-full flex items-center justify-between px-4"
+                >
+                  {HeaderData[1].title}
+                  {/* <div
+                    className={`${
+                      location.pathname === HeaderData[1].path ||
+                      (HeaderData[1].path === "/industries" &&
+                        location.pathname.startsWith("/industries"))
+                        ? "text-orange-400"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    <FiArrowUpRight size={25} />
+                  </div> */}
+                </div>
+
+                {/* product hover */}
+                <div className="hidden group-hover:block text-xs font-medium shadow-xl border border-gray-400 rounded-sm">
+                  <NavLink
+                    to={HeaderData[1].path}
+                    className={`flex items-center justify-between px-1 py-0.5 border border-b-gray-300 ${
+                      location.pathname === HeaderData[1].path 
+                        ? "text-orange-400"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      handleBurgerMenu();
+                    }}
+                  >
+                    Key Products
+                    <div
+                      className={`${
+                        location.pathname === HeaderData[1].path 
+                          ? "text-orange-400"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      <FiArrowUpRight size={18} />
+                    </div>
+                  </NavLink>
+
+                  <NavLink
+                    to={HeaderData[6].path}
+                    className={`flex items-center justify-between gap-1 px-1 py-0.5 ${
+                      location.pathname === HeaderData[6].path
+                        ? "text-orange-400"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      handleBurgerMenu();
+                    }}
+                  >
+                    Other Projects
+                    <div
+                      className={`${
+                        location.pathname === HeaderData[6].path
+                          ? "text-orange-400"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      <FiArrowUpRight size={18} />
+                    </div>
+                  </NavLink>
+                </div>
               </li>
 
               <li
@@ -489,9 +548,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[3].path ||
-                  (HeaderData[3].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
+                  location.pathname === HeaderData[3].path 
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -506,9 +563,7 @@ const Navbar = () => {
                   {HeaderData[3].title}
                   <div
                     className={`${
-                      location.pathname === HeaderData[3].path ||
-                      (HeaderData[3].path === "/industries" &&
-                        location.pathname.startsWith("/industries"))
+                      location.pathname === HeaderData[3].path 
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}
@@ -520,9 +575,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[4].path ||
-                  (HeaderData[4].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
+                  location.pathname === HeaderData[4].path 
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -537,9 +590,7 @@ const Navbar = () => {
                   {HeaderData[4].title}
                   <div
                     className={`${
-                      location.pathname === HeaderData[4].path ||
-                      (HeaderData[4].path === "/industries" &&
-                        location.pathname.startsWith("/industries"))
+                      location.pathname === HeaderData[4].path
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}
@@ -551,9 +602,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[5].path ||
-                  (HeaderData[5].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
+                  location.pathname === HeaderData[5].path 
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -568,40 +617,7 @@ const Navbar = () => {
                   {HeaderData[5].title}
                   <div
                     className={`${
-                      location.pathname === HeaderData[5].path ||
-                      (HeaderData[5].path === "/industries" &&
-                        location.pathname.startsWith("/industries"))
-                        ? "text-orange-400"
-                        : "text-gray-400"
-                    }`}
-                  >
-                    <FiArrowUpRight size={25} />
-                  </div>
-                </NavLink>
-              </li>
-
-              <li
-                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[6].path ||
-                  (HeaderData[6].path === "/industries" &&
-                    location.pathname.startsWith("/industries"))
-                    ? "text-orange-400"
-                    : ""
-                }`}
-                onClick={() => {
-                  handleBurgerMenu();
-                }}
-              >
-                <NavLink
-                  to={HeaderData[6].path}
-                  className="w-full h-full flex items-center justify-between px-4"
-                >
-                  {HeaderData[6].title}
-                  <div
-                    className={`${
-                      location.pathname === HeaderData[6].path ||
-                      (HeaderData[6].path === "/industries" &&
-                        location.pathname.startsWith("/industries"))
+                      location.pathname === HeaderData[5].path 
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}
