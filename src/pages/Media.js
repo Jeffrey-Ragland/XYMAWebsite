@@ -14,6 +14,8 @@ import newsTOI from '../Assets/MediaNewsTOI.png';
 import newsWiresLogo from '../Assets/newsWiresLogo.png'
 import toiLogo from '../Assets/toiLogo.png';
 import ddLogo from '../Assets/ddLogo.png';
+import ndtvLogo from '../Assets/ndtvLogo.png';
+import mediaNdtv from '../Assets/mediaNdtv.png';
 import image1 from '../Assets/Image1.png';
 import image2 from '../Assets/Image2.png';
 import image3 from '../Assets/Image3.png';
@@ -301,6 +303,94 @@ const Media = () => {
             {/* news 2 */}
             <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
               <div className="relative">
+                <img
+                  src={mediaNdtv}
+                  alt="ndtv interview"
+                  className="w-full rounded-xl"
+                />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img
+                    src={ndtvLogo}
+                    alt="ndtvLogo"
+                    className="h-[40px] rounded-md"
+                  />
+                  <p className="text-white">NDTV</p>
+                </div>
+              </div>
+              <div>
+                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                  Chennai Startup - Interview with NDTV
+                </figcaption>
+                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                  Updated - Aug 28th, 2024
+                </p>
+              </div>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.youtube.com/watch?v=6N7IjErIuqs&t=208s",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+
+            {/* news 3 */}
+            <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
+                <img
+                  src={newsTOI}
+                  alt="Times of  India Cover"
+                  className="w-full rounded-xl"
+                />
+                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
+                  <img
+                    src={toiLogo}
+                    alt="Times of India Logo"
+                    className="h-[40px] rounded-md"
+                  />
+                  <p className="text-white">Times of India</p>
+                </div>
+              </div>
+              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                Xyma Analytics offers ‘sensors as a service’
+              </figcaption>
+              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                Updated - Feb 20th, 2023
+              </p>
+              <center>
+                <button
+                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://timesofindia.indiatimes.com/city/chennai/they-sensed-an-opportunity-and-took-it/articleshow/98083290.cms",
+                      "_blank"
+                    )
+                  }
+                >
+                  View More
+                </button>
+              </center>
+            </figure>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
+            {/* news 4 */}
+            <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+              <div className="relative">
                 <img src={shell} alt="Shell" className="w-full" />
                 <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
                   <img src={icon1} alt="Icon 1" className="h-[40px]" />
@@ -333,8 +423,8 @@ const Media = () => {
               </center>
             </figure>
 
-            {/* news 3 */}
-            <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+            {/* news 5 */}
+            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
               <div className="relative">
                 <img src={business} alt="Business" className="w-full" />
                 <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
@@ -366,10 +456,8 @@ const Media = () => {
                 </button>
               </center>
             </figure>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-4 mb-4">
-            {/* news 4 */}
+            {/* news 6 */}
             <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
               <div className="relative">
                 <img src={iitm} alt="Iitm" className="w-full" />
@@ -402,8 +490,10 @@ const Media = () => {
                 </button>
               </center>
             </figure>
+          </div>
 
-            {/* news 5 */}
+          <div className="flex flex-col md:flex-row gap-4 mb-4">
+            {/* news 7 */}
             <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
               <div className="relative">
                 <img src={cm} alt="Cm" className="w-full" />
@@ -437,7 +527,7 @@ const Media = () => {
               </center>
             </figure>
 
-            {/* news 6 */}
+            {/* news 8 */}
             <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
               <div className="relative">
                 <img src={smart} alt="Smart" className="w-full" />
@@ -474,53 +564,8 @@ const Media = () => {
                 </button>
               </center>
             </figure>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-4 mb-4">
-            {/* news 7 */}
-            <figure className="hidden md:block border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
-              <div className="relative">
-                <img
-                  src={newsTOI}
-                  alt="Times of  India Cover"
-                  className="w-full rounded-xl"
-                />
-                <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                  <img
-                    src={toiLogo}
-                    alt="Times of India Logo"
-                    className="h-[40px] rounded-md"
-                  />
-                  <p className="text-white">Times of India</p>
-                </div>
-              </div>
-              <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-                They sensed an oppurtunity and took it
-              </figcaption>
-              <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-                Updated - Feb 20th, 2023
-              </p>
-              <center>
-                <button
-                  className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                  }}
-                  onClick={() =>
-                    window.open(
-                      "https://timesofindia.indiatimes.com/city/chennai/they-sensed-an-opportunity-and-took-it/articleshow/98083290.cms",
-                      "_blank"
-                    )
-                  }
-                >
-                  View More
-                </button>
-              </center>
-            </figure>
-
-            {/* empty div for alignment */}
-            <div className="hidden md:block w-1/3" />
+            {/* empty div for alignment - news 9 */}
             <div className="hidden md:block w-1/3" />
           </div>
 
@@ -570,7 +615,41 @@ const Media = () => {
           {/* mobile view duplicate news content */}
           {loadMore && (
             <div className="md:hidden">
-              {/* mobile news 4 */}
+              {/* mobile news 5 */}
+              <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full md:w-1/3">
+                <div className="relative">
+                  <img src={business} alt="Business" className="w-full" />
+                  <div className="flex items-center absolute bottom-0 w-full p-2 gap-2">
+                    <img src={icon2} alt="Icon 2" className="h-[40px]" />
+                    <p className="text-white mt-1">Businessline</p>
+                  </div>
+                </div>
+                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
+                  Start-up tech. Remote sensing with XYMA Analytics
+                </figcaption>
+                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
+                  Updated - Jan 9th, 2022
+                </p>
+                <center>
+                  <button
+                    className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
+                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://www.thehindubusinessline.com/business-tech/remote-sensing-with-xyma-analytics/article64577779.ece",
+                        "_blank"
+                      )
+                    }
+                  >
+                    View More
+                  </button>
+                </center>
+              </figure>
+
+              {/* mobile news 6 */}
               <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto">
                 <div className="relative">
                   <img src={iitm} alt="Iitm" className="w-full" />
@@ -604,7 +683,7 @@ const Media = () => {
                 </center>
               </figure>
 
-              {/* mobile news 5 */}
+              {/* mobile news 7 */}
               <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
                 <div className="relative">
                   <img src={cm} alt="Cm" className="w-full" />
@@ -639,7 +718,7 @@ const Media = () => {
                 </center>
               </figure>
 
-              {/* mobile news 6 */}
+              {/* mobile news 8 */}
               <figure className=" border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
                 <div className="relative">
                   <img src={smart} alt="Smart" className="w-full" />
@@ -666,48 +745,6 @@ const Media = () => {
                     onClick={() =>
                       window.open(
                         "https://www.einnews.com/pr_news/564327124/smarthub-ai-and-xyma-partnership-announcement",
-                        "_blank"
-                      )
-                    }
-                  >
-                    View More
-                  </button>
-                </center>
-              </figure>
-
-              {/* mobile news 7 */}
-              <figure className="border border-gray-300 p-1 hover:scale-90 duration-300 rounded-lg w-full m-auto mt-[5%]">
-                <div className="relative">
-                  <img
-                    src={newsTOI}
-                    alt="Times of  India Cover"
-                    className="w-full rounded-lg"
-                  />
-                  <div className="flex items-center gap-2 absolute bottom-0 w-full p-2">
-                    <img
-                      src={toiLogo}
-                      alt="Times of India Logo"
-                      className="h-[40px] rounded-md"
-                    />
-                    <p className="text-white">Times of India</p>
-                  </div>
-                </div>
-                <figcaption className="text-sm lg:text-lg 2xl:text-xl font-semibold mt-1">
-                  They sensed an oppurtunity and took it
-                </figcaption>
-                <p className="text-xs 2xl:text-sm mt-1 text-[#60646C]">
-                  Updated - Feb 20th, 2023
-                </p>
-                <center>
-                  <button
-                    className="text-white mt-1 text-sm 2xl:text-base rounded-full px-4 py-2 mb-2"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #FE6F17 0%, #FE9D1C 101.48%)",
-                    }}
-                    onClick={() =>
-                      window.open(
-                        "https://timesofindia.indiatimes.com/city/chennai/they-sensed-an-opportunity-and-took-it/articleshow/98083290.cms",
                         "_blank"
                       )
                     }
