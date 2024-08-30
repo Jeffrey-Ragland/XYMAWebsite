@@ -467,7 +467,7 @@ const Navbar = () => {
                 </div>
 
                 {/* product hover */}
-                <div className="hidden group-hover:block text-xs font-medium shadow-xl border border-gray-400 rounded-sm">
+                <div className="hidden group-hover:block text-xs md:text-sm font-medium shadow-xl border border-gray-400 rounded-sm">
                   <NavLink
                     to={HeaderData[1].path}
                     className={`flex items-center justify-between px-1 py-0.5 border border-b-gray-300 ${
