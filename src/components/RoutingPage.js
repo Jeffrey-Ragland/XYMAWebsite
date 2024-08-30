@@ -43,7 +43,7 @@ const RoutingPage = () => {
     "/industries/marine",
     "/industries/semiconductor",
     "/industries/mining",
-    "/otherProjects",
+    "/hseMonitoringProducts",
     "/admin@2k24",
     "/admin@2k24Portal",
     "/admin@2k24Applications",
@@ -64,12 +64,15 @@ const RoutingPage = () => {
           <Route path="/industries/OilAndGas" element={<OilAndGasCS />} />
           <Route path="/industries/SpecialtyChemicals" element={<PaintCS />} />
           <Route path="/industries/marine" element={<MarineCS />} />
-          <Route path="/industries/semiconductor" element={<SemiconductorCS />} />
+          <Route
+            path="/industries/semiconductor"
+            element={<SemiconductorCS />}
+          />
           <Route path="/industries/mining" element={<MiningCS />} />
           <Route path="/media" element={<Media />} />
           <Route path="/careers" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path='/otherProjects' element={<OtherProjects />} />
+          <Route path="/hseMonitoringProducts" element={<OtherProjects />} />
           <Route path="/admin@2k24" element={<AdminLogin />} />
           <Route path="/admin@2k24Portal" element={<ProtectedRoute />}>
             <Route path="" element={<AdminPortal />} />
@@ -77,11 +80,16 @@ const RoutingPage = () => {
           <Route path="/admin@2k24Applications" element={<ProtectedRoute />}>
             <Route path="" element={<AdminApplications />} />
           </Route>
-          <Route path="*" element={<div>
-            <Navbar />
-            <Home />
-            <Footer />
-          </div>} />
+          <Route
+            path="*"
+            element={
+              <div>
+                <Navbar />
+                <Home />
+                <Footer />
+              </div>
+            }
+          />
         </Routes>
       </main>
       {!isAdminRoute && !isNotFoundRoute && <Footer />}

@@ -6,7 +6,7 @@ import CircleComponent from "../CircleComponent";
 import { IoMenu, IoCloseSharp } from "react-icons/io5";
 import { FiArrowUpRight } from "react-icons/fi";
 import mainProductsCover from '../Assets/productHover.png';
-import otherProductsCover from '../Assets/heatStressMonitor.png';
+import otherProductsCover from '../Assets/heatStressMonitorHover.png';
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 
@@ -52,7 +52,7 @@ const Navbar = () => {
     },
     {
       title: "Other\u00A0Projects",
-      path: "/otherProjects",
+      path: "/hseMonitoringProducts",
     },
   ];
 
@@ -167,14 +167,14 @@ const Navbar = () => {
                       </div>
                       <p className="w-1/2 px-4">
                         <p className="font-semibold text-base 2xl:text-xl text-gray-700">
-                          Key Products
+                          Measurement Products
                         </p>
                         <p className="text-xs 2xl:text-base text-justify">
-                          Explore our advanced range of sensors and monitoring
-                          solutions for diverse measurement needs even in the
-                          most challenging conditions. Our lineup features
-                          Multi-Point and Multi-Parameter Temperature Mapping
-                          Sensors and Ultrasonic Level Measurement Sensors.
+                          Our Patented Worlds #1 Ultrasonic Waveguide sensors
+                          provide accurate multi-point temperature and
+                          multi-parameter measurements, with AI & IoT enabled
+                          dashboard for predictive maintenance and process
+                          efficiency.
                         </p>
                       </p>
                     </NavLink>
@@ -203,13 +203,14 @@ const Navbar = () => {
                       </div>
                       <p className="w-1/2 px-4">
                         <p className="font-semibold text-base 2xl:text-xl text-gray-700">
-                          Other Projects
+                          HSE Monitoring Products
                         </p>
                         <p className="text-xs 2xl:text-base text-justify">
-                          Discover more of our innovative products designed to
-                          enhance thermal monitoring and analysis. Our solutions
-                          offer advanced capabilities to meet various needs and
-                          improve operational efficiency.
+                          Our HSE products are designed to ensure the safe,
+                          compliant, and efficient management of the workforce,
+                          industrial assets, and processes, featuring advanced
+                          alert systems for optimal safety, performance, and
+                          productivity.
                         </p>
                       </p>
                     </NavLink>
@@ -470,7 +471,7 @@ const Navbar = () => {
                   <NavLink
                     to={HeaderData[1].path}
                     className={`flex items-center justify-between px-1 py-0.5 border border-b-gray-300 ${
-                      location.pathname === HeaderData[1].path 
+                      location.pathname === HeaderData[1].path
                         ? "text-orange-400"
                         : ""
                     }`}
@@ -478,10 +479,10 @@ const Navbar = () => {
                       handleBurgerMenu();
                     }}
                   >
-                    Key Products
+                    Measurement Products
                     <div
                       className={`${
-                        location.pathname === HeaderData[1].path 
+                        location.pathname === HeaderData[1].path
                           ? "text-orange-400"
                           : "text-gray-400"
                       }`}
@@ -501,7 +502,7 @@ const Navbar = () => {
                       handleBurgerMenu();
                     }}
                   >
-                    Other Projects
+                    HSE Monitoring Products
                     <div
                       className={`${
                         location.pathname === HeaderData[6].path
@@ -548,7 +549,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[3].path 
+                  location.pathname === HeaderData[3].path
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -563,7 +564,7 @@ const Navbar = () => {
                   {HeaderData[3].title}
                   <div
                     className={`${
-                      location.pathname === HeaderData[3].path 
+                      location.pathname === HeaderData[3].path
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}
@@ -575,7 +576,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[4].path 
+                  location.pathname === HeaderData[4].path
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -602,7 +603,7 @@ const Navbar = () => {
 
               <li
                 className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
-                  location.pathname === HeaderData[5].path 
+                  location.pathname === HeaderData[5].path
                     ? "text-orange-400"
                     : ""
                 }`}
@@ -617,7 +618,7 @@ const Navbar = () => {
                   {HeaderData[5].title}
                   <div
                     className={`${
-                      location.pathname === HeaderData[5].path 
+                      location.pathname === HeaderData[5].path
                         ? "text-orange-400"
                         : "text-gray-400"
                     }`}

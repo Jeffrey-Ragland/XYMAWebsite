@@ -29,7 +29,7 @@ const OtherProjects = () => {
   }, []);
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <div className="h-[10vh]">{/* navbar space */}</div>
       {/* scroll progress bar */}
       <div
@@ -53,7 +53,7 @@ const OtherProjects = () => {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xl md:text-3xl 2xl:text-5xl font-medium md:font-semibold text-center">
-          Discover More of Our Exciting Projects Below!
+          Explore Our Innovative HSE Solutions for Safety and Efficiency
         </div>
       </section>
       {/* bottom text */}
@@ -66,7 +66,7 @@ const OtherProjects = () => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        OTHER&nbsp;PROJECTS
+        HSE&nbsp;PRODUCTS
       </h3>
 
       {/* product cards */}
@@ -188,7 +188,7 @@ const OtherProjects = () => {
               </p>
               <p>
                 The Thermal and Acoustic Camera is an all-in-one solution
-                engineered to keep your workplace safe, efficient  and compliant
+                engineered to keep your workplace safe, efficient and compliant
                 with safety regulations.
               </p>
             </p>
