@@ -79,8 +79,56 @@ export const Home = () => {
     section4: useRef(null),
   };
 
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 1000,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   rows: 1,
+  //   slidesPerRow: 7,
+  //   adaptiveHeight: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 4000,
+  //   pauseOnHover: false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         dots: true,
+  //         infinite: true,
+  //         speed: 1000,
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         rows: 1,
+  //         slidesPerRow: 2,
+  //         adaptiveHeight: true,
+  //         autoplay: true,
+  //         autoplaySpeed: 2000,
+  //         pauseOnHover: false,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1280,
+  //       settings: {
+  //         dots: true,
+  //         infinite: true,
+  //         speed: 1000,
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         rows: 1,
+  //         slidesPerRow: 3,
+  //         adaptiveHeight: true,
+  //         autoplay: true,
+  //         autoplaySpeed: 2000,
+  //         pauseOnHover: false,
+  //       },
+  //     },
+  //   ],
+  // };
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -88,7 +136,7 @@ export const Home = () => {
     rows: 1,
     slidesPerRow: 7,
     adaptiveHeight: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     pauseOnHover: false,
     responsive: [
@@ -111,15 +159,15 @@ export const Home = () => {
       {
         breakpoint: 1280,
         settings: {
-          dots: true,
+          dots: false,
           infinite: true,
           speed: 1000,
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
-          slidesPerRow: 3,
+          slidesPerRow: 4,
           adaptiveHeight: true,
-          autoplay: true,
+          autoplay: false,
           autoplaySpeed: 2000,
           pauseOnHover: false,
         },
@@ -734,7 +782,8 @@ export const Home = () => {
                     width: "100%",
                   }}
                 >
-                  We aid the Defence Industry using our Rapid Data Acquisition Technology.
+                  We aid the Defence Industry using our Rapid Data Acquisition
+                  Technology.
                 </article>
               </div>
             </>
@@ -1512,7 +1561,7 @@ export const Home = () => {
       <section id="section4" ref={sectionRefs.section4} className=" ">
         <header
           // ref={sectionRefs.section4}
-          className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4"
+          className="flex flex-col justify-center items-center mt-8 md:mt-20 md:pt-4 mb-6 2xl:mb-8"
         >
           <div className="text-center flex justify-center">
             <div className="mx-[8%] md:mx-0 flex flex-col items-center text-[#1C2024] text-xl md:text-3xl lg:text-4xl 2xl:text-6xl font-semibold">
@@ -1529,25 +1578,17 @@ export const Home = () => {
         </header>
 
         {/* client logo carousel*/}
-        <div className="mt-16 mb-8 md:mx-[8%]">
+        <div className="mt-16 mb-8 md:mx-[8%] md:hidden">
           <Slider {...settings}>
-            <figure className="mb-6">
-              <img
-                src={sg}
-                alt="saint-gobain-logo"
-                className="mx-auto max-w-[145px] h-auto"
-              />
-            </figure>
-
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={tata}
                 alt="tata-steel-logo"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            <figure className="mb-6 ">
               <img
                 src={drdo}
                 alt="Defence-Research-and-Development-Organisation-logo"
@@ -1555,23 +1596,23 @@ export const Home = () => {
               />
             </figure>
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={cumi}
                 alt="cumi"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={lam}
                 alt="lam"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            <figure className="mb-6 ">
               <img
                 src={ind}
                 alt="ind"
@@ -1579,55 +1620,55 @@ export const Home = () => {
               />
             </figure>
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={epri}
                 alt="epri"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={skf}
                 alt="skf"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={bharat}
                 alt="bharat"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={ved}
                 alt="ved"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={schneider}
                 alt="schneider"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            {/* <figure className="mb-6">
               <img
                 src={reliance}
                 alt="reliance"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
 
-            <figure className="mb-6">
+            <figure className="mb-6 ">
               <img
                 src={threeLions}
                 alt="threeLions"
@@ -1635,14 +1676,56 @@ export const Home = () => {
               />
             </figure>
 
-            <figure className="mb-6">
+            <figure className="mb-6 h-full">
+              <img
+                src={sg}
+                alt="saint-gobain-logo"
+                className="mx-auto max-w-[130px] h-auto"
+              />
+            </figure>
+
+            {/* <figure className="mb-6">
               <img
                 src={cairn}
                 alt="cairn"
                 className=" mx-auto max-w-[145px] h-auto"
               />
-            </figure>
+            </figure> */}
           </Slider>
+        </div>
+
+        <div className="justify-center gap-4 2xl:gap-6 hidden md:flex">
+          <figure>
+            <img
+              src={drdo}
+              alt="Defence-Research-and-Development-Organisation-logo"
+              className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+            />
+          </figure>
+
+          <figure>
+            <img
+              src={ind}
+              alt="ind"
+              className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+            />
+          </figure>
+
+          <figure>
+            <img
+              src={threeLions}
+              alt="threeLions"
+              className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+            />
+          </figure>
+
+          <figure>
+            <img
+              src={sg}
+              alt="saint-gobain-logo"
+              className="mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+            />
+          </figure>
         </div>
       </section>
     </div>
