@@ -17,6 +17,7 @@ import sg from '../Brand/sg.png';
 import tata from '../Brand/tata.png';
 import lam from '../Brand/lam.png';
 import ind from '../Brand/iocl.png';
+import iocl2 from '../Brand/iocl2.jpg'
 import bharat from '../Brand/bpcl.png';
 import ved from '../Brand/vedanta.png';
 import drdo from '../Brand/drdo.png';
@@ -1623,9 +1624,9 @@ export const Home = () => {
 
             <figure className="mb-6 ">
               <img
-                src={ind}
-                alt="ind"
-                className=" mx-auto max-w-[145px] h-auto"
+                src={iocl2}
+                alt="iocl"
+                className=" mx-auto max-w-[220px] h-auto"
               />
             </figure>
 
@@ -1704,7 +1705,7 @@ export const Home = () => {
         </div>
 
         {/* duplicate logo content for approved logos without react slider for big screens */}
-        <div className="justify-center gap-4 xl:gap-6 2xl:gap-8 hidden xl:flex">
+        <div className="justify-center items-center gap-4 xl:gap-6 2xl:gap-8 hidden xl:flex">
           <figure>
             <img
               src={drdo}
@@ -1717,15 +1718,15 @@ export const Home = () => {
             <img
               src={srf}
               alt="srf"
-              className=" mx-auto max-w-[135px] h-auto"
+              className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
             />
           </figure>
 
           <figure>
             <img
-              src={ind}
-              alt="ind"
-              className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+              src={iocl2}
+              alt="iocl"
+              className=" mx-auto max-w-[250px] 2xl:max-w-[320px] h-auto"
             />
           </figure>
 
