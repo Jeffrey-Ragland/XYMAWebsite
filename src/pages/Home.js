@@ -27,6 +27,7 @@ import schneider from '../Brand/schneider.png';
 import reliance from '../Brand/reliance.png';
 import threeLions from '../Brand/threeLions.png';
 import cairn from '../Brand/cairn.png';
+import srf from '../Brand/srf.png';
 import newbgcropped from '../Assets/newbgcropped.png';
 import sensor from '../Assets/sensor.png';
 import iot from '../Assets/iot.png';
@@ -159,15 +160,15 @@ export const Home = () => {
       {
         breakpoint: 1280,
         settings: {
-          dots: false,
+          dots: true,
           infinite: true,
           speed: 1000,
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
-          slidesPerRow: 4,
+          slidesPerRow: 3,
           adaptiveHeight: true,
-          autoplay: false,
+          autoplay: true,
           autoplaySpeed: 2000,
           pauseOnHover: false,
         },
@@ -1578,7 +1579,7 @@ export const Home = () => {
         </header>
 
         {/* client logo carousel*/}
-        <div className="mt-16 mb-8 md:mx-[8%] md:hidden">
+        <div className="mt-16 mb-8 md:mx-[8%] xl:hidden">
           <Slider {...settings}>
             {/* <figure className="mb-6">
               <img
@@ -1592,6 +1593,14 @@ export const Home = () => {
               <img
                 src={drdo}
                 alt="Defence-Research-and-Development-Organisation-logo"
+                className=" mx-auto max-w-[145px] h-auto"
+              />
+            </figure>
+
+            <figure className="mb-6 ">
+              <img
+                src={srf}
+                alt="srf"
                 className=" mx-auto max-w-[145px] h-auto"
               />
             </figure>
@@ -1680,7 +1689,7 @@ export const Home = () => {
               <img
                 src={sg}
                 alt="saint-gobain-logo"
-                className="mx-auto max-w-[130px] h-auto"
+                className="mx-auto max-w-[145px] h-auto"
               />
             </figure>
 
@@ -1694,12 +1703,21 @@ export const Home = () => {
           </Slider>
         </div>
 
-        <div className="justify-center gap-4 2xl:gap-6 hidden md:flex">
+        {/* duplicate logo content for approved logos without react slider for big screens */}
+        <div className="justify-center gap-4 xl:gap-6 2xl:gap-8 hidden xl:flex">
           <figure>
             <img
               src={drdo}
               alt="Defence-Research-and-Development-Organisation-logo"
               className=" mx-auto max-w-[145px] 2xl:max-w-[175px] h-auto"
+            />
+          </figure>
+
+          <figure>
+            <img
+              src={srf}
+              alt="srf"
+              className=" mx-auto max-w-[135px] h-auto"
             />
           </figure>
 
