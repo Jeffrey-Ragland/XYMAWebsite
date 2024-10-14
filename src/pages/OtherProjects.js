@@ -94,13 +94,13 @@ const OtherProjects = () => {
               Thermal Work Limit Monitoring Device
             </h1>
             {/* description */}
-            <p className=" text-[#60646C] text-sm lg:text-base 2xl:text-2xl mb-2 font-medium flex flex-col gap-4">
+            <div className=" text-[#60646C] text-sm lg:text-base 2xl:text-2xl mb-2 font-medium flex flex-col gap-4">
               <p>
                 To install an Al-enabled, smart, and cost-effective solution for
                 continuous TWL monitoring & providing customers with the
                 following indexes:
               </p>
-              <p className="flex flex-col gap-2 px-2 md:px-4">
+              <div className="flex flex-col gap-2 px-2 md:px-4">
                 <p>
                   •{" "}
                   <span className="font-semibold text-gray-800">
@@ -122,13 +122,13 @@ const OtherProjects = () => {
                   </span>{" "}
                   (as per ISO 7933){" "}
                 </p>
-              </p>
+              </div>
               <p>
                 Implement a predictive data analysis model for heat stress
                 monitoring, featuring a centralized alarm unit to ensure
                 immediate and effective response to critical heat stress levels.
               </p>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -155,14 +155,14 @@ const OtherProjects = () => {
               Thermal and Acoustic Camera
             </h1>
             {/* description */}
-            <p className=" text-[#60646C] text-sm lg:text-base 2xl:text-2xl mb-2 font-medium flex flex-col gap-4">
+            <div className=" text-[#60646C] text-sm lg:text-base 2xl:text-2xl mb-2 font-medium flex flex-col gap-4">
               <p>
                 The Thermal and Acoustic Camera is an advanced safety product
                 designed to enhance workplace safety by monitoring environmental
                 conditions. It offers customizable functionalities to meet
                 diverse industry needs. Key features include:
               </p>
-              <p className="flex flex-col gap-2 px-2 md:px-4">
+              <div className="flex flex-col gap-2 px-2 md:px-4">
                 <p>
                   •{" "}
                   <span className="font-semibold text-gray-800">
@@ -185,13 +185,13 @@ const OtherProjects = () => {
                   </span>{" "}
                   Measures the temperature of customizable assets.
                 </p>
-              </p>
+              </div>
               <p>
                 The Thermal and Acoustic Camera is an all-in-one solution
                 engineered to keep your workplace safe, efficient and compliant
                 with safety regulations.
               </p>
-            </p>
+            </div>
           </div>
         </div>
       </div>
