@@ -17,7 +17,7 @@ import cto from "../Assets/cto.jpg";
 import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
 import groupPicEdited from '../Assets/groupPicEdited.png';
-import teamLeadPic from '../Assets/teamLeadPhoto.JPG';
+import teamLeadPic from '../Assets/teamLeadPhoto.jpg';
 import designTeam from "../Assets/designTeam.jpg";
 import dataTeam from "../Assets/dataTeam.jpg";
 import electronicsTeam from "../Assets/electronicsTeam.jpg";

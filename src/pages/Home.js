@@ -28,6 +28,7 @@ import schneider from '../Brand/schneider.png';
 import reliance from '../Brand/reliance.png';
 import threeLions from '../Brand/threeLions.png';
 import cairn from '../Brand/cairn.png';
+import tempMiningImage from "../Assets/mining1.jpg";
 import srf from '../Brand/srf.png';
 import newbgcropped from '../Assets/newbgcropped.png';
 import sensor from '../Assets/sensor.png';
@@ -909,14 +910,19 @@ export const Home = () => {
                 className=" flex flex-col items-center justify-center relative w-full md:w-[43%] xl:w-[48%] 2xl:w-[50%] px-2 xl:px-4"
                 data-aos="fade-up"
               >
-                <video
+                {/* <video
                   autoPlay
                   loop
                   controls
                   className="rounded-2xl shadow-white shadow-2xl"
                 >
                   <source src={miningVideo} type="video/mp4" />
-                </video>
+                </video> */}
+                <img
+                  src={tempMiningImage}
+                  alt="mining"
+                  className="shadow-white shadow-2xl rounded-2xl object-cover"
+                />
                 <figcaption
                   className="md:absolute md:top-full md:left-1/2 md:transform md:-translate-x-1/2 text-4xl lg:text-6xl xl:text-5xl 2xl:text-7xl font-black text-center"
                   style={{

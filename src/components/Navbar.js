@@ -286,13 +286,13 @@ const Navbar = () => {
                 )}
               </li>
 
-              <li className='hover:text-orange-400 duration-200 cursor-pointer'
+              {/* <li className='hover:text-orange-400 duration-200 cursor-pointer'
                   onClick={() =>
                   window.open("https://kesco.co.jp/xyma/", "_blank")
                 }
               >
                 <span>Kesco</span>
-              </li>
+              </li> */}
 
               {/* <li>
                 <NavLink
@@ -404,7 +404,7 @@ const Navbar = () => {
 
             <ul className="h-[70%]">
               <li
-                className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
                   location.pathname === HeaderData[0].path
                     ? "text-orange-400"
                     : ""
@@ -433,7 +433,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`group w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl `}
+                className={`group w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl `}
                 // onClick={() => {
                 //   handleBurgerMenu();
                 // }}
@@ -525,7 +525,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
                   location.pathname === HeaderData[2].path ||
                   (HeaderData[2].path === "/industries" &&
                     location.pathname.startsWith("/industries"))
@@ -556,7 +556,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
                   location.pathname === HeaderData[3].path
                     ? "text-orange-400"
                     : ""
@@ -583,7 +583,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
                   location.pathname === HeaderData[4].path
                     ? "text-orange-400"
                     : ""
@@ -610,7 +610,7 @@ const Navbar = () => {
               </li>
 
               <li
-                className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
+                className={`w-full h-1/6 border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl ${
                   location.pathname === HeaderData[5].path
                     ? "text-orange-400"
                     : ""
@@ -636,7 +636,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
 
-              <li
+              {/* <li
                 className={`w-full h-[14.28%] border border-b-gray-300 flex items-center font-[700] text-lg md:text-2xl `}
                 onClick={() => {
                   handleBurgerMenu();
@@ -655,7 +655,7 @@ const Navbar = () => {
                     <FiArrowUpRight size={25} />
                   </div>
                 </div>
-              </li>
+              </li> */}
             </ul>
 
             <div className="p-3 h-[20%] flex items-end">

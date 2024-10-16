@@ -14,6 +14,7 @@ import paints1 from '../Assets/paintsresized.jpg';
 import paints2 from '../Assets/paints2.jpg';
 import defence1 from '../Assets/defence.jpg';
 import defence2 from '../Assets/defence2.jpeg';
+import tempMiningImage from '../Assets/tempMiningImage.png'
 import { useNavigate } from 'react-router-dom';
 import {
   GiMetalDisc,
@@ -785,7 +786,7 @@ const Resource = () => {
                   <div className="mb-4">
                     <img
                       className="rounded-2xl w-full h-full"
-                      src={mining2}
+                      src={tempMiningImage}
                       alt="mining2"
                     ></img>
                   </div>

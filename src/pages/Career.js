@@ -555,7 +555,7 @@ const Career = () => {
                   value={applicationFormData.ExpectedSalary}
                   required
                   autoComplete="off"
-                  placeholder="Entern your Expected Salary"
+                  placeholder="Enter your Expected Salary"
                   onChange={handleApplicationFormChange}
                 />
               </div>
