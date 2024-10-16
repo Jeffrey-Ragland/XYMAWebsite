@@ -92,19 +92,19 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className=" w-full md:w-[40%] text-xs lg:text-sm xl:text-xs 2xl:text-base p-2 md:p-4 flex gap-2 justify-center h-16 md:h-auto mt-2 md:mt-0">
+          <div className=" w-full md:w-[40%] text-xs lg:text-sm xl:text-xs 2xl:text-base p-2 md:p-4 flex gap-2 justify-center h-16 md:h-auto mt-2 md:mt-0 ">
             <button
               className="bg-[#01285C] text-white rounded-full w-44 px-1 hover:scale-105 duration-200"
               onClick={handleContactClick}
             >
               Get&nbsp;in&nbsp;Touch
             </button>
-            <button
+            {/* <button
               className="bg-white text-[#01285C] rounded-full w-44 px-1 hover:scale-105 duration-200"
               onClick={handleBrochureDownload}
             >
               Download&nbsp;Newsletter
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

@@ -374,6 +374,7 @@ export const Home = () => {
           <source src={homeVideo} type="video/mp4" />
         </video>
 
+        {/* 
         <button
           className="bg-white/50 text-[#01285C] rounded-full px-3 md:px-6 py-2 md:py-2 absolute bottom-[4%] xl:bottom-[8%] left-[4%] xl:left-[8%] font-semibold text-xs md:text-sm xl:text-base 2xl:text-lg hover:scale-110 duration-200 flex items-center gap-4"
           onClick={() => window.open(brochure, "_blank")}
@@ -383,6 +384,7 @@ export const Home = () => {
             <FaAngleRight size={20} />
           </span>
         </button>
+        */}
 
         <div className="absolute inset-0 flex flex-col text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl text-white font-medium md:font-semibold gap-2 items-center justify-center xl:items-start xl:justify-start m-[8%]">
           <div className="flex xl:flex-col gap-2 md:gap-4">
