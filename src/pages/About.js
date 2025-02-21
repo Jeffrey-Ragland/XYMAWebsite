@@ -1,23 +1,23 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {useTypewriter, Cursor} from 'react-simple-typewriter';
-import CountUp from 'react-countup';
-import iit from '../Assets/Frameiit.png';
-import frame1 from '../Assets/Frame1.png';
-import frame2 from '../Assets/Frame2.png';
-import frame3 from '../Assets/Frame3.png';
-import frame4 from '../Assets/Frame4.png';
-import c1 from '../Assets/Framec1.png';
-import c2 from '../Assets/Framec2.png';
-import c3 from '../Assets/Framec3.png';
-import c4 from '../Assets/Framec4.png';
-import c5 from '../Assets/Framec5.png';
-import c6 from '../Assets/Framec6.png';
+import React, { useEffect, useRef, useState } from "react";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import CountUp from "react-countup";
+import iit from "../Assets/Frameiit.png";
+import frame1 from "../Assets/Frame1.png";
+import frame2 from "../Assets/Frame2.png";
+import frame3 from "../Assets/Frame3.png";
+import frame4 from "../Assets/Frame4.png";
+import c1 from "../Assets/Framec1.png";
+import c2 from "../Assets/Framec2.png";
+import c3 from "../Assets/Framec3.png";
+import c4 from "../Assets/Framec4.png";
+import c5 from "../Assets/Framec5.png";
+import c6 from "../Assets/Framec6.png";
 import ceo from "../Assets/ceo.jpg";
 import cto from "../Assets/cto.jpg";
 import adv1 from "../Assets/adv1.png";
 import adv2 from "../Assets/adv2.png";
-import groupPicEdited from '../Assets/groupPicEdited.png';
-import teamLeadPic from '../Assets/teamLeadPhoto.jpg';
+import groupPicEdited from "../Assets/groupPicEdited.png";
+import teamLeadPic from "../Assets/teamLeadPhoto.JPG";
 import designTeam from "../Assets/designTeam.jpg";
 import dataTeam from "../Assets/dataTeam.jpg";
 import electronicsTeam from "../Assets/electronicsTeam.jpg";
@@ -28,20 +28,20 @@ import pythonTeam from "../Assets/pythonTeam.jpg";
 import Xarrow from "react-xarrows";
 import useWindowSize from "react-use/lib/useWindowSize";
 import line from "../Assets/underline.png";
-import iitmic from '../Brand/iitmic.png';
-import nasscom from '../Brand/nasscom.png';
-import shell from '../Brand/shell.png';
-import cnde from '../Brand/cnde.png';
-import fcri from '../Brand/fcri.png';
+import iitmic from "../Brand/iitmic.png";
+import nasscom from "../Brand/nasscom.png";
+import shell from "../Brand/shell.png";
+import cnde from "../Brand/cnde.png";
+import fcri from "../Brand/fcri.png";
 import qualcomm from "../Brand/qualcomm.png";
-import skf from '../Brand/skf2.png';
-import schneider from '../Brand/schneider2.png';
+import skf from "../Brand/skf2.png";
+import schneider from "../Brand/schneider2.png";
 import Slider from "react-slick";
 import { RiMapPinTimeLine } from "react-icons/ri";
 import { GrGroup } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
 import { FaListCheck } from "react-icons/fa6";
-import { LiaSitemapSolid } from "react-icons/lia"; 
+import { LiaSitemapSolid } from "react-icons/lia";
 import { GiSoundWaves } from "react-icons/gi";
 import { PiCircuitryLight } from "react-icons/pi";
 import { TbBrandPython } from "react-icons/tb";
@@ -141,11 +141,11 @@ const About = () => {
               return prevPic;
             });
             setActiveSection((prevActiveSections) => {
-            if (!prevActiveSections.includes(sectionId)) {
-              return [...prevActiveSections, sectionId];
-            }
-            return prevActiveSections;
-          });
+              if (!prevActiveSections.includes(sectionId)) {
+                return [...prevActiveSections, sectionId];
+              }
+              return prevActiveSections;
+            });
           } else if (visiblePercentage >= 40) {
             setActiveSection((prevActiveSections) => {
               if (!prevActiveSections.includes(sectionId)) {
@@ -210,7 +210,7 @@ const About = () => {
     loop: {},
     typeSpeed: 10,
     deleteSpeed: 20,
-    delaySpeed: 3000
+    delaySpeed: 3000,
   });
 
   return (
@@ -1170,6 +1170,6 @@ const About = () => {
       </section>
     </div>
   );
-}
+};
 
 export default About;

@@ -7,7 +7,7 @@ import utmap from "../Assets/utmaps.png";
 import isteel from "../Assets/isteel.png";
 import ports from "../Assets/ports.png";
 import ztar from "../Assets/Ztar.png";
-import ipams from '../Assets/IPAMS.png';
+import ipams from "../Assets/IPAMS.png";
 import paint from "../Assets/paint.png";
 import metal from "../Assets/metal.png";
 import aicon from "../Assets/aluminumicon.png";
@@ -16,18 +16,18 @@ import luboil from "../Assets/luboil.png";
 import semi from "../Assets/semi.png";
 import ref from "../Assets/refineries.png";
 import eor from "../Assets/eor.png";
-import utmapsLogo from '../Assets/utmapsLogo.png';
-import portsLogo from '../Assets/portsLogo.png';
-import ztarLogo from '../Assets/ztarLogo.png';
-import ipamsLogo from '../Assets/ipamsLogo.png';
-import ipamsIcon1 from '../Assets/ipamsIcon1.png';
+import utmapsLogo from "../Assets/utmapsLogo.png";
+import portsLogo from "../Assets/portsLogo.png";
+import ztarLogo from "../Assets/ztarLogo.png";
+import ipamsLogo from "../Assets/ipamsLogo.png";
+import ipamsIcon1 from "../Assets/ipamsIcon1.png";
 import ipamsIcon2 from "../Assets/ipamsIcon2.png";
 import ipamsIcon3 from "../Assets/ipamsIcon3.png";
-import utmapsDemo from '../videoAssets/utmapsDemo.mp4';
+import utmapsDemo from "../videoAssets/utmapsDemo.mp4";
 import portsDemo from "../videoAssets/portsDemo.mp4";
-import ztarDemo from '../videoAssets/ztarDemo.mp4';
+import ztarDemo from "../videoAssets/ztarDemo.mp4";
 import ipamsDemo from "../videoAssets/ipamsDemo.mp4";
-import additionalLogo1 from '../Assets/additionalLogo1.png';
+import additionalLogo1 from "../Assets/additionalLogo1.png";
 import additionalLogo2 from "../Assets/additionalLogo2.png";
 import additionalLogo3 from "../Assets/additionalLogo3.png";
 import additionalLogo4 from "../Assets/additionalLogo4.png";
@@ -67,7 +67,7 @@ const Product = () => {
     uTMapS: useRef(null),
     PoRTS: useRef(null),
     Ztar: useRef(null),
-    IPAMS: useRef(null)
+    IPAMS: useRef(null),
   };
 
   //to control cover image slide change
@@ -437,8 +437,8 @@ const Product = () => {
                     μTMapS
                   </h1>
                   <h2 className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
-                    A single customizable waveguide can measure temperature at
-                    10 points over 50 meters length.
+                    A single customizable waveguide that can measure temperature
+                    at 10 points over 50 meters length.
                   </h2>
                 </div>
               </div>
@@ -747,7 +747,7 @@ const Product = () => {
                     PoRTS
                   </h1>
                   <p className="text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
-                    A single customizable waveguide can measure viscosity,
+                    A single customizable waveguide that can measure viscosity,
                     density & Temperature continuously.
                   </p>
                 </div>
@@ -1103,8 +1103,8 @@ const Product = () => {
                     Ztar
                   </h1>
                   <p className=" text-white text-xs md:text-sm lg:text-lg xl:text-base 2xl:text-xl">
-                    A single waveguide can measure viscosity, density &
-                    Temperature continuously.
+                    A single waveguide that can measure level continuously
+                    across any hazardous environment.
                   </p>
                 </div>
               </div>

@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
-import video from '../videoAssets/contactOverlay.mp4';
-import map from '../Assets/map.png';
-import mail from '../Assets/mail.png';
-import call from '../Assets/call.png'
-import location from '../Assets/location.png'; 
+import React, { useRef, useEffect, useState } from "react";
+import video from "../videoAssets/contactOverlay.mp4";
+import map from "../Assets/map.png";
+import mail from "../Assets/mail.png";
+import call from "../Assets/call.png";
+import location from "../Assets/location.png";
 import line from "../Assets/underline.png";
 import { IoChevronDown } from "react-icons/io5";
 import AOS from "aos";
@@ -21,7 +21,7 @@ const ContactPage = () => {
     company: "",
     solution: "",
     details: "",
-  }); 
+  });
 
   const handleSubmitButtonClick = () => {
     setSubmitButtonClicked(true);
@@ -42,7 +42,7 @@ const ContactPage = () => {
     e.preventDefault();
     const toastId = toast.loading("Sending response...", { closeButton: true });
     fetch("https://database.xyma.live/sensor/contacts", {
-      // http://localhost:4000/backend/contacts
+      // fetch("http://localhost:4000/sensor/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

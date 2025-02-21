@@ -1,71 +1,71 @@
-import React from 'react'
-import { useState } from 'react';
-import vector from '../Assets/Vector.png';
+import React from "react";
+import { useState } from "react";
+import vector from "../Assets/Vector.png";
 import logo from "../Assets/logo.png";
 import line from "../Assets/line.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RWebShare } from "react-web-share";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { IoShareSocialSharp } from "react-icons/io5";
-import brochure from '../pdfAssets/Newsletter.pdf';
+import brochure from "../pdfAssets/Newsletter.pdf";
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [subscribeButtonClicked, setSubscribeButtonClicked] = useState(false);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleContactClick = () => {
-      navigate("/contact");
-    };
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
 
-    const handleBrochureDownload = () => {
-      window.open(brochure,'_blank');
-    };
+  const handleBrochureDownload = () => {
+    window.open(brochure, "_blank");
+  };
 
-    const handleProductClick = (sectionId) => {
-      navigate(`/products#${sectionId}`)
-    };
+  const handleProductClick = (sectionId) => {
+    navigate(`/products#${sectionId}`);
+  };
 
-    const handleSubscription = () => {
-      setSubscribeButtonClicked(true);
-      setTimeout(() => {
-        setSubscribeButtonClicked(false)
-      },200);
-    };
+  const handleSubscription = () => {
+    setSubscribeButtonClicked(true);
+    setTimeout(() => {
+      setSubscribeButtonClicked(false);
+    }, 200);
+  };
 
-    const handleSubscriptionSubmit = (e) => {
-      e.preventDefault();
-      const toastId = toast.loading('Sending response...',{closeButton : true});
-      fetch("https://database.xyma.live/sensor/subscription", {
-        // fetch('http://localhost:4000/backend/subscription', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
+  const handleSubscriptionSubmit = (e) => {
+    e.preventDefault();
+    const toastId = toast.loading("Sending response...", { closeButton: true });
+    fetch("https://database.xyma.live/sensor/subscription", {
+      // fetch("http://localhost:4000/sensor/subscription", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          toast.update(toastId, {
+            render: "Thank You for Subscribing!",
+            type: "success",
+            closeOnClick: true,
+            isLoading: false,
+            autoClose: 5000,
+          });
+          // console.log('subscribed successfully');
+          setEmail("");
+        } else {
+          // console.error('subscription failed')
+        }
       })
-        .then((response) => {
-          if (response.ok) {
-            toast.update(toastId, {
-              render: "Thank You for Subscribing!",
-              type: "success",
-              closeOnClick: true,
-              isLoading: false,
-              autoClose: 5000,
-            });
-            // console.log('subscribed successfully');
-            setEmail("");
-          } else {
-            // console.error('subscription failed')
-          }
-        })
-        .catch((error) => {
-          // console.error(error);
-        });
-    };
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <footer
@@ -306,6 +306,6 @@ const Footer = () => {
       </section>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
